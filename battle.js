@@ -12,6 +12,8 @@ var poison_attack_modifier = [0, 0];
 var soul_slash_modifier = [0, 0];
 var undead_skill_modifier = [0, 0];
 var meteor_skill_modifier = [0, 0];
+var mp_burn_modifier = [0, 0];
+var soul_mind_modifier = [0, 0];
 
 
 function test_output(){
@@ -788,11 +790,11 @@ function death_damage_apply(id1, id2, skill){
 			break;
 		case "3: Soul Taker":
 			battle_data[id2].blockable = false;
-			damage_dealer(id1, id2, skill, "Physical", 1.5, 0.5, 0);
+			damage_dealer(id1, id2, skill, "Physical", 1.5 + soul_mind_modifier[id1], 0.5, 0);
 			break;
 		case "3: Mind Crush":
 			battle_data[id2].blockable = false;
-			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.5, 0.5, 0);
+			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.5 + soul_mind_modifier[id1], 0.5, 0);
 			break;
 		case "3: Martyr":
 			chance = 0.8;
@@ -861,7 +863,7 @@ function battle(){
 	// Blue EX & Colosseum Skill Buff Effect
 	ability_lock_modifier = [0, 0], mind_break_modifier = [0, 0], explosion_modifier = [0, 0], revival_modifier = [0, 0], quick_strike_modifier = [0, 0];
 	martyr_modifier = [0, 0], deft_step_modifier = [0, 0], giga_slash_modifier = [0, 0], poison_attack_modifier = [0, 0], soul_slash_modifier = [0, 0];
-	undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0];
+	undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], soul_mind_modifier = [0, 0];
 	var blue = [ document.getElementById('blue_ex1').value, document.getElementById('blue_ex2').value, document.getElementById('colo_buff_skill').value ];
 	for (var i = 0; i < 3; i++){
 		switch (blue[i]){
@@ -913,6 +915,14 @@ function battle(){
 			case "Meteor Skill":
 				if (i != 0) meteor_skill_modifier[1] += 0.1;
 				if (i != 1) meteor_skill_modifier[0] += 0.1;
+				break;
+			case "Laevateinn & Arondight":
+				if (i != 0) mp_burn_modifier[1] += 0.3;
+				if (i != 1) mp_burn_modifier[0] += 0.3;
+				break;
+			case "Soul Taker & Mind Crush":
+				if (i != 0) soul_mind_modifier[1] += 0.1;
+				if (i != 1) soul_mind_modifier[0] += 0.1;
 				break;
 		}
 	}
@@ -1334,7 +1344,7 @@ function battle(){
 			else if (attack_skill == "Life Drain")
 				heal_apply(attacker, 0, 0.2 * damage);
 			else if (attack_skill == "Laevateinn" || attack_skill == "Arondight")
-				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 0.5);
+				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 0.5 + mp_burn_modifier[attacker]);
 		}
 		
 
