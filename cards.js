@@ -404,6 +404,16 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
+		"name": "ネフティス / Nephthys", "attr": "Darkness", "hp": 2160, "mp": 2600, "atk": 1720, "def": 1660, "spd": 1396, "wis": 1760, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "Burst",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "暴君マモン / Mammon the Tyrant", "attr": "Earth", "hp": 2220, "mp": 1260, "atk": 1760, "def": 1720, "spd": 1390, "wis": 1680, 
+		"attack_skill": "Predator", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
 		"name": "ミノタウロスコマンダー / Minotaur Commander", "attr": "Earth", "hp": 2320, "mp": 975, "atk": 1720, "def": 1640, "spd": 1400, "wis": 1760, 
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
@@ -549,9 +559,214 @@ var data =
 		"attack_skill": "Predator", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "ミカエル / Michael", "attr": "Wind", "hp": 2250, "mp": 1315, "atk": 1460, "def": 1700, "spd": 1380, "wis": 1780, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "ヴィクトーリア / Victoria", "attr": "Wind", "hp": 2240, "mp": 1510, "atk": 1720, "def": 1500, "spd": 1370, "wis": 1500, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Attack +25%", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真アイスクイーン / True Ice Queen", "attr": "Water", "hp": 1520, "mp": 940, "atk": 1200, "def": 1260, "spd": 1250, "wis": 1560, 
+		"attack_skill": "Water +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真ドラゴンゾンビ / True Dragon Zombie", "attr": "Undead", "hp": 1400, "mp": 999, "atk": 1140, "def": 1240, "spd": 1200, "wis": 1520, 
+		"attack_skill": "Poison +4", "intro_skill1": "Mind Shift", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真ミノタウロスサージェント / True Minotaur Sergeant", "attr": "Fire", "hp": 1520, "mp": 640, "atk": 1580, "def": 1520, "spd": 1180, "wis": 1380, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Power Shift", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真カーミラ / True Carmilla", "attr": "Fire", "hp": 1480, "mp": 1090, "atk": 1400, "def": 1100, "spd": 1220, "wis": 1480, 
+		"attack_skill": "Undead +4", "intro_skill1": "Quick Strike", "intro_skill2": "Mind Break", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "軍神ゴーレム / Eidolon Golem", "attr": "Earth", "hp": 2100, "mp": 440, "atk": 1540, "def": 1560, "spd": 1080, "wis": 1160, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Multi Block", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "軍神シヴァ / Eidolon Shiva", "attr": "Water", "hp": 2120, "mp": 1240, "atk": 1420, "def": 1500, "spd": 1400, "wis": 1800, 
+		"attack_skill": "Arondight", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "軍神バハムート零式 / Eidolon Bahamut ZERO", "attr": "Light", "hp": 2160, "mp": 1160, "atk": 1620, "def": 1720, "spd": 1370, "wis": 1760, 
+		"attack_skill": "Light +S", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "軍神ディアボロス / Eidolon Diabolos", "attr": "Darkness", "hp": 1680, "mp": 1140, "atk": 1440, "def": 1440, "spd": 1372, "wis": 1800, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "軍神オーディン / Eidolon Odin", "attr": "Darkness", "hp": 2080, "mp": 1040, "atk": 1700, "def": 1780, "spd": 1364, "wis": 1500, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "軍神イフリート / Eidolon Ifrit", "attr": "Fire", "hp": 1480, "mp": 1360, "atk": 1140, "def": 1360, "spd": 1260, "wis": 1540, 
+		"attack_skill": "Fire +4EX", "intro_skill1": "Wise Smite", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アトラック・ナチャ / Atlach-Nacha", "attr": "Poison", "hp": 1480, "mp": 1180, "atk": 1500, "def": 1300, "spd": 1230, "wis": 1300, 
+		"attack_skill": "Predator", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "サンダルフォン / Sandolphon", "attr": "Machine", "hp": 2080, "mp": 1240, "atk": 1710, "def": 1680, "spd": 1370, "wis": 1780, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Predator, Wise Smite, Deft Step"
+	},
+	{
+		"name": "ユースティティア / Justitia", "attr": "Water", "hp": 2040, "mp": 3040, "atk": 1700, "def": 1500, "spd": 1360, "wis": 920, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ロビン・フッド / Robin Hood", "attr": "Wind", "hp": 2080, "mp": 252, "atk": 1720, "def": 1660, "spd": 1370, "wis": 1520, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "カマエル / Camael", "attr": "Fire", "hp": 2060, "mp": 2600, "atk": 1600, "def": 1540, "spd": 1360, "wis": 1500, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "神炎宿せしウリエル / Uriel of the Flame", "attr": "Light", "hp": 2250, "mp": 1220, "atk": 1460, "def": 1480, "spd": 1370, "wis": 1800, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Wise Smite", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ラファエル / Raphael", "attr": "Light", "hp": 2080, "mp": 1080, "atk": 1720, "def": 1760, "spd": 1370, "wis": 1540, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "熾天使ガブリエル / Archangel Gabriel", "attr": "Wind", "hp": 2100, "mp": 1490, "atk": 1450, "def": 1500, "spd": 1370, "wis": 1800, 
+		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヨフィエル / Jophiel", "attr": "Wind", "hp": 2160, "mp": 1180, "atk": 1680, "def": 1700, "spd": 1380, "wis": 1540, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "モロク / Moloch", "attr": "Fire", "hp": 2160, "mp": 1000, "atk": 1500, "def": 1580, "spd": 1350, "wis": 1760, 
+		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "パンドラ・デスペアー / Pandora of Despair", "attr": "Earth", "hp": 2120, "mp": 1460, "atk": 1660, "def": 1740, "spd": 1340, "wis": 1580, 
+		"attack_skill": "Crush Drain", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "Mirage Drive", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "旋渦竜リヴァイアサン / Maelstorm Leviathan", "attr": "Water", "hp": 1680, "mp": 520, "atk": 1520, "def": 1480, "spd": 1220, "wis": 1360, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "サルヴァ / Saurva", "attr": "Water", "hp": 2220, "mp": 840, "atk": 1670, "def": 1580, "spd": 1360, "wis": 1500, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "ケルビム / Karabu", "attr": "Light", "hp": 1880, "mp": 370, "atk": 1640, "def": 1420, "spd": 1320, "wis": 1320, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "Mirage Drive", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ドラキュラ / Dracula", "attr": "Darkness", "hp": 1800, "mp": 1030, "atk": 1500, "def": 1400, "spd": 1340, "wis": 1380, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Power Shift", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "シスターズ / Undead Sisters", "attr": "Undead", "hp": 1600, "mp": 1090, "atk": 1280, "def": 1350, "spd": 1310, "wis": 1600, 
+		"attack_skill": "Darkness +4", "intro_skill1": "Mind Break", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スウィート・ヘラ / Sweet Hera", "attr": "Light", "hp": 1440, "mp": 940, "atk": 1380, "def": 1300, "spd": 1260, "wis": 1460, 
+		"attack_skill": "Light +4", "intro_skill1": "Transposition", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スリーピング・ハート / Princess Somnus", "attr": "Darkness", "hp": 2200, "mp": 1030, "atk": 1680, "def": 1560, "spd": 1360, "wis": 1500, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "バレンタイン・ゼノビア / Valentine Zenobia", "attr": "Darkness", "hp": 2060, "mp": 420, "atk": 1760, "def": 1580, "spd": 1340, "wis": 1500, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "サタナエル / Satanail", "attr": "Darkness", "hp": 2220, "mp": 1385, "atk": 1670, "def": 1760, "spd": 1360, "wis": 1500, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "アエーシェマ / Aeshma", "attr": "Darkness", "hp": 2000, "mp": 1140, "atk": 1680, "def": 1580, "spd": 1350, "wis": 1480, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ネヴァン / Nemain", "attr": "Wind", "hp": 1380, "mp": 1140, "atk": 1120, "def": 1220, "spd": 1240, "wis": 1540, 
+		"attack_skill": "Wind +4", "intro_skill1": "Wisdom -40%", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ランスロット / Lancelot", "attr": "Water", "hp": 2000, "mp": 940, "atk": 1670, "def": 1520, "spd": 1360, "wis": 1460, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "マーリン / Merlin", "attr": "Thunder", "hp": 2000, "mp": 2340, "atk": 1420, "def": 1400, "spd": 1340, "wis": 1730, 
+		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+
 
 	/*
-	
+	フェルニゲシュ	火	☆５	イベ報酬		1480	1270	1480	1320	1280	1260
+	クピードー	闇	☆５	バビロン		2060	405	1670	1360	1340	1600
+	ルキフグス	闇	☆５	イベ報酬		1500	730	1180	1410	1310	1700
+	ゼノビア	闇	☆５	魔宮殿	女性	2220	1100	1670	1560	1360	1500
+	アトロポス・カラミティ	風	☆５	魔宮殿	浮遊体	2000	1325	1560	1500	1350	1740
+	ヘレル・ベン・サハル	闇	☆５	魔宮殿	人型	1920	1075	1590	1480	1360	1765
+	モルドレッド	死	☆５	魔宮殿	獣	2080	1250	1660	1600	1320	1490
+	ペイルライダー	死	☆５	魔宮殿	巨獣	2160	1130	1680	1500	1320	1480
+	ジルニトラ	水	☆５	招待特典		1320	940	1470	1310	1300	1380
+	ヴァハ	風	☆５	招待特典		1380	1020	1280	1370	1280	1480
+	クロト・カラミティ	機	☆５	イベ報酬		1870	2500	1500	1420	1330	1720
+	聖夜のアメノウズメ	風	☆５	イベ報酬		1580	900	1535	1360	1300	1260
+	サンタ・ティンカー・ベル	風	☆５	エデン(限)	クリスマス	1920	1180	1200	1320	1360	1760
+	セイント・アナグティア	水	☆５	エデン(限)	クリスマス	1780	1330	1670	1460	1320	1500
+	ヴェルザンディ	水	☆５	魔宮殿(限)	女性	1900	1280	1520	1490	1360	1760
+	ウルズ	土	☆５	魔宮殿(限)	女性	2090	2400	1670	1520	1350	1460
+	スクルド	風	☆５	イベ報酬		1530	1040	1370	1300	1300	1430
+	羊姫ポベートール	死	☆５	魔宮殿(限)	獣	1660	1390	1470	1480	1330	1760
+	ラケシス・カラミティ	死	☆５	イベ報酬		1480	210	1550	1480	1240	1400
+	サタン	死	☆５	魔宮殿	人型	2020	1220	1670	1580	1360	1720
+	メリヒム	毒	☆５	魔宮殿	浮遊体	2080	1280	1500	1480	1350	1760
+	リリム	死	☆５	魔宮殿(限)	女性	2100	960	1550	1550	1360	1760
+	ティンダロス	闇	☆５	イベ報酬		1670	765	1600	1500	1320	1390
+
 	*/
 
 
@@ -570,11 +785,79 @@ var data =
 
 	/*
 	
+	最強リリス・メイデン	闇	☆５金	コロ報酬		1880	1180	1360	1480	1360	1860
+	最強フェルニゲシュ	火	☆５金	コロ報酬		1720	2320	1640	1530	1320	1480
+	最強ルー	光	☆５金	コロ報酬		2180	900	1700	1480	1330	1400
+	最強アメノウズメ	風	☆５金	コロ報酬		1880	1400	1300	1420	1360	1700
+	最強キングアーサー	土	☆５金	コロ報酬		2160	1180	1700	1440	1330	1440
+	最強サルガタナス	死	☆５金	コロ報酬		2200	2690	1730	1470	1340	1440
+	最強カーボニク・ナイト	毒	☆５金	コロ報酬		1920	1075	1700	1470	1350	1500
 
 	*/
 
 
 
+
+	{
+		"name": "最強シクヨミ / Almighty Tsukuyomi", "attr": "Water", "hp": 2240, "mp": 1280, "atk": 1720, "def": 1530, "spd": 1340, "wis": 1500, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ルキフグス / Almighty Lucifugus", "attr": "Darkness", "hp": 2020, "mp": 1145, "atk": 1460, "def": 1410, "spd": 1360, "wis": 1900, 
+		"attack_skill": "Darkness +4", "intro_skill1": "Ability Lock", "intro_skill2": "Transposition", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ヘカテ / Almighty Hecate", "attr": "Undead", "hp": 2000, "mp": 1290, "atk": 1460, "def": 1420, "spd": 1350, "wis": 1820, 
+		"attack_skill": "Undead +4", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "妻恐ヘラ / Tenacious Hera", "attr": "Light", "hp": 2160, "mp": 1146, "atk": 2600, "def": 1800, "spd": 1360, "wis": 800, 
+		"attack_skill": "Physical +4", "intro_skill1": "Quick Strike", "intro_skill2": "Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強タイラント / Almighty Tyrant", "attr": "Machine", "hp": 2400, "mp": 1325, "atk": 1720, "def": 1460, "spd": 1325, "wis": 1420, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強アロケル / Almighty Allocer", "attr": "Fire", "hp": 2200, "mp": 2400, "atk": 1720, "def": 1460, "spd": 1340, "wis": 1420, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ミネルヴァ / Almighty Minerva", "attr": "Wind", "hp": 2100, "mp": 1600, "atk": 1460, "def": 1600, "spd": 1360, "wis": 1900, 
+		"attack_skill": "Wind +4", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強グヴィバー / Almighty Gwiber", "attr": "Thunder", "hp": 2210, "mp": 1180, "atk": 1720, "def": 1500, "spd": 1340, "wis": 1700, 
+		"attack_skill": "Predator", "intro_skill1": "Wise Smite", "intro_skill2": "Quick Strike", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強サラスヴァティ / Almighty Saraswati", "attr": "Water", "hp": 2080, "mp": 1480, "atk": 1465, "def": 1590, "spd": 1364, "wis": 1820, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Mind Break", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強軍神イフリート / Almighty Eidolon Ifrit", "attr": "Fire", "hp": 2200, "mp": 2050, "atk": 1440, "def": 1580, "spd": 1370, "wis": 1840, 
+		"attack_skill": "Fire +4EX", "intro_skill1": "Wise Smite", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強軍神ゴーレム / Almighty Eidolon Golem", "attr": "Earth", "hp": 2400, "mp": 640, "atk": 1800, "def": 1800, "spd": 1330, "wis": 1360, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Multi Block", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強アイスクイーン / Almighty Ice Queen", "attr": "Water", "hp": 2120, "mp": 1280, "atk": 1500, "def": 1600, "spd": 1370, "wis": 1920, 
+		"attack_skill": "Water +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	{
 		"name": "最強ゼノビア / Almighty Zenobia", "attr": "Darkness", "hp": 2400, "mp": 1100, "atk": 1780, "def": 1660, "spd": 1390, "wis": 1600, 
 		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
