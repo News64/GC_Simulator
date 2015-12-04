@@ -620,7 +620,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	}
 	if (damage != 0){
 		document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " deals " + damage.toString() + " damage to Card " + (id2 + 1).toString() + "! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
-		if (poison != "None" && (attack_skill.charCodeAt(0) < 48 || attack_skill.charCodeAt(0) > 57) && battle_data[id2].hp_left > 0 && 
+		if (poison != "None" && (attack_skill.charCodeAt(0) < 48 || attack_skill.charCodeAt(0) > 57) && attack_skill != "Counter" && battle_data[id2].hp_left > 0 && 
 			battle_data[id1].mind_break == false && battle_data[id2].resist == false){
 			if (poison == "Deadly Poison")
 				chance = 1;
