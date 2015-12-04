@@ -1176,7 +1176,7 @@ function battle(){
 				case "+3": dmg_rate = 1.25; mp_cost = 600; break;
 				case "+4": dmg_rate = 1.5;; mp_cost = 1200; break;
 				case "+4EX": dmg_rate = 1.6; mp_cost = 1300; break;
-				case "+0": dmg_rate = 2; mp_cost = 1500; break;
+				case "+S": dmg_rate = 2; mp_cost = 1500; break;
 			}
 		}
 		else{
@@ -1302,10 +1302,13 @@ function battle(){
 
 		// Mind Break Effect
 		if (battle_data[attacker].mind_break ==  true){
-			if (Math.random() < 0.8 + mind_break_modifier[attacker])
+			if (Math.random() < 0.8 + mind_break_modifier[attacker]){
+				battle_data[attacker].dodgable = battle_data[defender].dodgable, battle_data[attacker].counterable = battle_data[defender].counterable, battle_data[attacker].no_death = battle_data[defender].no_death, battle_data[attacker].blockable = battle_data[defender].blockable;
+				battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
 				defender = attacker;
+			}
 		}
-
+		
 		// Damage Calc
 		if (attack_skill == "Energy Drain"){
 			damage = mp_damage_dealer(attacker, defender, attack_skill, 1, 0.5, 0);
@@ -1323,6 +1326,7 @@ function battle(){
 		}
 		else
 			damage = damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, reduc_rate, 0);
+		
 		// Extra Heal or MP Damage
 		if (damage > 0){
 			if (attack_skill == "Crush Drain")
@@ -1352,6 +1356,7 @@ function battle(){
 						break;
 				}
 			}
+			
 			death_proc(defender, 1 - defender);
 
 			// If Survived
