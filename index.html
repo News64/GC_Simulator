@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>GC Battle Emulator</title>
+		<title>GC Battle Simulator</title>
 	</head>
 
 	<body onload="init_list(1); init_list(2)">
@@ -11,13 +11,11 @@
 					Card 1:
 					<select id="card1" onchange="update_box(1, 1)"> </select> 
 					<select id="type1" onchange="update_box(1, 1)"> </select>
-					<button id="apply1" onclick="update_box(1, 2)">Re-apply Boosts</button>
 				</td>
 				<td>
 					Card 2:
 					<select id="card2" onchange="update_box(2, 1)"> </select> 
 					<select id="type2" onchange="update_box(2, 1)"> </select>
-					<button id="apply2" onclick="update_box(2, 2)">Re-apply Boosts</button>
 				</td>
 			</tr>
 			<tr>
@@ -34,10 +32,12 @@
 				<td>
 					Attribute: 
 					<select id="attr1" onchange="update_box(1, 0)"> </select>
+					<button id="apply1" onclick="update_box(1, 2)">Re-apply Boosts</button>
 				</td>
 				<td>
 					Attribute: 
 					<select id="attr2" onchange="update_box(2, 0)"> </select>
+					<button id="apply2" onclick="update_box(2, 2)">Re-apply Boosts</button>
 				</td>
 			</tr>
 			<tr>
@@ -162,11 +162,13 @@
 		<select id="colo_buff_skill"></select> <br>
 		<br>
 
+		<p style="display:none;">
 		From LV 70 Cool Clean to Basic: <button id="calc" onclick="basic_calc()">Calc!</button> <br>
 		<input type="text" name="hpc" id="hpc"> <input type="text" name="mpc" id="mpc"> <br>
 		<input type="text" name="atkc" id="atkc"> <input type="text" name="defc" id="defc"> <br>
 		<input type="text" name="spdc" id="spdc"> <input type="text" name="wisc" id="wisc"> <br>
 		<br>
+		</p>
 
 		<button id="battle" onclick="battle()">Go!</button>
 		
