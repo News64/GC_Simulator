@@ -50,21 +50,21 @@ function init_list(num){
 	for (var i = 0; i < 14; i++){
 		option = document.createElement("option");
 		switch (i){
-			case 0: text = 'Cool'; break;
-			case 1: text = 'Chaos'; break;
-			case 2: text = 'Wild'; break;
-			case 3: text = 'Sexy'; break;
-			case 4: text = 'Virgin'; break;
-			case 5: text = 'Powerful'; break;
-			case 6: text = 'Berserk'; break;
-			case 7: text = 'Brave'; break;
-			case 8: text = 'Hero'; break;
-			case 9: text = 'Haste'; break;
-			case 10: text = 'Sonic'; break;
-			case 11: text = 'Intelligent'; break;
-			case 12: text = 'Wise'; break;
-			case 13: text = 'Ace'; break;
-			default: text = 'Cool'; 
+			case 0: text = 'クール / Cool'; break;
+			case 1: text = 'カオス / Chaotic'; break;
+			case 2: text = 'ワイルド / Bold'; break;
+			case 3: text = 'セクシー / Sexy'; break;
+			case 4: text = 'バージン / Erotic'; break;
+			case 5: text = 'パワフル / Powerful'; break;
+			case 6: text = 'バーサク / Berserk'; break;
+			case 7: text = 'ブレイブ / Brave'; break;
+			case 8: text = 'ヒーロー / Stalwart'; break;
+			case 9: text = 'ヘイスト / Fast'; break;
+			case 10: text = 'ソニック / Sonic'; break;
+			case 11: text = 'インテリ / Intelligent'; break;
+			case 12: text = 'ワイズ / Wise'; break;
+			case 13: text = 'エース / Ace'; break;
+			default: text = 'クール / Cool'; 
 		}
 		option.value = text;
 		option.text = text;
@@ -261,20 +261,20 @@ function update_box(num, mode){
 	}
 
 	switch (document.getElementById(type).value){
-		case "Cool": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break; 
-		case "Chaos": hp_rate = 1.1, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 0.9; break;
-		case "Wild": hp_rate = 1.15, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 0.85; break;
-		case "Sexy": hp_rate = 0.9, mp_rate = 1.1, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break;
-		case "Virgin": hp_rate = 0.85, mp_rate = 1.15, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break;
-		case "Powerful": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.1, def_rate = 1.0, spd_rate = 0.9, wis_rate = 1.0; break;
-		case "Berserk": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.15, def_rate = 1.0, spd_rate = 0.85, wis_rate = 1.0; break;
-		case "Brave": hp_rate = 1.0, mp_rate = 0.9, atk_rate = 1.0, def_rate = 1.1, spd_rate = 1.0, wis_rate = 1.0; break;
-		case "Hero": hp_rate = 1.0, mp_rate = 0.85, atk_rate = 1.0, def_rate = 1.15, spd_rate = 1.0, wis_rate = 1.0; break;
-		case "Haste": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 0.9, spd_rate = 1.1, wis_rate = 1.0; break;
-		case "Sonic": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 0.85, spd_rate = 1.15, wis_rate = 1.0; break;
-		case "Intelligent": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 0.9, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.1; break;
-		case "Wise": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 0.85, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.15; break;
-		case "Ace": hp_rate = 1.1, mp_rate = 1.1, atk_rate = 1.1, def_rate = 1.1, spd_rate = 1.1, wis_rate = 1.1; break;
+		case "クール / Cool": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break; 
+		case "カオス / Chaotic": hp_rate = 1.1, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 0.9; break;
+		case "ワイルド / Bold": hp_rate = 1.15, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 0.85; break;
+		case "セクシー / Sexy": hp_rate = 0.9, mp_rate = 1.1, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break;
+		case "バージン / Erotic": hp_rate = 0.85, mp_rate = 1.15, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; break;
+		case "パワフル / Powerful": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.1, def_rate = 1.0, spd_rate = 0.9, wis_rate = 1.0; break;
+		case "バーサク / Berserk": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.15, def_rate = 1.0, spd_rate = 0.85, wis_rate = 1.0; break;
+		case "ブレイブ / Brave": hp_rate = 1.0, mp_rate = 0.9, atk_rate = 1.0, def_rate = 1.1, spd_rate = 1.0, wis_rate = 1.0; break;
+		case "ヒーロー / Stalwart": hp_rate = 1.0, mp_rate = 0.85, atk_rate = 1.0, def_rate = 1.15, spd_rate = 1.0, wis_rate = 1.0; break;
+		case "ヘイスト / Fast": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 0.9, spd_rate = 1.1, wis_rate = 1.0; break;
+		case "ソニック / Sonic": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 0.85, spd_rate = 1.15, wis_rate = 1.0; break;
+		case "インテリ / Intelligent": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 0.9, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.1; break;
+		case "ワイズ / Wise": hp_rate = 1.0, mp_rate = 1.0, atk_rate = 0.85, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.15; break;
+		case "エース / Ace": hp_rate = 1.1, mp_rate = 1.1, atk_rate = 1.1, def_rate = 1.1, spd_rate = 1.1, wis_rate = 1.1; break;
 		default: hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; 
 	}
 
@@ -616,7 +616,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	battle_data[id2].hp_left -= damage;
 	if (damage > 0 && battle_data[id2].freeze == true){
 		battle_data[id2].hp_left = 0;
-		attle_data[id2].freeze = false;
+		battle_data[id2].freeze = false;
 	}
 	if (damage != 0){
 		document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " deals " + damage.toString() + " damage to Card " + (id2 + 1).toString() + "! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";

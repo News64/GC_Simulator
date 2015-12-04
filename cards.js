@@ -90,6 +90,136 @@ var data =
 		"attack_skill": "Soul Buster", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "ラケシス・ナイトメア / Lachesis Nightmare", "attr": "Undead", "hp": 2300, "mp": 1680, "atk": 1540, "def": 1640, "spd": 1428, "wis": 1930, 
+		"attack_skill": "Undead +4", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "歌舞伎・雷神 / Kabuki Raijin", "attr": "Thunder", "hp": 2300, "mp": 1460, "atk": 1760, "def": 1700, "spd": 1440, "wis": 1700, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "婆娑羅・風神 / Basara Fujin", "attr": "Wind", "hp": 2300, "mp": 1460, "atk": 1760, "def": 1700, "spd": 1440, "wis": 1700, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "極夜のシェヘラザード / Arctic Scheherazade", "attr": "Water", "hp": 2080, "mp": 1350, "atk": 1620, "def": 1560, "spd": 1395, "wis": 1840, 
+		"attack_skill": "Arondight", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ゼノ・ケンタウロス / Zeno Centaur", "attr": "Machine", "hp": 2290, "mp": 1640, "atk": 1660, "def": 1800, "spd": 1418, "wis": 1915, 
+		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "エンシェント・ファング / Ancient Fang", "attr": "Earth", "hp": 2400, "mp": 1650, "atk": 1660, "def": 1880, "spd": 1412, "wis": 1920, 
+		"attack_skill": "Arondight", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ネファリアン / Nefarian", "attr": "Fire", "hp": 2330, "mp": 1460, "atk": 1800, "def": 1640, "spd": 1430, "wis": 1700, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真ファランクス / True Phalanx", "attr": "Machine", "hp": 1780, "mp": 1100, "atk": 1660, "def": 1440, "spd": 1350, "wis": 1320, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Mind Break", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "黒鱗帝クルセギオン / Krusegionn", "attr": "Naught", "hp": 3540, "mp": 1160, "atk": 2050, "def": 1940, "spd": 1412, "wis": 1700, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "クラッシュ・ライノス / Crush Rhino", "attr": "Earth", "hp": 2300, "mp": 1260, "atk": 1780, "def": 1720, "spd": 1430, "wis": 1580, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アルシエル / Alsiel", "attr": "Darkness", "hp": 2280, "mp": 1460, "atk": 1600, "def": 1560, "spd": 1420, "wis": 1900, 
+		"attack_skill": "Undead +4", "intro_skill1": "Divine Shield", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "冥王妃ペルセポネ / Queen Persephone", "attr": "Poison", "hp": 2220, "mp": 1740, "atk": 1820, "def": 1580, "spd": 1405, "wis": 1680, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ルナ / Luna", "attr": "Light", "hp": 2320, "mp": 1560, "atk": 1680, "def": 1640, "spd": 1415, "wis": 1920, 
+		"attack_skill": "Dimension", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "オルクス / Orcus", "attr": "Machine", "hp": 2340, "mp": 1180, "atk": 1760, "def": 1700, "spd": 1410, "wis": 1500, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "Soul Taker",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真カーボニク・ナイト / True Carbonic Knight", "attr": "Poison", "hp": 1620, "mp": 1100, "atk": 1620, "def": 1340, "spd": 1355, "wis": 1360, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真オリオン / True Orion", "attr": "Water", "hp": 1640, "mp": 1360, "atk": 1600, "def": 1220, "spd": 1350, "wis": 1360, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真ルシファー / True Lucifer", "attr": "Darkness", "hp": 1800, "mp": 940, "atk": 1680, "def": 1440, "spd": 1360, "wis": 1380, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真ヘラ / True Hera", "attr": "Light", "hp": 1660, "mp": 1120, "atk": 1640, "def": 1400, "spd": 1350, "wis": 1400, 
+		"attack_skill": "Physical +4", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "神楽 / Kagura", "attr": "Wind", "hp": 2280, "mp": 1740, "atk": 1630, "def": 1590, "spd": 1420, "wis": 1900, 
+		"attack_skill": "Arondight", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヴァサーゴ / Virsago", "attr": "Earth", "hp": 2260, "mp": 1480, "atk": 1760, "def": 1840, "spd": 1402, "wis": 1600, 
+		"attack_skill": "Crush Drain", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "大賢者アルカナ / Archmage Arcana", "attr": "Wind", "hp": 2300, "mp": 1430, "atk": 1520, "def": 1670, "spd": 1402, "wis": 1860, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヴァルカン / Vulcan", "attr": "Fire", "hp": 2220, "mp": 3560, "atk": 1750, "def": 1780, "spd": 1400, "wis": 1640, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アグロナ / Aglona", "attr": "Water", "hp": 2380, "mp": 1820, "atk": 1800, "def": 1720, "spd": 1430, "wis": 1660, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Resistance", "intro_skill2": "Healing Light", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "獣妃アーサー / Princess Arthur", "attr": "Thunder", "hp": 2270, "mp": 1460, "atk": 1840, "def": 1600, "spd": 1430, "wis": 1620, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "巨神タイタン / Titan the Tremendous", "attr": "Earth", "hp": 2120, "mp": 1140, "atk": 1680, "def": 1600, "spd": 1370, "wis": 1460, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ジャガーノート・アサルト / Assault Juggernaut", "attr": "Machine", "hp": 2020, "mp": 2600, "atk": 1700, "def": 1580, "spd": 1375, "wis": 1400, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 
 
@@ -203,7 +333,7 @@ var death_skills = [
 	"2: Deep Sleep", "2: Crystallize",
 	"3: Explosion", "3: Dark Explosion", "3: Burst",
 	"3: Soul Taker", "3: Mind Crush",
-	"3: Martyr", "3: Entrust"
+	"3: Martyr", "3: Entrust", "3: Force"
 ];
 
 

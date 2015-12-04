@@ -6,3 +6,8 @@ To use a card that is not yet included:
 3. Click 'Re-apply Boosts', and the stats in the boxes will update
 (Don't change the dropboxes mentioned in the first step after this, because that would refresh the boxes!)
 Choosing skills and blue EX will not affect the stats, so feel free to do so.
+
+Known issues:
+1. Force and Entrust doesn't have the stat inheritance effect (because it's useless in 1-1 battle)
+2. Only 1 attack skill is available (choosing an attack skill according to damage is currently not implemented)
+3. Some English names are not correct (since they're directly translated from Japanese)
