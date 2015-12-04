@@ -414,6 +414,12 @@ function update_box(num, mode){
 				}
 			}
 
+			if (data[i].hasOwnProperty("alt_skill")){
+				document.getElementById('alt_skill' + num.toString()).innerHTML = data[i].alt_skill;
+			}
+			else
+				document.getElementById('alt_skill' + num.toString()).innerHTML = "";
+
 			break;
 		}
 	}
@@ -934,6 +940,7 @@ function battle(){
 	var keep = false;
 	var damage, counter_skill;
 	var temp;
+	var pre_hp;
 	var battle_length = 0;
 	while (true){ 
 		// Speed Decision
@@ -965,6 +972,7 @@ function battle(){
 								break;
 							battle_data[matrix[j][0]].mp_left -= 300;
 							document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+							pre_hp = battle_data[matrix[j][1]].hp_left;
 							switch (matrix[j][2]){
 								case "1: Quick Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 0.85 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
 								case "1: Assault Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 1.6 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
@@ -980,15 +988,19 @@ function battle(){
 								death_proc(matrix[j][1], 1 - matrix[j][1]);
 
 								// If Survived
-								if (battle_data[matrix[j][1]].hp_left > 0){
+								if (battle_data[matrix[j][1]].hp_left > 1){
 									break;
 								}
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " is defeated! <br>";
-								if (battle_data[1 - matrix[j][1]].hp_left <= 0)
-									document.getElementById('res').innerHTML += "Card " + (2 - matrix[j][1]).toString() + " is defeated! <br>";
-								return;
+								else if (battle_data[matrix[j][1]].hp_left <= 0){
+									document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " is defeated! <br>";
+									if (battle_data[1 - matrix[j][1]].hp_left <= 0)
+										document.getElementById('res').innerHTML += "Card " + (2 - matrix[j][1]).toString() + " is defeated! <br>";
+									return;
+								}
+								else
+									damage = pre_hp - 1;
 							}
-							else{ // Counter
+							{ // Counter
 								counter_skill = document.getElementById('counter_skill' + (matrix[j][1] + 1).toString()).value;
 								if (battle_data[matrix[j][1]].mp_left >= 300 && battle_data[matrix[j][1]].mind_break == false && 
 									battle_data[matrix[j][1]].sleep == false && counter_skill != "None"){
@@ -1320,6 +1332,7 @@ function battle(){
 		}
 		
 		// Damage Calc
+		pre_hp = battle_data[defender].hp_left;
 		if (attack_skill == "Energy Drain"){
 			damage = mp_damage_dealer(attacker, defender, attack_skill, 1, 0.5, 0);
 			mp_heal_apply(attacker, 0, 0.6 * damage);
@@ -1349,37 +1362,43 @@ function battle(){
 		
 
 		// If Death Occurs
-		if (battle_data[defender].hp_left <= 0){
-			if (attack_skill == "Predator"){
-				switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
-					case 1: 
-						battle_data[attacker].atk_buff += 0.2, battle_data[attacker].def_buff += 0.2, battle_data[attacker].spd_buff += 0.2, battle_data[attacker].wis_buff += 0.2; 
-						document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have greatly increased! <br>";
-						break; 
-					case 0: 
-						battle_data[attacker].atk_buff += 0.1, battle_data[attacker].def_buff += 0.1, battle_data[attacker].spd_buff += 0.1, battle_data[attacker].wis_buff += 0.1; 
-						document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have increased! <br>";
-						break;
-					case -1: 
-						battle_data[attacker].atk_debuff += 0.1, battle_data[attacker].def_debuff += 0.1, battle_data[attacker].spd_debuff += 0.1, battle_data[attacker].wis_debuff += 0.1; 
-						document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have decreased! <br>";
-						break;
-				}
-			}
-			
+		if (battle_data[defender].hp_left <= 0){		
 			death_proc(defender, 1 - defender);
 
 			// If Survived
-			if (battle_data[defender].hp_left > 0){
+			if (battle_data[defender].hp_left > 1){
 				battle_length++;
 				continue;
 			}
-			document.getElementById('res').innerHTML += "Card " + (defender + 1).toString() + " is defeated! <br>";
-			if (battle_data[1 - defender].hp_left <= 0)
-				document.getElementById('res').innerHTML += "Card " + (2 - defender).toString() + " is defeated! <br>";
-			break;
+			else if (battle_data[defender].hp_left <= 0){	
+				if (attack_skill == "Predator"){
+					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
+						case 1: 
+							battle_data[attacker].atk_buff += 0.2, battle_data[attacker].def_buff += 0.2, battle_data[attacker].spd_buff += 0.2, battle_data[attacker].wis_buff += 0.2; 
+							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have greatly increased! <br>";
+							break; 
+						case 0: 
+							battle_data[attacker].atk_buff += 0.1, battle_data[attacker].def_buff += 0.1, battle_data[attacker].spd_buff += 0.1, battle_data[attacker].wis_buff += 0.1; 
+							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have increased! <br>";
+							break;
+						case -1: 
+							battle_data[attacker].atk_debuff += 0.1, battle_data[attacker].def_debuff += 0.1, battle_data[attacker].spd_debuff += 0.1, battle_data[attacker].wis_debuff += 0.1; 
+							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have decreased! <br>";
+							break;
+					}
+				}
+
+				document.getElementById('res').innerHTML += "Card " + (defender + 1).toString() + " is defeated! <br>";
+				if (battle_data[1 - defender].hp_left <= 0)
+					document.getElementById('res').innerHTML += "Card " + (2 - defender).toString() + " is defeated! <br>";
+				break;
+			}
+			else
+				damage = pre_hp - 1;
 		}
-		else{ // Counter
+
+		// Counter
+		{
 			counter_skill = document.getElementById('counter_skill' + (defender + 1).toString()).value;
 			if (damage > 0 && battle_data[defender].counterable == true && battle_data[defender].mp_left >= 300 && 
 				battle_data[defender].mind_break == false && battle_data[defender].sleep == false && counter_skill != "None"){
@@ -1406,7 +1425,7 @@ function battle(){
 		}
 
 		battle_length++;
-		if (battle_length > 10) break;
+		if (battle_length > 50) break;
 	}
 }
 
