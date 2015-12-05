@@ -284,17 +284,23 @@ function update_box(num, mode){
 	var count = data.length;
 	var skill_count;
 	var ok;
+	var stone_rate = 0;
+
+	if (document.getElementById('stone' + num.toString()).value == "Full")
+		stone_rate = 1;
+	else
+		stone_rate = 0;
 
 	if (mode != 2){
 		for (var i = 0; i < count; i++){
 			if (data[i].name == document.getElementById(card).value){
 
-				document.getElementById(hp).value = Math.floor((data[i].hp * (1 + 1.5 / 59 * 69) * hp_rate + data[i].hp * 0.55) ).toString();
-				document.getElementById(mp).value = Math.floor((data[i].mp * (1 + 1.5 / 59 * 69) * mp_rate + data[i].mp * 0.55) ).toString();
-				document.getElementById(atk).value = Math.floor((data[i].atk * (1 + 1.5 / 59 * 69) * atk_rate + data[i].atk * 0.55) ).toString();
-				document.getElementById(def).value = Math.floor((data[i].def * (1 + 1.5 / 59 * 69) * def_rate + data[i].def * 0.55) ).toString();
-				document.getElementById(spd).value = Math.floor((data[i].spd * (1 + 1.5 / 59 * 69) * spd_rate + data[i].spd * 0.55) ).toString();
-				document.getElementById(wis).value = Math.floor((data[i].wis * (1 + 1.5 / 59 * 69) * wis_rate + data[i].wis * 0.55) ).toString();
+				document.getElementById(hp).value = Math.floor((data[i].hp * (1 + 1.5 / 59 * 69) * hp_rate + data[i].hp * 0.55 * stone_rate) ).toString();
+				document.getElementById(mp).value = Math.floor((data[i].mp * (1 + 1.5 / 59 * 69) * mp_rate + data[i].mp * 0.55 * stone_rate) ).toString();
+				document.getElementById(atk).value = Math.floor((data[i].atk * (1 + 1.5 / 59 * 69) * atk_rate + data[i].atk * 0.55 * stone_rate) ).toString();
+				document.getElementById(def).value = Math.floor((data[i].def * (1 + 1.5 / 59 * 69) * def_rate + data[i].def * 0.55 * stone_rate) ).toString();
+				document.getElementById(spd).value = Math.floor((data[i].spd * (1 + 1.5 / 59 * 69) * spd_rate + data[i].spd * 0.55 * stone_rate) ).toString();
+				document.getElementById(wis).value = Math.floor((data[i].wis * (1 + 1.5 / 59 * 69) * wis_rate + data[i].wis * 0.55 * stone_rate) ).toString();
 
 				if (mode != 0){
 					skill_count = document.getElementById(attr).options.length;
