@@ -740,32 +740,127 @@ var data =
 		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
 		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "ティンダロス / Vesper Hound", "attr": "Darkness", "hp": 1670, "mp": 765, "atk": 1600, "def": 1500, "spd": 1320, "wis": 1390, 
+		"attack_skill": "Predator", "intro_skill1": "Attack +20%", "intro_skill2": "Power Shift", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "リリム / Lilim", "attr": "Undead", "hp": 2100, "mp": 960, "atk": 1550, "def": 1550, "spd": 1360, "wis": 1760, 
+		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "メリヒム / Merihim", "attr": "Poison", "hp": 2080, "mp": 1280, "atk": 1500, "def": 1480, "spd": 1350, "wis": 1760, 
+		"attack_skill": "Arondight", "intro_skill1": "Divine Shield", "intro_skill2": "Transposition", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "サタン / Dark Emperor", "attr": "Undead", "hp": 2020, "mp": 1220, "atk": 1670, "def": 1580, "spd": 1360, "wis": 1720, 
+		"attack_skill": "Arondight", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None",
+		"alt_skill": "Predator, Resistance, Mirage Drive"
+	},
+	{
+		"name": "ラケシス・カラミティ / Lachesis the Calamity", "attr": "Undead", "hp": 1480, "mp": 210, "atk": 1550, "def": 1480, "spd": 1240, "wis": 1400, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "羊姫ポベートール / Ovis Phobetor", "attr": "Undead", "hp": 1660, "mp": 1390, "atk": 1470, "def": 1480, "spd": 1330, "wis": 1760, 
+		"attack_skill": "Undead +4", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スクルド / Skuld", "attr": "Wind", "hp": 1530, "mp": 1040, "atk": 1370, "def": 1300, "spd": 1300, "wis": 1430, 
+		"attack_skill": "Wind +4", "intro_skill1": "Wise Smite", "intro_skill2": "Quick Strike", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ウルズ / Urd", "attr": "Earth", "hp": 2090, "mp": 2400, "atk": 1670, "def": 1520, "spd": 1350, "wis": 1460, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヴェルザンディ / Verdandi", "attr": "Water", "hp": 1900, "mp": 1280, "atk": 1520, "def": 1490, "spd": 1360, "wis": 1760, 
+		"attack_skill": "Arondight", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "セイント・アナグティア / Saint Angitia", "attr": "Water", "hp": 1780, "mp": 1330, "atk": 1670, "def": 1460, "spd": 1320, "wis": 1500, 
+		"attack_skill": "Predator", "intro_skill1": "Divine Shield", "intro_skill2": "Quick Strike", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "サンタ・ティンカー・ベル / Aine Claus", "attr": "Wind", "hp": 1920, "mp": 1180, "atk": 1200, "def": 1320, "spd": 1360, "wis": 1760, 
+		"attack_skill": "Wind +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "聖夜のアメノウズメ / Holy Ame-no-Uzume", "attr": "Wind", "hp": 1580, "mp": 900, "atk": 1535, "def": 1360, "spd": 1300, "wis": 1260, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Dark Ability Lock", "intro_skill2": "Attack +25%", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "クロト・カラミティ / Clotho of Calamities", "attr": "Machine", "hp": 1870, "mp": 2500, "atk": 1500, "def": 1420, "spd": 1330, "wis": 1720, 
+		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヴァハ / Macha", "attr": "Wind", "hp": 1380, "mp": 1020, "atk": 1280, "def": 1370, "spd": 1280, "wis": 1480, 
+		"attack_skill": "Wind +4", "intro_skill1": "Transposition", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ジルニトラ / Zirnitra", "attr": "Water", "hp": 1320, "mp": 940, "atk": 1470, "def": 1310, "spd": 1300, "wis": 1380, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ペイルライダー / Pale Rider", "attr": "Undead", "hp": 2160, "mp": 1130, "atk": 1680, "def": 1500, "spd": 1320, "wis": 1480, 
+		"attack_skill": "Predator", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
+	{
+		"name": "モルドレッド / Mordred", "attr": "Undead", "hp": 2080, "mp": 1250, "atk": 1660, "def": 1600, "spd": 1320, "wis": 1490, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヘレル・ベン・サハル / Shahar", "attr": "Darkness", "hp": 1920, "mp": 1075, "atk": 1590, "def": 1480, "spd": 1360, "wis": 1765, 
+		"attack_skill": "Arondight", "intro_skill1": "Wise Smite", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アトロポス・カラミティ / Calamitous Atropos", "attr": "Wind", "hp": 2000, "mp": 1325, "atk": 1560, "def": 1500, "spd": 1350, "wis": 1740, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Wisdom +25%", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ゼノビア / Zenobia", "attr": "Darkness", "hp": 2220, "mp": 1100, "atk": 1670, "def": 1560, "spd": 1360, "wis": 1500, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Force", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ルキフグス / Lucifugus", "attr": "Darkness", "hp": 1500, "mp": 730, "atk": 1180, "def": 1410, "spd": 1310, "wis": 1700, 
+		"attack_skill": "Darkness +4", "intro_skill1": "Ability Lock", "intro_skill2": "Transposition", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "クピードー / Cupido", "attr": "Darkness", "hp": 2060, "mp": 404, "atk": 1670, "def": 1360, "spd": 1340, "wis": 1600, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None",
+		"alt_skill": "Deft Step, Mirage Drive"
+	},
+	{
+		"name": "フェルニゲシュ / Fernyiges", "attr": "Fire", "hp": 1480, "mp": 1270, "atk": 1480, "def": 1320, "spd": 1280, "wis": 1260, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 
 	/*
-	フェルニゲシュ	火	☆５	イベ報酬		1480	1270	1480	1320	1280	1260
-	クピードー	闇	☆５	バビロン		2060	405	1670	1360	1340	1600
-	ルキフグス	闇	☆５	イベ報酬		1500	730	1180	1410	1310	1700
-	ゼノビア	闇	☆５	魔宮殿	女性	2220	1100	1670	1560	1360	1500
-	アトロポス・カラミティ	風	☆５	魔宮殿	浮遊体	2000	1325	1560	1500	1350	1740
-	ヘレル・ベン・サハル	闇	☆５	魔宮殿	人型	1920	1075	1590	1480	1360	1765
-	モルドレッド	死	☆５	魔宮殿	獣	2080	1250	1660	1600	1320	1490
-	ペイルライダー	死	☆５	魔宮殿	巨獣	2160	1130	1680	1500	1320	1480
-	ジルニトラ	水	☆５	招待特典		1320	940	1470	1310	1300	1380
-	ヴァハ	風	☆５	招待特典		1380	1020	1280	1370	1280	1480
-	クロト・カラミティ	機	☆５	イベ報酬		1870	2500	1500	1420	1330	1720
-	聖夜のアメノウズメ	風	☆５	イベ報酬		1580	900	1535	1360	1300	1260
-	サンタ・ティンカー・ベル	風	☆５	エデン(限)	クリスマス	1920	1180	1200	1320	1360	1760
-	セイント・アナグティア	水	☆５	エデン(限)	クリスマス	1780	1330	1670	1460	1320	1500
-	ヴェルザンディ	水	☆５	魔宮殿(限)	女性	1900	1280	1520	1490	1360	1760
-	ウルズ	土	☆５	魔宮殿(限)	女性	2090	2400	1670	1520	1350	1460
-	スクルド	風	☆５	イベ報酬		1530	1040	1370	1300	1300	1430
-	羊姫ポベートール	死	☆５	魔宮殿(限)	獣	1660	1390	1470	1480	1330	1760
-	ラケシス・カラミティ	死	☆５	イベ報酬		1480	210	1550	1480	1240	1400
-	サタン	死	☆５	魔宮殿	人型	2020	1220	1670	1580	1360	1720
-	メリヒム	毒	☆５	魔宮殿	浮遊体	2080	1280	1500	1480	1350	1760
-	リリム	死	☆５	魔宮殿(限)	女性	2100	960	1550	1550	1360	1760
-	ティンダロス	闇	☆５	イベ報酬		1670	765	1600	1500	1320	1390
+
 
 	*/
 
@@ -783,21 +878,116 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 
+	
+	{
+		"name": "最凶アジ・ダカーハ / Archfiend Azi Dahaka", "attr": "Poison", "hp": 10, "mp": 1030, "atk": 1600, "def": 913, "spd": 1250, "wis": 1600, 
+		"attack_skill": "Poison +4", "intro_skill1": "Wisdom -20%", "intro_skill2": "Speed -20%", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最狂ジャガーノート / Maniacal Juggernaut", "attr": "Machine", "hp": 666, "mp": 1720, "atk": 2300, "def": 666, "spd": 666, "wis": 666, 
+		"attack_skill": "Physical +3", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強聖アジ・ダカーハ / Almighty Jolly Old Azi Dahaka", "attr": "Poison", "hp": 358, "mp": 280, "atk": 1520, "def": 913, "spd": 1400, "wis": 1800, 
+		"attack_skill": "Light +3", "intro_skill1": "Wisdom +10%", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最恐ミクトランテクートリ / Archfiend Mictlantecuhtli", "attr": "Undead", "hp": 10, "mp": 2442, "atk": 910, "def": 1059, "spd": 1440, "wis": 1200, 
+		"attack_skill": "Poison +4", "intro_skill1": "Wisdom +25%", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "災凶スケルス / Archfiend Sucellus", "attr": "Thunder", "hp": 699, "mp": 729, "atk": 2400, "def": 699, "spd": 729, "wis": 699, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Quick Strike", "intro_skill2": "Speed +25%", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最兇アバドン / Archfiend Abaddon", "attr": "Poison", "hp": 2400, "mp": 2400, "atk": 200, "def": 200, "spd": 1200, "wis": 200, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最侠ダゴン / Almighty Dagon", "attr": "Water", "hp": 100, "mp": 100, "atk": 100, "def": 100, "spd": 2400, "wis": 2400, 
+		"attack_skill": "Earth +1", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最胸リリス / Almighty Lilith", "attr": "Darkness", "hp": 1600, "mp": 336, "atk": 1600, "def": 336, "spd": 1200, "wis": 336, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Mind Break", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "砕狂ヘパイストス / Almighty Hephaestus", "attr": "Machine", "hp": 2600, "mp": 337, "atk": 1430, "def": 1200, "spd": 1320, "wis": 1050, 
+		"attack_skill": "Heal", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強クリスマス・タイタン / Almighty Merrymaking Titan", "attr": "Earth", "hp": 111, "mp": 165, "atk": 2200, "def": 111, "spd": 2100, "wis": 2000, 
+		"attack_skill": "Physical +2", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最叫アザゼル / Almighty Azazel", "attr": "Poison", "hp": 1560, "mp": 220, "atk": 1000, "def": 100, "spd": 1180, "wis": 2680, 
+		"attack_skill": "Darkness +1", "intro_skill1": "Wisdom +20%", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最兄プロメテウス / Almighty Prometheus", "attr": "Earth", "hp": 2680, "mp": 1760, "atk": 1740, "def": 1610, "spd": 948, "wis": 10, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Defend +40%", "intro_skill2": "Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最脅タイタン・レジェンド / Almighty Legendary Titan", "attr": "Earth", "hp": 2689, "mp": 1800, "atk": 2600, "def": 600, "spd": 990, "wis": 600, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+
 	/*
 	
-	最強リリス・メイデン	闇	☆５金	コロ報酬		1880	1180	1360	1480	1360	1860
-	最強フェルニゲシュ	火	☆５金	コロ報酬		1720	2320	1640	1530	1320	1480
-	最強ルー	光	☆５金	コロ報酬		2180	900	1700	1480	1330	1400
-	最強アメノウズメ	風	☆５金	コロ報酬		1880	1400	1300	1420	1360	1700
-	最強キングアーサー	土	☆５金	コロ報酬		2160	1180	1700	1440	1330	1440
-	最強サルガタナス	死	☆５金	コロ報酬		2200	2690	1730	1470	1340	1440
-	最強カーボニク・ナイト	毒	☆５金	コロ報酬		1920	1075	1700	1470	1350	1500
 
 	*/
 
 
 
 
+	{
+		"name": "最強リリス・メイデン / Almighty Maiden Lilith", "attr": "Darkness", "hp": 1880, "mp": 1180, "atk": 1360, "def": 1480, "spd": 1360, "wis": 1860, 
+		"attack_skill": "Darkness +4", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強フェルニゲシュ / Almighty Fernyiges", "attr": "Fire", "hp": 1720, "mp": 2320, "atk": 1640, "def": 1530, "spd": 1320, "wis": 1480, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ルー / Almighty Lugh", "attr": "Light", "hp": 2180, "mp": 900, "atk": 1700, "def": 1480, "spd": 1330, "wis": 1400, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強アメノウズメ / Almighty Ame-no-Uzume", "attr": "Wind", "hp": 1880, "mp": 1400, "atk": 1300, "def": 1420, "spd": 1360, "wis": 1700, 
+		"attack_skill": "Wind +4", "intro_skill1": "Mind Shift", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強キングアーサー / Almighty King Arthur", "attr": "Earth", "hp": 2160, "mp": 1180, "atk": 1700, "def": 1440, "spd": 1330, "wis": 1440, 
+		"attack_skill": "Crush Drain", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強サルガタナス / Almighty Sargatanas", "attr": "Undead", "hp": 2200, "mp": 2690, "atk": 1730, "def": 1470, "spd": 1340, "wis": 1440, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Quick Strike", "intro_skill2": "Resistance", "death_skill1": "Burst", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強カーボニク・ナイト / Almighty Obsidian Knight", "attr": "Poison", "hp": 1920, "mp": 1075, "atk": 1700, "def": 1470, "spd": 1350, "wis": 1500, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	{
 		"name": "最強シクヨミ / Almighty Tsukuyomi", "attr": "Water", "hp": 2240, "mp": 1280, "atk": 1720, "def": 1530, "spd": 1340, "wis": 1500, 
 		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",

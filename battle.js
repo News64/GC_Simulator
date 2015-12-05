@@ -280,7 +280,112 @@ function update_box(num, mode){
 		default: hp_rate = 1.0, mp_rate = 1.0, atk_rate = 1.0, def_rate = 1.0, spd_rate = 1.0, wis_rate = 1.0; 
 	}
 
-	// Boost From Red EX and Colosseum
+
+	var count = data.length;
+	var skill_count;
+	var ok;
+
+	if (mode != 2){
+		for (var i = 0; i < count; i++){
+			if (data[i].name == document.getElementById(card).value){
+
+				document.getElementById(hp).value = Math.floor((data[i].hp * (1 + 1.5 / 59 * 69) * hp_rate + data[i].hp * 0.55) ).toString();
+				document.getElementById(mp).value = Math.floor((data[i].mp * (1 + 1.5 / 59 * 69) * mp_rate + data[i].mp * 0.55) ).toString();
+				document.getElementById(atk).value = Math.floor((data[i].atk * (1 + 1.5 / 59 * 69) * atk_rate + data[i].atk * 0.55) ).toString();
+				document.getElementById(def).value = Math.floor((data[i].def * (1 + 1.5 / 59 * 69) * def_rate + data[i].def * 0.55) ).toString();
+				document.getElementById(spd).value = Math.floor((data[i].spd * (1 + 1.5 / 59 * 69) * spd_rate + data[i].spd * 0.55) ).toString();
+				document.getElementById(wis).value = Math.floor((data[i].wis * (1 + 1.5 / 59 * 69) * wis_rate + data[i].wis * 0.55) ).toString();
+
+				if (mode != 0){
+					skill_count = document.getElementById(attr).options.length;
+					for (var j = 0; j < skill_count; j++){
+						if (document.getElementById(attr).options[j].value == data[i].attr){
+							document.getElementById(attr).options[j].selected = true;
+							break;
+						}
+					}
+				}
+
+				skill_count = document.getElementById(attack_skill).options.length;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(attack_skill).options[j].value == data[i].attack_skill){
+						document.getElementById(attack_skill).options[j].selected = true;
+						break;
+					}
+				}
+
+				skill_count = document.getElementById(intro_skill1).options.length;
+				ok = 0;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(intro_skill1).options[j].text == data[i].intro_skill1){
+						document.getElementById(intro_skill1).options[j].selected = true;
+						ok += 1;
+					}
+					if (document.getElementById(intro_skill2).options[j].text == data[i].intro_skill2){
+						document.getElementById(intro_skill2).options[j].selected = true;
+						ok += 1;
+					}
+					if (ok >= 2)
+						break;
+				}
+
+				skill_count = document.getElementById(death_skill1).options.length;
+				ok = 0;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(death_skill1).options[j].text == data[i].death_skill1){
+						document.getElementById(death_skill1).options[j].selected = true;
+						ok += 1;
+					}
+					if (document.getElementById(death_skill2).options[j].text == data[i].death_skill2){
+						document.getElementById(death_skill2).options[j].selected = true;
+						ok += 1;
+					}
+					if (ok >= 2)
+						break;
+				}
+
+				skill_count = document.getElementById(dodge_skill1).options.length;
+				ok = 0;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(dodge_skill1).options[j].text == data[i].dodge_skill1){
+						document.getElementById(dodge_skill1).options[j].selected = true;
+						ok += 1;
+					}
+					if (document.getElementById(dodge_skill2).options[j].text == data[i].dodge_skill2){
+						document.getElementById(dodge_skill2).options[j].selected = true;
+						ok += 1;
+					}
+					if (ok >= 2)
+						break;
+				}
+
+				skill_count = document.getElementById(poison_skill).options.length;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(poison_skill).options[j].value == data[i].poison_skill){
+						document.getElementById(poison_skill).options[j].selected = true;
+						break;
+					}
+				}
+
+				skill_count = document.getElementById(counter_skill).options.length;
+				for (var j = 0; j < skill_count; j++){
+					if (document.getElementById(counter_skill).options[j].value == data[i].counter_skill){
+						document.getElementById(counter_skill).options[j].selected = true;
+						break;
+					}
+				}
+
+				if (data[i].hasOwnProperty("alt_skill")){
+					document.getElementById('alt_skill' + num.toString()).innerHTML = data[i].alt_skill;
+				}
+				else
+					document.getElementById('alt_skill' + num.toString()).innerHTML = "";
+
+				break;
+			}
+		}
+	}
+
 	var hp_boost = 1, mp_boost = 1, atk_boost = 1, def_boost = 1, spd_boost = 1, wis_boost = 1;
 	var temp = document.getElementById(red_ex).value.split(" ");
 	var percentage;
@@ -313,116 +418,13 @@ function update_box(num, mode){
 			wis_boost *= 1 + parseFloat(percentage) / 100.0;
 		}
 	}
-	if (mode == 2){
-		document.getElementById(hp).value = Math.floor(parseInt(document.getElementById(hp).value) * hp_boost).toString();
-		document.getElementById(mp).value = Math.floor(parseInt(document.getElementById(mp).value) * mp_boost).toString();
-		document.getElementById(atk).value = Math.floor(parseInt(document.getElementById(atk).value) * atk_boost).toString();
-		document.getElementById(def).value = Math.floor(parseInt(document.getElementById(def).value) * def_boost).toString();
-		document.getElementById(spd).value = Math.floor(parseInt(document.getElementById(spd).value) * spd_boost).toString();
-		document.getElementById(wis).value = Math.floor(parseInt(document.getElementById(wis).value) * wis_boost).toString();
-		return;
-	}
 
-	var count = data.length;
-	var skill_count;
-	var ok;
-	for (var i = 0; i < count; i++){
-		if (data[i].name == document.getElementById(card).value){
-			document.getElementById(hp).value = Math.floor((data[i].hp * (1 + 1.5 / 59 * 69) * hp_rate + data[i].hp * 0.55) * hp_boost).toString();
-			document.getElementById(mp).value = Math.floor((data[i].mp * (1 + 1.5 / 59 * 69) * mp_rate + data[i].mp * 0.55) * mp_boost).toString();
-			document.getElementById(atk).value = Math.floor((data[i].atk * (1 + 1.5 / 59 * 69) * atk_rate + data[i].atk * 0.55) * atk_boost).toString();
-			document.getElementById(def).value = Math.floor((data[i].def * (1 + 1.5 / 59 * 69) * def_rate + data[i].def * 0.55) * def_boost).toString();
-			document.getElementById(spd).value = Math.floor((data[i].spd * (1 + 1.5 / 59 * 69) * spd_rate + data[i].spd * 0.55) * spd_boost).toString();
-			document.getElementById(wis).value = Math.floor((data[i].wis * (1 + 1.5 / 59 * 69) * wis_rate + data[i].wis * 0.55) * wis_boost).toString(); 
-			if (mode == 0)
-				break;
-
-			skill_count = document.getElementById(attr).options.length;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(attr).options[j].value == data[i].attr){
-					document.getElementById(attr).options[j].selected = true;
-					break;
-				}
-			}
-
-			skill_count = document.getElementById(attack_skill).options.length;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(attack_skill).options[j].value == data[i].attack_skill){
-					document.getElementById(attack_skill).options[j].selected = true;
-					break;
-				}
-			}
-
-			skill_count = document.getElementById(intro_skill1).options.length;
-			ok = 0;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(intro_skill1).options[j].text == data[i].intro_skill1){
-					document.getElementById(intro_skill1).options[j].selected = true;
-					ok += 1;
-				}
-				if (document.getElementById(intro_skill2).options[j].text == data[i].intro_skill2){
-					document.getElementById(intro_skill2).options[j].selected = true;
-					ok += 1;
-				}
-				if (ok >= 2)
-					break;
-			}
-
-			skill_count = document.getElementById(death_skill1).options.length;
-			ok = 0;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(death_skill1).options[j].text == data[i].death_skill1){
-					document.getElementById(death_skill1).options[j].selected = true;
-					ok += 1;
-				}
-				if (document.getElementById(death_skill2).options[j].text == data[i].death_skill2){
-					document.getElementById(death_skill2).options[j].selected = true;
-					ok += 1;
-				}
-				if (ok >= 2)
-					break;
-			}
-
-			skill_count = document.getElementById(dodge_skill1).options.length;
-			ok = 0;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(dodge_skill1).options[j].text == data[i].dodge_skill1){
-					document.getElementById(dodge_skill1).options[j].selected = true;
-					ok += 1;
-				}
-				if (document.getElementById(dodge_skill2).options[j].text == data[i].dodge_skill2){
-					document.getElementById(dodge_skill2).options[j].selected = true;
-					ok += 1;
-				}
-				if (ok >= 2)
-					break;
-			}
-
-			skill_count = document.getElementById(poison_skill).options.length;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(poison_skill).options[j].value == data[i].poison_skill){
-					document.getElementById(poison_skill).options[j].selected = true;
-					break;
-				}
-			}
-
-			skill_count = document.getElementById(counter_skill).options.length;
-			for (var j = 0; j < skill_count; j++){
-				if (document.getElementById(counter_skill).options[j].value == data[i].counter_skill){
-					document.getElementById(counter_skill).options[j].selected = true;
-					break;
-				}
-			}
-
-			if (data[i].hasOwnProperty("alt_skill")){
-				document.getElementById('alt_skill' + num.toString()).innerHTML = data[i].alt_skill;
-			}
-			else
-				document.getElementById('alt_skill' + num.toString()).innerHTML = "";
-
-			break;
-		}
-	}
+	document.getElementById(hp).value = Math.floor(parseInt(document.getElementById(hp).value) * hp_boost).toString();
+	document.getElementById(mp).value = Math.floor(parseInt(document.getElementById(mp).value) * mp_boost).toString();
+	document.getElementById(atk).value = Math.floor(parseInt(document.getElementById(atk).value) * atk_boost).toString();
+	document.getElementById(def).value = Math.floor(parseInt(document.getElementById(def).value) * def_boost).toString();
+	document.getElementById(spd).value = Math.floor(parseInt(document.getElementById(spd).value) * spd_boost).toString();
+	document.getElementById(wis).value = Math.floor(parseInt(document.getElementById(wis).value) * wis_boost).toString();
 }
 
 
@@ -1311,7 +1313,7 @@ function battle(){
 			}
 			
 		}
-		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 27 && attack_skill != "Crush Drain") ){ // Special Normal Attack Decision
+		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain") ){ // Special Normal Attack Decision
 			attack_skill = "Normal Attack", attack_attr = "Physical";
 			dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
