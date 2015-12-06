@@ -996,7 +996,7 @@ function battle(){
 								death_proc(matrix[j][1], 1 - matrix[j][1]);
 
 								// If Survived
-								if (battle_data[matrix[j][1]].hp_left > 1){
+								if (battle_data[matrix[j][1]].hp_left > 0){ // Set this to > 1 to allow Last Bastion + Counter combo
 									break;
 								}
 								else if (battle_data[matrix[j][1]].hp_left <= 0){
@@ -1374,11 +1374,11 @@ function battle(){
 			death_proc(defender, 1 - defender);
 
 			// If Survived
-			if (battle_data[defender].hp_left > 1){
+			if (battle_data[defender].hp_left > 0){ // Set this to > 1 to allow Last Bastion + Counter combo
 				battle_length++;
 				continue;
 			}
-			else if (battle_data[defender].hp_left <= 0){	
+			else if (battle_data[defender].hp_left <= 0){ 
 				if (attack_skill == "Predator"){
 					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
 						case 1: 
