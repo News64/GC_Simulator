@@ -1182,19 +1182,6 @@ var data =
 	},
 
 	/*
-2014/11/25
-第8回天空コロシアム: 最強テスカトリポカ (Almighty Tezcatlipoca) 。
-2014/11/10
-第7回天空コロシアム: 最強クロノス (Almighty Chronos) 。
-2014/11/2
-第5回天空コロシアム: 最強スリーピングビューティー (Almighty Sleeping Beauty) 。
-第6回天空コロシアム: 最強ロキ (Almighty Loki) 。
-2014/10/23
-第4回天空コロシアム: 最強水神クトゥルフ (Almighty Cthulhu Risen) 。
-2014/10/14
-第3回天空コロシアム: 最強アイオロス (Almighty Aeolus) 。
-2014/9/1
-第2回天空コロシアム: 最強サマエル (Almighty Samael) 。
 	
 
 	*/
@@ -1202,6 +1189,41 @@ var data =
 
 
 
+	{
+		"name": "最強サマエル / Almighty Samael", "attr": "Undead", "hp": 1810, "mp": 2500, "atk": 1670, "def": 1500, "spd": 1320, "wis": 1400, 
+		"attack_skill": "Predator", "intro_skill1": "Attack +20%", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強アイオロス / Almighty Aeolus", "attr": "Wind", "hp": 2160, "mp": 1400, "atk": 1750, "def": 1500, "spd": 1360, "wis": 1460, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強水神クトゥルフ / Almighty Cthulhu Risen", "attr": "Poison", "hp": 2060, "mp": 1360, "atk": 1560, "def": 1390, "spd": 1350, "wis": 1610, 
+		"attack_skill": "Poison +4", "intro_skill1": "Resistance", "intro_skill2": "Multi Block", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ロキ / Almighty Loki", "attr": "Darkness", "hp": 1880, "mp": 1480, "atk": 1620, "def": 1580, "spd": 1310, "wis": 1580, 
+		"attack_skill": "Predator", "intro_skill1": "Power Shift", "intro_skill2": "None", "death_skill1": "Martyr", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強スリーピングビューティー / Almighty Sleeping Beauty", "attr": "Darkness", "hp": 2400, "mp": 600, "atk": 1660, "def": 1600, "spd": 1260, "wis": 1600, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強クロノス / Almighty Chronos", "attr": "Machine", "hp": 1820, "mp": 2300, "atk": 1320, "def": 1500, "spd": 1330, "wis": 1740, 
+		"attack_skill": "Machine +4", "intro_skill1": "Wise Smite", "intro_skill2": "None", "death_skill1": "Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強テスカトリポカ / Almighty Tezcatlipoca", "attr": "Earth", "hp": 1980, "mp": 800, "atk": 1760, "def": 1570, "spd": 1360, "wis": 1400, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	{
 		"name": "最強リリス・メイデン / Almighty Maiden Lilith", "attr": "Darkness", "hp": 1880, "mp": 1180, "atk": 1360, "def": 1480, "spd": 1360, "wis": 1860, 
 		"attack_skill": "Darkness +4", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
