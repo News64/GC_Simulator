@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<title>GC Battle Simulator</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body onload="generate_table(10); init_all(10)">
-		Number of cards in both teams: <select id="num_cards"> </select> <br>
+		Number of cards involved in both teams: <select id="num_cards"> </select> <br>
 		<button id="show_details" onclick="show_details()">Show Detailed Data</button>
 		<button id="hide_details" onclick="hide_details()">Hide Detailed Data</button>
 		<br> <br>
@@ -44,7 +45,7 @@
 		<p id="res"></p>
 		
 		<script src="cards.js" charset="UTF-8"></script>
-		<script src="team_battle.js" charset="UTF-8"></script>
+		<script src="battle.js" charset="UTF-8"></script>
 
 	</body>
 </html>

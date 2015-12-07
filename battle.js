@@ -60,16 +60,16 @@ function generate_table(num_cards) {
 				+ "<input type='text' name='def" + j.toString() + "." + i.toString() + "' id='def" + j.toString() + "." + i.toString() + "'> </td>";
 			document.getElementById('tr_spd_wis' + i.toString()).innerHTML += "<td> <input type='text' name='spd" + j.toString() + "." + i.toString() + "' id='spd" + j.toString() + "." + i.toString() + "'>"
 				+ "<input type='text' name='wis" + j.toString() + "." + i.toString() + "' id='wis" + j.toString() + "." + i.toString() + "'> </td>";
-			document.getElementById('tr_alt_skill' + i.toString()).innerHTML += "<td> Alternative Skill: <span id='alt_skill" + j.toString() + "." + i.toString() + "'> </span> </td>";
-			document.getElementById('tr_attack_skill' + i.toString()).innerHTML += "<td> Attack Skill: " + "<select id='attack_skill"+ j.toString() + "." + i.toString() + "'> </select> </td>";
-			document.getElementById('tr_intro_skill' + i.toString()).innerHTML += "<td> Intro Skill 1: " + "<select id='intro_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
-				+ "Intro Skill 2: " + "<select id='intro_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
-			document.getElementById('tr_death_skill' + i.toString()).innerHTML += "<td> Death Skill 1: " + "<select id='death_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
-				+ "Death Skill 2: " + "<select id='death_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
-			document.getElementById('tr_dodge_skill' + i.toString()).innerHTML += "<td> Dodge Skill 1: " + "<select id='dodge_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
-				+ "Dodge Skill 2: " + "<select id='dodge_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
-			document.getElementById('tr_counter_poison' + i.toString()).innerHTML += "<td> Counter Skill: " + "<select id='counter_skill"+ j.toString() + "." + i.toString() + "'> </select>"
-				+ "Poison Skill: " + "<select id='poison_skill"+ j.toString() + "." + i.toString() + "'> </select> </td>";
+			document.getElementById('tr_alt_skill' + i.toString()).innerHTML += "<td> <span class='words'> Alternative Skill: </span> <span id='alt_skill" + j.toString() + "." + i.toString() + "'> </span> </td>";
+			document.getElementById('tr_attack_skill' + i.toString()).innerHTML += "<td> <span class='words'> Attack Skill: </span> " + "<select id='attack_skill"+ j.toString() + "." + i.toString() + "'> </select> </td>";
+			document.getElementById('tr_intro_skill' + i.toString()).innerHTML += "<td> <span class='words'> Intro Skill 1: </span> " + "<select id='intro_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
+				+ " <span class='words'> Intro Skill 2: </span> " + "<select id='intro_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
+			document.getElementById('tr_death_skill' + i.toString()).innerHTML += "<td> <span class='words'> Death Skill 1: </span> " + "<select id='death_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
+				+ " <span class='words'> Death Skill 2: </span> " + "<select id='death_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
+			document.getElementById('tr_dodge_skill' + i.toString()).innerHTML += "<td> <span class='words'> Dodge Skill 1: </span>" + "<select id='dodge_skill1"+ j.toString() + "." + i.toString() + "'> </select>"
+				+ " <span class='words'> Dodge Skill 2: </span>" + "<select id='dodge_skill2"+ j.toString() + "." + i.toString() + "'> </select> </td>";
+			document.getElementById('tr_counter_poison' + i.toString()).innerHTML += "<td> <span class='words'>  Counter Skill: </span>" + "<select id='counter_skill"+ j.toString() + "." + i.toString() + "'> </select>"
+				+ " <span class='words'> Poison Skill: </span>" + "<select id='poison_skill"+ j.toString() + "." + i.toString() + "'> </select> </td>";
 			document.getElementById('tr_line' + i.toString()).innerHTML += "<td> ---------------------------- </td>";
 		}
 	}
@@ -266,7 +266,7 @@ function init_list(team_num, card_num){
 			option.text = j.toString();
 			list.appendChild(option);
 		}
-		document.getElementById('num_cards')[9].selected = true;
+		// document.getElementById('num_cards')[9].selected = true;
 
 		for (var j = 1; j <= 3 ; j++){
 			list = document.getElementById('colo_buff_attr' + j.toString());
@@ -529,14 +529,56 @@ function update_box(team_num, card_num, mode){
 
 
 function show_details(){
+	var words = document.getElementsByClassName('words');
+	for (var i = 0; i < words.length; i++){
+		words[i].style.display = "inline";
+	}
 	for (var i = 1; i <= 10; i++){
-		document.getElementById('tr_hp_mp' + i.toString()).style.display = "initial";
+		for (var j = 1; j <= 2; j++){
+			document.getElementById('hp' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('mp' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('atk' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('def' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('spd' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('wis' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('alt_skill' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('attack_skill' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('intro_skill1' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('intro_skill2' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('death_skill1' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('death_skill2' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('dodge_skill1' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('dodge_skill2' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('counter_skill' + j.toString() + '.' + i.toString()).style.display = "inline";
+			document.getElementById('poison_skill' + j.toString() + '.' + i.toString()).style.display = "inline";
+		}
 	}
 }
 
 function hide_details(){
+	var words = document.getElementsByClassName('words');
+	for (var i = 0; i < words.length; i++){
+		words[i].style.display = "none";
+	}
 	for (var i = 1; i <= 10; i++){
-		document.getElementById('tr_hp_mp' + i.toString()).style.display = "none";
+		for (var j = 1; j <= 2; j++){
+			document.getElementById('hp' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('mp' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('atk' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('def' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('spd' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('wis' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('alt_skill' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('attack_skill' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('intro_skill1' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('intro_skill2' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('death_skill1' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('death_skill2' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('dodge_skill1' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('dodge_skill2' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('counter_skill' + j.toString() + '.' + i.toString()).style.display = "none";
+			document.getElementById('poison_skill' + j.toString() + '.' + i.toString()).style.display = "none";
+		}
 	}
 }
 
@@ -580,7 +622,7 @@ function buff_apply(id1, id2, name){
 		battle_data[id1].mp_left -= mp_cost;
 
 
-	document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " uses " + name.slice(3) + "! <br>";
+	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	if (name == "4: Multi Block") {
 		battle_data[id1].multi_block = true;
 		return;
@@ -715,14 +757,20 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				attr_adv = -1;
 			else
 				attr_adv = attr_cmp(attack_attr, base_data[id2].attr);
+
+			if (attack_skill == "Undead +4EX")
+				dmg_rate = 1.5;
+
 			damage = Math.round( (base_data[id1].wis + battle_data[id1].inherit_wis) * (dmg_rate + battle_data[id1].wis_buff - battle_data[id1].wis_debuff) * (1 + attr_adv * 0.15)
 				   - (base_data[id2].wis + battle_data[id2].inherit_wis) * (1 + battle_data[id2].wis_buff - battle_data[id2].wis_debuff) * reduc_rate);
 			if (attack_skill.search("Undead +") != -1){
 				undead = true;
 				chance = damage / battle_data[id2].hp_left + undead_skill_modifier[id1];
 				damage = 0;
-				if (chance > 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1)
-					chance = 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1;
+				if (attack_skill != "Undead +4EX"){
+					if (chance > 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1)
+						chance = 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1;
+				}
 				if (Math.random() < chance){
 					insta_death = true;
 					battle_data[id2].hp_left = 0;
@@ -746,7 +794,8 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		battle_data[id2].freeze = false;
 	}
 	if (damage != 0){
-		document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " deals " + damage.toString() + " damage to Card " + (id2 + 1).toString() + "! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
+		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " damage to " 
+			+ base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
 		if (poison != "None" && (attack_skill.charCodeAt(0) < 48 || attack_skill.charCodeAt(0) > 57) && attack_skill != "Counter" && battle_data[id2].hp_left > 0 && 
 			battle_data[id1].mind_break == false && battle_data[id2].resist == false){
 			if (poison == "Deadly Poison")
@@ -755,7 +804,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				chance = 0.8;
 			if (Math.random() < chance){
 				battle_data[id2].poisoned = true;
-				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " is poisoned! (Chance: " + chance.toString() + ") <br>";
+				document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
 			}
 		}
 	}
@@ -763,12 +812,12 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		if (dodged == true)
 			document.getElementById('res').innerHTML += "But it is dodged! (Chance: " + dodge_chance.toString() + ") <br>";
 		else if (blocked == true)
-			document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " deals " + damage.toString() + " damage to Card " + (id2 + 1).toString() + " because of the shield! <br>";
+			document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals 0 damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ") because of the shield! <br>";
 		else if (attack_skill.search("Undead +") != -1){
 			if (insta_death == true)
-				document.getElementById('res').innerHTML += "Death effect succeeds on Card " + (id2 + 1).toString() + "! (Chance: " + chance.toString() + ") <br>";
+				document.getElementById('res').innerHTML += "Death effect succeeds on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + chance.toString() + ") <br>";
 			else
-				document.getElementById('res').innerHTML += "Death effect does not work on Card " + (id2 + 1).toString() + "! (Chance: " + (1 - chance).toString() + ")<br>";
+				document.getElementById('res').innerHTML += "Death effect does not work on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + (1 - chance).toString() + ")<br>";
 		}
 	}
 	return damage;
@@ -784,7 +833,7 @@ function mp_damage_dealer(id1, id2, attack_skill, dmg_rate, reduc_rate, percenta
 	if (damage > battle_data[id2].mp_left && attack_skill == "Energy Drain")
 		damage = battle_data[id2].mp_left;
 	battle_data[id2].mp_left -= damage;
-	document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " deals " + damage.toString() + " MP damage to Card " + (id2 + 1).toString() + "! MP: " + battle_data[id2].mp_left + "/" + base_data[id2].mp + " <br>";
+	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " MP damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! MP: " + battle_data[id2].mp_left + "/" + base_data[id2].mp + " <br>";
 	return damage;
 }
 
@@ -795,78 +844,86 @@ function death_proc(id1, id2){
 	var death1 = base_data[id1].death_skill1;
 	var death2 = base_data[id1].death_skill2;
 
-	// Avoid Death
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "1" && battle_data[id1].death_used == false){
-		avoid_death_apply(id1, death1);
-		battle_data[id1].death_used = true;
+	// Revival
+	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "1" && battle_data[id1].death1_used == false){
+		revival_apply(id1, death1);
+		battle_data[id1].death1_used = true;
 		if (battle_data[id1].hp_left > 0)
 			return;
 	}
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "1" && battle_data[id1].death_used == false){
-		avoid_death_apply(id1, death2);
-		battle_data[id1].death_used = true;
+	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "1" && battle_data[id1].death2_used == false){
+		revival_apply(id1, death2);
+		battle_data[id1].death2_used = true;
+		if (battle_data[id1].hp_left > 0)
+			return;
+	}
+
+	// Last Stand
+	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "2" && battle_data[id1].death1_used == false){
+		last_stand_apply(id1, death1);
+		battle_data[id1].death1_used = true;
+		if (battle_data[id1].hp_left > 0)
+			return;
+	}
+	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "2" && battle_data[id1].death2_used == false){
+		last_stand_apply(id1, death2);
+		battle_data[id1].death2_used = true;
 		if (battle_data[id1].hp_left > 0)
 			return;
 	}
 
 	// On Death Status (todo)
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "2")
+	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "3")
 		death_status_apply(id1, id2, death1);
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "2")
+	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "3")
 		death_status_apply(id1, id2, death2);
 
 	// Self Destruct
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "3")
+	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "4")
 		death_damage_apply(id1, id2, death1);
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "3")
+	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "4")
 		death_damage_apply(id1, id2, death2);
 }
 
-function avoid_death_apply(id, name){
-	document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " uses " + name.slice(3) + "! <br>";
+function revival_apply(id, name){
+	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	var chance;
-	switch (name){
-		case "1: Revival":
-			chance = 0.55 + revival_modifier[id];
-			if (Math.random() < chance){
-				battle_data[id].hp_left = base_data[id].hp;
-				battle_data[id].mp_left -= 1;
-				document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " revives! (Chance: " + chance.toString() + ") <br>";
-			}
-			else
-				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
-			return;
-		case "1: Dark Revival":
-			battle_data[id].hp_left = base_data[id].hp;
-			battle_data[id].mp_left -= 1;
-			document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " revives! <br>";
-			return;
-		case "1: Last Stand":
-			battle_data[id].hp_left = 1;
-			battle_data[id].mp_left = 0;
-			document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " endures the attack! <br>";
-			return;
-		case "1: Last Bastion":
-			battle_data[id].hp_left = 1;
-			battle_data[id].mp_left -= 1;
-			document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " endures the attack! <br>";
-			return;
-		default: return;
+	if (name.search("Dark") != -1)
+		chance = 1;
+	else
+		chance = 0.55 + revival_modifier[id];
+
+	if (Math.random() < chance){
+		battle_data[id].hp_left = base_data[id].hp;
+		battle_data[id].mp_left -= 1;
+		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") revives! (Chance: " + chance.toString() + ") <br>";
 	}
+	else
+		document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+}
+
+function last_stand_apply(id, name){
+	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
+	var chance;
+	battle_data[id].hp_left = 1;
+	if (name.search("Bastion") != -1)
+		battle_data[id].mp_left -= 1;
+	else
+		battle_data[id].mp_left = 0;
 }
 
 function death_status_apply(id1, id2, skill){
 	var mp_cost = 0;
-	if (skill == "2: Crystallize")
+	if (skill == "3: Crystallize")
 		mp_cost = 300;
 	if (battle_data[id1].mp_left < mp_cost)
 		return
 	else
 		battle_data[id1].mp_left -= mp_cost;
 
-	document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " uses " + skill.slice(3) + "! <br>";
+	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
 	switch (skill){
-		case "2: Deep Sleep":
+		case "3: Deep Sleep":
 			if (battle_data[id2].resist == false){
 				battle_data[id2].sleep = true;
 				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes asleep! <br>";
@@ -874,7 +931,7 @@ function death_status_apply(id1, id2, skill){
 			else
 				document.getElementById('res').innerHTML += "But it failed! <br>";
 			break;
-		case "2: Crystallize":
+		case "3: Crystallize":
 			if (battle_data[id2].resist == false){
 				battle_data[id2].freeze = true;
 				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes crystallized! <br>";
@@ -888,7 +945,7 @@ function death_status_apply(id1, id2, skill){
 function death_damage_apply(id1, id2, skill){
 	var mp_cost = 0, chance;
 	var temp1, temp2, temp3, temp4;
-	if (skill == "3: Soul Taker" || skill == "3: Mind Crush" || skill == "3: Entrust"){
+	if (skill == "4: Soul Taker" || skill == "4: Mind Crush" || skill == "4: Entrust"){
 		mp_cost = 300;
 	}
 	if (battle_data[id1].mp_left < mp_cost)
@@ -896,44 +953,44 @@ function death_damage_apply(id1, id2, skill){
 	else
 		battle_data[id1].mp_left -= mp_cost;
 
-	document.getElementById('res').innerHTML += "Card " + (id1 + 1).toString() + " uses " + skill.slice(3) + "! <br>";
+	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
 	temp1 = battle_data[id2].dodgable, temp2 = battle_data[id2].counterable, temp3 = battle_data[id2].no_death, temp4 = battle_data[id2].blockable;
 	battle_data[id2].dodgable = false, battle_data[id2].counterable = false, battle_data[id2].no_death = true, battle_data[id2].blockable = true;
 	switch (skill){
-		case "3: Explosion":
+		case "4: Explosion":
 			chance = 0.5 + explosion_modifier[id1];
 			if (Math.random() < chance)
 				damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left);
 			else
 				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
-		case "3: Dark Explosion":
+		case "4: Dark Explosion":
 			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left);
 			break;
-		case "3: Burst":
+		case "4: Burst":
 			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left * 0.7);
 			break;
-		case "3: Soul Taker":
+		case "4: Soul Taker":
 			battle_data[id2].blockable = false;
 			damage_dealer(id1, id2, skill, "Physical", 1.5 + soul_mind_modifier[id1], 0.5, 0);
 			break;
-		case "3: Mind Crush":
+		case "4: Mind Crush":
 			battle_data[id2].blockable = false;
 			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.5 + soul_mind_modifier[id1], 0.5, 0);
 			break;
-		case "3: Martyr":
+		case "4: Martyr":
 			chance = 0.8;
 			if (Math.random() < chance && battle_data[id2].resist == false)
 				mp_damage_dealer(id1, id2, skill, 0, 0, 0.15 + martyr_modifier[id1]);
 			else
 				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
-		case "3: Entrust":
+		case "4: Entrust":
 			if (battle_data[id2].resist == false)
 				mp_damage_dealer(id1, id2, skill, 0, 0, 1);
 			else
 				document.getElementById('res').innerHTML += "But it failed! <br>";
-		case "3: Force":
+		case "4: Force":
 			inherit_atk = Math.round(base_data[id1].atk * 0.08), inherit_def = Math.round(base_data[id1].def * 0.08);
 			inherit_spd = Math.round(base_data[id1].spd * 0.08), inherit_wis = Math.round(base_data[id1].wis * 0.08);
 			break;
@@ -950,7 +1007,7 @@ function heal_apply(id, percentage, fixed){
 	if (battle_data[id].hp_left + amount > base_data[id].hp)
 		amount = base_data[id].hp - battle_data[id].hp_left;
 	battle_data[id].hp_left += amount;
-	document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " heals " + amount.toString() + " damage to itself! HP: " + battle_data[id].hp_left + "/" + base_data[id].hp + " <br>";
+	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") heals " + amount.toString() + " damage to itself! HP: " + battle_data[id].hp_left + "/" + base_data[id].hp + " <br>";
 }
 
 function mp_heal_apply(id, percentage, fixed){
@@ -962,7 +1019,7 @@ function mp_heal_apply(id, percentage, fixed){
 	if (battle_data[id].mp_left + amount > base_data[id].mp)
 		amount = base_data[id].mp - battle_data[id].mp_left;
 	battle_data[id].mp_left += amount;
-	document.getElementById('res').innerHTML += "Card " + (id + 1).toString() + " recovers " + amount.toString() + " MP to itself! MP: " + battle_data[id].mp_left + "/" + base_data[id].mp + " <br>";
+	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") recovers " + amount.toString() + " MP to itself! MP: " + battle_data[id].mp_left + "/" + base_data[id].mp + " <br>";
 }
 
 
@@ -975,6 +1032,7 @@ function team_battle(){
 	ability_lock_modifier = [0, 0], mind_break_modifier = [0, 0], explosion_modifier = [0, 0], revival_modifier = [0, 0], quick_strike_modifier = [0, 0];
 	martyr_modifier = [0, 0], deft_step_modifier = [0, 0], giga_slash_modifier = [0, 0], poison_attack_modifier = [0, 0], soul_slash_modifier = [0, 0];
 	undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], soul_mind_modifier = [0, 0];
+	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 	var blue = [ document.getElementById('blue_ex1').value, document.getElementById('blue_ex2').value, document.getElementById('colo_buff_skill').value ];
 	for (var i = 0; i < 3; i++){
 		switch (blue[i]){
@@ -1080,7 +1138,7 @@ function team_battle(){
 }
 
 function data_init(team_num, card_num){
-	base_data[team_num - 1] = {"attr": document.getElementById('attr' + team_num.toString() + '.' + card_num.toString()).value, 
+	base_data[team_num - 1] = {"card": document.getElementById('card' + team_num.toString() + '.' + card_num.toString()).value, "attr": document.getElementById('attr' + team_num.toString() + '.' + card_num.toString()).value, 
 		"hp": parseInt(document.getElementById('hp' + team_num.toString() + '.' + card_num.toString()).value), "mp": parseInt(document.getElementById('mp' + team_num.toString() + '.' + card_num.toString()).value),
 		"atk": parseInt(document.getElementById('atk' + team_num.toString() + '.' + card_num.toString()).value), "def": parseInt(document.getElementById('def' + team_num.toString() + '.' + card_num.toString()).value), 
 		"spd": parseInt(document.getElementById('spd' + team_num.toString() + '.' + card_num.toString()).value), "wis": parseInt(document.getElementById('wis' + team_num.toString() + '.' + card_num.toString()).value),
@@ -1094,7 +1152,7 @@ function data_init(team_num, card_num){
 	battle_data[team_num - 1] = {"atk_buff": 0, "def_buff": 0, "spd_buff": 0, "wis_buff": 0, "atk_debuff": 0, "def_debuff": 0, "spd_debuff": 0, "wis_debuff": 0,
 		"inherit_atk": inherit_atk, "inherit_def": inherit_def, "inherit_spd": inherit_spd, "inherit_wis": inherit_wis,
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
-		"intro1_used": false, "intro2_used": false, "death_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
+		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
 		"resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false};
 
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
@@ -1114,7 +1172,7 @@ function battle(){
 	var battle_length = 0;
 	while (true){ 
 		// Speed Decision
-		document.getElementById('res').innerHTML += battle_data[0].exceeded_speed.toString() + " vs " + battle_data[1].exceeded_speed.toString() + "<br>";
+		document.getElementById('res').innerHTML += "Speed: " + battle_data[0].exceeded_speed.toString() + " vs " + battle_data[1].exceeded_speed.toString() + "<br>";
 		if (battle_data[0].exceeded_speed >= battle_data[1].exceeded_speed){
 			attacker = 0, defender = 1;
 		}
@@ -1141,7 +1199,7 @@ function battle(){
 							if (battle_data[matrix[j][0]].mp_left < 300)
 								break;
 							battle_data[matrix[j][0]].mp_left -= 300;
-							document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+							document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 							pre_hp = battle_data[matrix[j][1]].hp_left;
 							switch (matrix[j][2]){
 								case "1: Quick Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 0.85 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
@@ -1162,10 +1220,10 @@ function battle(){
 									break;
 								}
 								else if (battle_data[matrix[j][1]].hp_left <= 0){
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " is defeated! <br>";
+									document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
 									result = 1 - matrix[j][1];
 									if (battle_data[1 - matrix[j][1]].hp_left <= 0){
-										document.getElementById('res').innerHTML += "Card " + (2 - matrix[j][1]).toString() + " is defeated! <br>";
+										document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]].card + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
 										result = -1;
 									}
 									matrix[j][3] = true;
@@ -1195,10 +1253,10 @@ function battle(){
 										if (battle_data[matrix[j][0]].hp_left > 0){
 											break;
 										}
-										document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " is defeated! <br>";
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") is defeated! <br>";
 										result = 1 - matrix[j][0];
 										if (battle_data[1 - matrix[j][0]].hp_left <= 0){
-											document.getElementById('res').innerHTML += "Card " + (2 - matrix[j][0]).toString() + " is defeated! <br>";
+											document.getElementById('res').innerHTML += base_data[1 - matrix[j][0]].card + " (Team " + (2 - matrix[j][0]).toString() + ") is defeated! <br>";
 											result = -1;
 										}
 										matrix[j][3] = true;
@@ -1216,7 +1274,7 @@ function battle(){
 							if (battle_data[matrix[j][0]].mp_left >= 600){
 								battle_data[matrix[j][0]].mp_left -= 600;
 								battle_data[matrix[j][0]].shield = true;
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " can block an attack for once! <br>";
+								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") can block an attack for once! <br>";
 							}
 							break;
 						// Priority 3: Resistance 
@@ -1224,7 +1282,7 @@ function battle(){
 							if (battle_data[matrix[j][0]].mp_left >= 600){
 								battle_data[matrix[j][0]].mp_left -= 600;
 								battle_data[matrix[j][0]].resist = true;
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " gains resistance against bad status! <br>";
+								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains resistance against bad status! <br>";
 							}
 							break;
 						// Priority 4: Buff, Debuff, Multi Block, Healing Light
@@ -1242,7 +1300,7 @@ function battle(){
 								battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].shield = false, battle_data[matrix[j][1]].multi_block = false;
 								keep = false;
 								battle_data[matrix[j][0]].mp_left -= 300;
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 							}
 							else
 								keep = true;
@@ -1254,11 +1312,11 @@ function battle(){
 									chance = 1;
 								else
 									chance = 0.75 + ability_lock_modifier[matrix[j][0]];
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 								battle_data[matrix[j][0]].mp_left -= 600;
 								if (battle_data[matrix[j][1]].resist == false && Math.random() < chance){
 									battle_data[matrix[j][1]].mp_left = 0;
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + "'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
+									document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
 								}
 								else
 									document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
@@ -1267,7 +1325,7 @@ function battle(){
 						// Priority 7: Transposition
 						case 7:
 							if (battle_data[matrix[j][0]].mp_left >= 300){
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 								battle_data[matrix[j][0]].mp_left -= 300;
 								temp = battle_data[matrix[j][1]].hp_left;
 								battle_data[matrix[j][1]].hp_left = battle_data[matrix[j][1]].mp_left;
@@ -1275,7 +1333,7 @@ function battle(){
 								temp = base_data[matrix[j][1]].hp;
 								base_data[matrix[j][1]].hp = base_data[matrix[j][1]].mp;
 								base_data[matrix[j][1]].mp = temp;
-								document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + "'s HP and MP are switched! <br> ";
+								document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s HP and MP are switched! <br> ";
 
 								if (battle_data[matrix[j][1]].hp_left <= 0){
 									death_proc(matrix[j][1], 1 - matrix[j][1]);
@@ -1284,10 +1342,10 @@ function battle(){
 									if (battle_data[matrix[j][1]].hp_left > 0){
 										break;
 									}
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " is defeated! <br>";
+									document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
 									result = 1 - matrix[j][1];
 									if (battle_data[1 - matrix[j][1]].hp_left <= 0){
-										document.getElementById('res').innerHTML += "Card " + (2 - matrix[j][1]).toString() + " is defeated! <br>";
+										document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]] + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
 										result = -1;
 									}
 									matrix[j][3] = true;
@@ -1307,11 +1365,11 @@ function battle(){
 										chance = 1;
 									else
 										chance = 0.6;
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 									battle_data[matrix[j][0]].mp_left -= 600;
 									if (battle_data[matrix[j][1]].resist == false && Math.random() < chance){
 										battle_data[matrix[j][1]].mind_break = true;
-										document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " becomes confused! (Chance: " + chance.toString() + ") <br> ";
+										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
 									}
 									else
 										document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
@@ -1319,11 +1377,11 @@ function battle(){
 							}
 							else if (matrix[j][2].search("Fast Sleep") != -1){
 								if (battle_data[matrix[j][0]].mp_left >= 300){
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][0] + 1).toString() + " uses " + matrix[j][2].slice(3) + "! <br>";
+									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 									battle_data[matrix[j][0]].mp_left -= 300;
 									if (battle_data[matrix[j][1]].resist == false){
 										battle_data[matrix[j][1]].sleep = true;
-										document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " becomes asleep! <br> ";
+										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
 									}
 									else
 										document.getElementById('res').innerHTML += "But it failed! <br> ";
@@ -1359,9 +1417,9 @@ function battle(){
 		if (battle_data[attacker].poisoned == true){
 			damage = Math.round((0.4 + poison_attack_modifier[attacker]) * base_data[attacker].hp);
 			battle_data[attacker].hp_left -= damage;
-			document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " takes " + damage.toString() + " damage from poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
+			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") takes " + damage.toString() + " damage from poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
 			if (battle_data[attacker].hp_left <= 0){
-				document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " is defeated! <br>";
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
 				result = 1 - attacker;
 				return result;
 			}
@@ -1369,14 +1427,14 @@ function battle(){
 		// Sleep
 		if (battle_data[attacker].sleep == true){
 			battle_data[attacker].sleep = false;
-			document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " skips a turn because of sleep! <br>";
+			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of sleep! <br>";
 			battle_length++;
 			continue;
 		}
 		// Freeze
 		if (battle_data[attacker].freeze == true){
 			battle_data[attacker].freeze = false;
-			document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " skips a turn because of crytallization! <br>";
+			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of crytallization! <br>";
 			battle_length++;
 			continue;
 		}
@@ -1515,9 +1573,9 @@ function battle(){
 		}
 		battle_data[attacker].hp_left -= hp_cost;
 		battle_data[attacker].mp_left -= mp_cost;
-		document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " attacks with " + attack_skill + "! MP: " + battle_data[attacker].mp_left + "/" + base_data[attacker].mp + " <br>";
+		document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") attacks with " + attack_skill + "! MP: " + battle_data[attacker].mp_left + "/" + base_data[attacker].mp + " <br>";
 		if (hp_cost != 0)
-			document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " spends " + hp_cost + " HP! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
+			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") spends " + hp_cost + " HP! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
 
 		// Mind Break Effect
 		if (battle_data[attacker].mind_break ==  true){
@@ -1573,23 +1631,23 @@ function battle(){
 					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
 						case 1: 
 							battle_data[attacker].atk_buff += 0.2, battle_data[attacker].def_buff += 0.2, battle_data[attacker].spd_buff += 0.2, battle_data[attacker].wis_buff += 0.2; 
-							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have greatly increased! <br>";
+							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have greatly increased! <br>";
 							break; 
 						case 0: 
 							battle_data[attacker].atk_buff += 0.1, battle_data[attacker].def_buff += 0.1, battle_data[attacker].spd_buff += 0.1, battle_data[attacker].wis_buff += 0.1; 
-							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have increased! <br>";
+							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have increased! <br>";
 							break;
 						case -1: 
 							battle_data[attacker].atk_debuff += 0.1, battle_data[attacker].def_debuff += 0.1, battle_data[attacker].spd_debuff += 0.1, battle_data[attacker].wis_debuff += 0.1; 
-							document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + "'s stats have decreased! <br>";
+							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have decreased! <br>";
 							break;
 					}
 				}
 
-				document.getElementById('res').innerHTML += "Card " + (defender + 1).toString() + " is defeated! <br>";
+				document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") is defeated! <br>";
 				result = 1 - defender;
 				if (battle_data[1 - defender].hp_left <= 0){
-					document.getElementById('res').innerHTML += "Card " + (2 - defender).toString() + " is defeated! <br>";
+					document.getElementById('res').innerHTML += base_data[1 - defender].card + " (Team " + (2 - defender).toString() + ") is defeated! <br>";
 					result = -1;
 				}
 				return result;
@@ -1604,7 +1662,7 @@ function battle(){
 			if (damage > 0 && battle_data[defender].counterable == true && battle_data[defender].mp_left >= 300 && 
 				battle_data[defender].mind_break == false && battle_data[defender].sleep == false && counter_skill != "None"){
 				battle_data[defender].mp_left -= 300;
-				document.getElementById('res').innerHTML += "Card " + (defender + 1).toString() + " uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
+				document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
 				battle_data[attacker].dodgable = false, battle_data[attacker].counterable = false;
 				damage_dealer(defender, attacker, counter_skill, "None", 0, 0, 1.2 * damage);
 				battle_data[attacker].dodgable = true, battle_data[attacker].counterable = true;
@@ -1617,10 +1675,10 @@ function battle(){
 						battle_length++;
 						continue;
 					}
-					document.getElementById('res').innerHTML += "Card " + (attacker + 1).toString() + " is defeated! <br>";
+					document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
 					result = 1 - attacker;
 					if (battle_data[1 - attacker].hp_left <= 0){
-						document.getElementById('res').innerHTML += "Card " + (2 - attacker).toString() + " is defeated! <br>";
+						document.getElementById('res').innerHTML += base_data[1 - attacker].card + " (Team " + (2 - attacker).toString() + ") is defeated! <br>";
 						result = -1;
 					}
 					return result;

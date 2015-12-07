@@ -1,6 +1,21 @@
 var data =
 [
 	{
+		"name": "イリス / Iris", "attr": "Darkness", "hp": 2360, "mp": 1460, "atk": 1600, "def": 1600, "spd": 1440, "wis": 1980, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Entrust",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ドゥマ / Dumah", "attr": "Fire", "hp": 2420, "mp": 1570, "atk": 1880, "def": 1760, "spd": 1460, "wis": 1740, 
+		"attack_skill": "Laevateinn", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Last Bastion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "シグルーン / Sigrun", "attr": "Machine", "hp": 2340, "mp": 1550, "atk": 1660, "def": 1640, "spd": 1422, "wis": 1940, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ヘル・アビス / Hell Abyss", "attr": "Undead", "hp": 2340, "mp": 1700, "atk": 1380, "def": 1520, "spd": 1450, "wis": 1960, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1508,14 +1523,14 @@ var data =
 		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
-
-	// From here: Only name is updated
-	/*
 	{
-		"name": "最強サリエル / Almighty Sariel", "attr": "Darkness", "hp": 2340, "mp": 1560, "atk": 1640, "def": 1640, "spd": 1420, "wis": 1960, 
+		"name": "最強サリエル / Almighty Sariel", "attr": "Darkness", "hp": 2360, "mp": 1600, "atk": 1800, "def": 1760, "spd": 1422, "wis": 1820, 
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+
+	// From here: Only name is updated
+	/*
 	*/
 
 
@@ -1567,7 +1582,7 @@ var attack_skills = [
 	"Thunder +1", "Thunder +2", "Thunder +3", "Thunder +4", "Thunder +4EX",
 	"Wind +1", "Wind +2", "Wind +3", "Wind +4", 
 	"Poison +1", "Poison +2", "Poison +3", "Poison +4",
-	"Undead +1", "Undead +2", "Undead +3", "Undead +4",
+	"Undead +1", "Undead +2", "Undead +3", "Undead +4", "Undead +4EX",
 	"Machine +4",
 	"Light +1", "Light +2", "Light +3", "Light +4", "Light +4EX", "Light +S",  
 	"Darkness +1", "Darkness +2", "Darkness +3", "Darkness +4", "Darkness +4EX",
@@ -1601,11 +1616,11 @@ var intro_skills = [
 var death_skills = [
 	"0: None",
 	"1: Revival", "1: Dark Revival",
-	"1: Last Stand", "1: Last Bastion",
-	"2: Deep Sleep", "2: Crystallize",
-	"3: Explosion", "3: Dark Explosion", "3: Burst",
-	"3: Soul Taker", "3: Mind Crush",
-	"3: Martyr", "3: Entrust", "3: Force"
+	"2: Last Stand", "2: Last Bastion",
+	"3: Deep Sleep", "3: Crystallize",
+	"4: Explosion", "4: Dark Explosion", "4: Burst",
+	"4: Soul Taker", "4: Mind Crush",
+	"4: Martyr", "4: Entrust", "4: Force"
 ];
 
 
