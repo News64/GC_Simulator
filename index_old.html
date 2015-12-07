@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GC Battle Simulator</title>
+	</head>
+
+	<body onload="init_list(1); init_list(2)">
+		<table>
+			<tr>
+				<td>
+					Card 1:
+					<select id="card1" onchange="update_box(1, 1)"> </select> 
+				</td>
+				<td>
+					Card 2:
+					<select id="card2" onchange="update_box(2, 1)"> </select> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Filter By Attribute: 
+					<select id="filter_attr1" onchange="filter_name(1)"> </select>
+				</td>
+				<td>
+					Filter By Attribute: 
+					<select id="filter_attr2" onchange="filter_name(2)"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Type: <select id="type1" onchange="update_box(1, 0)"> </select>
+					Stone: 
+					<select id="stone1" onchange="update_box(1, 0)"> 
+						<option value="Full">Full</option>
+						<option value="None">None</option>
+					</select>
+				</td>
+				<td>
+					Type: <select id="type2" onchange="update_box(2, 0)"> </select>
+					Stone: 
+					<select id="stone2" onchange="update_box(2, 0)"> 
+						<option value="Full">Full</option>
+						<option value="None">None</option>
+					</select>
+				</td>
+			<tr>
+				<td>
+					Attribute: 
+					<select id="attr1" onchange="update_box(1, 0)"> </select>
+					<button id="apply1" onclick="update_box(1, 2)">Re-apply Boosts</button>
+				</td>
+				<td>
+					Attribute: 
+					<select id="attr2" onchange="update_box(2, 0)"> </select>
+					<button id="apply2" onclick="update_box(2, 2)">Re-apply Boosts</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="hp1" id="hp1"> <input type="text" name="mp1" id="mp1">
+				</td>
+				<td>
+					<input type="text" name="hp2" id="hp2"> <input type="text" name="mp2" id="mp2">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="atk1" id="atk1"> <input type="text" name="def1" id="def1">
+				</td>
+				<td>
+					<input type="text" name="atk2" id="atk2"> <input type="text" name="def2" id="def2">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="spd1" id="spd1"> <input type="text" name="wis1" id="wis1">
+				</td>
+				<td>
+					<input type="text" name="spd2" id="spd2"> <input type="text" name="wis2" id="wis2">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Alternative Skill:
+					<span id="alt_skill1"> </span>
+				</td>
+				<td>
+					Alternative Skill:
+					<span id="alt_skill2"> </span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Attack Skill:
+					<select id="attack_skill1"> </select>
+				</td>
+				<td>
+					Attack Skill:
+					<select id="attack_skill2"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Intro Skill1:
+					<select id="intro_skill11"> </select>
+					Intro Skill2:
+					<select id="intro_skill21"> </select>
+				</td>
+				<td>
+					Intro Skill1:
+					<select id="intro_skill12"> </select>
+					Intro Skill2:
+					<select id="intro_skill22"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Death Skill1:
+					<select id="death_skill11"> </select>
+					Death Skill2:
+					<select id="death_skill21"> </select>
+				</td>
+				<td>
+					Death Skill1:
+					<select id="death_skill12"> </select>
+					Death Skill2:
+					<select id="death_skill22"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Dodge Skill1:
+					<select id="dodge_skill11"> </select>
+					Dodge Skill2:
+					<select id="dodge_skill21"> </select>
+				</td>
+				<td>
+					Dodge Skill1:
+					<select id="dodge_skill12"> </select>
+					Dodge Skill2:
+					<select id="dodge_skill22"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Counter Skill:
+					<select id="counter_skill1"> </select>
+					Poison Skill:
+					<select id="poison_skill1"> </select>
+				</td>
+				<td>
+					Counter Skill:
+					<select id="counter_skill2"> </select>
+					Poison Skill:
+					<select id="poison_skill2"> </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Red EX:
+					<select id="red_ex1" onchange="update_box(1, 0)"> </select>
+					Blue EX:
+					<select id="blue_ex1"> </select>
+				</td>
+				<td>
+					Red EX:
+					<select id="red_ex2" onchange="update_box(2, 0)"> </select>
+					Blue EX:
+					<select id="blue_ex2"> </select>
+				</td>
+			</tr>
+		</table>
+
+		<br>
+		<br>
+
+		Colosseum Attribute Buff1:
+		<select id="colo_buff_attr1" onchange="update_box(1, 0); update_box(2, 0)"></select>
+		<select id="colo_buff_rate1" onchange="update_box(1, 0); update_box(2, 0)"></select> <br>
+		Colosseum Attribute Buff2:
+		<select id="colo_buff_attr2" onchange="update_box(1, 0); update_box(2, 0)"></select>
+		<select id="colo_buff_rate2" onchange="update_box(1, 0); update_box(2, 0)"></select> <br>
+		Colosseum Attribute Buff3:
+		<select id="colo_buff_attr3" onchange="update_box(1, 0); update_box(2, 0)"></select>
+		<select id="colo_buff_rate3" onchange="update_box(1, 0); update_box(2, 0)"></select> <br>
+		Colosseum Skill Buff:
+		<select id="colo_buff_skill"></select> <br>
+		<br>
+
+		<!-- <p style="display:none;"> -->
+		<!-- <p> -->
+		<p style="display:none;">
+		From LV 70 Cool Clean to Basic: <button id="calc" onclick="basic_calc()">Calc!</button> <br>
+		<input type="text" name="hpc" id="hpc"> <input type="text" name="mpc" id="mpc"> <br>
+		<input type="text" name="atkc" id="atkc"> <input type="text" name="defc" id="defc"> <br>
+		<input type="text" name="spdc" id="spdc"> <input type="text" name="wisc" id="wisc"> <br>
+		<br>
+		</p>
+
+		<button id="battle" onclick="battle()">Go!</button>
+		
+		<p id="res"></p>
+		
+		<script src="cards.js" charset="UTF-8"></script>
+		<script src="battle.js" charset="UTF-8"></script>
+
+	</body>
+</html>
