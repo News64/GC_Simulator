@@ -1,6 +1,21 @@
 var data =
 [
 	{
+		"name": "ウプウアウト / Wepwawet", "attr": "Thunder", "hp": 2340, "mp": 1730, "atk": 1840, "def": 1630, "spd": 1410, "wis": 1630, 
+		"attack_skill": "Predator", "intro_skill1": "Resistance", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "大海龍レヴィアタン / Great Serpent Leviathan", "attr": "Water", "hp": 2500, "mp": 1550, "atk": 1860, "def": 1900, "spd": 1412, "wis": 1680, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "黄泉神イザナミ / Izanami the Yomi Goddess", "attr": "Poison", "hp": 2040, "mp": 1420, "atk": 1520, "def": 1560, "spd": 1386, "wis": 1840, 
+		"attack_skill": "Poison +4", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "イリス / Iris", "attr": "Darkness", "hp": 2360, "mp": 1460, "atk": 1600, "def": 1600, "spd": 1440, "wis": 1980, 
 		"attack_skill": "Undead +4EX", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Entrust",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1526,6 +1541,11 @@ var data =
 	{
 		"name": "最強サリエル / Almighty Sariel", "attr": "Darkness", "hp": 2360, "mp": 1600, "atk": 1800, "def": 1760, "spd": 1422, "wis": 1820, 
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強獄炎鳥スィームルグ / Almighty Simurgh", "attr": "Fire", "hp": 2140, "mp": 3720, "atk": 1580, "def": 1640, "spd": 1424, "wis": 2000, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 
