@@ -1,6 +1,22 @@
 var data =
 [
 	{
+		"name": "ロビン・パティシエール / Robin the Patissiere", "attr": "Wind", "hp": 2290, "mp": 1460, "atk": 1760, "def": 1660, "spd": 1414, "wis": 1940, 
+		"attack_skill": "Variable Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "聖夜姫アスタロット / Holy Ashtoreth", "attr": "Poison", "hp": 2380, "mp": 1580, "atk": 1620, "def": 1600, "spd": 1440, "wis": 2000, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Dimension Gate"
+	},
+	{
+		"name": "ツリー・グランドジョラス / Grandes Jorasses of Trees", "attr": "Earth", "hp": 2520, "mp": 3820, "atk": 1820, "def": 1940, "spd": 1412, "wis": 1760, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ウプウアウト / Wepwawet", "attr": "Thunder", "hp": 2340, "mp": 1730, "atk": 1840, "def": 1630, "spd": 1410, "wis": 1630, 
 		"attack_skill": "Predator", "intro_skill1": "Resistance", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -496,6 +512,11 @@ var data =
 	{
 		"name": "アークエンジェル / Earthbound Angel", "attr": "Undead", "hp": 2180, "mp": 1440, "atk": 1520, "def": 1520, "spd": 1394, "wis": 1840, 
 		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Mind Crush",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "チェルノボグ / Chernobog", "attr": "Poison", "hp": 2100, "mp": 3040, "atk": 1720, "def": 1520, "spd": 1384, "wis": 1800, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Quick Strike", "intro_skill2": "Wise Smite", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
@@ -1548,6 +1569,11 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強サルヴァ / Almighty Saurva", "attr": "Water", "hp": 2460, "mp": 970, "atk": 1860, "def": 1680, "spd": 1410, "wis": 1600, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1568,7 +1594,7 @@ var attributes = [
 ];
 
 
-var colo_rates = [ "0", "5%", "12%" ];
+var colo_rates = [ "0", "5%", "8%", "12%" ];
 
 
 var red_exs = [

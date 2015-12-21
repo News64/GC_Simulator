@@ -1241,7 +1241,7 @@ function battle(){
 								if (battle_data[matrix[j][1]].mp_left >= 300 && battle_data[matrix[j][1]].mind_break == false && 
 									battle_data[matrix[j][1]].sleep == false && counter_skill != "None"){
 									battle_data[matrix[j][1]].mp_left -= 300;
-									document.getElementById('res').innerHTML += "Card " + (matrix[j][1] + 1).toString() + " uses " + counter_skill + "! MP: " + battle_data[matrix[j][1]].mp_left + "/" + base_data[matrix[j][1]].mp + " <br>";
+									document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[matrix[j][1]].mp_left + "/" + base_data[matrix[j][1]].mp + " <br>";
 									battle_data[matrix[j][0]].dodgable = false, battle_data[matrix[j][0]].counterable = false;
 									damage_dealer(matrix[j][1], matrix[j][0], counter_skill, "None", 0, 0, 1.2 * damage);
 									battle_data[matrix[j][0]].dodgable = true, battle_data[matrix[j][0]].counterable = true;
