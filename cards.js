@@ -1574,6 +1574,11 @@ var data =
 		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Stand", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
 	},
+	{
+		"name": "最強ツリー・グランドジョラス / Almighty Grandes Jorasses of Trees", "attr": "Earth", "hp": 2540, "mp": 4000, "atk": 1890, "def": 1980, "spd": 1422, "wis": 1780, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
