@@ -1,6 +1,11 @@
 var data =
 [
 	{
+		"name": "猿姫セルヴァ / Monkey Princess Selva", "attr": "Naught", "hp": 2540, "mp": 1650, "atk": 1970, "def": 1800, "spd": 1670, "wis": 1840, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ロビン・パティシエール / Robin the Patissiere", "attr": "Wind", "hp": 2290, "mp": 1460, "atk": 1760, "def": 1660, "spd": 1414, "wis": 1940, 
 		"attack_skill": "Variable Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
