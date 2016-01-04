@@ -1584,6 +1584,11 @@ var data =
 		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強ローレライ / Almighty Lorelei", "attr": "Water", "hp": 2380, "mp": 1590, "atk": 1640, "def": 1640, "spd": 1440, "wis": 2030, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
