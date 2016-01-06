@@ -1,6 +1,21 @@
 var data =
 [
 	{
+		"name": "リトルガーネット / Little Garnet", "attr": "Fire", "hp": 2360, "mp": 1730, "atk": 1860, "def": 1560, "spd": 1430, "wis": 1680, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Divine Shield", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "モーガン・ル・フェイ / Morgan le Fay", "attr": "Darkness", "hp": 2340, "mp": 1640, "atk": 1660, "def": 1660, "spd": 1434, "wis": 1930, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アムフィフテーレ / Amphiptere", "attr": "Light", "hp": 2100, "mp": 3680, "atk": 1900, "def": 1600, "spd": 1450, "wis": 1580, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "猿姫セルヴァ / Monkey Princess Selva", "attr": "Naught", "hp": 2540, "mp": 1650, "atk": 1970, "def": 1800, "spd": 1670, "wis": 1840, 
 		"attack_skill": "Laevateinn", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
