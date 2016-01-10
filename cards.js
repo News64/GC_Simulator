@@ -1604,6 +1604,11 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強神炎宿せしウリエル / Almighty Uriel of the Flame", "attr": "Light", "hp": 2400, "mp": 1460, "atk": 1580, "def": 1660, "spd": 1440, "wis": 2030, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Wise Smite", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*

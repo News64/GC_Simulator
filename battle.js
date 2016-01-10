@@ -1117,7 +1117,7 @@ function team_battle(){
 			case -1:
 				curr[0] += 1, curr[1] += 1;
 				if (curr[0] > num_cards && curr[1] > num_cards){
-					document.getElementById('res').innerHTML += "Team " + (temp_result + 1).toString() + " wins! <br>";
+					document.getElementById('res').innerHTML += "Team 1 wins! <br>";
 					return;
 				}
 				if (curr[0] > num_cards){
