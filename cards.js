@@ -1,6 +1,16 @@
 var data =
 [
 	{
+		"name": "イシュタム / Ixtab", "attr": "Undead", "hp": 2330, "mp": 1460, "atk": 1700, "def": 1520, "spd": 1440, "wis": 1980, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Deep Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "インペリアルジャスティス / Imperial Justice", "attr": "Machine", "hp": 2420, "mp": 1590, "atk": 1800, "def": 1840, "spd": 1432, "wis": 1620, 
+		"attack_skill": "Giga Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "クーリエ / Courier", "attr": "Wind", "hp": 2370, "mp": 1550, "atk": 1540, "def": 1680, "spd": 1414, "wis": 2000, 
 		"attack_skill": "Undead +4", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
@@ -1620,6 +1630,11 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "Wise Smite", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強キメラテックドラゴン / Almighty Chimeratech Dragon", "attr": "Machine", "hp": 2480, "mp": 1550, "atk": 1920, "def": 1880, "spd": 1462, "wis": 1760, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1646,7 +1661,7 @@ var colo_rates = [ "0", "5%", "8%", "12%" ];
 var red_exs = [
 	"None",
 	"Fire 15% All", "Water 15% All", "Earth 15% All", "Thunder 15% All", "Wind 15% All", 
-	"Poison 15% All", "Machine 15% All", "Light 15% All", "Darkness 15% All",
+	"Poison 15% All", "Undead 15% All", "Machine 15% All", "Light 15% All", "Darkness 15% All",
 	"All 15% HP", "All 10% MP", "All 15% Attack", "All 15% Defend", "All 15% Wisdom",
 	"All 10% Attack & 10% Wisdom", "All 15% Defend & 10% Wisdom"
 ];
