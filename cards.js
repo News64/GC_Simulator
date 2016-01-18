@@ -2,7 +2,7 @@ var data =
 [
 	{
 		"name": "イシュタム / Ixtab", "attr": "Undead", "hp": 2330, "mp": 1460, "atk": 1700, "def": 1520, "spd": 1440, "wis": 1980, 
-		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Deep Sleep", "death_skill1": "None", "death_skill2": "None",
+		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
