@@ -1050,8 +1050,8 @@ function team_battle(){
 				if (i != 1) explosion_modifier[0] += 0.15;
 				break;
 			case "Revival":
-				if (i != 0) revival_modifier[1] += 0.2;
-				if (i != 1) revival_modifier[0] += 0.2;
+				if (i != 0) revival_modifier[1] += 0.45;
+				if (i != 1) revival_modifier[0] += 0.45;
 				break;
 			case "Quick Strike":
 				if (i != 0) quick_strike_modifier[1] += 0.4;
