@@ -1,6 +1,16 @@
 var data =
 [
 	{
+		"name": "グリムウィッチ / Grimm Witch", "attr": "Poison", "hp": 2400, "mp": 1460, "atk": 1860, "def": 1560, "spd": 1416, "wis": 1900, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "ブリリアント・ブライド / Brilliant Bride", "attr": "Water", "hp": 2420, "mp": 1550, "atk": 1680, "def": 1640, "spd": 1414, "wis": 1980, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Resistance", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "イシュタム / Ixtab", "attr": "Undead", "hp": 2330, "mp": 1460, "atk": 1700, "def": 1520, "spd": 1440, "wis": 1980, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1635,6 +1645,11 @@ var data =
 		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強リリム / Almighty Lilim", "attr": "Undead", "hp": 2480, "mp": 1460, "atk": 1670, "def": 1670, "spd": 1460, "wis": 2030, 
+		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1669,7 +1684,7 @@ var red_exs = [
 
 var blue_exs = [
 	"None", "Ability Lock", "Mind Break", "Explosion", "Revival", "Quick Strike", "Martyr", "Deft Step", "Giga Slash", "Poison Attack", 
-	"Soul Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Soul Taker & Mind Crush"
+	"Soul Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
 ];
 
 

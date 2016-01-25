@@ -1089,9 +1089,13 @@ function team_battle(){
 				if (i != 0) mp_burn_modifier[1] += 0.3;
 				if (i != 1) mp_burn_modifier[0] += 0.3;
 				break;
-			case "Soul Taker & Mind Crush":
+			case "Soul Taker & Mind Crush 10%":
 				if (i != 0) soul_mind_modifier[1] += 0.1;
 				if (i != 1) soul_mind_modifier[0] += 0.1;
+				break;
+			case "Soul Taker & Mind Crush 30%":
+				if (i != 0) soul_mind_modifier[1] += 0.3;
+				if (i != 1) soul_mind_modifier[0] += 0.3;
 				break;
 		}
 	}
