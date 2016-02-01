@@ -1,6 +1,11 @@
 var data =
 [
 	{
+		"name": "デウス・エクス・マキナ / Deus ex Machina", "attr": "Naught", "hp": 2640, "mp": 1640, "atk": 1500, "def": 1700, "spd": 1600, "wis": 2570, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "グリムウィッチ / Grimm Witch", "attr": "Poison", "hp": 2400, "mp": 1460, "atk": 1860, "def": 1560, "spd": 1416, "wis": 1900, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
@@ -567,7 +572,7 @@ var data =
 	},
 	{
 		"name": "チェルノボグ / Chernobog", "attr": "Poison", "hp": 2100, "mp": 3040, "atk": 1720, "def": 1520, "spd": 1384, "wis": 1800, 
-		"attack_skill": "Normal Attack", "intro_skill1": "Quick Strike", "intro_skill2": "Wise Smite", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"attack_skill": "Normal Attack", "intro_skill1": "Wise Smite", "intro_skill2": "Quick Strike", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
@@ -687,7 +692,7 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "真カーミラ / True Carmilla", "attr": "Fire", "hp": 1480, "mp": 1090, "atk": 1400, "def": 1100, "spd": 1220, "wis": 1480, 
+		"name": "真カーミラ / True Carmilla", "attr": "Darkness", "hp": 1480, "mp": 1090, "atk": 1400, "def": 1100, "spd": 1220, "wis": 1480, 
 		"attack_skill": "Undead +4", "intro_skill1": "Quick Strike", "intro_skill2": "Mind Break", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
@@ -1145,7 +1150,7 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "水のカイナッツォ / Maelstrom Cagnazzo", "attr": "Earth", "hp": 1400, "mp": 1180, "atk": 1160, "def": 1430, "spd": 1010, "wis": 1190, 
+		"name": "水のカイナッツォ / Maelstrom Cagnazzo", "attr": "Water", "hp": 1400, "mp": 1180, "atk": 1160, "def": 1430, "spd": 1010, "wis": 1190, 
 		"attack_skill": "Water +4", "intro_skill1": "Defend +40%", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
@@ -1649,6 +1654,11 @@ var data =
 		"name": "最強リリム / Almighty Lilim", "attr": "Undead", "hp": 2480, "mp": 1460, "atk": 1670, "def": 1670, "spd": 1460, "wis": 2030, 
 		"attack_skill": "Undead +4", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強チェルノボグ / Almighty Chernobog", "attr": "Poison", "hp": 2160, "mp": 3440, "atk": 1880, "def": 1620, "spd": 1452, "wis": 1960, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Wise Smite", "intro_skill2": "Quick Strike", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 
 	// From here: Only name is updated
