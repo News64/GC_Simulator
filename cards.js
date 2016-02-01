@@ -256,7 +256,7 @@ var data =
 	},
 	{
 		"name": "ルナ / Luna", "attr": "Light", "hp": 2320, "mp": 1560, "atk": 1680, "def": 1640, "spd": 1415, "wis": 1920, 
-		"attack_skill": "Dimension", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"attack_skill": "Dimension Gate", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
