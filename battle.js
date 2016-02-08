@@ -1487,12 +1487,16 @@ function battle(){
 					battle_data[defender].dodgable = false;
 					break;
 				case "Crush Drain":
+				case "Soul Drain":
 					if (battle_data[attacker].mind_break == true){
 						attack_skill = "Normal Attack";
 						break;
 					}
 					attack_attr = "Physical";
-					dmg_rate = 1.5, mp_cost = 1400;
+					if (attack_skill == "Crush Drain")
+						dmg_rate = 1.5, mp_cost = 1400;
+					else
+						dmg_rate = 2, mp_cost = 1600;
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
 					break;
 				case "Life Drain":
@@ -1553,6 +1557,10 @@ function battle(){
 					attack_attr = base_data[attacker].attr;
 					dmg_rate = 1.5, mp_cost = 1400;
 					break;
+				case "Gram":
+					attack_attr = base_data[attacker].attr;
+					dmg_rate = 1.5, mp_cost = 1500;
+					break;
 				case "Meteor Nova":
 					attack_attr = base_data[attacker].attr;
 					dmg_rate = 1.3 + meteor_skill_modifier[attacker], reduc_rate = 0, mp_cost = 1300;
@@ -1612,12 +1620,14 @@ function battle(){
 		
 		// Extra Heal or MP Damage
 		if (damage > 0){
-			if (attack_skill == "Crush Drain")
+			if (attack_skill == "Crush Drain" || attack_skill == "Soul Drain")
 				heal_apply(attacker, 0, 0.9 * damage);
 			else if (attack_skill == "Life Drain")
 				heal_apply(attacker, 0, 0.2 * damage);
 			else if (attack_skill == "Laevateinn" || attack_skill == "Arondight")
 				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 0.5 + mp_burn_modifier[attacker]);
+			else if (attack_skill == "Gram")
+				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 1 + mp_burn_modifier[attacker]);
 		}
 		
 

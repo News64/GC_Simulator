@@ -1,6 +1,26 @@
 var data =
 [
 	{
+		"name": "ジュピター・ショコラ / Jupiter of Chocolat", "attr": "Thunder", "hp": 2560, "mp": 1620, "atk": 1480, "def": 1880, "spd": 1444, "wis": 1920, 
+		"attack_skill": "Gram", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "デメテル・オランジェット / Demeter of Orangette", "attr": "Earth", "hp": 2500, "mp": 1850, "atk": 1860, "def": 1700, "spd": 1418, "wis": 1700, 
+		"attack_skill": "Soul Drain", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "リリム・ドルチェ / Dolce Lilim", "attr": "Undead", "hp": 2370, "mp": 1460, "atk": 1640, "def": 1640, "spd": 1430, "wis": 2000, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "グライアイ・フォーチュン / Graiae of Fortune", "attr": "Darkness", "hp": 2280, "mp": 1350, "atk": 1580, "def": 1580, "spd": 1420, "wis": 1920, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Wise Smite", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "デウス・エクス・マキナ / Deus ex Machina", "attr": "Naught", "hp": 2640, "mp": 1640, "atk": 1500, "def": 1700, "spd": 1600, "wis": 2570, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1660,6 +1680,11 @@ var data =
 		"attack_skill": "Normal Attack", "intro_skill1": "Wise Smite", "intro_skill2": "Quick Strike", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強パイモン / Almighty Paimon", "attr": "Darkness", "hp": 2500, "mp": 1740, "atk": 1640, "def": 1680, "spd": 1438, "wis": 2030, 
+		"attack_skill": "Arondight", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1702,11 +1727,11 @@ var attack_skills = [
 	"Normal Attack",
 	"Giga Slash", "Dark Giga Slash",
 	"Soul Slash", "Soul Buster", "Variable Slash",
-	"Crush Drain", "Life Drain",
+	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain",
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Dimension Gate",
-	"Laevateinn", "Arondight",
+	"Laevateinn", "Arondight", "Gram",
 	"Meteor Impact", "Meteor Nova",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
 	"Water +1", "Water +2", "Water +3", "Water +4", 
