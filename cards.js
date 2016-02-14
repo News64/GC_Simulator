@@ -1685,6 +1685,11 @@ var data =
 		"attack_skill": "Arondight", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "偲叶ジュピター・ショコラ / Almighty Jupiter of Chocolat", "attr": "Thunder", "hp": 3590, "mp": 3000, "atk": 2100, "def": 214, "spd": 2, "wis": 214, 
+		"attack_skill": "None", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
 
 	// From here: Only name is updated
 	/*
