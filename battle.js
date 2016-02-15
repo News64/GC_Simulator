@@ -1298,7 +1298,7 @@ function battle(){
 							if (battle_data[matrix[j][0]].mp_left >= 300 && 
 								(battle_data[matrix[j][1]].atk_buff + battle_data[matrix[j][1]].def_buff + battle_data[matrix[j][1]].spd_buff + battle_data[matrix[j][1]].wis_buff != 0 || 
 								battle_data[matrix[j][1]].inherit_atk + battle_data[matrix[j][1]].inherit_def + battle_data[matrix[j][1]].inherit_spd + battle_data[matrix[j][1]].inherit_wis != 0 || 
-								battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].healing == true || battle_data[matrix[j][1]].shield > 0 || battle_data[matrix[j][1]].multi_block == true )){
+								battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].healing > 0 || battle_data[matrix[j][1]].shield == true || battle_data[matrix[j][1]].multi_block == true )){
 								battle_data[matrix[j][1]].atk_buff = 0, battle_data[matrix[j][1]].def_buff = 0, battle_data[matrix[j][1]].spd_buff = 0, battle_data[matrix[j][1]].wis_buff = 0; 
 								battle_data[matrix[j][1]].inherit_atk = 0, battle_data[matrix[j][1]].inherit_def = 0, battle_data[matrix[j][1]].inherit_spd = 0, battle_data[matrix[j][1]].inherit_wis = 0; 
 								battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].shield = false, battle_data[matrix[j][1]].multi_block = false;
