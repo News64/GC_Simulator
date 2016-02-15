@@ -1710,7 +1710,7 @@ var attributes = [
 ];
 
 
-var colo_rates = [ "0", "5%", "8%", "12%" ];
+var colo_rates = [ "0", "3%", "5%", "8%", "12%" ];
 
 
 var red_exs = [
