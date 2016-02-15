@@ -1,6 +1,21 @@
 var data =
 [
 	{
+		"name": "クトゥグア / Cthugua", "attr": "Fire", "hp": 2440, "mp": 1560, "atk": 1700, "def": 1640, "spd": 1440, "wis": 1970, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ミスト / Mist", "attr": "Water", "hp": 2420, "mp": 1580, "atk": 1800, "def": 1820, "spd": 1434, "wis": 1720, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "闇火之迦具土神 / Dark Kagu-tsuchi", "attr": "Fire", "hp": 1960, "mp": 434, "atk": 1540, "def": 1500, "spd": 1390, "wis": 1800, 
+		"attack_skill": "Undead +3", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "Crystallize",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ジュピター・ショコラ / Jupiter of Chocolat", "attr": "Thunder", "hp": 2560, "mp": 1620, "atk": 1480, "def": 1880, "spd": 1444, "wis": 1920, 
 		"attack_skill": "Gram", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1687,7 +1702,7 @@ var data =
 	},
 	{
 		"name": "偲叶ジュピター・ショコラ / Almighty Jupiter of Chocolat", "attr": "Thunder", "hp": 3590, "mp": 3000, "atk": 2100, "def": 214, "spd": 2, "wis": 214, 
-		"attack_skill": "None", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"attack_skill": "Normal Attack", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
 
