@@ -74,8 +74,8 @@ function generate_table(num_cards) {
 		}
 	}
 
-	document.getElementById('team_table').innerHTML += "<tr> <td> Red EX: <select id='red_ex1' onchange='update_all(3, 1, 0)'> </select> Blue EX: <select id='blue_ex1'> </select> </td>"
-		+ "<td> Red EX: <select id='red_ex2' onchange='update_all(3, 2, 0)'> </select> Blue EX: <select id='blue_ex2'> </select> </td> </tr>";
+	document.getElementById('team_table').innerHTML += "<tr> <td> Red EX: <select id='red_ex1' onchange='update_all(10, 1, 0)'> </select> Blue EX: <select id='blue_ex1'> </select> </td>"
+		+ "<td> Red EX: <select id='red_ex2' onchange='update_all(10, 2, 0)'> </select> Blue EX: <select id='blue_ex2'> </select> </td> </tr>";
 }
 
 
@@ -489,7 +489,7 @@ function update_box(team_num, card_num, mode){
 	var hp_boost = 1, mp_boost = 1, atk_boost = 1, def_boost = 1, spd_boost = 1, wis_boost = 1;
 	var temp = document.getElementById(red_ex).value.split(" ");
 	var percentage;
-	if (temp[0] == "All" || temp[0] == document.getElementById(attr).value){
+	if (temp[0] == "All" || temp[0].indexOf(document.getElementById(attr).value) != -1){
 		if (temp[2] == "All" || temp[2] == "HP")
 			hp_boost *= 1 + parseFloat(temp[1]) / 100.0;
 		if (temp[2] == "All" || temp[2] == "MP")
@@ -586,6 +586,7 @@ function hide_details(){
 
 
 function attr_cmp(a, b){
+	if (a == "Naught" || b == "Naught") return 0;
 	if (a == b) return -1;
 	switch (a){
 		case "Fire": if(b == "Water" || b == "Light") return -1; if(b == "Wind" || b == "Undead") return 1; return 0;

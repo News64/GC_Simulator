@@ -1,6 +1,22 @@
 var data =
 [
 	{
+		"name": "ソーマ / Soma", "attr": "Poison", "hp": 2370, "mp": 1550, "atk": 1850, "def": 1540, "spd": 1432, "wis": 1560, 
+		"attack_skill": "Predator", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "レア / Rhea", "attr": "Wind", "hp": 2380, "mp": 3820, "atk": 1865, "def": 1740, "spd": 1446, "wis": 1660, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "エスメラルダ / Esmeralda", "attr": "Light", "hp": 2400, "mp": 1580, "atk": 1660, "def": 1640, "spd": 1440, "wis": 1930, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Divine Shield", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Arondight"
+	},
+	{
 		"name": "クトゥグア / Cthugua", "attr": "Fire", "hp": 2440, "mp": 1560, "atk": 1700, "def": 1640, "spd": 1440, "wis": 1970, 
 		"attack_skill": "Meteor Nova", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1666,7 +1682,7 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Poison Attack", "counter_skill": "None"
 	},
 	{
-		"name": "最強ツリー・グランドジョラス / Almighty Grandes Jorasses of Trees", "attr": "Earth", "hp": 2540, "mp": 4000, "atk": 1890, "def": 1980, "spd": 1422, "wis": 1780, 
+		"name": "最強ツリー・グランドジョラス / Almighty Grandes Jorasses of Trees", "attr": "Earth", "hp": 2540, "mp": 4000, "atk": 2100, "def": 1980, "spd": 1422, "wis": 1780, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
@@ -1705,6 +1721,11 @@ var data =
 		"attack_skill": "Normal Attack", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
+	{
+		"name": "最強ネファリアン / Almighty Nefarian", "attr": "Fire", "hp": 2480, "mp": 1460, "atk": 1980, "def": 1720, "spd": 1460, "wis": 1780, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1732,6 +1753,7 @@ var red_exs = [
 	"None",
 	"Fire 15% All", "Water 15% All", "Earth 15% All", "Thunder 15% All", "Wind 15% All", 
 	"Poison 15% All", "Undead 15% All", "Machine 15% All", "Light 15% All", "Darkness 15% All",
+	"Fire/Darkness 15% All", "Water/Wind 15% All", "Earth/Light 15% All", "Thunder/Poison 15% All", "Machine/Undead 15% All",
 	"All 15% HP", "All 10% MP", "All 15% Attack", "All 15% Defend", "All 15% Wisdom",
 	"All 10% Attack & 10% Wisdom", "All 15% Defend & 10% Wisdom"
 ];
