@@ -1,6 +1,16 @@
 var data =
 [
 	{
+		"name": "オネイロス / Oneiros", "attr": "Darkness", "hp": 2420, "mp": 1560, "atk": 1540, "def": 1660, "spd": 1436, "wis": 1980, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アガートラム / Agateram", "attr": "Machine", "hp": 2470, "mp": 1540, "atk": 1865, "def": 1780, "spd": 1455, "wis": 1640, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ソーマ / Soma", "attr": "Poison", "hp": 2370, "mp": 1550, "atk": 1850, "def": 1540, "spd": 1432, "wis": 1560, 
 		"attack_skill": "Predator", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -159,7 +169,7 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "ケリドウェン / Ceridwen", "attr": "Poison", "hp": 2320, "mp": 1640, "atk": 1620, "def": 1540, "spd": 1411, "wis": 1940, 
+		"name": "ケリドウェン / Ceridwen", "attr": "Poison", "hp": 2320, "mp": 1640, "atk": 1620, "def": 1540, "spd": 1412, "wis": 1940, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
@@ -784,7 +794,7 @@ var data =
 	},
 	{
 		"name": "サンダルフォン / Sandolphon", "attr": "Machine", "hp": 2080, "mp": 1240, "atk": 1710, "def": 1680, "spd": 1370, "wis": 1780, 
-		"attack_skill": "Dimension Gate", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Burst", "death_skill2": "None",
+		"attack_skill": "Dimension Gate", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Predator, Wise Smite, Deft Step"
 	},
@@ -1725,6 +1735,16 @@ var data =
 		"name": "最強ネファリアン / Almighty Nefarian", "attr": "Fire", "hp": 2480, "mp": 1460, "atk": 1980, "def": 1720, "spd": 1460, "wis": 1780, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ローダンテ / Almighty Rhodanthe", "attr": "Wind", "hp": 2500, "mp": 1380, "atk": 1580, "def": 1700, "spd": 1462, "wis": 2050, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Deep Sleep",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "偲叶ジュピター・ショコラ改 / Heavenly Jupiter of Chocolat Kai", "attr": "Thunder", "hp": 3655, "mp": 3000, "atk": 2100, "def": 214, "spd": 920, "wis": 214, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
 
 	// From here: Only name is updated
