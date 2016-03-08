@@ -1,6 +1,21 @@
 var data =
 [
 	{
+		"name": "シスターシュバリエ / Sister Chevalier", "attr": "Light", "hp": 2420, "mp": 1520, "atk": 1820, "def": 1700, "spd": 1452, "wis": 1780, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "Soul Taker",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ハオカー / Haokah", "attr": "Thunder", "hp": 2400, "mp": 1630, "atk": 1720, "def": 1860, "spd": 1432, "wis": 1970, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "紅嵐シュガール / Sugaar of Red Storm", "attr": "Thunder", "hp": 2280, "mp": 1550, "atk": 1810, "def": 1640, "spd": 1434, "wis": 1620, 
+		"attack_skill": "Predator", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "オネイロス / Oneiros", "attr": "Darkness", "hp": 2420, "mp": 1560, "atk": 1540, "def": 1660, "spd": 1436, "wis": 1980, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1744,6 +1759,11 @@ var data =
 	{
 		"name": "偲叶ジュピター・ショコラ改 / Heavenly Jupiter of Chocolat Kai", "attr": "Thunder", "hp": 3655, "mp": 3000, "atk": 2100, "def": 214, "spd": 920, "wis": 214, 
 		"attack_skill": "Normal Attack", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "最強メック・アーガス / Almighty Mech Argus", "attr": "Machine", "hp": 2600, "mp": 1380, "atk": 1820, "def": 1800, "spd": 1440, "wis": 1840, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
 

@@ -787,7 +787,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		blocked = true;
 		battle_data[id2].shield = false;
 	}
-	if ( (attack_skill == "Crush Drain" || attack_skill == "Life Drain") && damage > battle_data[id2].hp_left)
+	if ( (attack_skill == "Crush Drain" || attack_skill == "Soul Drain" || attack_skill == "Life Drain") && damage > battle_data[id2].hp_left)
 		damage = battle_data[id2].hp_left;
 	battle_data[id2].hp_left -= damage;
 	if (damage > 0 && battle_data[id2].freeze == true){
