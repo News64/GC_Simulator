@@ -634,49 +634,65 @@ function buff_apply(id1, id2, name){
 	}
 	if (name == "4: Power Shift") { 
 		battle_data[id1].atk_buff += 0.2;
-		if (battle_data[id2].resist == false) 
+		if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
 			battle_data[id2].def_debuff += 0.2; 
+		battle_data[id2].temp_resist = false;
 	}
 	if (name == "4: Mind Shift") { 
 		battle_data[id1].wis_buff += 0.2; 
-		if (battle_data[id2].resist == false) 
+		if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
 			battle_data[id2].wis_debuff += 0.2; 
+		battle_data[id2].temp_resist = false;
 	}
 	if (name == "4: Fast Shift") { 
 		battle_data[id1].spd_buff += 0.2; 
-		if (battle_data[id2].resist == false) 
+		if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
 			battle_data[id2].wis_debuff += 0.2; 
+		battle_data[id2].temp_resist = false;
 	}
 	if (name == "4: All Shift") { 
 		battle_data[id1].atk_buff += 0.2, battle_data[id1].def_buff += 0.2, battle_data[id1].spd_buff += 0.2, battle_data[id1].wis_buff += 0.2; 
-		if (battle_data[id2].resist == false) 
+		if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
 			battle_data[id2].atk_debuff += 0.4, battle_data[id2].def_debuff += 0.4, battle_data[id2].spd_debuff += 0.4, battle_data[id2].wis_debuff += 0.4; 
+		battle_data[id2].temp_resist = false;
 	}
 	var temp = name.split(" ");
 	switch (temp[1]){
 		case "Attack": 
 			if (temp[2].charAt(0) == "+")
 				battle_data[id1].atk_buff += parseFloat(temp[2].slice(1)) / 100.0;
-			else
-				if (battle_data[id2].resist == false) battle_data[id2].atk_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+			else{
+				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
+					battle_data[id2].atk_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+				battle_data[id2].temp_resist = false;
+			}
 			break;
 		case "Defend": 
 			if (temp[2].charAt(0) == "+")
 				battle_data[id1].def_buff += parseFloat(temp[2].slice(1)) / 100.0;
-			else
-				if (battle_data[id2].resist == false) battle_data[id2].def_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+			else{
+				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
+					battle_data[id2].def_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+				battle_data[id2].temp_resist = false;
+			}
 			break;
 		case "Speed": 
 			if (temp[2].charAt(0) == "+")
 				battle_data[id1].spd_buff += parseFloat(temp[2].slice(1)) / 100.0;
-			else
-				if (battle_data[id2].resist == false) battle_data[id2].spd_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+			else{
+				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
+					battle_data[id2].spd_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+				battle_data[id2].temp_resist = false;
+			}
 			break;
 		case "Wisdom": 
 			if (temp[2].charAt(0) == "+")
 				battle_data[id1].wis_buff += parseFloat(temp[2].slice(1)) / 100.0;
-			else
-				if (battle_data[id2].resist == false) battle_data[id2].wis_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+			else{
+				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false) 
+					battle_data[id2].wis_debuff += parseFloat(temp[2].slice(1)) / 100.0;
+				battle_data[id2].temp_resist = false;
+			}
 			break;
 		case "Attack_Defend": battle_data[id1].atk_buff += 0.1; battle_data[id1].def_buff += 0.1; break;
 		case "Attack_Speed": battle_data[id1].atk_buff += 0.1; battle_data[id1].spd_buff += 0.1; break;
@@ -804,8 +820,12 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			else
 				chance = 0.8;
 			if (Math.random() < chance){
-				battle_data[id2].poisoned = true;
-				document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
+				if (battle_data[id2].temp_resist == true)
+					battle_data[id2].temp_resist = false;
+				else{
+					battle_data[id2].poisoned = true;
+					document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
+				}
 			}
 		}
 	}
@@ -925,20 +945,22 @@ function death_status_apply(id1, id2, skill){
 	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
 	switch (skill){
 		case "3: Deep Sleep":
-			if (battle_data[id2].resist == false){
+			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false){
 				battle_data[id2].sleep = true;
 				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes asleep! <br>";
 			}
 			else
 				document.getElementById('res').innerHTML += "But it failed! <br>";
+			battle_data[id2].temp_resist = false;
 			break;
 		case "3: Crystallize":
-			if (battle_data[id2].resist == false){
+			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false){
 				battle_data[id2].freeze = true;
 				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes crystallized! <br>";
 			}
 			else
 				document.getElementById('res').innerHTML += "But it failed! <br>";
+			battle_data[id2].temp_resist = false;
 			break;
 	}
 }
@@ -981,16 +1003,22 @@ function death_damage_apply(id1, id2, skill){
 			break;
 		case "4: Martyr":
 			chance = 0.8;
-			if (Math.random() < chance && battle_data[id2].resist == false)
-				mp_damage_dealer(id1, id2, skill, 0, 0, 0.15 + martyr_modifier[id1]);
+			if (Math.random() < chance){
+				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
+					mp_damage_dealer(id1, id2, skill, 0, 0, 0.15 + martyr_modifier[id1]);
+				else
+					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+				battle_data[id2].temp_resist = false;
+			}
 			else
 				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
 		case "4: Entrust":
-			if (battle_data[id2].resist == false)
+			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
 				mp_damage_dealer(id1, id2, skill, 0, 0, 1);
 			else
 				document.getElementById('res').innerHTML += "But it failed! <br>";
+			battle_data[id2].temp_resist = false;
 		case "4: Force":
 			inherit_atk = Math.round(base_data[id1].atk * 0.08), inherit_def = Math.round(base_data[id1].def * 0.08);
 			inherit_spd = Math.round(base_data[id1].spd * 0.08), inherit_wis = Math.round(base_data[id1].wis * 0.08);
@@ -1158,7 +1186,7 @@ function data_init(team_num, card_num){
 		"inherit_atk": inherit_atk, "inherit_def": inherit_def, "inherit_spd": inherit_spd, "inherit_wis": inherit_wis,
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
 		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
-		"resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false};
+		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false};
 
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 }
@@ -1203,8 +1231,14 @@ function battle(){
 				for (var j = 0; j < 4; j++){
 					if (battle_data[matrix[j][0]].sleep == false && matrix[j][2].charAt(0) == i.toString() && matrix[j][3] == false){
 						switch (i){
-							// Priority 1: Quick Strike, Wise Smite
+							// Priority 1: Quick Strike, Wise Smite, Resist Smite
 							case 1:
+								if (matrix[j][2] == "1: Resist Smite"){
+									if (battle_data[matrix[j][0]].mp_left < 600) 
+										break;
+									else
+										battle_data[matrix[j][0]].mp_left -= 300;
+								}
 								if (battle_data[matrix[j][0]].mp_left < 300)
 									break;
 								battle_data[matrix[j][0]].mp_left -= 300;
@@ -1213,10 +1247,15 @@ function battle(){
 								switch (matrix[j][2]){
 									case "1: Quick Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 0.85 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
 									case "1: Assault Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 1.6 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
+									case "1: Resist Smite":
 									case "1: Wise Smite": 
 										battle_data[matrix[j][1]].dodgable = false; 
 										damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 0.95, 0.5, 0); 
 										battle_data[matrix[j][1]].dodgable = true; 
+										if (matrix[j][2] == "1: Resist Smite"){
+											battle_data[matrix[j][0]].temp_resist = true;
+											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains temporary resistance against bad status! <br>";
+										}
 										break;
 								}
 			
@@ -1305,10 +1344,12 @@ function battle(){
 								if (battle_data[matrix[j][0]].mp_left >= 300 && 
 									(battle_data[matrix[j][1]].atk_buff + battle_data[matrix[j][1]].def_buff + battle_data[matrix[j][1]].spd_buff + battle_data[matrix[j][1]].wis_buff != 0 || 
 									battle_data[matrix[j][1]].inherit_atk + battle_data[matrix[j][1]].inherit_def + battle_data[matrix[j][1]].inherit_spd + battle_data[matrix[j][1]].inherit_wis != 0 || 
-									battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].healing > 0 || battle_data[matrix[j][1]].shield == true || battle_data[matrix[j][1]].multi_block == true )){
+									battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].temp_resist == true || battle_data[matrix[j][1]].healing > 0 || battle_data[matrix[j][1]].shield == true || 
+									battle_data[matrix[j][1]].multi_block == true )){
 									battle_data[matrix[j][1]].atk_buff = 0, battle_data[matrix[j][1]].def_buff = 0, battle_data[matrix[j][1]].spd_buff = 0, battle_data[matrix[j][1]].wis_buff = 0; 
 									battle_data[matrix[j][1]].inherit_atk = 0, battle_data[matrix[j][1]].inherit_def = 0, battle_data[matrix[j][1]].inherit_spd = 0, battle_data[matrix[j][1]].inherit_wis = 0; 
-									battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].shield = false, battle_data[matrix[j][1]].multi_block = false;
+									battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].temp_resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].shield = false;
+									battle_data[matrix[j][1]].multi_block = false;
 									keep = false;
 									battle_data[matrix[j][0]].mp_left -= 300;
 									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
@@ -1325,9 +1366,14 @@ function battle(){
 										chance = 0.75 + ability_lock_modifier[matrix[j][0]];
 									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 									battle_data[matrix[j][0]].mp_left -= 600;
-									if (battle_data[matrix[j][1]].resist == false && Math.random() < chance){
-										battle_data[matrix[j][1]].mp_left = 0;
-										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
+									if (Math.random() < chance){
+										if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
+											battle_data[matrix[j][1]].mp_left = 0;
+											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
+										}
+										else
+											document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+										battle_data[matrix[j][1]].temp_resist = false;
 									}
 									else
 										document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
@@ -1379,9 +1425,14 @@ function battle(){
 											chance = 0.6;
 										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 600;
-										if (battle_data[matrix[j][1]].resist == false && Math.random() < chance){
-											battle_data[matrix[j][1]].mind_break = true;
-											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
+										if (Math.random() < chance){
+											if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
+												battle_data[matrix[j][1]].mind_break = true;
+												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
+											}
+											else
+												document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+											battle_data[matrix[j][1]].temp_resist = false;
 										}
 										else
 											document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
@@ -1391,12 +1442,13 @@ function battle(){
 									if (battle_data[matrix[j][0]].mp_left >= 300){
 										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 300;
-										if (battle_data[matrix[j][1]].resist == false){
+										if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
 											battle_data[matrix[j][1]].sleep = true;
 											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
 										}
 										else
 											document.getElementById('res').innerHTML += "But it failed! <br> ";
+										battle_data[matrix[j][1]].temp_resist = false;
 									}
 								}
 								break;
@@ -1571,8 +1623,13 @@ function battle(){
 					dmg_rate = 1.5, mp_cost = 1500;
 					break;
 				case "Meteor Nova":
+				case "Mighty Cyclone":
 					attack_attr = base_data[attacker].attr;
-					dmg_rate = 1.3 + meteor_skill_modifier[attacker], reduc_rate = 0, mp_cost = 1300;
+					reduc_rate = 0;
+					if(attack_skill == "Meteor Nova")
+						dmg_rate = 1.3 + meteor_skill_modifier[attacker], mp_cost = 1300;
+					else
+						dmg_rate = 1.5 + meteor_skill_modifier[attacker], mp_cost = 1400;
 					battle_data[defender].blockable = false;
 					break;
 				case "Variable Slash":

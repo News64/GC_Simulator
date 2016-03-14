@@ -1,6 +1,31 @@
 var data =
 [
 	{
+		"name": "魔海侯フォルネウス / Forneus, the Abyss Lord of Water", "attr": "Water", "hp": 2420, "mp": 1660, "atk": 1700, "def": 1680, "spd": 1430, "wis": 1970, 
+		"attack_skill": "Mighty Cyclone", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スカイデストロイヤー / Sky Destroyer", "attr": "Darkness", "hp": 2370, "mp": 1540, "atk": 1560, "def": 1640, "spd": 1442, "wis": 2030, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ステュクス / Styx", "attr": "Undead", "hp": 2580, "mp": 1520, "atk": 1840, "def": 1700, "spd": 1450, "wis": 1740, 
+		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スルクカムイ / Suruku Kamuy", "attr": "Poison", "hp": 2500, "mp": 1640, "atk": 1940, "def": 1620, "spd": 1420, "wis": 1780, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "プロメテウス・ブレイズ / Prometheus of Blaze", "attr": "Earth", "hp": 2260, "mp": 1460, "atk": 1800, "def": 1700, "spd": 1360, "wis": 1480, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Attack +25%", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "シスターシュバリエ / Sister Chevalier", "attr": "Light", "hp": 2420, "mp": 1520, "atk": 1820, "def": 1700, "spd": 1452, "wis": 1780, 
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "Soul Taker",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1824,7 +1849,7 @@ var attack_skills = [
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Dimension Gate",
 	"Laevateinn", "Arondight", "Gram",
-	"Meteor Impact", "Meteor Nova",
+	"Meteor Impact", "Meteor Nova", "Mighty Cyclone",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
 	"Water +1", "Water +2", "Water +3", "Water +4", 
 	"Earth +1", "Earth +2", "Earth +3", "Earth +4", "Fire +4EX",
@@ -1841,7 +1866,7 @@ var attack_skills = [
 
 var intro_skills = [
 	"0: None",
-	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite",
+	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite", "1: Resist Smite",
 	"2: Divine Shield",
 	"3: Resistance",
 	"4: Power Shift", "4: Mind Shift", "4: Fast Shift", "4: All Shift",
