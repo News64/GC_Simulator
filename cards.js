@@ -13,7 +13,7 @@ var data =
 	{
 		"name": "ステュクス / Styx", "attr": "Undead", "hp": 2580, "mp": 1520, "atk": 1840, "def": 1700, "spd": 1450, "wis": 1740, 
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
-		"dodge_skill1": "Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
 		"name": "スルクカムイ / Suruku Kamuy", "attr": "Poison", "hp": 2500, "mp": 1640, "atk": 1940, "def": 1620, "spd": 1420, "wis": 1780, 
