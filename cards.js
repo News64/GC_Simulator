@@ -1766,6 +1766,16 @@ var data =
 		"attack_skill": "Giga Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
+	{
+		"name": "最強ルナ / Almighty Luna", "attr": "Light", "hp": 2460, "mp": 1560, "atk": 1720, "def": 1680, "spd": 1442, "wis": 2050, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強アグロナ / Almighty Aglona", "attr": "Water", "hp": 2600, "mp": 1820, "atk": 1920, "def": 1880, "spd": 1464, "wis": 1720, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Resistance", "intro_skill2": "Healing Light", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
