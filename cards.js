@@ -1801,6 +1801,11 @@ var data =
 		"attack_skill": "Laevateinn", "intro_skill1": "Resistance", "intro_skill2": "Healing Light", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強エンシェント・ファング / Almighty Ancient Fang", "attr": "Earth", "hp": 2620, "mp": 1650, "atk": 1960, "def": 2000, "spd": 1432, "wis": 1920, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
