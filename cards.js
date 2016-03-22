@@ -1,8 +1,18 @@
 var data =
 [
 	{
+		"name": "魔炎長アウナス / Aunas, the Abyss Lord of Fire", "attr": "Fire", "hp": 2510, "mp": 1620, "atk": 1720, "def": 1660, "spd": 1430, "wis": 2050, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "魔戦士公アラケス / Arakes, the Abyss Lord of Earth", "attr": "Earth", "hp": 2600, "mp": 1660, "atk": 1830, "def": 2400, "spd": 1430, "wis": 1500, 
+		"attack_skill": "Meteor Impact EX", "intro_skill1": "Resistance", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "魔海侯フォルネウス / Forneus, the Abyss Lord of Water", "attr": "Water", "hp": 2420, "mp": 1660, "atk": 1700, "def": 1680, "spd": 1430, "wis": 1970, 
-		"attack_skill": "Mighty Cyclone", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"attack_skill": "Meteor Nova EX", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
@@ -1854,7 +1864,7 @@ var attack_skills = [
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Dimension Gate",
 	"Laevateinn", "Arondight", "Gram",
-	"Meteor Impact", "Meteor Nova", "Mighty Cyclone",
+	"Meteor Impact", "Meteor Impact EX", "Meteor Nova", "Meteor Nova EX",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
 	"Water +1", "Water +2", "Water +3", "Water +4", 
 	"Earth +1", "Earth +2", "Earth +3", "Earth +4", "Fire +4EX",

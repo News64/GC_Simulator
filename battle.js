@@ -1605,8 +1605,13 @@ function battle(){
 					dmg_rate = 1.5, mp_cost = 1400;
 					break;
 				case "Meteor Impact":
+				case "Meteor Impact EX":
 					attack_attr = "Physical";
-					dmg_rate = 1.3 + meteor_skill_modifier[attacker], reduc_rate = 0, mp_cost = 1300;
+					reduc_rate = 0;
+					if(attack_skill == "Meteor Impact")
+						dmg_rate = 1.3 + meteor_skill_modifier[attacker], mp_cost = 1300;
+					else
+						dmg_rate = 1.5 + meteor_skill_modifier[attacker], mp_cost = 1400;
 					battle_data[defender].blockable = false;
 					break;
 				case "Dimension Gate":
@@ -1623,7 +1628,7 @@ function battle(){
 					dmg_rate = 1.5, mp_cost = 1500;
 					break;
 				case "Meteor Nova":
-				case "Mighty Cyclone":
+				case "Meteor Nova EX":
 					attack_attr = base_data[attacker].attr;
 					reduc_rate = 0;
 					if(attack_skill == "Meteor Nova")
