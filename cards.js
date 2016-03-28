@@ -1,6 +1,16 @@
 var data =
 [
 	{
+		"name": "晶雷竜タラスク / Tarasque", "attr": "Thunder", "hp": 2530, "mp": 1560, "atk": 1740, "def": 1740, "spd": 1452, "wis": 2000, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "魔龍公ビューネイ / Byunei, the Abyss Lord of Wind", "attr": "Wind", "hp": 2160, "mp": 3240, "atk": 1500, "def": 1560, "spd": 1480, "wis": 2000, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Resist Smite", "intro_skill2": "Wise Smite +S", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "魔炎長アウナス / Aunas, the Abyss Lord of Fire", "attr": "Fire", "hp": 2510, "mp": 1620, "atk": 1720, "def": 1660, "spd": 1430, "wis": 2050, 
 		"attack_skill": "Undead +4EX", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1816,6 +1826,11 @@ var data =
 		"attack_skill": "Laevateinn", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強 歌舞伎・雷神 / Almighty Kabuki Raijin", "attr": "Thunder", "hp": 2560, "mp": 1640, "atk": 1840, "def": 1820, "spd": 1480, "wis": 1820, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 
 	// From here: Only name is updated
 	/*
@@ -1881,7 +1896,7 @@ var attack_skills = [
 
 var intro_skills = [
 	"0: None",
-	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite", "1: Resist Smite",
+	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite", "1: Wise Smite +S", "1: Resist Smite",
 	"2: Divine Shield",
 	"3: Resistance",
 	"4: Power Shift", "4: Mind Shift", "4: Fast Shift", "4: All Shift",

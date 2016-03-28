@@ -1249,8 +1249,12 @@ function battle(){
 									case "1: Assault Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 1.6 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
 									case "1: Resist Smite":
 									case "1: Wise Smite": 
+									case "1: Wise Smite +S": 
 										battle_data[matrix[j][1]].dodgable = false; 
-										damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 0.95, 0.5, 0); 
+										if (matrix[j][2] == "1: Wise Smite +S")
+											damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 1.7, 0.5, 0); 
+										else
+											damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 0.95, 0.5, 0); 
 										battle_data[matrix[j][1]].dodgable = true; 
 										if (matrix[j][2] == "1: Resist Smite"){
 											battle_data[matrix[j][0]].temp_resist = true;
