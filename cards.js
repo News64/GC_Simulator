@@ -1866,7 +1866,7 @@ var red_exs = [
 
 var blue_exs = [
 	"None", "Ability Lock", "Mind Break", "Explosion", "Revival", "Quick Strike", "Martyr", "Deft Step", "Giga Slash", "Poison Attack", 
-	"Soul Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
+	"Soul Slash", "Variable Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
 ];
 
 

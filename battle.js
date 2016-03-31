@@ -10,6 +10,7 @@ var deft_step_modifier = [0, 0];
 var giga_slash_modifier = [0, 0];
 var poison_attack_modifier = [0, 0];
 var soul_slash_modifier = [0, 0];
+var variable_slash_modifier = [0, 0];
 var undead_skill_modifier = [0, 0];
 var meteor_skill_modifier = [0, 0];
 var mp_burn_modifier = [0, 0];
@@ -1105,6 +1106,9 @@ function team_battle(){
 			case "Soul Slash":
 				if (i != 0) soul_slash_modifier[1] = 999;
 				if (i != 1) soul_slash_modifier[0] = 999;
+			case "Variable Slash":
+				if (i != 0) variable_slash_modifier[1] += 0.1;
+				if (i != 1) variable_slash_modifier[0] += 0.1;
 				break;
 			case "Undead Skill":
 				if (i != 0) undead_skill_modifier[1] += 0.03;
@@ -1643,7 +1647,7 @@ function battle(){
 					break;
 				case "Variable Slash":
 					attack_attr = base_data[attacker].attr;
-					dmg_rate = 1.7;
+					dmg_rate = 1.7 + variable_slash_modifier[attacker];
 					if (battle_data[attacker].mp_left > 1400)
 						mp_cost = 1400;
 					else
