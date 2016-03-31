@@ -1,6 +1,11 @@
 var data =
 [
 	{
+		"name": "天使エリス / Angelic Eris", "attr": "Light", "hp": 2220, "mp": 1440, "atk": 1820, "def": 1540, "spd": 1436, "wis": 1600, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "晶雷竜タラスク / Tarasque", "attr": "Thunder", "hp": 2530, "mp": 1560, "atk": 1740, "def": 1740, "spd": 1452, "wis": 2000, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
