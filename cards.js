@@ -1,6 +1,16 @@
 var data =
 [
 	{
+		"name": "夜桜イブリース / Iblis of Night Sakura", "attr": "Undead", "hp": 2520, "mp": 1720, "atk": 1920, "def": 1780, "spd": 1460, "wis": 1700, 
+		"attack_skill": "Predator", "intro_skill1": "Absolute Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "桜咲ゼノビア・クピードー / Zenobia & Cupido of Sakura", "attr": "Darkness", "hp": 2620, "mp": 300, "atk": 1860, "def": 1680, "spd": 1482, "wis": 1680, 
+		"attack_skill": "Soul Buster", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Free Revival", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "天使エリス / Angelic Eris", "attr": "Light", "hp": 2220, "mp": 1440, "atk": 1820, "def": 1540, "spd": 1436, "wis": 1600, 
 		"attack_skill": "Laevateinn", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1836,7 +1846,11 @@ var data =
 		"attack_skill": "Dark Giga Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
-
+	{
+		"name": "最強ヘレル・ベン・サハル / Almighty Shahar", "attr": "Darkness", "hp": 2440, "mp": 1640, "atk": 1750, "def": 1650, "spd": 1444, "wis": 2070, 
+		"attack_skill": "Arondight", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	*/
@@ -1909,7 +1923,7 @@ var intro_skills = [
 	"5: Celestial Pulse",
 	"6: Ability Lock", "6: Dark Ability Lock",
 	"7: Transposition",
-	"8: Mind Break", "8: Dark Mind Break", "8: Fast Sleep",
+	"8: Mind Break", "8: Dark Mind Break", "8: Absolute Mind Break", "8: Fast Sleep",
 	"4: Attack +10%", "4: Attack +20%", "4: Attack +25%",
 	"4: Defend +10%", "4: Defend +20%", "4: Defend +25%", "4: Defend +40%",
 	"4: Speed +10%", "4: Speed +20%", "4: Speed +25%",
@@ -1924,7 +1938,7 @@ var intro_skills = [
 
 var death_skills = [
 	"0: None",
-	"1: Revival", "1: Dark Revival",
+	"1: Revival", "1: Dark Revival", "1: Free Revival",
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",

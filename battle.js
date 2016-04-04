@@ -867,13 +867,13 @@ function death_proc(id1, id2){
 	var death2 = base_data[id1].death_skill2;
 
 	// Revival
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "1" && battle_data[id1].death1_used == false){
+	if (death1.charAt(0) == "1" && battle_data[id1].death1_used == false){
 		revival_apply(id1, death1);
 		battle_data[id1].death1_used = true;
 		if (battle_data[id1].hp_left > 0)
 			return;
 	}
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "1" && battle_data[id1].death2_used == false){
+	if (death2.charAt(0) == "1" && battle_data[id1].death2_used == false){
 		revival_apply(id1, death2);
 		battle_data[id1].death2_used = true;
 		if (battle_data[id1].hp_left > 0)
@@ -908,6 +908,8 @@ function death_proc(id1, id2){
 }
 
 function revival_apply(id, name){
+	if (name.search("Free") == -1 && battle_data[id].mp_left < 1)
+		return;
 	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	var chance;
 	if (name.search("Dark") != -1)
@@ -917,7 +919,8 @@ function revival_apply(id, name){
 
 	if (Math.random() < chance){
 		battle_data[id].hp_left = base_data[id].hp;
-		battle_data[id].mp_left -= 1;
+		if (name.search("Free") == -1)
+			battle_data[id].mp_left -= 1;
 		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") revives! (Chance: " + chance.toString() + ") <br>";
 	}
 	else
@@ -1061,7 +1064,7 @@ function team_battle(){
 	// Blue EX & Colosseum Skill Buff Effect
 	ability_lock_modifier = [0, 0], mind_break_modifier = [0, 0], explosion_modifier = [0, 0], revival_modifier = [0, 0], quick_strike_modifier = [0, 0];
 	martyr_modifier = [0, 0], deft_step_modifier = [0, 0], giga_slash_modifier = [0, 0], poison_attack_modifier = [0, 0], soul_slash_modifier = [0, 0];
-	undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], soul_mind_modifier = [0, 0];
+	variable_slash_modifier = [0, 0], undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], soul_mind_modifier = [0, 0];
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 	var blue = [ document.getElementById('blue_ex1').value, document.getElementById('blue_ex2').value, document.getElementById('colo_buff_skill').value ];
 	for (var i = 0; i < 3; i++){
@@ -1190,7 +1193,8 @@ function data_init(team_num, card_num){
 		"inherit_atk": inherit_atk, "inherit_def": inherit_def, "inherit_spd": inherit_spd, "inherit_wis": inherit_wis,
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
 		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
-		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false};
+		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false,
+		"abs_mind_break": false};
 
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 }
@@ -1426,8 +1430,8 @@ function battle(){
 							// Priority 8: Mind Break, Fast Sleep
 							case 8:
 								if (matrix[j][2].search("Mind Break") != -1){
-									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true){
-										if (matrix[j][2].search("Dark") != -1)
+									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true){
+										if (matrix[j][2].search("Dark") != -1 || matrix[j][2].search("Absolute") != -1)
 											chance = 1;
 										else
 											chance = 0.6;
@@ -1435,7 +1439,10 @@ function battle(){
 										battle_data[matrix[j][0]].mp_left -= 600;
 										if (Math.random() < chance){
 											if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
-												battle_data[matrix[j][1]].mind_break = true;
+												if(matrix[j][2].search("Absolute") != -1)
+													battle_data[matrix[j][1]].abs_mind_break = true;
+												else
+													battle_data[matrix[j][1]].mind_break = true;
 												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
 											}
 											else
@@ -1557,7 +1564,7 @@ function battle(){
 					break;
 				case "Crush Drain":
 				case "Soul Drain":
-					if (battle_data[attacker].mind_break == true){
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
 						attack_skill = "Normal Attack";
 						break;
 					}
@@ -1569,7 +1576,7 @@ function battle(){
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
 					break;
 				case "Life Drain":
-					if (battle_data[attacker].mind_break == true){
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
 						attack_skill = "Normal Attack";
 						break;
 					}
@@ -1578,7 +1585,8 @@ function battle(){
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
 					break;
 				case "Energy Drain":
-					if (battle_data[attacker].mind_break == true || battle_data[defender].mp_left <= 0 || battle_data[attacker].mp_left == base_data[attacker].mp ){
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true || battle_data[defender].mp_left <= 0 
+					|| battle_data[attacker].mp_left == base_data[attacker].mp ){
 						attack_skill = "Normal Attack";
 						break;
 					}
@@ -1589,7 +1597,7 @@ function battle(){
 				case "Heal": 
 				case "Greater Heal": 
 				case "Holy Grail": 
-					if (battle_data[attacker].mind_break == true || battle_data[attacker].hp_left / base_data[attacker].hp > 0.8){
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true || battle_data[attacker].hp_left / base_data[attacker].hp > 0.8){
 						attack_skill = "Normal Attack";
 						break;
 					}
@@ -1600,7 +1608,7 @@ function battle(){
 					attack_attr = "None";
 					break;
 				case "Predator":
-					if (battle_data[attacker].mind_break == true){
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
 						attack_skill = "Normal Attack";
 						break;
 					}
@@ -1669,8 +1677,8 @@ function battle(){
 			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") spends " + hp_cost + " HP! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
 
 		// Mind Break Effect
-		if (battle_data[attacker].mind_break ==  true){
-			if (Math.random() < 0.8 + mind_break_modifier[attacker]){
+		if (battle_data[attacker].mind_break ==  true || battle_data[attacker].abs_mind_break == true){
+			if (battle_data[attacker].abs_mind_break == true || Math.random() < 0.8 + mind_break_modifier[attacker]){
 				battle_data[attacker].dodgable = battle_data[defender].dodgable, battle_data[attacker].counterable = battle_data[defender].counterable;
 				battle_data[attacker].no_death = battle_data[defender].no_death, battle_data[attacker].blockable = battle_data[defender].blockable;
 				battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
