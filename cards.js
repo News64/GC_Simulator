@@ -1,5 +1,23 @@
 var data =
 [
+
+	{
+		"name": "スピリッツサファイア / Spirits Sapphire", "attr": "Water", "hp": 2510, "mp": 1600, "atk": 1520, "def": 1680, "spd": 1430, "wis": 2000, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "女郎蜘蛛 / Joro Spider", "attr": "Poison", "hp": 2470, "mp": 1730, "atk": 1910, "def": 1700, "spd": 1440, "wis": 1740, 
+		"attack_skill": "Predator", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Crush Drain"
+	},
+	{
+		"name": "ジャヒ・ファントム / Phantom Jahi", "attr": "Undead", "hp": 2060, "mp": 1300, "atk": 1340, "def": 1580, "spd": 1380, "wis": 1780, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Deft Step", "dodge_skill2": "Mirage Drive", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Wisdom +25%"
+	},
 	{
 		"name": "夜桜イブリース / Iblis of Night Sakura", "attr": "Undead", "hp": 2520, "mp": 1720, "atk": 1920, "def": 1780, "spd": 1460, "wis": 1700, 
 		"attack_skill": "Predator", "intro_skill1": "Absolute Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
@@ -1850,6 +1868,11 @@ var data =
 		"name": "最強ヘレル・ベン・サハル / Almighty Shahar", "attr": "Darkness", "hp": 2440, "mp": 1640, "atk": 1750, "def": 1650, "spd": 1444, "wis": 2070, 
 		"attack_skill": "Arondight", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強キメラ / Almighty Greater Chimera", "attr": "Poison", "hp": 2620, "mp": 1080, "atk": 1940, "def": 1740, "spd": 1430, "wis": 1740, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
