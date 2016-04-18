@@ -16,6 +16,7 @@ var meteor_skill_modifier = [0, 0];
 var mp_burn_modifier = [0, 0];
 var soul_mind_modifier = [0, 0];
 var inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
+var show_log = true;
 
 
 function test_output(){
@@ -624,7 +625,8 @@ function buff_apply(id1, id2, name){
 		battle_data[id1].mp_left -= mp_cost;
 
 
-	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + name.slice(3) + "! <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	if (name == "4: Multi Block") {
 		battle_data[id1].multi_block = true;
 		return;
@@ -812,8 +814,9 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		battle_data[id2].freeze = false;
 	}
 	if (damage != 0){
-		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " damage to " 
-			+ base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
+		if (show_log == true)
+			document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " damage to " 
+				+ base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
 		if (poison != "None" && (attack_skill.charCodeAt(0) < 48 || attack_skill.charCodeAt(0) > 57) && attack_skill != "Counter" && battle_data[id2].hp_left > 0 && 
 			battle_data[id1].mind_break == false && battle_data[id2].resist == false){
 			if (poison == "Deadly Poison")
@@ -825,21 +828,29 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 					battle_data[id2].temp_resist = false;
 				else{
 					battle_data[id2].poisoned = true;
-					document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
+					if (show_log == true)
+						document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
 				}
 			}
 		}
 	}
 	else{
-		if (dodged == true)
-			document.getElementById('res').innerHTML += "But it is dodged! (Chance: " + dodge_chance.toString() + ") <br>";
-		else if (blocked == true)
-			document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals 0 damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ") because of the shield! <br>";
+		if (dodged == true){
+			if (show_log == true)
+				document.getElementById('res').innerHTML += "But it is dodged! (Chance: " + dodge_chance.toString() + ") <br>";
+		}
+		else if (blocked == true){
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals 0 damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ") because of the shield! <br>";
+		}
 		else if (attack_skill.search("Undead +") != -1){
-			if (insta_death == true)
-				document.getElementById('res').innerHTML += "Death effect succeeds on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + chance.toString() + ") <br>";
+			if (insta_death == true){
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "Death effect succeeds on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + chance.toString() + ") <br>";
+			}
 			else
-				document.getElementById('res').innerHTML += "Death effect does not work on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + (1 - chance).toString() + ")<br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "Death effect does not work on " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! (Chance: " + (1 - chance).toString() + ")<br>";
 		}
 	}
 	return damage;
@@ -855,7 +866,8 @@ function mp_damage_dealer(id1, id2, attack_skill, dmg_rate, reduc_rate, percenta
 	if (damage > battle_data[id2].mp_left && attack_skill == "Energy Drain")
 		damage = battle_data[id2].mp_left;
 	battle_data[id2].mp_left -= damage;
-	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " MP damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! MP: " + battle_data[id2].mp_left + "/" + base_data[id2].mp + " <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " MP damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! MP: " + battle_data[id2].mp_left + "/" + base_data[id2].mp + " <br>";
 	return damage;
 }
 
@@ -910,7 +922,8 @@ function death_proc(id1, id2){
 function revival_apply(id, name){
 	if (name.search("Free") == -1 && battle_data[id].mp_left < 1)
 		return;
-	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	var chance;
 	if (name.search("Dark") != -1)
 		chance = 1;
@@ -921,14 +934,17 @@ function revival_apply(id, name){
 		battle_data[id].hp_left = base_data[id].hp;
 		if (name.search("Free") == -1)
 			battle_data[id].mp_left -= 1;
-		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") revives! (Chance: " + chance.toString() + ") <br>";
+		if (show_log == true)
+			document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") revives! (Chance: " + chance.toString() + ") <br>";
 	}
 	else
-		document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+		if (show_log == true)
+			document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 }
 
 function last_stand_apply(id, name){
-	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	var chance;
 	battle_data[id].hp_left = 1;
 	if (name.search("Bastion") != -1)
@@ -946,24 +962,29 @@ function death_status_apply(id1, id2, skill){
 	else
 		battle_data[id1].mp_left -= mp_cost;
 
-	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
 	switch (skill){
 		case "3: Deep Sleep":
 			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false){
 				battle_data[id2].sleep = true;
-				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes asleep! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes asleep! <br>";
 			}
 			else
-				document.getElementById('res').innerHTML += "But it failed! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "But it failed! <br>";
 			battle_data[id2].temp_resist = false;
 			break;
 		case "3: Crystallize":
 			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false){
 				battle_data[id2].freeze = true;
-				document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes crystallized! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes crystallized! <br>";
 			}
 			else
-				document.getElementById('res').innerHTML += "But it failed! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "But it failed! <br>";
 			battle_data[id2].temp_resist = false;
 			break;
 	}
@@ -980,7 +1001,8 @@ function death_damage_apply(id1, id2, skill){
 	else
 		battle_data[id1].mp_left -= mp_cost;
 
-	document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") uses " + skill.slice(3) + "! <br>";
 	temp1 = battle_data[id2].dodgable, temp2 = battle_data[id2].counterable, temp3 = battle_data[id2].no_death, temp4 = battle_data[id2].blockable;
 	battle_data[id2].dodgable = false, battle_data[id2].counterable = false, battle_data[id2].no_death = true, battle_data[id2].blockable = true;
 	switch (skill){
@@ -989,7 +1011,8 @@ function death_damage_apply(id1, id2, skill){
 			if (Math.random() < chance)
 				damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left);
 			else
-				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
 		case "4: Dark Explosion":
 			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left);
@@ -1011,17 +1034,20 @@ function death_damage_apply(id1, id2, skill){
 				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
 					mp_damage_dealer(id1, id2, skill, 0, 0, 0.15 + martyr_modifier[id1]);
 				else
-					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 				battle_data[id2].temp_resist = false;
 			}
 			else
-				document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
 		case "4: Entrust":
 			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
 				mp_damage_dealer(id1, id2, skill, 0, 0, 1);
 			else
-				document.getElementById('res').innerHTML += "But it failed! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += "But it failed! <br>";
 			battle_data[id2].temp_resist = false;
 		case "4: Force":
 			inherit_atk = Math.round(base_data[id1].atk * 0.08), inherit_def = Math.round(base_data[id1].def * 0.08);
@@ -1040,7 +1066,8 @@ function heal_apply(id, percentage, fixed){
 	if (battle_data[id].hp_left + amount > base_data[id].hp)
 		amount = base_data[id].hp - battle_data[id].hp_left;
 	battle_data[id].hp_left += amount;
-	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") heals " + amount.toString() + " damage to itself! HP: " + battle_data[id].hp_left + "/" + base_data[id].hp + " <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") heals " + amount.toString() + " damage to itself! HP: " + battle_data[id].hp_left + "/" + base_data[id].hp + " <br>";
 }
 
 function mp_heal_apply(id, percentage, fixed){
@@ -1052,7 +1079,25 @@ function mp_heal_apply(id, percentage, fixed){
 	if (battle_data[id].mp_left + amount > base_data[id].mp)
 		amount = base_data[id].mp - battle_data[id].mp_left;
 	battle_data[id].mp_left += amount;
-	document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") recovers " + amount.toString() + " MP to itself! MP: " + battle_data[id].mp_left + "/" + base_data[id].mp + " <br>";
+	if (show_log == true)
+		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") recovers " + amount.toString() + " MP to itself! MP: " + battle_data[id].mp_left + "/" + base_data[id].mp + " <br>";
+}
+
+
+
+function win_rate_test(){
+	show_log = false;
+	var temp_res = 0, win_rate = 0;
+
+	for (var i = 0; i < 1000; i++)
+		temp_res += 1 - team_battle();
+
+	win_rate = temp_res / 10.0;
+	document.getElementById('res').innerHTML = "Win Rate for Team 1 is " + win_rate.toString() + "%";
+
+	show_log = true;
+
+	return win_rate;
 }
 
 
@@ -1148,8 +1193,9 @@ function team_battle(){
 			case 1:
 				curr[1 - temp_result] += 1;
 				if (curr[1 - temp_result] > num_cards){
-					document.getElementById('res').innerHTML += "Team " + (temp_result + 1).toString() + " wins! <br>";
-					return;
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "Team " + (temp_result + 1).toString() + " wins! <br>";
+					return temp_result;
 				}
 				else
 					data_init(2 - temp_result, curr[1 - temp_result]);
@@ -1157,18 +1203,21 @@ function team_battle(){
 			case -1:
 				curr[0] += 1, curr[1] += 1;
 				if (curr[0] > num_cards && curr[1] > num_cards){
-					document.getElementById('res').innerHTML += "Team 1 wins! <br>";
-					return;
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "Team 1 wins! <br>";
+					return 0;
 				}
 				if (curr[0] > num_cards){
-					document.getElementById('res').innerHTML += "Team 2 wins! <br>";
-					return;
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "Team 2 wins! <br>";
+					return 1;
 				}
 				else
 					data_init(1, curr[0]);
 				if (curr[1] > num_cards){
-					document.getElementById('res').innerHTML += "Team 1 wins! <br>";
-					return;
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "Team 1 wins! <br>";
+					return 0;
 				}
 				else
 					data_init(2, curr[1]);
@@ -1215,7 +1264,8 @@ function battle(){
 
 	while (true){ 
 		// Speed Decision
-		document.getElementById('res').innerHTML += "Speed: " + battle_data[0].exceeded_speed.toString() + " vs " + battle_data[1].exceeded_speed.toString() + "<br>";
+		if (show_log == true)
+			document.getElementById('res').innerHTML += "Speed: " + battle_data[0].exceeded_speed.toString() + " vs " + battle_data[1].exceeded_speed.toString() + "<br>";
 		if (battle_data[0].exceeded_speed >= battle_data[1].exceeded_speed){
 			attacker = 0, defender = 1;
 		}
@@ -1250,7 +1300,8 @@ function battle(){
 								if (battle_data[matrix[j][0]].mp_left < 300)
 									break;
 								battle_data[matrix[j][0]].mp_left -= 300;
-								document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 								pre_hp = battle_data[matrix[j][1]].hp_left;
 								switch (matrix[j][2]){
 									case "1: Quick Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 0.85 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
@@ -1266,7 +1317,8 @@ function battle(){
 										battle_data[matrix[j][1]].dodgable = true; 
 										if (matrix[j][2] == "1: Resist Smite"){
 											battle_data[matrix[j][0]].temp_resist = true;
-											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains temporary resistance against bad status! <br>";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains temporary resistance against bad status! <br>";
 										}
 										break;
 								}
@@ -1281,10 +1333,12 @@ function battle(){
 										break;
 									}
 									else if (battle_data[matrix[j][1]].hp_left <= 0){
-										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
 										result = 1 - matrix[j][1];
 										if (battle_data[1 - matrix[j][1]].hp_left <= 0){
-											document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]].card + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]].card + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
 											result = -1;
 										}
 										matrix[j][3] = true;
@@ -1302,7 +1356,8 @@ function battle(){
 									if (battle_data[matrix[j][1]].mp_left >= 300 && battle_data[matrix[j][1]].mind_break == false && 
 										battle_data[matrix[j][1]].sleep == false && counter_skill != "None"){
 										battle_data[matrix[j][1]].mp_left -= 300;
-										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[matrix[j][1]].mp_left + "/" + base_data[matrix[j][1]].mp + " <br>";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[matrix[j][1]].mp_left + "/" + base_data[matrix[j][1]].mp + " <br>";
 										battle_data[matrix[j][0]].dodgable = false, battle_data[matrix[j][0]].counterable = false;
 										damage_dealer(matrix[j][1], matrix[j][0], counter_skill, "None", 0, 0, 1.2 * damage);
 										battle_data[matrix[j][0]].dodgable = true, battle_data[matrix[j][0]].counterable = true;
@@ -1315,10 +1370,12 @@ function battle(){
 												intro_activate = true;
 												break;
 											}
-											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") is defeated! <br>";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") is defeated! <br>";
 											result = 1 - matrix[j][0];
 											if (battle_data[1 - matrix[j][0]].hp_left <= 0){
-												document.getElementById('res').innerHTML += base_data[1 - matrix[j][0]].card + " (Team " + (2 - matrix[j][0]).toString() + ") is defeated! <br>";
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[1 - matrix[j][0]].card + " (Team " + (2 - matrix[j][0]).toString() + ") is defeated! <br>";
 												result = -1;
 											}
 											matrix[j][3] = true;
@@ -1336,7 +1393,8 @@ function battle(){
 								if (battle_data[matrix[j][0]].mp_left >= 600){
 									battle_data[matrix[j][0]].mp_left -= 600;
 									battle_data[matrix[j][0]].shield = true;
-									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") can block an attack for once! <br>";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") can block an attack for once! <br>";
 								}
 								break;
 							// Priority 3: Resistance 
@@ -1344,7 +1402,8 @@ function battle(){
 								if (battle_data[matrix[j][0]].mp_left >= 600){
 									battle_data[matrix[j][0]].mp_left -= 600;
 									battle_data[matrix[j][0]].resist = true;
-									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains resistance against bad status! <br>";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains resistance against bad status! <br>";
 								}
 								break;
 							// Priority 4: Buff, Debuff, Multi Block, Healing Light
@@ -1364,7 +1423,8 @@ function battle(){
 									battle_data[matrix[j][1]].multi_block = false;
 									keep = false;
 									battle_data[matrix[j][0]].mp_left -= 300;
-									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 								}
 								else
 									keep = true;
@@ -1376,25 +1436,30 @@ function battle(){
 										chance = 1;
 									else
 										chance = 0.75 + ability_lock_modifier[matrix[j][0]];
-									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 									battle_data[matrix[j][0]].mp_left -= 600;
 									if (Math.random() < chance){
 										if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
 											battle_data[matrix[j][1]].mp_left = 0;
-											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s MP becomes 0! (Chance: " + chance.toString() + ") <br> ";
 										}
 										else
-											document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 										battle_data[matrix[j][1]].temp_resist = false;
 									}
 									else
-										document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 								}
 								break;
 							// Priority 7: Transposition
 							case 7:
 								if (battle_data[matrix[j][0]].mp_left >= 300){
-									document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 									battle_data[matrix[j][0]].mp_left -= 300;
 									temp = battle_data[matrix[j][1]].hp_left;
 									battle_data[matrix[j][1]].hp_left = battle_data[matrix[j][1]].mp_left;
@@ -1402,7 +1467,8 @@ function battle(){
 									temp = base_data[matrix[j][1]].hp;
 									base_data[matrix[j][1]].hp = base_data[matrix[j][1]].mp;
 									base_data[matrix[j][1]].mp = temp;
-									document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s HP and MP are switched! <br> ";
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s HP and MP are switched! <br> ";
 
 									if (battle_data[matrix[j][1]].hp_left <= 0){
 										death_proc(matrix[j][1], 1 - matrix[j][1]);
@@ -1412,10 +1478,12 @@ function battle(){
 											intro_activate = true;
 											break;
 										}
-										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") is defeated! <br>";
 										result = 1 - matrix[j][1];
 										if (battle_data[1 - matrix[j][1]].hp_left <= 0){
-											document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]] + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[1 - matrix[j][1]] + " (Team " + (2 - matrix[j][1]).toString() + ") is defeated! <br>";
 											result = -1;
 										}
 										matrix[j][3] = true;
@@ -1435,7 +1503,8 @@ function battle(){
 											chance = 1;
 										else
 											chance = 0.6;
-										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 600;
 										if (Math.random() < chance){
 											if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
@@ -1443,26 +1512,32 @@ function battle(){
 													battle_data[matrix[j][1]].abs_mind_break = true;
 												else
 													battle_data[matrix[j][1]].mind_break = true;
-												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes confused! (Chance: " + chance.toString() + ") <br> ";
 											}
 											else
-												document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+												if (show_log == true)
+													document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 											battle_data[matrix[j][1]].temp_resist = false;
 										}
 										else
-											document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 									}
 								}
 								else if (matrix[j][2].search("Fast Sleep") != -1){
 									if (battle_data[matrix[j][0]].mp_left >= 300){
-										document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
+										if (show_log == true)
+											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 300;
 										if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
 											battle_data[matrix[j][1]].sleep = true;
-											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
 										}
 										else
-											document.getElementById('res').innerHTML += "But it failed! <br> ";
+											if (show_log == true)
+												document.getElementById('res').innerHTML += "But it failed! <br> ";
 										battle_data[matrix[j][1]].temp_resist = false;
 									}
 								}
@@ -1497,9 +1572,11 @@ function battle(){
 		if (battle_data[attacker].poisoned == true){
 			damage = Math.round((0.4 + poison_attack_modifier[attacker]) * base_data[attacker].hp);
 			battle_data[attacker].hp_left -= damage;
-			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") takes " + damage.toString() + " damage from poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") takes " + damage.toString() + " damage from poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
 			if (battle_data[attacker].hp_left <= 0){
-				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
 				result = 1 - attacker;
 				return result;
 			}
@@ -1507,14 +1584,16 @@ function battle(){
 		// Sleep
 		if (battle_data[attacker].sleep == true){
 			battle_data[attacker].sleep = false;
-			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of sleep! <br>";
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of sleep! <br>";
 			battle_length++;
 			continue;
 		}
 		// Freeze
 		if (battle_data[attacker].freeze == true){
 			battle_data[attacker].freeze = false;
-			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of crytallization! <br>";
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of crytallization! <br>";
 			battle_length++;
 			continue;
 		}
@@ -1620,6 +1699,10 @@ function battle(){
 					attack_attr = "Physical";
 					dmg_rate = 1.5, mp_cost = 1400;
 					break;
+				case "Balmung":
+					attack_attr = "Physical";
+					dmg_rate = 1.5, mp_cost = 1500;
+					break;
 				case "Meteor Impact":
 				case "Meteor Impact EX":
 					attack_attr = "Physical";
@@ -1672,9 +1755,11 @@ function battle(){
 		}
 		battle_data[attacker].hp_left -= hp_cost;
 		battle_data[attacker].mp_left -= mp_cost;
-		document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") attacks with " + attack_skill + "! MP: " + battle_data[attacker].mp_left + "/" + base_data[attacker].mp + " <br>";
+		if (show_log == true)
+			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") attacks with " + attack_skill + "! MP: " + battle_data[attacker].mp_left + "/" + base_data[attacker].mp + " <br>";
 		if (hp_cost != 0)
-			document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") spends " + hp_cost + " HP! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") spends " + hp_cost + " HP! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
 
 		// Mind Break Effect
 		if (battle_data[attacker].mind_break ==  true || battle_data[attacker].abs_mind_break == true){
@@ -1713,7 +1798,7 @@ function battle(){
 				heal_apply(attacker, 0, 0.2 * damage);
 			else if (attack_skill == "Laevateinn" || attack_skill == "Arondight")
 				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 0.5 + mp_burn_modifier[attacker]);
-			else if (attack_skill == "Gram")
+			else if (attack_skill == "Balmung" || attack_skill == "Gram" )
 				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 1 + mp_burn_modifier[attacker]);
 		}
 		
@@ -1733,23 +1818,28 @@ function battle(){
 					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
 						case 1: 
 							battle_data[attacker].atk_buff += 0.2, battle_data[attacker].def_buff += 0.2, battle_data[attacker].spd_buff += 0.2, battle_data[attacker].wis_buff += 0.2; 
-							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have greatly increased! <br>";
+							if (show_log == true)
+								document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have greatly increased! <br>";
 							break; 
 						case 0: 
 							battle_data[attacker].atk_buff += 0.1, battle_data[attacker].def_buff += 0.1, battle_data[attacker].spd_buff += 0.1, battle_data[attacker].wis_buff += 0.1; 
-							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have increased! <br>";
+							if (show_log == true)
+								document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have increased! <br>";
 							break;
 						case -1: 
 							battle_data[attacker].atk_debuff += 0.1, battle_data[attacker].def_debuff += 0.1, battle_data[attacker].spd_debuff += 0.1, battle_data[attacker].wis_debuff += 0.1; 
-							document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have decreased! <br>";
+							if (show_log == true)
+								document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ")'s stats have decreased! <br>";
 							break;
 					}
 				}
 
-				document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") is defeated! <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") is defeated! <br>";
 				result = 1 - defender;
 				if (battle_data[1 - defender].hp_left <= 0){
-					document.getElementById('res').innerHTML += base_data[1 - defender].card + " (Team " + (2 - defender).toString() + ") is defeated! <br>";
+					if (show_log == true)
+						document.getElementById('res').innerHTML += base_data[1 - defender].card + " (Team " + (2 - defender).toString() + ") is defeated! <br>";
 					result = -1;
 				}
 				return result;
@@ -1764,7 +1854,8 @@ function battle(){
 			if (damage > 0 && battle_data[defender].counterable == true && battle_data[defender].mp_left >= 300 && 
 				battle_data[defender].mind_break == false && battle_data[defender].sleep == false && counter_skill != "None"){
 				battle_data[defender].mp_left -= 300;
-				document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
+				if (show_log == true)
+					document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
 				battle_data[attacker].dodgable = false, battle_data[attacker].counterable = false;
 				damage_dealer(defender, attacker, counter_skill, "None", 0, 0, 1.2 * damage);
 				battle_data[attacker].dodgable = true, battle_data[attacker].counterable = true;
@@ -1778,10 +1869,12 @@ function battle(){
 						battle_length++;
 						continue;
 					}
-					document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
+					if (show_log == true)
+						document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
 					result = 1 - attacker;
 					if (battle_data[1 - attacker].hp_left <= 0){
-						document.getElementById('res').innerHTML += base_data[1 - attacker].card + " (Team " + (2 - attacker).toString() + ") is defeated! <br>";
+						if (show_log == true)
+							document.getElementById('res').innerHTML += base_data[1 - attacker].card + " (Team " + (2 - attacker).toString() + ") is defeated! <br>";
 						result = -1;
 					}
 					return result;

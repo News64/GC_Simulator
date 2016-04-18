@@ -2,6 +2,17 @@ var data =
 [
 
 	{
+		"name": "エリゴス / Eligos", "attr": "Machine", "hp": 2560, "mp": 3800, "atk": 1840, "def": 2480, "spd": 1460, "wis": 1560, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ロゼッタ / Rosetta", "attr": "Earth", "hp": 2580, "mp": 1760, "atk": 1960, "def": 1700, "spd": 1484, "wis": 1780, 
+		"attack_skill": "Balmung", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Deep Sleep"
+	},
+	{
 		"name": "スピリッツサファイア / Spirits Sapphire", "attr": "Water", "hp": 2510, "mp": 1600, "atk": 1520, "def": 1680, "spd": 1430, "wis": 2000, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "Ability Lock", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1874,6 +1885,11 @@ var data =
 		"attack_skill": "Soul Slash", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
 	},
+	{
+		"name": "最強シグルーン / Almighty Sigrun", "attr": "Machine", "hp": 2530, "mp": 1550, "atk": 1740, "def": 1720, "spd": 1454, "wis": 2020, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	*/
@@ -1920,7 +1936,7 @@ var attack_skills = [
 	"Energy Drain",
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Dimension Gate",
-	"Laevateinn", "Arondight", "Gram",
+	"Laevateinn", "Arondight", "Balmung", "Gram",
 	"Meteor Impact", "Meteor Impact EX", "Meteor Nova", "Meteor Nova EX",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
 	"Water +1", "Water +2", "Water +3", "Water +4", 
