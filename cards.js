@@ -1,6 +1,16 @@
 var data =
 [
-
+	
+	{
+		"name": "ゲートキーパー / Gatekeeper", "attr": "Undead", "hp": 2640, "mp": 1760, "atk": 1600, "def": 2020, "spd": 1464, "wis": 2000, 
+		"attack_skill": "Undead +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アルプ / Alp", "attr": "Fire", "hp": 2520, "mp": 1620, "atk": 2010, "def": 1660, "spd": 1460, "wis": 1780, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	{
 		"name": "エリゴス / Eligos", "attr": "Machine", "hp": 2560, "mp": 3800, "atk": 1840, "def": 2480, "spd": 1460, "wis": 1560, 
 		"attack_skill": "Dark Giga Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
@@ -1890,6 +1900,12 @@ var data =
 		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強サタン / Almighty Dark Emperor", "attr": "Undead", "hp": 2600, "mp": 1640, "atk": 2010, "def": 1720, "spd": 1430, "wis": 1800, 
+		"attack_skill": "Predator", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
+		"alt_skill": "Laevateinn, Revival, Dark Mirage Drive"
+	},
 	// From here: Only name is updated
 	/*
 	*/
@@ -1944,7 +1960,7 @@ var attack_skills = [
 	"Thunder +1", "Thunder +2", "Thunder +3", "Thunder +4", "Thunder +4EX",
 	"Wind +1", "Wind +2", "Wind +3", "Wind +4", 
 	"Poison +1", "Poison +2", "Poison +3", "Poison +4",
-	"Undead +1", "Undead +2", "Undead +3", "Undead +4", "Undead +4EX",
+	"Undead +1", "Undead +2", "Undead +3", "Undead +4", "Undead +4EX", "Undead +S",
 	"Machine +4",
 	"Light +1", "Light +2", "Light +3", "Light +4", "Light +4EX", "Light +S",  
 	"Darkness +1", "Darkness +2", "Darkness +3", "Darkness +4", "Darkness +4EX",
@@ -1989,7 +2005,8 @@ var death_skills = [
 var dodge_skills = [
 	"None",
 	"Deft Step", "Dark Deft Step",
-	"Mirage Drive", "Dark Mirage Drive"
+	"Mirage Drive", "Dark Mirage Drive",
+	"Cursing Dance"
 ];
 
 

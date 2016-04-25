@@ -719,7 +719,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	var d1 = base_data[id2].dodge_skill1; 
 	var d2 = base_data[id2].dodge_skill2;
 	var damage = 0, chance = 0, dodge_chance = 0, attr_adv;
-	var insta_death = false, dodged = false, undead = false, blocked = false;
+	var insta_death = false, dodged = false, undead = false, blocked = false, curse = false;
 	var poison = base_data[id1].poison_skill;
 
 	if (attack_attr == "None"){
@@ -740,11 +740,19 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				else
 					dodge_chance = 0.7 + deft_step_modifier[id2];
 			}
+			if (battle_data[id2].mp_left >= 600 && (d1.search("Cursing Dance") != -1 || d2.search("Cursing Dance") != -1) && battle_data[id2].cursing_dance > 0){
+				battle_data[id2].cursing_dance -= 1;
+				dodge_chance = 1;
+				curse = true;
+			}
 		}
 		if (Math.random() < dodge_chance){
-			battle_data[id2].mp_left -= 300;
 			damage = 0;
 			dodged = true;
+			if (curse == true)
+				battle_data[id2].mp_left -= 600;
+			else
+				battle_data[id2].mp_left -= 300;
 		}
 		else{
 			damage = Math.round( (base_data[id1].atk + battle_data[id1].inherit_atk) * (dmg_rate + battle_data[id1].atk_buff - battle_data[id1].atk_debuff)
@@ -766,11 +774,19 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				else
 					dodge_chance = 0.8 + deft_step_modifier[id2];
 			}
+			if (battle_data[id2].mp_left >= 600 && (d1.search("Cursing Dance") != -1 || d2.search("Cursing Dance") != -1) && battle_data[id2].cursing_dance > 0){
+				battle_data[id2].cursing_dance -= 1;
+				dodge_chance = 1;
+				curse = true;
+			}
 		}
 		if (Math.random() < dodge_chance){
-			battle_data[id2].mp_left -= 300;
 			damage = 0;
 			dodged = true;
+			if (curse == true)
+				battle_data[id2].mp_left -= 600;
+			else
+				battle_data[id2].mp_left -= 300;
 		}
 		else{
 			if (battle_data[id2].multi_block == true)
@@ -780,6 +796,8 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 
 			if (attack_skill == "Undead +4EX")
 				dmg_rate = 1.5;
+			if (attack_skill == "Undead +S")
+				dmg_rate = 1.9;
 
 			damage = Math.round( (base_data[id1].wis + battle_data[id1].inherit_wis) * (dmg_rate + battle_data[id1].wis_buff - battle_data[id1].wis_debuff) * (1 + attr_adv * 0.15)
 				   - (base_data[id2].wis + battle_data[id2].inherit_wis) * (1 + battle_data[id2].wis_buff - battle_data[id2].wis_debuff) * reduc_rate);
@@ -787,7 +805,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				undead = true;
 				chance = damage / battle_data[id2].hp_left + undead_skill_modifier[id1];
 				damage = 0;
-				if (attack_skill != "Undead +4EX"){
+				if (attack_skill != "Undead +4EX" && attack_skill != "Undead +S"){
 					if (chance > 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1)
 						chance = 0.9 - (4 - parseInt(attack_skill.charAt(8))) * 0.1;
 				}
@@ -838,6 +856,15 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		if (dodged == true){
 			if (show_log == true)
 				document.getElementById('res').innerHTML += "But it is dodged! (Chance: " + dodge_chance.toString() + ") <br>";
+			if (curse == true){
+				if (show_log == true)
+					document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance's effect! <br>";
+				if (battle_data[id1].resist == false)
+					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7);	
+				else
+					if (show_log == true)
+						document.getElementById('res').innerHTML += "But it failed! <br> ";
+			}
 		}
 		else if (blocked == true){
 			if (show_log == true)
@@ -1243,7 +1270,10 @@ function data_init(team_num, card_num){
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
 		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
 		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false,
-		"abs_mind_break": false};
+		"abs_mind_break": false, "cursing_dance": 0};
+
+	if (base_data[team_num - 1].dodge_skill1 == "Cursing Dance" || base_data[team_num - 1].dodge_skill2 == "Cursing Dance")
+		battle_data[team_num - 1].cursing_dance += 1;
 
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 }
@@ -1447,12 +1477,12 @@ function battle(){
 										}
 										else
 											if (show_log == true)
-												document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+												document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 										battle_data[matrix[j][1]].temp_resist = false;
 									}
 									else
 										if (show_log == true)
-											document.getElementById('res').innerHTML += "But if failed! (Chance: " + (1 - chance).toString() + ") <br> ";
+											document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br> ";
 								}
 								break;
 							// Priority 7: Transposition
