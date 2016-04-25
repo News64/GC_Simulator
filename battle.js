@@ -859,7 +859,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			if (curse == true){
 				if (show_log == true)
 					document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance's effect! <br>";
-				if (battle_data[id1].resist == false)
+				if (battle_data[id1].resist == false && battle_data[id1].temp_resist == false)
 					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7);	
 				else
 					if (show_log == true)
