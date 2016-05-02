@@ -859,8 +859,10 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			if (curse == true){
 				if (show_log == true)
 					document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance's effect! <br>";
-				if (battle_data[id1].resist == false && battle_data[id1].temp_resist == false)
+				if (battle_data[id1].resist == false && battle_data[id1].temp_resist == false){
 					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7);	
+					battle_data[id1].temp_resist = false;
+				}
 				else
 					if (show_log == true)
 						document.getElementById('res').innerHTML += "But it failed! <br> ";
@@ -1600,7 +1602,7 @@ function battle(){
 		}
 		// Poison Damage
 		if (battle_data[attacker].poisoned == true){
-			damage = Math.round((0.4 + poison_attack_modifier[attacker]) * base_data[attacker].hp);
+			damage = Math.round((0.4 + poison_attack_modifier[defender]) * base_data[attacker].hp);
 			battle_data[attacker].hp_left -= damage;
 			if (show_log == true)
 				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") takes " + damage.toString() + " damage from poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";

@@ -2,6 +2,26 @@ var data =
 [
 	
 	{
+		"name": "インロン / Yinglong", "attr": "Wind", "hp": 2470, "mp": 1660, "atk": 1720, "def": 1700, "spd": 1460, "wis": 2020, 
+		"attack_skill": "Wind +S", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヴェヌス / Venus", "attr": "Thunder", "hp": 2620, "mp": 1690, "atk": 2010, "def": 1760, "spd": 1484, "wis": 1760, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "エスメラルダ・ゴールド / Gold Esmeralda", "attr": "Light", "hp": 2600, "mp": 1560, "atk": 1890, "def": 1720, "spd": 1430, "wis": 1820, 
+		"attack_skill": "Laevateinn", "intro_skill1": "Assault Strike", "intro_skill2": "Dark Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "エスメラルダ・シルバー / Silver Esmeralda", "attr": "Light", "hp": 2420, "mp": 1540, "atk": 1520, "def": 1680, "spd": 1455, "wis": 2000, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ゲートキーパー / Gatekeeper", "attr": "Undead", "hp": 2640, "mp": 1760, "atk": 1600, "def": 2020, "spd": 1464, "wis": 2000, 
 		"attack_skill": "Undead +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1906,6 +1926,11 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
 		"alt_skill": "Laevateinn, Revival, Dark Mirage Drive"
 	},
+	{
+		"name": "最強シリア / Almighty Thyria", "attr": "Thunder", "hp": 2400, "mp": 1550, "atk": 2035, "def": 1620, "spd": 1430, "wis": 1680, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	*/
@@ -1958,7 +1983,7 @@ var attack_skills = [
 	"Water +1", "Water +2", "Water +3", "Water +4", 
 	"Earth +1", "Earth +2", "Earth +3", "Earth +4", "Fire +4EX",
 	"Thunder +1", "Thunder +2", "Thunder +3", "Thunder +4", "Thunder +4EX",
-	"Wind +1", "Wind +2", "Wind +3", "Wind +4", 
+	"Wind +1", "Wind +2", "Wind +3", "Wind +4", "Wind +S",
 	"Poison +1", "Poison +2", "Poison +3", "Poison +4",
 	"Undead +1", "Undead +2", "Undead +3", "Undead +4", "Undead +4EX", "Undead +S",
 	"Machine +4",
