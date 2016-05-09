@@ -2,6 +2,17 @@ var data =
 [
 	
 	{
+		"name": "セクアナ / Sequana", "attr": "Water", "hp": 2420, "mp": 1700, "atk": 1400, "def": 1580, "spd": 1452, "wis": 2050, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ツインブレイヴ / Twin Brave", "attr": "Darkness", "hp": 2640, "mp": 1690, "atk": 2010, "def": 1780, "spd": 1464, "wis": 1840, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Divine Shield, Laevateinn, Last Bastion"
+	},
+	{
 		"name": "インロン / Yinglong", "attr": "Wind", "hp": 2470, "mp": 1660, "atk": 1720, "def": 1700, "spd": 1460, "wis": 2020, 
 		"attack_skill": "Wind +S", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1930,6 +1941,11 @@ var data =
 		"name": "最強シリア / Almighty Thyria", "attr": "Thunder", "hp": 2400, "mp": 1550, "atk": 2035, "def": 1620, "spd": 1430, "wis": 1680, 
 		"attack_skill": "Normal Attack", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "最強ドラゴンライダー / Almighty Dragon Rider", "attr": "Wind", "hp": 2540, "mp": 1690, "atk": 2010, "def": 1860, "spd": 1430, "wis": 1680, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Ability Lock", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
