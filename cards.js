@@ -2,6 +2,21 @@ var data =
 [
 	
 	{
+		"name": "ダーインスレイヴ / Dainsleif", "attr": "Earth", "hp": 2600, "mp": 1730, "atk": 1780, "def": 1520, "spd": 1452, "wis": 2000, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ハルピュイア / Harpyia", "attr": "Poison", "hp": 2460, "mp": 1710, "atk": 1740, "def": 1660, "spd": 1446, "wis": 2090, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "珠宿伏姫 / Princess Fuse of Beads", "attr": "Water", "hp": 2180, "mp": 1170, "atk": 1900, "def": 1620, "spd": 1430, "wis": 1620, 
+		"attack_skill": "Predator", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "セクアナ / Sequana", "attr": "Water", "hp": 2420, "mp": 1700, "atk": 1400, "def": 1580, "spd": 1452, "wis": 2050, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1947,6 +1962,11 @@ var data =
 		"attack_skill": "Meteor Impact", "intro_skill1": "Ability Lock", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強イザナギ / Almighty Izanagi", "attr": "Light", "hp": 2540, "mp": 1460, "atk": 2010, "def": 1780, "spd": 1464, "wis": 1780, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	*/
@@ -1966,7 +1986,7 @@ var attributes = [
 ];
 
 
-var colo_rates = [ "0", "3%", "5%", "8%", "12%" ];
+var colo_rates = [ "0", "3%", "5%", "7%", "8%", "12%" ];
 
 
 var red_exs = [
