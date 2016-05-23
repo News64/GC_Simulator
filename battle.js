@@ -1177,8 +1177,8 @@ function team_battle(){
 				if (i != 1) giga_slash_modifier[0] += 0.15;
 				break;
 			case "Poison Attack":
-				if (i != 0) poison_attack_modifier[1] += 0.3;
-				if (i != 1) poison_attack_modifier[0] += 0.3;
+				if (i != 0) poison_attack_modifier[1] += 0.25;
+				if (i != 1) poison_attack_modifier[0] += 0.25;
 				break;
 			case "Soul Slash":
 				if (i != 0) soul_slash_modifier[1] = 999;

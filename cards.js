@@ -2,6 +2,21 @@ var data =
 [
 	
 	{
+		"name": "ゼパル / Zepar", "attr": "Fire", "hp": 2180, "mp": 1200, "atk": 2270, "def": 1620, "spd": 1452, "wis": 1560, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "マリア・ハインライン / Maria Heinlein", "attr": "Machine", "hp": 2580, "mp": 1660, "atk": 1520, "def": 1600, "spd": 1480, "wis": 2020, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Wise Smite +S", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "狂騒のヴァハ / Macha of Wild Anger", "attr": "Wind", "hp": 2320, "mp": 1460, "atk": 1865, "def": 1580, "spd": 1414, "wis": 1660, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ダーインスレイヴ / Dainsleif", "attr": "Earth", "hp": 2600, "mp": 1730, "atk": 1780, "def": 1520, "spd": 1452, "wis": 2000, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1965,6 +1980,11 @@ var data =
 	{
 		"name": "最強イザナギ / Almighty Izanagi", "attr": "Light", "hp": 2540, "mp": 1460, "atk": 2010, "def": 1780, "spd": 1464, "wis": 1780, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強オグン / Almighty Ogun", "attr": "Fire", "hp": 2560, "mp": 1790, "atk": 1800, "def": 1720, "spd": 1462, "wis": 2090, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
