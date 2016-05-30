@@ -2,6 +2,21 @@ var data =
 [
 	
 	{
+		"name": "紅娘 / Hongniang", "attr": "Naught", "hp": 2840, "mp": 1990, "atk": 1970, "def": 1820, "spd": 1650, "wis": 2240, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "セレーネ / Selene", "attr": "Light", "hp": 2640, "mp": 1860, "atk": 1580, "def": 1740, "spd": 1484, "wis": 2110, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ウッコ / Ukko", "attr": "Thunder", "hp": 2680, "mp": 1650, "atk": 1500, "def": 2160, "spd": 1450, "wis": 2090, 
+		"attack_skill": "Arondight", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ゼパル / Zepar", "attr": "Fire", "hp": 2180, "mp": 1200, "atk": 2270, "def": 1620, "spd": 1452, "wis": 1560, 
 		"attack_skill": "Dark Giga Slash", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -1985,6 +2000,11 @@ var data =
 	{
 		"name": "最強オグン / Almighty Ogun", "attr": "Fire", "hp": 2560, "mp": 1790, "atk": 1800, "def": 1720, "spd": 1462, "wis": 2090, 
 		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強エクレール / Almighty Eclair", "attr": "Thunder", "hp": 2580, "mp": 4000, "atk": 1840, "def": 1660, "spd": 1460, "wis": 1760, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
