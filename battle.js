@@ -1530,7 +1530,7 @@ function battle(){
 							// Priority 8: Mind Break, Fast Sleep
 							case 8:
 								if (matrix[j][2].search("Mind Break") != -1){
-									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true){
+									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true && battle_data[matrix[j][0]].sleep != true){
 										if (matrix[j][2].search("Dark") != -1 || matrix[j][2].search("Absolute") != -1)
 											chance = 1;
 										else
@@ -1558,7 +1558,7 @@ function battle(){
 									}
 								}
 								else if (matrix[j][2].search("Fast Sleep") != -1){
-									if (battle_data[matrix[j][0]].mp_left >= 300){
+									if (battle_data[matrix[j][0]].mp_left >= 300 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true && battle_data[matrix[j][0]].sleep != true){
 										if (show_log == true)
 											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 300;

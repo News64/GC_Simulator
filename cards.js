@@ -2,6 +2,21 @@ var data =
 [
 	
 	{
+		"name": "サターン / Saturn", "attr": "Machine", "hp": 2680, "mp": 1800, "atk": 1880, "def": 1780, "spd": 1432, "wis": 1780, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "ユーノー / Juno", "attr": "Wind", "hp": 2600, "mp": 1800, "atk": 2020, "def": 1740, "spd": 1464, "wis": 1820, 
+		"attack_skill": "Predator", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "魂喰鬼ナイトゴーント / Night-gaunt the Soul Eater", "attr": "Undead", "hp": 2420, "mp": 1460, "atk": 1660, "def": 1620, "spd": 1440, "wis": 2000, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "Mind Crush",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "紅娘 / Hongniang", "attr": "Naught", "hp": 2840, "mp": 1990, "atk": 1970, "def": 1820, "spd": 1650, "wis": 2240, 
 		"attack_skill": "Arondight", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2007,9 +2022,15 @@ var data =
 		"attack_skill": "Dark Giga Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強ネメシス / Almighty Nemesis", "attr": "Undead", "hp": 2500, "mp": 1790, "atk": 1560, "def": 1620, "spd": 1446, "wis": 2110, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Undead +4EX, Fast Sleep, Revival"
+	},
 	// From here: Only name is updated
 	/*
-	*/
+	
 
 
 
@@ -2018,6 +2039,7 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "Resistance", "intro_skill2": "Healing Light", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	}
+	*/
 ];
 
 
