@@ -2,6 +2,32 @@ var data =
 [
 	
 	{
+		"name": "阿修羅・寿 / Asura the Long Lived", "attr": "Fire", "hp": 2440, "mp": 1560, "atk": 1800, "def": 1800, "spd": 1464, "wis": 2045, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Free Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "大海賊シリア / Thyria the Great Pirate", "attr": "Thunder", "hp": 2220, "mp": 1360, "atk": 2050, "def": 1660, "spd": 1436, "wis": 1720, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "Soul Taker +S", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
+		"alt_skill": "Soul Slash"
+	},
+	{
+		"name": "新バンシー・レクイエム / New Banshee Requiem", "attr": "Undead", "hp": 2480, "mp": 1630, "atk": 1700, "def": 1720, "spd": 1464, "wis": 2110, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新タイタン・レジェンド / New Titan the Tremendous", "attr": "Earth", "hp": 2160, "mp": 3560, "atk": 1740, "def": 1660, "spd": 1448, "wis": 2110, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "雷撃王ギルガメッシュ / Gilgamesh the Thunder King", "attr": "Thunder", "hp": 2080, "mp": 1420, "atk": 1540, "def": 1600, "spd": 1412, "wis": 1920, 
+		"attack_skill": "Thunder +4", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "サターン / Saturn", "attr": "Machine", "hp": 2680, "mp": 1800, "atk": 1880, "def": 1780, "spd": 1432, "wis": 1780, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
@@ -2028,6 +2054,11 @@ var data =
 		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Undead +4EX, Fast Sleep, Revival"
 	},
+	{
+		"name": "最強リトルガーネット / Almighty Little Garnet", "attr": "Fire", "hp": 2620, "mp": 1870, "atk": 1960, "def": 1720, "spd": 1460, "wis": 1840, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Divine Shield", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2116,11 +2147,11 @@ var intro_skills = [
 
 var death_skills = [
 	"0: None",
-	"1: Revival", "1: Dark Revival", "1: Free Revival",
+	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival",
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",
-	"4: Soul Taker", "4: Mind Crush",
+	"4: Soul Taker", "4: Mind Crush", "4: Soul Taker +S",
 	"4: Martyr", "4: Entrust", "4: Force"
 ];
 
