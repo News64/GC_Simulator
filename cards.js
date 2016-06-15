@@ -2059,6 +2059,12 @@ var data =
 		"attack_skill": "Crush Drain", "intro_skill1": "Divine Shield", "intro_skill2": "All Shift", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強祝福スケルトン / Almighty Blessed Skeleton", "attr": "Light", "hp": 990, "mp": 364, "atk": 1080, "def": 1050, "spd": 1075, "wis": 930, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "Dark Mirage Drive", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Dark Ability Lock, Holy Grail"
+	},
 	// From here: Only name is updated
 	/*
 	
