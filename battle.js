@@ -718,7 +718,7 @@ function buff_apply(id1, id2, name){
 function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate, fixed){
 	var d1 = base_data[id2].dodge_skill1; 
 	var d2 = base_data[id2].dodge_skill2;
-	var damage = 0, chance = 0, dodge_chance = 0, attr_adv;
+	var damage = 0, chance = 0, dodge_chance = 0, attr_adv, extra_curse = 0;
 	var insta_death = false, dodged = false, undead = false, blocked = false, curse = false;
 	var poison = base_data[id1].poison_skill;
 
@@ -744,6 +744,8 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				battle_data[id2].cursing_dance -= 1;
 				dodge_chance = 1;
 				curse = true;
+				if (d1.search("\\+S") != -1 || d2.search("\\+S") != -1)
+					extra_curse = 0.3;
 			}
 		}
 		if (Math.random() < dodge_chance){
@@ -778,6 +780,8 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				battle_data[id2].cursing_dance -= 1;
 				dodge_chance = 1;
 				curse = true;
+				if (d1.search("\\+S") != -1 || d2.search("\\+S") != -1)
+					extra_curse = 0.3;
 			}
 		}
 		if (Math.random() < dodge_chance){
@@ -857,10 +861,14 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			if (show_log == true)
 				document.getElementById('res').innerHTML += "But it is dodged! (Chance: " + dodge_chance.toString() + ") <br>";
 			if (curse == true){
-				if (show_log == true)
-					document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance's effect! <br>";
+				if (show_log == true){
+					if (extra_curse == 0)
+						document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance's effect! <br>";
+					else
+						document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance +S's effect! <br>";
+				}
 				if (battle_data[id1].resist == false && battle_data[id1].temp_resist == false){
-					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7);	
+					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7 + extra_curse);	
 					battle_data[id1].temp_resist = false;
 				}
 				else
@@ -892,8 +900,10 @@ function mp_damage_dealer(id1, id2, attack_skill, dmg_rate, reduc_rate, percenta
 	else
 		damage = Math.round(base_data[id1].wis * (dmg_rate + battle_data[id1].wis_buff - battle_data[id1].wis_debuff)
 			   - base_data[id2].wis * (1 + battle_data[id2].wis_buff - battle_data[id2].wis_debuff) * reduc_rate);
-	if (damage > battle_data[id2].mp_left && attack_skill == "Energy Drain")
+	
+	if (damage > battle_data[id2].mp_left) 
 		damage = battle_data[id2].mp_left;
+
 	battle_data[id2].mp_left -= damage;
 	if (show_log == true)
 		document.getElementById('res').innerHTML += base_data[id1].card + " (Team " + (id1 + 1).toString() + ") deals " + damage.toString() + " MP damage to " + base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! MP: " + battle_data[id2].mp_left + "/" + base_data[id2].mp + " <br>";
@@ -942,9 +952,9 @@ function death_proc(id1, id2){
 		death_status_apply(id1, id2, death2);
 
 	// Self Destruct
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "4")
+	if (death1.charAt(0) == "4")
 		death_damage_apply(id1, id2, death1);
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "4")
+	if (death2.charAt(0) == "4")
 		death_damage_apply(id1, id2, death2);
 }
 
@@ -1058,6 +1068,7 @@ function death_damage_apply(id1, id2, skill){
 			damage_dealer(id1, id2, skill, "Physical", 1.8 + soul_mind_modifier[id1], 0.5, 0);
 			break;
 		case "4: Mind Crush":
+		case "4: Free Mind Crush":
 			battle_data[id2].blockable = false;
 			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.5 + soul_mind_modifier[id1], 0.5, 0);
 			break;
@@ -1278,7 +1289,7 @@ function data_init(team_num, card_num){
 		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false,
 		"abs_mind_break": false, "cursing_dance": 0};
 
-	if (base_data[team_num - 1].dodge_skill1 == "Cursing Dance" || base_data[team_num - 1].dodge_skill2 == "Cursing Dance")
+	if (base_data[team_num - 1].dodge_skill1.search("Cursing Dance") != -1 || base_data[team_num - 1].dodge_skill2.search("Cursing Dance") != -1)
 		battle_data[team_num - 1].cursing_dance += 1;
 
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
@@ -1750,8 +1761,12 @@ function battle(){
 					battle_data[defender].blockable = false;
 					break;
 				case "Dimension Gate":
+				case "Dimension Gate +S":
 					attack_attr = base_data[attacker].attr;
-					dmg_rate = 1.5, mp_cost = 1300;
+					if(attack_skill == "Dimension Gate")
+						dmg_rate = 1.5, mp_cost = 1300;
+					else
+						dmg_rate = 2, mp_cost = 1600;
 					battle_data[defender].no_death = true;
 					break;
 				case "Arondight":
@@ -1784,7 +1799,7 @@ function battle(){
 			}
 			
 		}
-		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain" && attack_skill != "Life Drain") ){ // Special Normal Attack Decision
+		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain" && attack_skill != "Life Drain" && attack_skill != "Soul Drain") ){ // Special Normal Attack Decision
 			attack_skill = "Normal Attack", attack_attr = "Physical";
 			dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;

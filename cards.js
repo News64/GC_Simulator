@@ -2,6 +2,31 @@ var data =
 [
 	
 	{
+		"name": "バンシー・キャロル / Banshee of Carol", "attr": "Undead", "hp": 2440, "mp": 1620, "atk": 1660, "def": 1620, "spd": 1450, "wis": 2065, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Free Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スフィンクス・アニバーサリー / Anniversary Sphinx", "attr": "Light", "hp": 2440, "mp": 1560, "atk": 2010, "def": 1720, "spd": 1486, "wis": 1840, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance +S", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ローダンテ・フェスタ / Rhodanthe of Festa", "attr": "Wind", "hp": 2600, "mp": 1850, "atk": 1620, "def": 1660, "spd": 1436, "wis": 2020, 
+		"attack_skill": "Dimension Gate +S", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新リリス / Neo Lilith", "attr": "Darkness", "hp": 2620, "mp": 1660, "atk": 1760, "def": 1670, "spd": 1464, "wis": 2110, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新アバドン / Neo Abaddon", "attr": "Poison", "hp": 2400, "mp": 3240, "atk": 2050, "def": 1720, "spd": 1430, "wis": 1460, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
 		"name": "阿修羅・寿 / Asura the Long Lived", "attr": "Fire", "hp": 2440, "mp": 1560, "atk": 1800, "def": 1800, "spd": 1464, "wis": 2045, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Free Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -13,12 +38,12 @@ var data =
 		"alt_skill": "Soul Slash"
 	},
 	{
-		"name": "新バンシー・レクイエム / New Banshee Requiem", "attr": "Undead", "hp": 2480, "mp": 1630, "atk": 1700, "def": 1720, "spd": 1464, "wis": 2110, 
+		"name": "新バンシー・レクイエム / Neo Banshee Requiem", "attr": "Undead", "hp": 2480, "mp": 1630, "atk": 1700, "def": 1720, "spd": 1464, "wis": 2110, 
 		"attack_skill": "Undead +4EX", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "新タイタン・レジェンド / New Titan the Tremendous", "attr": "Earth", "hp": 2160, "mp": 3560, "atk": 1740, "def": 1660, "spd": 1448, "wis": 2110, 
+		"name": "新タイタン・レジェンド / Neo Titan the Tremendous", "attr": "Earth", "hp": 2160, "mp": 3560, "atk": 1740, "def": 1660, "spd": 1448, "wis": 2110, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
@@ -2065,6 +2090,11 @@ var data =
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "Dark Mirage Drive", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Dark Ability Lock, Holy Grail"
 	},
+	{
+		"name": "最強スフィンクス・アニバーサリー / Almighty Anniversary Sphinx", "attr": "Light", "hp": 2690, "mp": 38, "atk": 1910, "def": 1720, "spd": 1500, "wis": 1840, 
+		"attack_skill": "Soul Buster", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Free Dark Revival", "death_skill2": "Deep Sleep",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2111,7 +2141,7 @@ var attack_skills = [
 	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain",
 	"Heal", "Greater Heal", "Holy Grail",
-	"Predator", "Dimension Gate",
+	"Predator", "Dimension Gate", "Dimension Gate +S",
 	"Laevateinn", "Arondight", "Balmung", "Gram",
 	"Meteor Impact", "Meteor Impact EX", "Meteor Nova", "Meteor Nova EX",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
@@ -2157,7 +2187,7 @@ var death_skills = [
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",
-	"4: Soul Taker", "4: Mind Crush", "4: Soul Taker +S",
+	"4: Soul Taker", "4: Mind Crush", "4: Soul Taker +S", "4: Free Mind Crush",
 	"4: Martyr", "4: Entrust", "4: Force"
 ];
 
@@ -2166,7 +2196,7 @@ var dodge_skills = [
 	"None",
 	"Deft Step", "Dark Deft Step",
 	"Mirage Drive", "Dark Mirage Drive",
-	"Cursing Dance"
+	"Cursing Dance", "Cursing Dance +S"
 ];
 
 
