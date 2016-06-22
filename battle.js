@@ -1035,6 +1035,8 @@ function death_damage_apply(id1, id2, skill){
 	if (skill == "4: Soul Taker" || skill == "4: Mind Crush" || skill == "4: Entrust" || skill == "4: Soul Taker +S"){
 		mp_cost = 300;
 	}
+	else if (skill == "4: Explosion" || skill == "4: Dark Explosion" || skill == "4: Burst")
+		mp_cost = 1;
 	if (battle_data[id1].mp_left < mp_cost)
 		return;
 	else
