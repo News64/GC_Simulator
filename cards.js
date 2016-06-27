@@ -2,6 +2,32 @@ var data =
 [
 	
 	{
+		"name": "マーキュリー / Mercury", "attr": "Water", "hp": 2480, "mp": 1690, "atk": 1750, "def": 1600, "spd": 1448, "wis": 2110, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "キラウエア / Kilauea", "attr": "Fire", "hp": 2680, "mp": 3900, "atk": 1960, "def": 1820, "spd": 1442, "wis": 1740, 
+		"attack_skill": "Predator", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "シュヴァルツガイスト / Schwarzgeist", "attr": "Darkness", "hp": 2450, "mp": 1590, "atk": 1780, "def": 1720, "spd": 1470, "wis": 2050, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "Last Bastion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Undead +4EX"
+	},
+	{
+		"name": "時空神クロノス / Chronos, the God of Time", "attr": "Machine", "hp": 2340, "mp": 3430, "atk": 1540, "def": 1780, "spd": 1442, "wis": 2040, 
+		"attack_skill": "Arondight", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真アルテミス / True Artemis", "attr": "Light", "hp": 2280, "mp": 1580, "atk": 1940, "def": 1580, "spd": 1380, "wis": 1620, 
+		"attack_skill": "Crush Drain", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "バンシー・キャロル / Banshee of Carol", "attr": "Undead", "hp": 2440, "mp": 1620, "atk": 1660, "def": 1620, "spd": 1450, "wis": 2065, 
 		"attack_skill": "Meteor Nova", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Free Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2095,6 +2121,11 @@ var data =
 		"attack_skill": "Soul Buster", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Free Dark Revival", "death_skill2": "Deep Sleep",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強アプカルル / Apkallu", "attr": "Water", "hp": 2520, "mp": 1520, "atk": 1840, "def": 1840, "spd": 1470, "wis": 1780, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2130,7 +2161,8 @@ var red_exs = [
 
 var blue_exs = [
 	"None", "Ability Lock", "Mind Break", "Explosion", "Revival", "Quick Strike", "Martyr", "Deft Step", "Giga Slash", "Poison Attack", 
-	"Soul Slash", "Variable Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
+	"Soul Slash", "Variable Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Predator", "Dimension Gate",
+	"Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
 ];
 
 

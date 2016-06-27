@@ -14,6 +14,8 @@ var variable_slash_modifier = [0, 0];
 var undead_skill_modifier = [0, 0];
 var meteor_skill_modifier = [0, 0];
 var mp_burn_modifier = [0, 0];
+var predator_modifier = [0 ,0];
+var dimension_gate_modifier = [0, 0];
 var soul_mind_modifier = [0, 0];
 var inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 var show_log = true;
@@ -1155,7 +1157,8 @@ function team_battle(){
 	// Blue EX & Colosseum Skill Buff Effect
 	ability_lock_modifier = [0, 0], mind_break_modifier = [0, 0], explosion_modifier = [0, 0], revival_modifier = [0, 0], quick_strike_modifier = [0, 0];
 	martyr_modifier = [0, 0], deft_step_modifier = [0, 0], giga_slash_modifier = [0, 0], poison_attack_modifier = [0, 0], soul_slash_modifier = [0, 0];
-	variable_slash_modifier = [0, 0], undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], soul_mind_modifier = [0, 0];
+	variable_slash_modifier = [0, 0], undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], 
+	predator_modifier = [0, 0], dimension_gate_modifier = [0, 0], soul_mind_modifier = [0, 0];
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 	var blue = [ document.getElementById('blue_ex1').value, document.getElementById('blue_ex2').value, document.getElementById('colo_buff_skill').value ];
 	for (var i = 0; i < 3; i++){
@@ -1215,6 +1218,14 @@ function team_battle(){
 			case "Laevateinn & Arondight":
 				if (i != 0) mp_burn_modifier[1] += 0.3;
 				if (i != 1) mp_burn_modifier[0] += 0.3;
+				break;
+			case "Predator":
+				if (i != 0) predator_modifier[1] += 0.1;
+				if (i != 1) predator_modifier[0] += 0.1;
+				break;
+			case "Dimension Gate":
+				if (i != 0) dimension_gate_modifier[1] += 0.1;
+				if (i != 1) dimension_gate_modifier[0] += 0.1;
 				break;
 			case "Soul Taker & Mind Crush 10%":
 				if (i != 0) soul_mind_modifier[1] += 0.1;
@@ -1741,7 +1752,7 @@ function battle(){
 						break;
 					}
 					attack_attr = "Physical";
-					dmg_rate = 1.5, mp_cost = 1400;
+					dmg_rate = 1.5 + predator_modifier[attacker], mp_cost = 1400;
 					battle_data[defender].no_death = true;
 					break;
 				case "Laevateinn":
@@ -1766,9 +1777,9 @@ function battle(){
 				case "Dimension Gate +S":
 					attack_attr = base_data[attacker].attr;
 					if(attack_skill == "Dimension Gate")
-						dmg_rate = 1.5, mp_cost = 1300;
+						dmg_rate = 1.5 + dimension_gate_modifier[attacker], mp_cost = 1300;
 					else
-						dmg_rate = 2, mp_cost = 1600;
+						dmg_rate = 2 + dimension_gate_modifier[attacker], mp_cost = 1600;
 					battle_data[defender].no_death = true;
 					break;
 				case "Arondight":
