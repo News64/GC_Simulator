@@ -2,6 +2,26 @@ var data =
 [
 	
 	{
+		"name": "エンケラドゥス / Enceladus", "attr": "Naught", "hp": 3900, "mp": 1330, "atk": 2070, "def": 2180, "spd": 1684, "wis": 2352, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "スピカ / Spica", "attr": "Undead", "hp": 2440, "mp": 1640, "atk": 1540, "def": 1600, "spd": 1468, "wis": 2010, 
+		"attack_skill": "Meteor Nova EX", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "Last Bastion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ラドン / Neo Ladon", "attr": "Poison", "hp": 2700, "mp": 1850, "atk": 1860, "def": 2400, "spd": 1424, "wis": 1620, 
+		"attack_skill": "Soul Drain", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "緋雷タケミカヅチ / Takemikazuchi of Scarlet Thunder", "attr": "Thunder", "hp": 2180, "mp": 1320, "atk": 1830, "def": 1620, "spd": 1448, "wis": 1560, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Quick Strike", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "マーキュリー / Mercury", "attr": "Water", "hp": 2480, "mp": 1690, "atk": 1750, "def": 1600, "spd": 1448, "wis": 2110, 
 		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2122,8 +2142,13 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "最強アプカルル / Apkallu", "attr": "Water", "hp": 2520, "mp": 1520, "atk": 1840, "def": 1840, "spd": 1470, "wis": 1780, 
+		"name": "最強アプカルル / Almighty Apkallu", "attr": "Water", "hp": 2520, "mp": 1520, "atk": 1840, "def": 1840, "spd": 1470, "wis": 1780, 
 		"attack_skill": "Dark Giga Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強アガートラム / Almighty Agateram", "attr": "Machine", "hp": 2620, "mp": 1540, "atk": 2025, "def": 1860, "spd": 1486, "wis": 1720, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
