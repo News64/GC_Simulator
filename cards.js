@@ -2,6 +2,26 @@ var data =
 [
 	
 	{
+		"name": "ディアマンテドラーゴ / Diamante Drago", "attr": "Earth", "hp": 2740, "mp": 1000, "atk": 1935, "def": 1820, "spd": 1442, "wis": 1560, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Divine Shield", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "オラシオン / Oracion", "attr": "Wind", "hp": 2600, "mp": 1850, "atk": 2025, "def": 1540, "spd": 1454, "wis": 1760, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ウラニア / Neo Urania", "attr": "Light", "hp": 2620, "mp": 1500, "atk": 1580, "def": 1640, "spd": 1460, "wis": 2120, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Fast Sleep", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "闇魔ネヴァン / Nemain the Darkness", "attr": "Darkness", "hp": 2180, "mp": 1160, "atk": 1420, "def": 1500, "spd": 1380, "wis": 1820, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Transposition", "intro_skill2": "Ability Lock", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "エンケラドゥス / Enceladus", "attr": "Naught", "hp": 3900, "mp": 1330, "atk": 2070, "def": 2180, "spd": 1684, "wis": 2352, 
 		"attack_skill": "Variable Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2149,6 +2169,11 @@ var data =
 	{
 		"name": "最強アガートラム / Almighty Agateram", "attr": "Machine", "hp": 2620, "mp": 1540, "atk": 2025, "def": 1860, "spd": 1486, "wis": 1720, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強クラッシュ・ライノス / Almighty Crush Rhino", "attr": "Earth", "hp": 2620, "mp": 1320, "atk": 2040, "def": 1820, "spd": 1480, "wis": 1680, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
