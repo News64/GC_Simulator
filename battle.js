@@ -870,7 +870,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 						document.getElementById('res').innerHTML += base_data[id2].card + "'s Cursing Dance +S's effect! <br>";
 				}
 				if (battle_data[id1].resist == false && battle_data[id1].temp_resist == false){
-					mp_damage_dealer(id2, id1, "Cursing Dance", 0, 0, 0.7 + extra_curse);	
+					mp_damage_dealer(id2, id1, "Cursing Dance", "None", 0, 0, 0.7 + extra_curse);	
 					battle_data[id1].temp_resist = false;
 				}
 				else
@@ -895,13 +895,15 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	return damage;
 }
 
-function mp_damage_dealer(id1, id2, attack_skill, dmg_rate, reduc_rate, percentage){
-	var damage;
+function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate, percentage){
+	var damage, attr_adv;
 	if (percentage != 0)
 		damage = Math.round(base_data[id2].mp * percentage);
-	else
-		damage = Math.round(base_data[id1].wis * (dmg_rate + battle_data[id1].wis_buff - battle_data[id1].wis_debuff)
+	else{
+		attr_adv = attr_cmp(attack_attr, base_data[id2].attr);
+		damage = Math.round(base_data[id1].wis * (dmg_rate + battle_data[id1].wis_buff - battle_data[id1].wis_debuff) * (1 + attr_adv * 0.15)
 			   - base_data[id2].wis * (1 + battle_data[id2].wis_buff - battle_data[id2].wis_debuff) * reduc_rate);
+	}
 	
 	if (damage > battle_data[id2].mp_left) 
 		damage = battle_data[id2].mp_left;
@@ -912,25 +914,29 @@ function mp_damage_dealer(id1, id2, attack_skill, dmg_rate, reduc_rate, percenta
 	return damage;
 }
 
-function death_proc(id1, id2){
+function death_proc(id1, id2, attack_skill){
 	if (battle_data[id1].no_death == true || battle_data[id1].sleep == true)
-		return;
+		return -1;
+
 
 	var death1 = base_data[id1].death_skill1;
 	var death2 = base_data[id1].death_skill2;
+	var revival_proc;
 
 	// Revival
 	if (death1.charAt(0) == "1" && battle_data[id1].death1_used == false){
-		revival_apply(id1, death1);
-		battle_data[id1].death1_used = true;
-		if (battle_data[id1].hp_left > 0)
-			return;
+		revival_proc = revival_apply(id1, death1);
+		if (revival_proc != 0)
+			battle_data[id1].death1_used = true;
+		if (revival_proc == 1)
+			return 1;
 	}
 	if (death2.charAt(0) == "1" && battle_data[id1].death2_used == false){
-		revival_apply(id1, death2);
-		battle_data[id1].death2_used = true;
-		if (battle_data[id1].hp_left > 0)
-			return;
+		revival_proc = revival_apply(id1, death2);
+		if (revival_proc != 0)
+			battle_data[id1].death2_used = true;
+		if (revival_proc == 1)
+			return 1;
 	}
 
 	// Last Stand
@@ -938,36 +944,53 @@ function death_proc(id1, id2){
 		last_stand_apply(id1, death1);
 		battle_data[id1].death1_used = true;
 		if (battle_data[id1].hp_left > 0)
-			return;
+			return 1;
 	}
 	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "2" && battle_data[id1].death2_used == false){
 		last_stand_apply(id1, death2);
 		battle_data[id1].death2_used = true;
 		if (battle_data[id1].hp_left > 0)
-			return;
+			return 1;
 	}
 
+
+	// Death Slash Effect
+	if (attack_skill == "Death Slash"){
+		battle_data[id2].shield = true;
+		if (show_log == true)
+			document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") can block an attack for once! <br>";
+	}
+
+
 	// On Death Status (todo)
-	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "3")
+	if (battle_data[id1].mp_left > 0 && death1.charAt(0) == "3"){
 		death_status_apply(id1, id2, death1);
-	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "3")
+	}
+	if (battle_data[id1].mp_left > 0 && death2.charAt(0) == "3"){
 		death_status_apply(id1, id2, death2);
+	}
 
 	// Self Destruct
-	if (death1.charAt(0) == "4")
+	if (death1.charAt(0) == "4"){
 		death_damage_apply(id1, id2, death1);
-	if (death2.charAt(0) == "4")
+	}
+	if (death2.charAt(0) == "4"){
 		death_damage_apply(id1, id2, death2);
+	}
+
+	return 0;
 }
 
 function revival_apply(id, name){
 	if (name.search("Free") == -1 && battle_data[id].mp_left < 1)
-		return;
+		return 0;
 	if (show_log == true)
 		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses " + name.slice(3) + "! <br>";
 	var chance;
 	if (name.search("Dark") != -1)
 		chance = 1;
+	else if (name.search("Godly") != -1)
+		chance = 0.8 + revival_modifier[id];
 	else
 		chance = 0.55 + revival_modifier[id];
 
@@ -977,10 +1000,19 @@ function revival_apply(id, name){
 			battle_data[id].mp_left -= 1;
 		if (show_log == true)
 			document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") revives! (Chance: " + chance.toString() + ") <br>";
+		if (name.search("Godly") != -1){
+			battle_data[id].mp_left = base_data[id].mp;
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ")'s MP is replenished! <br>";
+		}
+		return 1;
 	}
-	else
+	else{
 		if (show_log == true)
 			document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
+		return -1;
+	}
+
 }
 
 function last_stand_apply(id, name){
@@ -1080,7 +1112,7 @@ function death_damage_apply(id1, id2, skill){
 			chance = 0.8;
 			if (Math.random() < chance){
 				if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
-					mp_damage_dealer(id1, id2, skill, 0, 0, 0.15 + martyr_modifier[id1]);
+					mp_damage_dealer(id1, id2, skill, "None", 0, 0, 0.15 + martyr_modifier[id1]);
 				else
 					if (show_log == true)
 						document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
@@ -1092,7 +1124,7 @@ function death_damage_apply(id1, id2, skill){
 			break;
 		case "4: Entrust":
 			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false)
-				mp_damage_dealer(id1, id2, skill, 0, 0, 1);
+				mp_damage_dealer(id1, id2, skill, "None", 0, 0, 1);
 			else
 				if (show_log == true)
 					document.getElementById('res').innerHTML += "But it failed! <br>";
@@ -1321,6 +1353,7 @@ function battle(){
 	var result = 0;
 	var battle_length = 0;
 	var intro_activate = true;
+	var still_alive;
 
 	while (true){ 
 		// Speed Decision
@@ -1385,7 +1418,7 @@ function battle(){
 			
 								// If Death Occurs
 								if (battle_data[matrix[j][1]].hp_left <= 0){
-									death_proc(matrix[j][1], 1 - matrix[j][1]);
+									death_proc(matrix[j][1], 1 - matrix[j][1], matrix[j][2]);
 
 									// If Survived
 									if (battle_data[matrix[j][1]].hp_left > 0){ // Set this to > 1 to allow Last Bastion + Counter combo
@@ -1423,7 +1456,7 @@ function battle(){
 										battle_data[matrix[j][0]].dodgable = true, battle_data[matrix[j][0]].counterable = true;
 
 										if (battle_data[matrix[j][0]].hp_left <= 0){
-											death_proc(matrix[j][0], 1 - matrix[j][0]);
+											death_proc(matrix[j][0], 1 - matrix[j][0], "Counter");
 
 											// If Survived
 											if (battle_data[matrix[j][0]].hp_left > 0){
@@ -1531,7 +1564,7 @@ function battle(){
 										document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ")'s HP and MP are switched! <br> ";
 
 									if (battle_data[matrix[j][1]].hp_left <= 0){
-										death_proc(matrix[j][1], 1 - matrix[j][1]);
+										death_proc(matrix[j][1], 1 - matrix[j][1], "Transposition");
 
 										// If Survived
 										if (battle_data[matrix[j][1]].hp_left > 0){
@@ -1678,6 +1711,7 @@ function battle(){
 		else{
 			switch (attack_skill){
 				case "Giga Slash":
+				case "Death Slash":
 					attack_attr = "Physical";
 					if (Math.random() < 0.85 + giga_slash_modifier[attacker])
 						dmg_rate = 2;
@@ -1732,6 +1766,15 @@ function battle(){
 					attack_attr = "None";
 					mp_cost = 20;
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
+					break;
+				case "Spirit Attack":
+					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
+						attack_skill = "Normal Attack";
+						break;
+					}
+					attack_attr = base_data[attacker].attr;
+					mp_cost = 1300;
+					battle_data[defender].dodgable = false, battle_data[defender].counterable = false, battle_data[defender].blockable = false;
 					break;
 				case "Heal": 
 				case "Greater Heal": 
@@ -1838,8 +1881,12 @@ function battle(){
 		// Damage Calc
 		pre_hp = battle_data[defender].hp_left;
 		if (attack_skill == "Energy Drain"){
-			damage = mp_damage_dealer(attacker, defender, attack_skill, 1, 0.5, 0);
+			damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
 			mp_heal_apply(attacker, 0, 0.6 * damage);
+			damage = 0;
+		}
+		else if (attack_skill == "Spirit Attack"){
+			damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
 			damage = 0;
 		}
 		else if (attack_skill == "Heal"){
@@ -1861,23 +1908,23 @@ function battle(){
 			else if (attack_skill == "Life Drain")
 				heal_apply(attacker, 0, 0.2 * damage);
 			else if (attack_skill == "Laevateinn" || attack_skill == "Arondight")
-				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 0.5 + mp_burn_modifier[attacker]);
+				mp_damage_dealer(attacker, defender, attack_skill, "None", 0, 0, 0.5 + mp_burn_modifier[attacker]);
 			else if (attack_skill == "Balmung" || attack_skill == "Gram" )
-				mp_damage_dealer(attacker, defender, attack_skill, 0, 0, 1 + mp_burn_modifier[attacker]);
+				mp_damage_dealer(attacker, defender, attack_skill, "None", 0, 0, 1 + mp_burn_modifier[attacker]);
 		}
 		
 
 		// If Death Occurs
-		if (battle_data[defender].hp_left <= 0){		
-			death_proc(defender, 1 - defender);
+		if (battle_data[defender].hp_left <= 0 || (attack_skill == "Spirit Attack" && battle_data[defender].mp_left <= 0)){		
+			still_alive = death_proc(defender, 1 - defender, attack_skill);
 
 			// If Survived
-			if (battle_data[defender].hp_left > 0){ // Set this to > 1 to allow Last Bastion + Counter combo
+			if (still_alive == 1){
 				intro_activate = true;
 				battle_length++;
 				continue;
 			}
-			else if (battle_data[defender].hp_left <= 0){ 
+			else{ 
 				if (attack_skill == "Predator"){
 					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
 						case 1: 
@@ -1908,8 +1955,6 @@ function battle(){
 				}
 				return result;
 			}
-			else
-				damage = pre_hp - 1;
 		}
 
 		// Counter
@@ -1925,7 +1970,7 @@ function battle(){
 				battle_data[attacker].dodgable = true, battle_data[attacker].counterable = true;
 
 				if (battle_data[attacker].hp_left <= 0){
-					death_proc(attacker, 1 - attacker);
+					death_proc(attacker, 1 - attacker, "Counter");
 
 					// If Survived
 					if (battle_data[attacker].hp_left > 0){

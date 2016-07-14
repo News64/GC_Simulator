@@ -2,6 +2,37 @@ var data =
 [
 	
 	{
+		"name": "エスメラルダ・オーシャン / Ocean Esmeralda", "attr": "Water", "hp": 2700, "mp": 1560, "atk": 1520, "def": 1740, "spd": 1430, "wis": 2130, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アガートラム・ビーチ / Beach Agateram", "attr": "Machine", "hp": 2730, "mp": 1660, "atk": 1880, "def": 1860, "spd": 1480, "wis": 1760, 
+		"attack_skill": "Death Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ゼフォン / Zephon", "attr": "Light", "hp": 2740, "mp": 1670, "atk": 2040, "def": 1740, "spd": 1482, "wis": 1860, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ストレンジラヴ / Strangelove", "attr": "Poison", "hp": 2740, "mp": 1660, "atk": 2080, "def": 1760, "spd": 1455, "wis": 1960, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
+		"alt_skill": "Entrust"
+	},
+	{
+		"name": "稲荷神 / Inari Okami", "attr": "Darkness", "hp": 2600, "mp": 1750, "atk": 1880, "def": 1800, "spd": 1500, "wis": 1780, 
+		"attack_skill": "Death Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Crystallize", "death_skill2": "Soul Taker",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新サマーキング・アーサー / Neo Summer King Arthur", "attr": "Earth", "hp": 2620, "mp": 1540, "atk": 1820, "def": 1820, "spd": 1450, "wis": 2040, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Revival", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ディアマンテドラーゴ / Diamante Drago", "attr": "Earth", "hp": 2740, "mp": 1000, "atk": 1935, "def": 1820, "spd": 1442, "wis": 1560, 
 		"attack_skill": "Soul Buster", "intro_skill1": "Divine Shield", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2218,10 +2249,10 @@ var blue_exs = [
 
 var attack_skills = [
 	"Normal Attack",
-	"Giga Slash", "Dark Giga Slash",
+	"Giga Slash", "Dark Giga Slash", "Death Slash",
 	"Soul Slash", "Soul Buster", "Variable Slash",
 	"Crush Drain", "Life Drain", "Soul Drain",
-	"Energy Drain",
+	"Energy Drain", "Spirit Attack",
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Dimension Gate", "Dimension Gate +S",
 	"Laevateinn", "Arondight", "Balmung", "Gram",
@@ -2265,7 +2296,7 @@ var intro_skills = [
 
 var death_skills = [
 	"0: None",
-	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival",
+	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival", "1: Godly Revival",
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",
