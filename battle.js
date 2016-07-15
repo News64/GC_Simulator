@@ -1768,10 +1768,6 @@ function battle(){
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
 					break;
 				case "Spirit Attack":
-					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
-						attack_skill = "Normal Attack";
-						break;
-					}
 					attack_attr = base_data[attacker].attr;
 					mp_cost = 1300;
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false, battle_data[defender].blockable = false;
