@@ -2207,6 +2207,11 @@ var data =
 		"attack_skill": "Meteor Impact", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強オネイロス / Almighty Oneiros", "attr": "Darkness", "hp": 2700, "mp": 1560, "atk": 1620, "def": 1760, "spd": 1480, "wis": 2080, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
