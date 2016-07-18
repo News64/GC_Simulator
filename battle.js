@@ -907,6 +907,8 @@ function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_r
 	
 	if (damage > battle_data[id2].mp_left) 
 		damage = battle_data[id2].mp_left;
+	if (damage < 0)
+		damage = 0;
 
 	battle_data[id2].mp_left -= damage;
 	if (show_log == true)
@@ -1354,6 +1356,7 @@ function battle(){
 	var battle_length = 0;
 	var intro_activate = true;
 	var still_alive;
+	var fake_damage = 0, temp_show_log;
 
 	while (true){ 
 		// Speed Decision
@@ -1851,11 +1854,41 @@ function battle(){
 			}
 			
 		}
+
 		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain" && attack_skill != "Life Drain" && attack_skill != "Soul Drain") ){ // Special Normal Attack Decision
 			attack_skill = "Normal Attack", attack_attr = "Physical";
 			dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
 		}
+		if( attack_skill == "Spirit Attack" || attack_skill == "Energy Drain"){
+			temp_show_log = show_log;
+			show_log = false;
+			fake_damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
+			if (fake_damage == 0){
+				attack_skill = "Normal Attack", attack_attr = "Physical";
+				dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
+				battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
+			}
+			else
+				mp_heal_apply(defender, 0, fake_damage);
+			show_log = temp_show_log;
+		}
+		else if ( attack_skill != "Heal" && attack_skill != "Greater Heal" && attack_skill != "Holy Grail" ){
+			temp_show_log = show_log;
+			show_log = false;
+			fake_damage = damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, reduc_rate, 0);
+			if (fake_damage == 1){
+				attack_skill = "Normal Attack", attack_attr = "Physical";
+				dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
+				battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
+				heal_apply(defender, 0, 1);
+			}
+			else
+				heal_apply(defender, 0, fake_damage);
+			show_log = temp_show_log;
+		}
+
+
 		battle_data[attacker].hp_left -= hp_cost;
 		battle_data[attacker].mp_left -= mp_cost;
 		if (show_log == true)
