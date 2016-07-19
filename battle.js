@@ -1356,7 +1356,7 @@ function battle(){
 	var battle_length = 0;
 	var intro_activate = true;
 	var still_alive;
-	var fake_damage = 0, temp_show_log, temp_blockable, temp_dodgable;
+	var fake_damage = 0, temp_mp, temp_show_log, temp_blockable, temp_dodgable;
 
 	while (true){ 
 		// Speed Decision
@@ -1861,10 +1861,10 @@ function battle(){
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
 		}
 		if( attack_skill == "Spirit Attack" || attack_skill == "Energy Drain"){
-			temp_show_log = show_log;
+			temp_show_log = show_log, temp_mp = battle_data[defender].mp_left;
 			show_log = false;
 			fake_damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
-			if (fake_damage == 0){
+			if (fake_damage == 0 && temp_mp > 0){
 				attack_skill = "Normal Attack", attack_attr = "Physical";
 				dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 				battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
