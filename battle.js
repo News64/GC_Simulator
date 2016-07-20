@@ -1356,7 +1356,7 @@ function battle(){
 	var battle_length = 0;
 	var intro_activate = true;
 	var still_alive;
-	var fake_damage = 0, temp_mp, temp_show_log, temp_blockable, temp_dodgable;
+	var fake_damage = 0, temp_mp, temp_poison, temp_freeze, temp_show_log, temp_blockable, temp_dodgable;
 
 	while (true){ 
 		// Speed Decision
@@ -1875,7 +1875,8 @@ function battle(){
 		}
 		else if ( attack_skill != "Heal" && attack_skill != "Greater Heal" && attack_skill != "Holy Grail" ){
 			temp_show_log = show_log, temp_blockable = battle_data[defender].blockable, temp_dodgable = battle_data[defender].dodgable;
-			show_log = false, battle_data[defender].blockable = false, battle_data[defender].dodgable = false;
+			temp_poison = battle_data[defender].poisoned, temp_freeze = battle_data[defender].freeze;
+			show_log = false, battle_data[defender].blockable = false, battle_data[defender].dodgable = false, battle_data[defender].freeze = false;
 			fake_damage = damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, reduc_rate, 0);
 			if (fake_damage == 1){
 				attack_skill = "Normal Attack", attack_attr = "Physical";
@@ -1886,6 +1887,7 @@ function battle(){
 			else
 				heal_apply(defender, 0, fake_damage);
 			show_log = temp_show_log, battle_data[defender].blockable = temp_blockable, battle_data[defender].dodgable = temp_dodgable;
+			battle_data[defender].poisoned = temp_poison, battle_data[defender].freeze = temp_freeze;
 		}
 
 
