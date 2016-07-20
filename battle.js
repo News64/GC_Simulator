@@ -1873,7 +1873,7 @@ function battle(){
 				mp_heal_apply(defender, 0, fake_damage);
 			show_log = temp_show_log;
 		}
-		else if ( attack_skill != "Heal" && attack_skill != "Greater Heal" && attack_skill != "Holy Grail" ){
+		else if ( attack_skill != "Heal" && attack_skill != "Greater Heal" && attack_skill != "Holy Grail" && attack_skill.search('Undead') == -1){
 			temp_show_log = show_log, temp_blockable = battle_data[defender].blockable, temp_dodgable = battle_data[defender].dodgable;
 			temp_poison = battle_data[defender].poisoned, temp_freeze = battle_data[defender].freeze;
 			show_log = false, battle_data[defender].blockable = false, battle_data[defender].dodgable = false, battle_data[defender].freeze = false;
