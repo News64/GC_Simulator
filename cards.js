@@ -2,6 +2,27 @@ var data =
 [
 	
 	{
+		"name": "デメテル・サンライト / Sunlight Demeter", "attr": "Earth", "hp": 2730, "mp": 1610, "atk": 1860, "def": 1780, "spd": 1436, "wis": 2130, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "デメテル・ナイトフォール / Nightfall Demeter", "attr": "Darkness", "hp": 2620, "mp": 1540, "atk": 1620, "def": 1720, "spd": 1444, "wis": 2080, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新バンシー・ノクターン / Neo Banshee Nocturne", "attr": "Undead", "hp": 2180, "mp": 600, "atk": 1600, "def": 1620, "spd": 1482, "wis": 2020, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Resist Smite", "intro_skill2": "Wise Smite +S", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Dark Mind Break"
+	},
+	{
+		"name": "ヘラ・トワイライト / Twilight Hera", "attr": "Fire", "hp": 2400, "mp": 1530, "atk": 1760, "def": 1600, "spd": 1440, "wis": 2010, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "エスメラルダ・オーシャン / Ocean Esmeralda", "attr": "Water", "hp": 2700, "mp": 1560, "atk": 1520, "def": 1740, "spd": 1430, "wis": 2130, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "Healing Light", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
