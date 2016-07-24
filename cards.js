@@ -2233,6 +2233,11 @@ var data =
 		"attack_skill": "Variable Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強マリン・エリス / Almighty Marine Eris", "attr": "Undead", "hp": 2630, "mp": 1900, "atk": 1880, "def": 1660, "spd": 1482, "wis": 1920, 
+		"attack_skill": "Death Slash", "intro_skill1": "Dark Mind Break", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
