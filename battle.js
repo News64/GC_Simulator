@@ -917,8 +917,14 @@ function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_r
 }
 
 function death_proc(id1, id2, attack_skill){
-	if (battle_data[id1].no_death == true || battle_data[id1].sleep == true)
+	if (battle_data[id1].no_death == true || battle_data[id1].sleep == true){
+		if (attack_skill == "Death Slash"){
+			battle_data[id2].shield = true;
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") can block an attack for once! <br>";
+		}
 		return -1;
+	}
 
 
 	var death1 = base_data[id1].death_skill1;

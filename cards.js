@@ -2,6 +2,26 @@ var data =
 [
 	
 	{
+		"name": "ジュピター・ロマンス / Romance Jupiter", "attr": "Thunder", "hp": 2580, "mp": 1740, "atk": 1880, "def": 1740, "spd": 1482, "wis": 1760, 
+		"attack_skill": "Death Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヘル・サマーデイ / Hell Summerday", "attr": "Undead", "hp": 2220, "mp": 1460, "atk": 1400, "def": 1560, "spd": 1436, "wis": 2130, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Wisdom +25%", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新スフィンクス・オアシス / Neo Sphinx Oasis", "attr": "Light", "hp": 2680, "mp": 1720, "atk": 1940, "def": 1740, "spd": 1455, "wis": 1860, 
+		"attack_skill": "Soul Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "新邪恋姫アスタロット / Neo Tropic of Ashtoreth", "attr": "Poison", "hp": 2520, "mp": 3560, "atk": 1640, "def": 1620, "spd": 1482, "wis": 2120, 
+		"attack_skill": "Arondight", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "デメテル・サンライト / Sunlight Demeter", "attr": "Earth", "hp": 2730, "mp": 1610, "atk": 1860, "def": 1780, "spd": 1436, "wis": 2130, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Entrust", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
