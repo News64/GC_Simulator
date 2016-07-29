@@ -729,7 +729,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	}
 	else if(attack_attr == "Physical"){
 		if (battle_data[id2].mp_left >= 300 && battle_data[id2].dodgable == true && battle_data[id2].mind_break == false && 
-			battle_data[id2].sleep == false && battle_data[id2].freeze == false){
+			battle_data[id2].sleep == false && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
 			if (d1.search("Deft Step") != -1){
 				if (d1.search("Dark") != -1)
 					dodge_chance = 1;
@@ -765,7 +765,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	}
 	else{
 		if (battle_data[id2].mp_left >= 300 && battle_data[id2].dodgable == true && battle_data[id2].mind_break == false && 
-			battle_data[id2].sleep == false && battle_data[id2].freeze == false){
+			battle_data[id2].sleep == false && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
 			if (d1.search("Mirage Drive") != -1){
 				if (d1.search("Dark") != -1)
 					dodge_chance = 1;
