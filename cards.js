@@ -1,6 +1,28 @@
 var data =
 [
 	
+	
+	{
+		"name": "ライラプス / Lailaps", "attr": "Wind", "hp": 2620, "mp": 1850, "atk": 1910, "def": 1700, "spd": 1482, "wis": 1780, 
+		"attack_skill": "Soul Drain", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ニンギルス / Ningirsu", "attr": "Machine", "hp": 2600, "mp": 4110, "atk": 1880, "def": 1760, "spd": 1466, "wis": 2130, 
+		"attack_skill": "Death Slash", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新アポカリプス・ビースト / Neo Apocalypse Beast", "attr": "Fire", "hp": 2760, "mp": 3800, "atk": 2040, "def": 2010, "spd": 1484, "wis": 2090, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "Dark Explosion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Meteor Impact"
+	},
+	{
+		"name": "奏姫イチキシマヒメ / Ichikishimahime, the Goddess of Music", "attr": "Water", "hp": 2300, "mp": 1660, "atk": 1500, "def": 1520, "spd": 1436, "wis": 2040, 
+		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	{
 		"name": "ジュピター・ロマンス / Romance Jupiter", "attr": "Thunder", "hp": 2580, "mp": 1740, "atk": 1880, "def": 1740, "spd": 1482, "wis": 1760, 
 		"attack_skill": "Death Slash", "intro_skill1": "Fast Sleep", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
@@ -2257,6 +2279,11 @@ var data =
 		"name": "最強マリン・エリス / Almighty Marine Eris", "attr": "Undead", "hp": 2630, "mp": 1900, "atk": 1880, "def": 1660, "spd": 1482, "wis": 1920, 
 		"attack_skill": "Death Slash", "intro_skill1": "Dark Mind Break", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強大賢者アルカナ / Almighty Archmage Arcana", "attr": "Wind", "hp": 2740, "mp": 1770, "atk": 1600, "def": 1780, "spd": 1458, "wis": 2090, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
