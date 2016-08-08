@@ -17,6 +17,7 @@ var mp_burn_modifier = [0, 0];
 var predator_modifier = [0 ,0];
 var dimension_gate_modifier = [0, 0];
 var soul_mind_modifier = [0, 0];
+var spirit_attack_modifier = [0, 0];
 var inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 var show_log = true;
 
@@ -1198,7 +1199,7 @@ function team_battle(){
 	ability_lock_modifier = [0, 0], mind_break_modifier = [0, 0], explosion_modifier = [0, 0], revival_modifier = [0, 0], quick_strike_modifier = [0, 0];
 	martyr_modifier = [0, 0], deft_step_modifier = [0, 0], giga_slash_modifier = [0, 0], poison_attack_modifier = [0, 0], soul_slash_modifier = [0, 0];
 	variable_slash_modifier = [0, 0], undead_skill_modifier = [0, 0], meteor_skill_modifier = [0, 0], mp_burn_modifier = [0, 0], 
-	predator_modifier = [0, 0], dimension_gate_modifier = [0, 0], soul_mind_modifier = [0, 0];
+	predator_modifier = [0, 0], dimension_gate_modifier = [0, 0], soul_mind_modifier = [0, 0], spirit_attack_modifier = [0, 0];
 	inherit_atk = 0, inherit_def = 0, inherit_spd = 0, inherit_wis = 0;
 	var blue = [ document.getElementById('blue_ex1').value, document.getElementById('blue_ex2').value, document.getElementById('colo_buff_skill').value ];
 	for (var i = 0; i < 3; i++){
@@ -1274,6 +1275,10 @@ function team_battle(){
 			case "Soul Taker & Mind Crush 30%":
 				if (i != 0) soul_mind_modifier[1] += 0.3;
 				if (i != 1) soul_mind_modifier[0] += 0.3;
+				break;
+			case "Spirit Attack":
+				if (i != 0) spirit_attack_modifier[1] += 0.1;
+				if (i != 1) spirit_attack_modifier[0] += 0.1;
 				break;
 		}
 	}
@@ -1779,6 +1784,7 @@ function battle(){
 				case "Spirit Attack":
 					attack_attr = base_data[attacker].attr;
 					mp_cost = 1300;
+					dmg_rate = 1 + spirit_attack_modifier[attacker];
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false, battle_data[defender].blockable = false;
 					break;
 				case "Heal": 
@@ -1869,7 +1875,7 @@ function battle(){
 		if( attack_skill == "Spirit Attack" || attack_skill == "Energy Drain"){
 			temp_show_log = show_log, temp_mp = battle_data[defender].mp_left;
 			show_log = false;
-			fake_damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
+			fake_damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, 0.5, 0);
 			if (fake_damage == 0 && temp_mp > 0){
 				attack_skill = "Normal Attack", attack_attr = "Physical";
 				dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
@@ -1923,7 +1929,7 @@ function battle(){
 			damage = 0;
 		}
 		else if (attack_skill == "Spirit Attack"){
-			damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, 1, 0.5, 0);
+			damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, 0.5, 0);
 			damage = 0;
 		}
 		else if (attack_skill == "Heal"){

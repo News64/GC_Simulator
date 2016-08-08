@@ -3,6 +3,26 @@ var data =
 	
 	
 	{
+		"name": "ゼフォン・リベリオン / Rebellious Zephon", "attr": "Darkness", "hp": 2700, "mp": 1460, "atk": 1900, "def": 1740, "spd": 1436, "wis": 2130, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "Entrust",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヨルズ / Jorth", "attr": "Thunder", "hp": 2700, "mp": 1490, "atk": 2035, "def": 1780, "spd": 1484, "wis": 1700, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新アザゼル / Neo Azazel", "attr": "Poison", "hp": 2100, "mp": 1490, "atk": 1780, "def": 1700, "spd": 1436, "wis": 2150, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新アフロディーテ / Neo Aphrodite", "attr": "Light", "hp": 2500, "mp": 1690, "atk": 2010, "def": 1620, "spd": 1502, "wis": 1740, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Assault Strike", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ライラプス / Lailaps", "attr": "Wind", "hp": 2620, "mp": 1850, "atk": 1910, "def": 1700, "spd": 1482, "wis": 1780, 
 		"attack_skill": "Soul Drain", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2285,6 +2305,12 @@ var data =
 		"attack_skill": "Meteor Nova", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強カオス・コア / Almighty Chaos Core", "attr": "Poison", "hp": 2580, "mp": 1560, "atk": 2100, "def": 1740, "spd": 1458, "wis": 1780, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "Crystallize",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
+		"alt_skill": "Predator"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2321,7 +2347,7 @@ var red_exs = [
 var blue_exs = [
 	"None", "Ability Lock", "Mind Break", "Explosion", "Revival", "Quick Strike", "Martyr", "Deft Step", "Giga Slash", "Poison Attack", 
 	"Soul Slash", "Variable Slash", "Undead Skill", "Meteor Skill", "Laevateinn & Arondight", "Predator", "Dimension Gate",
-	"Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%"
+	"Soul Taker & Mind Crush 10%", "Soul Taker & Mind Crush 30%", "Spirit Attack"
 ];
 
 
