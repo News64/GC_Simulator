@@ -3,6 +3,21 @@ var data =
 	
 	
 	{
+		"name": "クロト・サマーフェス / Clotho of Summer Festival", "attr": "Machine", "hp": 2500, "mp": 1550, "atk": 1580, "def": 1520, "spd": 1452, "wis": 2155, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アトロポス・サマーフェス / Atropos of Summer Festival", "attr": "Wind", "hp": 2420, "mp": 1620, "atk": 2035, "def": 1660, "spd": 1458, "wis": 1740, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Soul Taker +S", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "祭姫セルヴァ / Selva the Festive Princess", "attr": "Earth", "hp": 2680, "mp": 1760, "atk": 1760, "def": 1680, "spd": 1510, "wis": 2130, 
+		"attack_skill": "Gram", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ゼフォン・リベリオン / Rebellious Zephon", "attr": "Darkness", "hp": 2700, "mp": 1460, "atk": 1900, "def": 1740, "spd": 1436, "wis": 2130, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "Entrust",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2310,6 +2325,12 @@ var data =
 		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "Crystallize",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
 		"alt_skill": "Predator"
+	},
+	{
+		"name": "最強エスメラルダ / Almighty Esmeralda", "attr": "Light", "hp": 2740, "mp": 1720, "atk": 1780, "def": 1740, "spd": 1484, "wis": 2110, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Divine Shield", "intro_skill2": "Fast Sleep", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Arondight"
 	},
 	// From here: Only name is updated
 	/*
