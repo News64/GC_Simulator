@@ -1801,12 +1801,16 @@ function battle(){
 					attack_attr = "None";
 					break;
 				case "Predator":
+				case "Death Fang":
 					if (battle_data[attacker].mind_break == true || battle_data[attacker].abs_mind_break == true){
 						attack_skill = "Normal Attack";
 						break;
 					}
 					attack_attr = "Physical";
-					dmg_rate = 1.5 + predator_modifier[attacker], mp_cost = 1400;
+					if(attack_skill == "Predator")
+						dmg_rate = 1.5 + predator_modifier[attacker], mp_cost = 1400;
+					else
+						dmg_rate = 2 + predator_modifier[attacker], mp_cost = 1600;
 					battle_data[defender].no_death = true;
 					break;
 				case "Laevateinn":
@@ -1968,7 +1972,7 @@ function battle(){
 				continue;
 			}
 			else{ 
-				if (attack_skill == "Predator"){
+				if (attack_skill == "Predator" || attack_skill == "Death Fang"){
 					switch (attr_cmp(base_data[attacker].attr, base_data[defender].attr)){
 						case 1: 
 							battle_data[attacker].atk_buff += 0.2, battle_data[attacker].def_buff += 0.2, battle_data[attacker].spd_buff += 0.2, battle_data[attacker].wis_buff += 0.2; 

@@ -3,6 +3,22 @@ var data =
 	
 	
 	{
+		"name": "ラケシス・サマーフェス / Lachesis of Summer Festival", "attr": "Naught", "hp": 2740, "mp": 1760, "atk": 1880, "def": 1960, "spd": 1650, "wis": 2450, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Mind Crush, Last Bastion, Resistance"
+	},
+	{
+		"name": "ツインズ・ナイトフェス / Twins of Night Festival", "attr": "Darkness", "hp": 2560, "mp": 1820, "atk": 1880, "def": 1720, "spd": 1458, "wis": 1660, 
+		"attack_skill": "Death Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "Dark Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "女郎蜘蛛・甘誘 / Joro Spider of Sweet Lure", "attr": "Poison", "hp": 2700, "mp": 1730, "atk": 1910, "def": 1700, "spd": 1482, "wis": 1760, 
+		"attack_skill": "Death Fang", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "クロト・サマーフェス / Clotho of Summer Festival", "attr": "Machine", "hp": 2500, "mp": 1550, "atk": 1580, "def": 1520, "spd": 1452, "wis": 2155, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2332,6 +2348,11 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Arondight"
 	},
+	{
+		"name": "最強ヴァルカン / Almighty Vulcan", "attr": "Fire", "hp": 2760, "mp": 4340, "atk": 1880, "def": 1900, "spd": 1470, "wis": 1740, 
+		"attack_skill": "Death Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2379,7 +2400,7 @@ var attack_skills = [
 	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain", "Spirit Attack",
 	"Heal", "Greater Heal", "Holy Grail",
-	"Predator", "Dimension Gate", "Dimension Gate +S",
+	"Predator", "Death Fang", "Dimension Gate", "Dimension Gate +S",
 	"Laevateinn", "Arondight", "Balmung", "Gram",
 	"Meteor Impact", "Meteor Impact EX", "Meteor Nova", "Meteor Nova EX",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
