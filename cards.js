@@ -3,6 +3,21 @@ var data =
 	
 	
 	{
+		"name": "魔女皇モリガン / Morrigan, the Demon Empress", "attr": "Undead", "hp": 2520, "mp": 1760, "atk": 1880, "def": 1680, "spd": 1470, "wis": 1700, 
+		"attack_skill": "Death Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "ヤトノカミ / Yatonokami", "attr": "Light", "hp": 2540, "mp": 1560, "atk": 2010, "def": 1840, "spd": 1510, "wis": 1760, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Celestial Pulse", "intro_skill2": "Assault Strike", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "輝剣ヴィーヴル / Vouivre of Shiny Sword", "attr": "Light", "hp": 2480, "mp": 1760, "atk": 1840, "def": 1560, "spd": 1450, "wis": 1800, 
+		"attack_skill": "Death Slash", "intro_skill1": "Divine Shield", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ラケシス・サマーフェス / Lachesis of Summer Festival", "attr": "Naught", "hp": 2740, "mp": 1760, "atk": 1880, "def": 1960, "spd": 1650, "wis": 2450, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
@@ -2352,6 +2367,11 @@ var data =
 		"name": "最強ヴァルカン / Almighty Vulcan", "attr": "Fire", "hp": 2760, "mp": 4340, "atk": 1880, "def": 1900, "spd": 1470, "wis": 1740, 
 		"attack_skill": "Death Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強黒鱗帝クルセギオン / Almighty Krusegionn", "attr": "Naught", "hp": 4540, "mp": 1230, "atk": 2300, "def": 2080, "spd": 1640, "wis": 1840, 
+		"attack_skill": "Meteor Impact EX", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
 	// From here: Only name is updated
 	/*
