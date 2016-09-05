@@ -730,7 +730,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	}
 	else if(attack_attr == "Physical"){
 		if (battle_data[id2].mp_left >= 300 && battle_data[id2].dodgable == true && battle_data[id2].mind_break == false && 
-			battle_data[id2].sleep == false && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
+			battle_data[id2].sleep == 0 && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
 			if (d1.search("Deft Step") != -1){
 				if (d1.search("Dark") != -1)
 					dodge_chance = 1;
@@ -766,7 +766,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 	}
 	else{
 		if (battle_data[id2].mp_left >= 300 && battle_data[id2].dodgable == true && battle_data[id2].mind_break == false && 
-			battle_data[id2].sleep == false && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
+			battle_data[id2].sleep == 0 && battle_data[id2].freeze == false && battle_data[id2].abs_mind_break == false){
 			if (d1.search("Mirage Drive") != -1){
 				if (d1.search("Dark") != -1)
 					dodge_chance = 1;
@@ -844,7 +844,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				+ base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
 		if (poison != "None" && (attack_skill.charCodeAt(0) < 48 || attack_skill.charCodeAt(0) > 57) && attack_skill != "Counter" && battle_data[id2].hp_left > 0 && 
 			battle_data[id1].mind_break == false && battle_data[id2].resist == false){
-			if (poison == "Deadly Poison")
+			if (poison.search("Deadly Poison") != -1)
 				chance = 1;
 			else
 				chance = 0.8;
@@ -852,9 +852,16 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				if (battle_data[id2].temp_resist == true)
 					battle_data[id2].temp_resist = false;
 				else{
-					battle_data[id2].poisoned = true;
-					if (show_log == true)
-						document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
+					if (poison.search("Deadly Poison \\+S") != -1){
+						battle_data[id2].poisoned_S = true;
+						if (show_log == true)
+							document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is badly poisoned! (Chance: " + chance.toString() + ") <br>";
+					}
+					else{
+						battle_data[id2].poisoned = true;
+						if (show_log == true)
+							document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") is poisoned! (Chance: " + chance.toString() + ") <br>";
+					}
 				}
 			}
 		}
@@ -918,7 +925,7 @@ function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_r
 }
 
 function death_proc(id1, id2, attack_skill){
-	if (battle_data[id1].no_death == true || battle_data[id1].sleep == true){
+	if (battle_data[id1].no_death == true || battle_data[id1].sleep >= 1){
 		if (attack_skill == "Death Slash"){
 			battle_data[id2].shield = true;
 			if (show_log == true)
@@ -1049,7 +1056,7 @@ function death_status_apply(id1, id2, skill){
 	switch (skill){
 		case "3: Deep Sleep":
 			if (battle_data[id2].resist == false && battle_data[id2].temp_resist == false){
-				battle_data[id2].sleep = true;
+				battle_data[id2].sleep += 1;
 				if (show_log == true)
 					document.getElementById('res').innerHTML += "Card " + (id2 + 1).toString() + " becomes asleep! <br>";
 			}
@@ -1344,8 +1351,8 @@ function data_init(team_num, card_num){
 		"inherit_atk": inherit_atk, "inherit_def": inherit_def, "inherit_spd": inherit_spd, "inherit_wis": inherit_wis,
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
 		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
-		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "sleep": false, "multi_block": false, "freeze": false,
-		"abs_mind_break": false, "cursing_dance": 0};
+		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "poisoned_S":false, "sleep": 0, "multi_block": false, 
+		"freeze": false, "abs_mind_break": false, "cursing_dance": 0};
 
 	if (base_data[team_num - 1].dodge_skill1.search("Cursing Dance") != -1 || base_data[team_num - 1].dodge_skill2.search("Cursing Dance") != -1)
 		battle_data[team_num - 1].cursing_dance += 1;
@@ -1367,7 +1374,7 @@ function battle(){
 	var battle_length = 0;
 	var intro_activate = true;
 	var still_alive;
-	var fake_damage = 0, temp_mp, temp_poison, temp_freeze, temp_show_log, temp_blockable, temp_dodgable;
+	var fake_damage = 0, temp_mp, temp_poison, temp_poison_S, temp_freeze, temp_show_log, temp_blockable, temp_dodgable;
 
 	while (true){ 
 		// Speed Decision
@@ -1394,7 +1401,7 @@ function battle(){
 			];
 			for (var i = 1; i < 9; i++){
 				for (var j = 0; j < 4; j++){
-					if (battle_data[matrix[j][0]].sleep == false && matrix[j][2].charAt(0) == i.toString() && matrix[j][3] == false){
+					if (battle_data[matrix[j][0]].sleep == 0 && matrix[j][2].charAt(0) == i.toString() && matrix[j][3] == false){
 						switch (i){
 							// Priority 1: Quick Strike, Wise Smite, Resist Smite
 							case 1:
@@ -1461,7 +1468,7 @@ function battle(){
 								{ // Counter
 									counter_skill = base_data[matrix[j][1]].counter_skill;
 									if (battle_data[matrix[j][1]].mp_left >= 300 && battle_data[matrix[j][1]].mind_break == false && 
-										battle_data[matrix[j][1]].sleep == false && counter_skill != "None"){
+										battle_data[matrix[j][1]].sleep == 0 && counter_skill != "None"){
 										battle_data[matrix[j][1]].mp_left -= 300;
 										if (show_log == true)
 											document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[matrix[j][1]].mp_left + "/" + base_data[matrix[j][1]].mp + " <br>";
@@ -1605,7 +1612,7 @@ function battle(){
 							// Priority 8: Mind Break, Fast Sleep
 							case 8:
 								if (matrix[j][2].search("Mind Break") != -1){
-									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true && battle_data[matrix[j][0]].sleep != true){
+									if (battle_data[matrix[j][0]].mp_left >= 600 && battle_data[matrix[j][0]].mind_break != true && battle_data[matrix[j][0]].abs_mind_break != true && battle_data[matrix[j][0]].sleep == 0){
 										if (matrix[j][2].search("Dark") != -1 || matrix[j][2].search("Absolute") != -1)
 											chance = 1;
 										else
@@ -1638,9 +1645,16 @@ function battle(){
 											document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") uses " + matrix[j][2].slice(3) + "! <br>";
 										battle_data[matrix[j][0]].mp_left -= 300;
 										if (battle_data[matrix[j][1]].resist == false && battle_data[matrix[j][1]].temp_resist == false){
-											battle_data[matrix[j][1]].sleep = true;
-											if (show_log == true)
-												document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
+											if (matrix[j][2].search("Fast Sleep \\+S") != -1){
+												battle_data[matrix[j][1]].sleep += 2;
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes deeply asleep! <br> ";
+											}
+											else{
+												battle_data[matrix[j][1]].sleep += 1;
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[matrix[j][1]].card + " (Team " + (matrix[j][1] + 1).toString() + ") becomes asleep! <br> ";
+											}
 										}
 										else
 											if (show_log == true)
@@ -1688,9 +1702,21 @@ function battle(){
 				return result;
 			}
 		}
+		if (battle_data[attacker].poisoned_S == true){
+			damage = Math.round((0.75 + poison_attack_modifier[defender]) * base_data[attacker].hp);
+			battle_data[attacker].hp_left -= damage;
+			if (show_log == true)
+				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") takes " + damage.toString() + " damage from severe poison! HP: " + battle_data[attacker].hp_left + "/" + base_data[attacker].hp + " <br>";
+			if (battle_data[attacker].hp_left <= 0){
+				if (show_log == true)
+					document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") is defeated! <br>";
+				result = 1 - attacker;
+				return result;
+			}
+		}
 		// Sleep
-		if (battle_data[attacker].sleep == true){
-			battle_data[attacker].sleep = false;
+		if (battle_data[attacker].sleep >= 1){
+			battle_data[attacker].sleep -= 1;
 			if (show_log == true)
 				document.getElementById('res').innerHTML += base_data[attacker].card + " (Team " + (attacker + 1).toString() + ") skips a turn because of sleep! <br>";
 			battle_length++;
@@ -1891,7 +1917,7 @@ function battle(){
 		}
 		else if ( attack_skill != "Heal" && attack_skill != "Greater Heal" && attack_skill != "Holy Grail" && attack_skill.search('Undead') == -1){
 			temp_show_log = show_log, temp_blockable = battle_data[defender].blockable, temp_dodgable = battle_data[defender].dodgable;
-			temp_poison = battle_data[defender].poisoned, temp_freeze = battle_data[defender].freeze;
+			temp_poison = battle_data[defender].poisoned, temp_poison_S = battle_data[defender].poisoned_S, temp_freeze = battle_data[defender].freeze;
 			show_log = false, battle_data[defender].blockable = false, battle_data[defender].dodgable = false, battle_data[defender].freeze = false;
 			fake_damage = damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, reduc_rate, 0);
 			if (fake_damage == 1){
@@ -1903,7 +1929,7 @@ function battle(){
 			else
 				heal_apply(defender, 0, fake_damage);
 			show_log = temp_show_log, battle_data[defender].blockable = temp_blockable, battle_data[defender].dodgable = temp_dodgable;
-			battle_data[defender].poisoned = temp_poison, battle_data[defender].freeze = temp_freeze;
+			battle_data[defender].poisoned = temp_poison, battle_data[defender].poisoned_S = temp_poison_S, battle_data[defender].freeze = temp_freeze;
 		}
 
 
@@ -2008,7 +2034,7 @@ function battle(){
 		{
 			counter_skill = base_data[defender].counter_skill;
 			if (damage > 0 && battle_data[defender].counterable == true && battle_data[defender].mp_left >= 300 && 
-				battle_data[defender].mind_break == false && battle_data[defender].sleep == false && counter_skill != "None"){
+				battle_data[defender].mind_break == false && battle_data[defender].sleep == 0 && counter_skill != "None"){
 				battle_data[defender].mp_left -= 300;
 				if (show_log == true)
 					document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";

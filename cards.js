@@ -3,6 +3,26 @@ var data =
 	
 	
 	{
+		"name": "輪舞ゼノビア・クピードー / Zenobia and Cupido of La Ronde", "attr": "Darkness", "hp": 2620, "mp": 1920, "atk": 1820, "def": 1700, "spd": 1484, "wis": 2150, 
+		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep +S", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "パッション・モーガン / Morgan of Passion", "attr": "Poison", "hp": 2360, "mp": 1600, "atk": 2100, "def": 1660, "spd": 1460, "wis": 1820, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "Deadly Poison +S", "counter_skill": "None"
+	},
+	{
+		"name": "新セルキー / Neo Selkie", "attr": "Water", "hp": 2520, "mp": 1640, "atk": 1600, "def": 1560, "spd": 1450, "wis": 2120, 
+		"attack_skill": "Variable Slash", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新イズン / Neo Idun", "attr": "Earth", "hp": 2640, "mp": 3680, "atk": 2070, "def": 1760, "spd": 1480, "wis": 1840, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "魔女皇モリガン / Morrigan, the Demon Empress", "attr": "Undead", "hp": 2520, "mp": 1760, "atk": 1880, "def": 1680, "spd": 1470, "wis": 1700, 
 		"attack_skill": "Death Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2373,6 +2393,11 @@ var data =
 		"attack_skill": "Meteor Impact EX", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
+	{
+		"name": "最強ソーマ / Almighty Soma", "attr": "Poison", "hp": 2620, "mp": 1550, "atk": 2100, "def": 1620, "spd": 1484, "wis": 1660, 
+		"attack_skill": "Predator", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2447,7 +2472,7 @@ var intro_skills = [
 	"5: Celestial Pulse",
 	"6: Ability Lock", "6: Dark Ability Lock",
 	"7: Transposition",
-	"8: Mind Break", "8: Dark Mind Break", "8: Absolute Mind Break", "8: Fast Sleep",
+	"8: Mind Break", "8: Dark Mind Break", "8: Absolute Mind Break", "8: Fast Sleep", "8: Fast Sleep +S",
 	"4: Attack +10%", "4: Attack +20%", "4: Attack +25%",
 	"4: Defend +10%", "4: Defend +20%", "4: Defend +25%", "4: Defend +40%",
 	"4: Speed +10%", "4: Speed +20%", "4: Speed +25%",
@@ -2487,5 +2512,5 @@ var counter_skills = [
 
 var poison_skills = [
 	"None",
-	"Poison Attack", "Deadly Poison"
+	"Poison Attack", "Deadly Poison", "Deadly Poison +S"
 ];
