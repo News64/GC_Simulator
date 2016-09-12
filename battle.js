@@ -1885,8 +1885,12 @@ function battle(){
 					battle_data[defender].blockable = false;
 					break;
 				case "Variable Slash":
+				case "Variable Buster":
 					attack_attr = base_data[attacker].attr;
-					dmg_rate = 1.7 + variable_slash_modifier[attacker];
+					if(attack_skill == "Variable Slash")
+						dmg_rate = 1.7 + variable_slash_modifier[attacker];
+					else
+						dmg_rate = 2 + variable_slash_modifier[attacker];
 					if (battle_data[attacker].mp_left > 1400)
 						mp_cost = 1400;
 					else

@@ -3,6 +3,16 @@ var data =
 	
 	
 	{
+		"name": "クーリエ・ワンダーランド / Courier of Wonderland", "attr": "Wind", "hp": 2380, "mp": 1690, "atk": 1540, "def": 1680, "spd": 1436, "wis": 2150, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance +S", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "イシュタム・チェシャ / Ixtab the Chesire Cat", "attr": "Undead", "hp": 2740, "mp": 1710, "atk": 1780, "def": 1720, "spd": 1510, "wis": 2065, 
+		"attack_skill": "Variable Buster", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "輪舞ゼノビア・クピードー / Zenobia and Cupido of La Ronde", "attr": "Darkness", "hp": 2620, "mp": 1920, "atk": 1820, "def": 1700, "spd": 1484, "wis": 2150, 
 		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep +S", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2398,6 +2408,11 @@ var data =
 		"attack_skill": "Predator", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強エリス / Almighty Eris", "attr": "Undead", "hp": 2680, "mp": 1660, "atk": 1740, "def": 1760, "spd": 1484, "wis": 2150, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2441,7 +2456,7 @@ var blue_exs = [
 var attack_skills = [
 	"Normal Attack",
 	"Giga Slash", "Dark Giga Slash", "Death Slash",
-	"Soul Slash", "Soul Buster", "Variable Slash",
+	"Soul Slash", "Soul Buster", "Variable Slash", "Variable Buster",
 	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain", "Spirit Attack",
 	"Heal", "Greater Heal", "Holy Grail",
