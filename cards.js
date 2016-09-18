@@ -2413,6 +2413,12 @@ var data =
 		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強ガンコナー / Almighty Ganconer", "attr": "Earth", "hp": 2700, "mp": 1800, "atk": 1790, "def": 1780, "spd": 1484, "wis": 2180, 
+		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Fast Sleep, Divine Shield, Undead +4EX"
+	},
 	// From here: Only name is updated
 	/*
 	
