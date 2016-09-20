@@ -2050,7 +2050,7 @@ function battle(){
 				battle_data[defender].mp_left -= 300;
 				if (show_log == true)
 					document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses " + counter_skill + "! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
-				battle_data[attacker].dodgable = false, battle_data[attacker].counterable = false;
+				battle_data[attacker].dodgable = false, battle_data[attacker].counterable = false, battle_data[attacker].no_death = false;
 				damage_dealer(defender, attacker, counter_skill, "None", 0, 0, 1.2 * damage);
 				battle_data[attacker].dodgable = true, battle_data[attacker].counterable = true;
 
