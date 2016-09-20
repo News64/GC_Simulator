@@ -3,6 +3,40 @@ var data =
 	
 	
 	{
+		"name": "ネイト / Neit", "attr": "Thunder", "hp": 2730, "mp": 1720, "atk": 1470, "def": 1790, "spd": 1436, "wis": 2130, 
+		"attack_skill": "Spirit Break", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "Dark Mirage Drive", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Mind Crush"
+	},
+	{
+		"name": "アレイオーン / Areion", "attr": "Light", "hp": 2520, "mp": 1850, "atk": 1780, "def": 1720, "spd": 1484, "wis": 2065, 
+		"attack_skill": "Dimension Gate +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ラグナロク / Neo Ragnarok", "attr": "Fire", "hp": 3300, "mp": 1770, "atk": 1940, "def": 1720, "spd": 1480, "wis": 1670, 
+		"attack_skill": "Death Fang", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
+		"name": "新ニケ / Neo Nike", "attr": "Wind", "hp": 2440, "mp": 1560, "atk": 2100, "def": 1720, "spd": 1460, "wis": 1980, 
+		"attack_skill": "Soul Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None",
+		"alt_skill": "Variable Slash"
+	},
+	{
+		"name": "新ヌァザ / Neo Nuada", "attr": "Machine", "hp": 2370, "mp": 1610, "atk": 2240, "def": 1800, "spd": 1482, "wis": 1620, 
+		"attack_skill": "Dark Death Slash", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Last Bastion"
+	},
+	{
+		"name": "聖流サラスヴァティ / Saraswati of Holy Stream", "attr": "Water", "hp": 2570, "mp": 1550, "atk": 1620, "def": 1700, "spd": 1436, "wis": 2120, 
+		"attack_skill": "Undead +4EX", "intro_skill1": "Dark Ability Lock", "intro_skill2": "Divine Shield", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Entrust"
+	},
+	{
 		"name": "クーリエ・ワンダーランド / Courier of Wonderland", "attr": "Wind", "hp": 2380, "mp": 1690, "atk": 1540, "def": 1680, "spd": 1436, "wis": 2150, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance +S", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2461,10 +2495,10 @@ var blue_exs = [
 
 var attack_skills = [
 	"Normal Attack",
-	"Giga Slash", "Dark Giga Slash", "Death Slash",
+	"Giga Slash", "Dark Giga Slash", "Death Slash", "Dark Death Slash",
 	"Soul Slash", "Soul Buster", "Variable Slash", "Variable Buster",
 	"Crush Drain", "Life Drain", "Soul Drain",
-	"Energy Drain", "Spirit Attack",
+	"Energy Drain", "Spirit Attack", "Spirit Break",
 	"Heal", "Greater Heal", "Holy Grail",
 	"Predator", "Death Fang", "Dimension Gate", "Dimension Gate +S",
 	"Laevateinn", "Arondight", "Balmung", "Gram",
@@ -2508,7 +2542,7 @@ var intro_skills = [
 
 var death_skills = [
 	"0: None",
-	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival", "1: Godly Revival",
+	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival", "1: Godly Revival", "1: Dark Godly Revival",
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",

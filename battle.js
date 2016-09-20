@@ -926,7 +926,7 @@ function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_r
 
 function death_proc(id1, id2, attack_skill){
 	if (battle_data[id1].no_death == true || battle_data[id1].sleep >= 1){
-		if (attack_skill == "Death Slash"){
+		if (attack_skill.search("Death Slash") != -1){
 			battle_data[id2].shield = true;
 			if (show_log == true)
 				document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") can block an attack for once! <br>";
@@ -971,7 +971,7 @@ function death_proc(id1, id2, attack_skill){
 
 
 	// Death Slash Effect
-	if (attack_skill == "Death Slash"){
+	if (attack_skill.search("Death Slash") != -1){
 		battle_data[id2].shield = true;
 		if (show_log == true)
 			document.getElementById('res').innerHTML += base_data[id2].card + " (Team " + (id2 + 1).toString() + ") can block an attack for once! <br>";
@@ -1761,6 +1761,7 @@ function battle(){
 					battle_data[defender].dodgable = false;
 					break;
 				case "Dark Giga Slash":
+				case "Dark Death Slash":
 					attack_attr = "Physical";
 					dmg_rate = 2, reduc_rate = 0, mp_cost = 1200;
 					battle_data[defender].dodgable = false;
@@ -1808,9 +1809,16 @@ function battle(){
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false;
 					break;
 				case "Spirit Attack":
+				case "Spirit Break":
 					attack_attr = base_data[attacker].attr;
-					mp_cost = 1300;
-					dmg_rate = 1 + spirit_attack_modifier[attacker];
+					if (attack_skill == "Spirit Attack"){
+						mp_cost = 1300;
+						dmg_rate = 1 + spirit_attack_modifier[attacker];
+					}
+					else{
+						mp_cost = 1400;
+						dmg_rate = 1.25 + spirit_attack_modifier[attacker];
+					}
 					battle_data[defender].dodgable = false, battle_data[defender].counterable = false, battle_data[defender].blockable = false;
 					break;
 				case "Heal": 
@@ -1906,7 +1914,7 @@ function battle(){
 			dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;
 		}
-		if( attack_skill == "Spirit Attack" || attack_skill == "Energy Drain"){
+		if( attack_skill == "Spirit Attack" || attack_skill == "Spirit Break" || attack_skill == "Energy Drain"){
 			temp_show_log = show_log, temp_mp = battle_data[defender].mp_left;
 			show_log = false;
 			fake_damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, 0.5, 0);
@@ -1962,7 +1970,7 @@ function battle(){
 			mp_heal_apply(attacker, 0, 0.6 * damage);
 			damage = 0;
 		}
-		else if (attack_skill == "Spirit Attack"){
+		else if (attack_skill == "Spirit Attack" || attack_skill == "Spirit Break"){
 			damage = mp_damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, 0.5, 0);
 			damage = 0;
 		}
@@ -1992,7 +2000,7 @@ function battle(){
 		
 
 		// If Death Occurs
-		if (battle_data[defender].hp_left <= 0 || (attack_skill == "Spirit Attack" && battle_data[defender].mp_left <= 0)){		
+		if (battle_data[defender].hp_left <= 0 || ((attack_skill == "Spirit Attack" || attack_skill == "Spirit Break") && battle_data[defender].mp_left <= 0)){		
 			still_alive = death_proc(defender, 1 - defender, attack_skill);
 
 			// If Survived
