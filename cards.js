@@ -3,6 +3,26 @@ var data =
 	
 	
 	{
+		"name": "千代女 / Chiyome", "attr": "Darkness", "hp": 2340, "mp": 1540, "atk": 1760, "def": 1580, "spd": 1436, "wis": 2150, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "テラ / Terra", "attr": "Water", "hp": 2680, "mp": 1740, "atk": 2100, "def": 1780, "spd": 1460, "wis": 1820, 
+		"attack_skill": "Balmung", "intro_skill1": "Ability Lock", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新キングトロール / Neo Troll King", "attr": "Earth", "hp": 2680, "mp": 1820, "atk": 1880, "def": 1920, "spd": 1460, "wis": 1500, 
+		"attack_skill": "Death Slash", "intro_skill1": "Celestial Pulse", "intro_skill2": "Dark Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新アークエンジェル / Neo Earthbound Angel", "attr": "Undead", "hp": 2700, "mp": 1660, "atk": 1640, "def": 1640, "spd": 1486, "wis": 2065, 
+		"attack_skill": "Undead +S", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ネイト / Neit", "attr": "Thunder", "hp": 2730, "mp": 1720, "atk": 1470, "def": 1790, "spd": 1436, "wis": 2130, 
 		"attack_skill": "Spirit Break", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "Dark Mirage Drive", "poison_skill": "None", "counter_skill": "None",
@@ -2452,6 +2472,11 @@ var data =
 		"attack_skill": "Arondight", "intro_skill1": "Dark Mind Break", "intro_skill2": "Resistance", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Fast Sleep, Divine Shield, Undead +4EX"
+	},
+	{
+		"name": "最強レア / Almighty Rhea", "attr": "Wind", "hp": 2740, "mp": 4220, "atk": 2090, "def": 1890, "spd": 1510, "wis": 1760, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
