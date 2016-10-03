@@ -3,6 +3,26 @@ var data =
 	
 	
 	{
+		"name": "ファイアードレイク / Fire Drake", "attr": "Fire", "hp": 2730, "mp": 2000, "atk": 1840, "def": 1760, "spd": 1510, "wis": 2075, 
+		"attack_skill": "Dimension Gate +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "パラス・アテネ / Pallas Athena", "attr": "Earth", "hp": 2760, "mp": 1740, "atk": 1880, "def": 2640, "spd": 1470, "wis": 1620, 
+		"attack_skill": "Dark Death Slash", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新魔業姫アスタロット / Neo Princess Ashtoreth", "attr": "Poison", "hp": 1990, "mp": 730, "atk": 1660, "def": 1640, "spd": 1484, "wis": 2050, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Resist Smite", "intro_skill2": "Wise Smite +S", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新閃電娘娘 / Neo Shandian Niang-niang", "attr": "Thunder", "hp": 2480, "mp": 1870, "atk": 2090, "def": 1600, "spd": 1462, "wis": 1820, 
+		"attack_skill": "Meteor Impact", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
 		"name": "千代女 / Chiyome", "attr": "Darkness", "hp": 2340, "mp": 1540, "atk": 1760, "def": 1580, "spd": 1436, "wis": 2150, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2476,6 +2496,11 @@ var data =
 	{
 		"name": "最強レア / Almighty Rhea", "attr": "Wind", "hp": 2740, "mp": 4220, "atk": 2090, "def": 1890, "spd": 1510, "wis": 1760, 
 		"attack_skill": "Meteor Impact", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ラー / Almighty Ra", "attr": "Fire", "hp": 2200, "mp": 1600, "atk": 2450, "def": 1580, "spd": 1484, "wis": 1580, 
+		"attack_skill": "Physical +4", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
