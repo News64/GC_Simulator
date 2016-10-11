@@ -3,6 +3,16 @@ var data =
 	
 	
 	{
+		"name": "メロウ / Merrow", "attr": "Water", "hp": 2660, "mp": 1630, "atk": 1500, "def": 1560, "spd": 1436, "wis": 2150, 
+		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Mind Crush +S", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "アーティファクト / Artifact", "attr": "Machine", "hp": 2760, "mp": 1900, "atk": 1880, "def": 2020, "spd": 1510, "wis": 1900, 
+		"attack_skill": "Dark Death Slash", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "Dark Mirage Drive", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ファイアードレイク / Fire Drake", "attr": "Fire", "hp": 2730, "mp": 2000, "atk": 1840, "def": 1760, "spd": 1510, "wis": 2075, 
 		"attack_skill": "Dimension Gate +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2503,6 +2513,11 @@ var data =
 		"attack_skill": "Physical +4", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Soul Taker", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強ゼノ・ケンタウロス / Almighty Zeno Centaur", "attr": "Machine", "hp": 2690, "mp": 1640, "atk": 1740, "def": 1900, "spd": 1486, "wis": 2185, 
+		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2596,7 +2611,7 @@ var death_skills = [
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",
-	"4: Soul Taker", "4: Mind Crush", "4: Soul Taker +S", "4: Free Mind Crush",
+	"4: Soul Taker", "4: Mind Crush", "4: Soul Taker +S", "4: Mind Crush +S", "4: Free Mind Crush",
 	"4: Martyr", "4: Entrust", "4: Force"
 ];
 

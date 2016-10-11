@@ -1082,7 +1082,7 @@ function death_status_apply(id1, id2, skill){
 function death_damage_apply(id1, id2, skill){
 	var mp_cost = 0, chance;
 	var temp1, temp2, temp3, temp4;
-	if (skill == "4: Soul Taker" || skill == "4: Mind Crush" || skill == "4: Entrust" || skill == "4: Soul Taker +S"){
+	if (skill == "4: Soul Taker" || skill == "4: Mind Crush" || skill == "4: Entrust" || skill == "4: Soul Taker +S" || skill == "4: Mind Crush +S"){
 		mp_cost = 300;
 	}
 	else if (skill == "4: Explosion" || skill == "4: Dark Explosion" || skill == "4: Burst")
@@ -1123,6 +1123,10 @@ function death_damage_apply(id1, id2, skill){
 		case "4: Free Mind Crush":
 			battle_data[id2].blockable = false;
 			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.5 + soul_mind_modifier[id1], 0.5, 0);
+			break;
+		case "4: Mind Crush +S":
+			battle_data[id2].blockable = false;
+			damage_dealer(id1, id2, skill, base_data[id1].attr , 1.8 + soul_mind_modifier[id1], 0.5, 0);
 			break;
 		case "4: Martyr":
 			chance = 0.8;
