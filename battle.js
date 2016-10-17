@@ -1761,13 +1761,21 @@ function battle(){
 						dmg_rate = 2;
 					else
 						dmg_rate = 0.5;
-					reduc_rate = 0, mp_cost = 1200;
+					reduc_rate = 0;
+					if (attack_skill == "Giga Slash")
+						mp_cost = 1200;
+					else
+						mp_cost = 1500;
 					battle_data[defender].dodgable = false;
 					break;
 				case "Dark Giga Slash":
 				case "Dark Death Slash":
 					attack_attr = "Physical";
-					dmg_rate = 2, reduc_rate = 0, mp_cost = 1200;
+					dmg_rate = 2, reduc_rate = 0;
+					if (attack_skill == "Dark Giga Slash")
+						mp_cost = 1200;
+					else
+						mp_cost = 1500;
 					battle_data[defender].dodgable = false;
 					break;
 				case "Soul Slash":
