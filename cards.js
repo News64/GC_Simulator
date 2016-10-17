@@ -3,6 +3,26 @@ var data =
 	
 	
 	{
+		"name": "灯斬稲荷神 / Inari the Lantern Slasher", "attr": "Darkness", "hp": 2600, "mp": 1760, "atk": 1880, "def": 1840, "spd": 1500, "wis": 1800, 
+		"attack_skill": "Dark Death Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新バンシー・ヴィッチ / Neo Banshee Witch", "attr": "Undead", "hp": 2520, "mp": 1690, "atk": 1620, "def": 1680, "spd": 1490, "wis": 2075, 
+		"attack_skill": "Dimension Gate +S", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "Last Bastion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ミネルヴァ・ヴィッチ / Neo Minerva Witch", "attr": "Wind", "hp": 2560, "mp": 1420, "atk": 1540, "def": 1700, "spd": 1510, "wis": 2075, 
+		"attack_skill": "Dimension Gate +S", "intro_skill1": "Resist Smite", "intro_skill2": "Wise Smite +S", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新パンプキン・タイタン/ Neo Pumpkin Titan", "attr": "Earth", "hp": 3220, "mp": 3520, "atk": 1900, "def": 1780, "spd": 1400, "wis": 1520, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "Dark Explosion",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
+	},
+	{
 		"name": "メロウ / Merrow", "attr": "Water", "hp": 2660, "mp": 1630, "atk": 1500, "def": 1560, "spd": 1436, "wis": 2150, 
 		"attack_skill": "Spirit Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Mind Crush +S", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2516,6 +2536,11 @@ var data =
 	{
 		"name": "最強ゼノ・ケンタウロス / Almighty Zeno Centaur", "attr": "Machine", "hp": 2690, "mp": 1640, "atk": 1740, "def": 1900, "spd": 1486, "wis": 2185, 
 		"attack_skill": "Arondight", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ゼノビア・ダークナイト / Almighty Dark Knight Zenobia", "attr": "Darkness", "hp": 2840, "mp": 1090, "atk": 2040, "def": 1780, "spd": 1502, "wis": 1780, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
