@@ -3,6 +3,28 @@ var data =
 	
 	
 	{
+		"name": "ストレンジ・メイジ / Strangemage", "attr": "Poison", "hp": 2620, "mp": 1600, "atk": 1740, "def": 1780, "spd": 1460, "wis": 2065, 
+		"attack_skill": "Meteor Nova EX", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Last Bastion"
+	},
+	{
+		"name": "ホーンテッドエスメラルダ / Haunted Esmeralda", "attr": "Light", "hp": 2620, "mp": 1730, "atk": 1940, "def": 1760, "spd": 1466, "wis": 1760, 
+		"attack_skill": "Soul Drain", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Dark Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ガブリエル・デーモン / Neo Gabriel Demon", "attr": "Darkness", "hp": 2520, "mp": 960, "atk": 1580, "def": 1700, "spd": 1464, "wis": 2110, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Arondight"
+	},
+	{
+		"name": "新パンプキン・イブリース / Neo Pumpkin Iblis", "attr": "Undead", "hp": 2540, "mp": 1100, "atk": 1965, "def": 1780, "spd": 1436, "wis": 1740, 
+		"attack_skill": "Normal Attack", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "Soul Taker",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "灯斬稲荷神 / Inari the Lantern Slasher", "attr": "Darkness", "hp": 2600, "mp": 1760, "atk": 1880, "def": 1840, "spd": 1500, "wis": 1800, 
 		"attack_skill": "Dark Death Slash", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2542,6 +2564,11 @@ var data =
 		"name": "最強ゼノビア・ダークナイト / Almighty Dark Knight Zenobia", "attr": "Darkness", "hp": 2840, "mp": 1090, "atk": 2040, "def": 1780, "spd": 1502, "wis": 1780, 
 		"attack_skill": "Soul Buster", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ラケシス・ナイトメア / Nightmare Lachesis", "attr": "Undead", "hp": 2730, "mp": 1900, "atk": 1620, "def": 1740, "spd": 1510, "wis": 2065, 
+		"attack_skill": "Undead +S", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
