@@ -2566,9 +2566,14 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "最強ラケシス・ナイトメア / Nightmare Lachesis", "attr": "Undead", "hp": 2730, "mp": 1900, "atk": 1620, "def": 1740, "spd": 1510, "wis": 2065, 
+		"name": "最強ラケシス・ナイトメア / Almighty Nightmare Lachesis", "attr": "Undead", "hp": 2730, "mp": 1900, "atk": 1620, "def": 1740, "spd": 1510, "wis": 2065, 
 		"attack_skill": "Undead +S", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Dark Mirage Drive", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ヴァサーゴ / Almighty Virsago", "attr": "Earth", "hp": 2680, "mp": 1480, "atk": 2100, "def": 1920, "spd": 1462, "wis": 1700, 
+		"attack_skill": "Crush Drain", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
