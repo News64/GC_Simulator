@@ -3,6 +3,21 @@ var data =
 	
 	
 	{
+		"name": "殲滅皇ファープニル / Fafnir, the Annihilating Emperor", "attr": "Earth", "hp": 2560, "mp": 1790, "atk": 1940, "def": 1840, "spd": 1490, "wis": 1740, 
+		"attack_skill": "Death Fang", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ジェド・マロース / Neo Ded Moroz", "attr": "Water", "hp": 2740, "mp": 1640, "atk": 1520, "def": 1770, "spd": 1460, "wis": 2075, 
+		"attack_skill": "Variable Buster", "intro_skill1": "Celestial Pulse", "intro_skill2": "Ability Lock", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "真グランドポーンカイザー / True Grand Pawn Caesar", "attr": "Naught", "hp": 2880, "mp": 1180, "atk": 2000, "def": 1940, "spd": 1645, "wis": 1780, 
+		"attack_skill": "Dark Giga Slash", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Deep Sleep", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ストレンジ・メイジ / Strangemage", "attr": "Poison", "hp": 2620, "mp": 1600, "atk": 1740, "def": 1780, "spd": 1460, "wis": 2065, 
 		"attack_skill": "Meteor Nova EX", "intro_skill1": "Dark Ability Lock", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
@@ -40,7 +55,7 @@ var data =
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	{
-		"name": "新パンプキン・タイタン/ Neo Pumpkin Titan", "attr": "Earth", "hp": 3220, "mp": 3520, "atk": 1900, "def": 1780, "spd": 1400, "wis": 1520, 
+		"name": "新パンプキン・タイタン / Neo Pumpkin Titan", "attr": "Earth", "hp": 3220, "mp": 3520, "atk": 1900, "def": 1780, "spd": 1400, "wis": 1520, 
 		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "Dark Explosion",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "Counter"
 	},
