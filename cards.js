@@ -3,6 +3,16 @@ var data =
 	
 	
 	{
+		"name": "エリス・マギア / Magia Eris", "attr": "Undead", "hp": 2620, "mp": 1680, "atk": 1680, "def": 1780, "spd": 1486, "wis": 2065, 
+		"attack_skill": "Gram", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "新ギルガメッシュ / Neo Gilgamesh", "attr": "Thunder", "hp": 2840, "mp": 1090, "atk": 2040, "def": 2340, "spd": 1486, "wis": 1660, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "殲滅皇ファープニル / Fafnir, the Annihilating Emperor", "attr": "Earth", "hp": 2560, "mp": 1790, "atk": 1940, "def": 1840, "spd": 1490, "wis": 1740, 
 		"attack_skill": "Death Fang", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2589,6 +2599,11 @@ var data =
 		"name": "最強ヴァサーゴ / Almighty Virsago", "attr": "Earth", "hp": 2680, "mp": 1480, "atk": 2100, "def": 1920, "spd": 1462, "wis": 1700, 
 		"attack_skill": "Crush Drain", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
+	{
+		"name": "最強晶雷竜タラスク / Almighty Tarasque", "attr": "Thunder", "hp": 2710, "mp": 1640, "atk": 1840, "def": 1840, "spd": 1486, "wis": 2075, 
+		"attack_skill": "Variable Buster", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
