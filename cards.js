@@ -3,6 +3,11 @@ var data =
 	
 	
 	{
+		"name": "イグニス / Ignis", "attr": "Fire", "hp": 2200, "mp": 4240, "atk": 1680, "def": 1580, "spd": 1484, "wis": 2065, 
+		"attack_skill": "Variable Buster", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "エリス・マギア / Magia Eris", "attr": "Undead", "hp": 2620, "mp": 1680, "atk": 1680, "def": 1780, "spd": 1486, "wis": 2065, 
 		"attack_skill": "Gram", "intro_skill1": "Dark Mind Break", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2603,6 +2608,11 @@ var data =
 	{
 		"name": "最強晶雷竜タラスク / Almighty Tarasque", "attr": "Thunder", "hp": 2710, "mp": 1640, "atk": 1840, "def": 1840, "spd": 1486, "wis": 2075, 
 		"attack_skill": "Variable Buster", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強セクアナ / Almighty Sequana", "attr": "Water", "hp": 2620, "mp": 1700, "atk": 1440, "def": 1760, "spd": 1466, "wis": 2185, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
