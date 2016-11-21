@@ -2615,6 +2615,11 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "All Shift", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強エルピス / Almighty Elpis", "attr": "Light", "hp": 2740, "mp": 1620, "atk": 1560, "def": 1890, "spd": 1510, "wis": 2150, 
+		"attack_skill": "Meteor Nova", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Mind Crush +S", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
