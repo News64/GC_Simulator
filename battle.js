@@ -1879,11 +1879,14 @@ function battle(){
 					break;
 				case "Dimension Gate":
 				case "Dimension Gate +S":
+				case "Free Dimension Gate +S":
 					attack_attr = base_data[attacker].attr;
 					if(attack_skill == "Dimension Gate")
 						dmg_rate = 1.5 + dimension_gate_modifier[attacker], mp_cost = 1300;
 					else
 						dmg_rate = 2 + dimension_gate_modifier[attacker], mp_cost = 1600;
+					if(attack_skill == "Free Dimension Gate +S")
+						mp_cost = 0;
 					battle_data[defender].no_death = true;
 					break;
 				case "Arondight":
@@ -1921,7 +1924,7 @@ function battle(){
 			
 		}
 
-		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) ) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain" && attack_skill != "Life Drain" && attack_skill != "Soul Drain") ){ // Special Normal Attack Decision
+		if( ( (mp_cost == 0 || battle_data[attacker].mp_left < mp_cost) && (hp_cost == 0 || battle_data[attacker].hp_left <= hp_cost) && (attack_skill.search('Free') == -1)) || (battle_data[defender].hp_left < 24 && attack_skill != "Crush Drain" && attack_skill != "Life Drain" && attack_skill != "Soul Drain") ){ // Special Normal Attack Decision
 			attack_skill = "Normal Attack", attack_attr = "Physical";
 			dmg_rate = 1, reduc_rate = 0.5, hp_cost = 0, mp_cost = 0;
 			battle_data[defender].dodgable = true, battle_data[defender].counterable = true, battle_data[defender].no_death = false, battle_data[defender].blockable = true;

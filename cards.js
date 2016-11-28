@@ -1,7 +1,16 @@
 var data =
 [
 	
-	
+	{
+		"name": "ブラッディ・ダークネス / Bloody Darkness", "attr": "Naught", "hp": 8323, "mp": 8323, "atk": 2800, "def": 4801, "spd": 3632, "wis": 5041, 
+		"attack_skill": "Free Dimension Gate +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Free Dark Godly Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "エドワード・ティーチ / Edward Teach", "attr": "Poison", "hp": 2620, "mp": 1600, "atk": 1740, "def": 1780, "spd": 1460, "wis": 2065, 
+		"attack_skill": "Normal Attack", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Last Bastion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "Deadly Poison", "counter_skill": "None"
+	},
 	{
 		"name": "イグニス / Ignis", "attr": "Fire", "hp": 2200, "mp": 4240, "atk": 1680, "def": 1580, "spd": 1484, "wis": 2065, 
 		"attack_skill": "Variable Buster", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
@@ -2620,6 +2629,11 @@ var data =
 		"attack_skill": "Meteor Nova", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Mind Crush +S", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強ハルピュイア / Almighty Harpyia", "attr": "Poison", "hp": 2620, "mp": 1710, "atk": 1820, "def": 1820, "spd": 1486, "wis": 2185, 
+		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
@@ -2667,7 +2681,7 @@ var attack_skills = [
 	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain", "Spirit Attack", "Spirit Break",
 	"Heal", "Greater Heal", "Holy Grail",
-	"Predator", "Death Fang", "Dimension Gate", "Dimension Gate +S",
+	"Predator", "Death Fang", "Dimension Gate", "Dimension Gate +S", "Free Dimension Gate +S",
 	"Laevateinn", "Arondight", "Balmung", "Gram",
 	"Meteor Impact", "Meteor Impact EX", "Meteor Nova", "Meteor Nova EX",
 	"Fire +1", "Fire +2", "Fire +3", "Fire +4", "Fire +4EX", "Fire +S", 
@@ -2709,7 +2723,7 @@ var intro_skills = [
 
 var death_skills = [
 	"0: None",
-	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival", "1: Godly Revival", "1: Dark Godly Revival",
+	"1: Revival", "1: Dark Revival", "1: Free Revival", "1: Free Dark Revival", "1: Godly Revival", "1: Dark Godly Revival", "1: Free Dark Godly Revival",
 	"2: Last Stand", "2: Last Bastion",
 	"3: Deep Sleep", "3: Crystallize",
 	"4: Explosion", "4: Dark Explosion", "4: Burst",
