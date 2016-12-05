@@ -2634,6 +2634,11 @@ var data =
 		"attack_skill": "Dimension Gate", "intro_skill1": "Resist Smite", "intro_skill2": "None", "death_skill1": "Mind Crush", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強アルプ / Almighty Alp", "attr": "Fire", "hp": 2690, "mp": 1720, "atk": 2020, "def": 1700, "spd": 1486, "wis": 1880, 
+		"attack_skill": "Meteor Impact EX", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
 	// From here: Only name is updated
 	/*
 	
