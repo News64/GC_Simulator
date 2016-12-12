@@ -2,6 +2,11 @@ var data =
 [
 	
 	{
+		"name": "新サンタ・ニケ / Neo Santa Nike", "attr": "Wind", "hp": 2740, "mp": 4240, "atk": 1680, "def": 1720, "spd": 1512, "wis": 2065, 
+		"attack_skill": "Undead +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "ブラッディ・ダークネス / Bloody Darkness", "attr": "Naught", "hp": 8323, "mp": 8323, "atk": 2800, "def": 4801, "spd": 3632, "wis": 5041, 
 		"attack_skill": "Free Dimension Gate +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Free Dark Godly Revival", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2638,6 +2643,11 @@ var data =
 		"name": "最強アルプ / Almighty Alp", "attr": "Fire", "hp": 2690, "mp": 1720, "atk": 2020, "def": 1700, "spd": 1486, "wis": 1880, 
 		"attack_skill": "Meteor Impact EX", "intro_skill1": "Fast Sleep", "intro_skill2": "None", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "Cursing Dance", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
+		"name": "最強ロビン・パティシエール / Almighty Robin the Patissiere", "attr": "Wind", "hp": 2730, "mp": 1720, "atk": 1860, "def": 1820, "spd": 1512, "wis": 2075, 
+		"attack_skill": "Variable Buster", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
