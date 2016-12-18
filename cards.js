@@ -2649,6 +2649,12 @@ var data =
 		"attack_skill": "Variable Buster", "intro_skill1": "None", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
 		"dodge_skill1": "Dark Deft Step", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
+	{
+		"name": "最強聖夜姫アスタロット / Almighty Holy Ashtoreth", "attr": "Poison", "hp": 2620, "mp": 1820, "atk": 1780, "def": 1760, "spd": 1486, "wis": 2075, 
+		"attack_skill": "Gram", "intro_skill1": "Dark Mind Break", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Dimension Gate +S"
+	},
 	// From here: Only name is updated
 	/*
 	
