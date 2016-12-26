@@ -2,6 +2,17 @@ var data =
 [
 	
 	{
+		"name": "新スフィンクス・レジェンド / Neo Legendary Sphinx", "attr": "Light", "hp": 2580, "mp": 1160, "atk": 2240, "def": 1720, "spd": 1512, "wis": 2150, 
+		"attack_skill": "Soul Buster", "intro_skill1": "Resist Smite", "intro_skill2": "Quick Strike", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
+		"alt_skill": "Assault Strike"
+	},
+	{
+		"name": "新バンシー・セレナーデ / Neo Banshee Serenade", "attr": "Undead", "hp": 2620, "mp": 1520, "atk": 1640, "def": 1740, "spd": 1510, "wis": 2065, 
+		"attack_skill": "Variable Buster", "intro_skill1": "Divine Shield", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "新サンタ・ニケ / Neo Santa Nike", "attr": "Wind", "hp": 2740, "mp": 4240, "atk": 1680, "def": 1720, "spd": 1512, "wis": 2065, 
 		"attack_skill": "Undead +S", "intro_skill1": "Resistance", "intro_skill2": "None", "death_skill1": "Dark Explosion", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
@@ -2654,6 +2665,11 @@ var data =
 		"attack_skill": "Gram", "intro_skill1": "Dark Mind Break", "intro_skill2": "Celestial Pulse", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
 		"alt_skill": "Dimension Gate +S"
+	},
+	{
+		"name": "最強猿姫セルヴァ / Almighty Monkey Princess Selva", "attr": "Naught", "hp": 3160, "mp": 1920, "atk": 2815, "def": 2016, "spd": 1736, "wis": 2016, 
+		"attack_skill": "Balmung", "intro_skill1": "Assault Strike", "intro_skill2": "None", "death_skill1": "Dark Revival", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
 	},
 	// From here: Only name is updated
 	/*
