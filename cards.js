@@ -2,6 +2,11 @@ var data =
 [
 	
 	{
+		"name": "ブラッディ・クルス / Bloody Cross", "attr": "Naught", "hp": 8323, "mp": 8323, "atk": 4801, "def": 4801, "spd": 3821, "wis": 3481, 
+		"attack_skill": "Free Dark Giga Slash", "intro_skill1": "Resist Smite +S", "intro_skill2": "Healing Light +S", "death_skill1": "None", "death_skill2": "None",
+		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None"
+	},
+	{
 		"name": "新スフィンクス・レジェンド / Neo Legendary Sphinx", "attr": "Light", "hp": 2580, "mp": 1160, "atk": 2240, "def": 1720, "spd": 1512, "wis": 2150, 
 		"attack_skill": "Soul Buster", "intro_skill1": "Resist Smite", "intro_skill2": "Quick Strike", "death_skill1": "None", "death_skill2": "None",
 		"dodge_skill1": "None", "dodge_skill2": "None", "poison_skill": "None", "counter_skill": "None",
@@ -2713,7 +2718,7 @@ var blue_exs = [
 
 var attack_skills = [
 	"Normal Attack",
-	"Giga Slash", "Dark Giga Slash", "Death Slash", "Dark Death Slash",
+	"Giga Slash", "Dark Giga Slash", "Death Slash", "Dark Death Slash", "Free Dark Giga Slash",
 	"Soul Slash", "Soul Buster", "Variable Slash", "Variable Buster",
 	"Crush Drain", "Life Drain", "Soul Drain",
 	"Energy Drain", "Spirit Attack", "Spirit Break",
@@ -2737,11 +2742,11 @@ var attack_skills = [
 
 var intro_skills = [
 	"0: None",
-	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite", "1: Wise Smite +S", "1: Resist Smite",
+	"1: Quick Strike", "1: Assault Strike", "1: Wise Smite", "1: Wise Smite +S", "1: Resist Smite", "1: Resist Smite +S",
 	"2: Divine Shield",
 	"3: Resistance",
 	"4: Power Shift", "4: Mind Shift", "4: Fast Shift", "4: All Shift",
-	"4: Multi Block", "4: Healing Light",
+	"4: Multi Block", "4: Healing Light", "4: Healing Light +S",
 	"5: Celestial Pulse",
 	"6: Ability Lock", "6: Dark Ability Lock",
 	"7: Transposition",

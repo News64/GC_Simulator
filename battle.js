@@ -612,6 +612,7 @@ function buff_apply(id1, id2, name){
 	var mp_cost = 0;
 	if (name == "4: Multi Block") mp_cost = 600;
 	else if (name == "4: Healing Light") mp_cost = 300;
+	else if (name == "4: Healing Light +S") mp_cost = 300;
 	else if (name == "4: All Shift") mp_cost = 900;
 	else if (name.search("Shift") != -1) mp_cost = 600;
 	else if (name.search("_") != -1) mp_cost = 400;
@@ -636,6 +637,10 @@ function buff_apply(id1, id2, name){
 	}
 	if (name == "4: Healing Light") {
 		battle_data[id1].healing = 5;
+		return;
+	}
+	if (name == "4: Healing Light +S") {
+		battle_data[id1].full_healing = 5;
 		return;
 	}
 	if (name == "4: Power Shift") { 
@@ -1355,7 +1360,7 @@ function data_init(team_num, card_num){
 		"inherit_atk": inherit_atk, "inherit_def": inherit_def, "inherit_spd": inherit_spd, "inherit_wis": inherit_wis,
 		"exceeded_speed": base_data[team_num - 1].spd + inherit_spd, "hp_left": base_data[team_num - 1].hp, "mp_left": base_data[team_num - 1].mp, 
 		"intro1_used": false, "intro2_used": false, "death1_used": false, "death2_used": false, "dodgable": true, "counterable": true, "blockable": true, "no_death": false,
-		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "mind_break": false, "poisoned": false, "poisoned_S":false, "sleep": 0, "multi_block": false, 
+		"resist": false, "temp_resist": false, "shield": false, "healing": 0, "full_healing": 0, "mind_break": false, "poisoned": false, "poisoned_S":false, "sleep": 0, "multi_block": false, 
 		"freeze": false, "abs_mind_break": false, "cursing_dance": 0};
 
 	if (base_data[team_num - 1].dodge_skill1.search("Cursing Dance") != -1 || base_data[team_num - 1].dodge_skill2.search("Cursing Dance") != -1)
@@ -1425,15 +1430,16 @@ function battle(){
 									case "1: Quick Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 0.85 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
 									case "1: Assault Strike": damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], "Physical", 1.6 + quick_strike_modifier[matrix[j][0]], 0.5, 0); break;
 									case "1: Resist Smite":
+									case "1: Resist Smite +S":
 									case "1: Wise Smite": 
 									case "1: Wise Smite +S": 
 										battle_data[matrix[j][1]].dodgable = false; 
-										if (matrix[j][2] == "1: Wise Smite +S")
+										if (matrix[j][2] == "1: Wise Smite +S" || matrix[j][2] == "1: Resist Smite +S")
 											damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 1.7, 0.5, 0); 
 										else
 											damage = damage_dealer(matrix[j][0], matrix[j][1], matrix[j][2], base_data[matrix[j][0]].attr, 0.95, 0.5, 0); 
 										battle_data[matrix[j][1]].dodgable = true; 
-										if (matrix[j][2] == "1: Resist Smite"){
+										if (matrix[j][2] == "1: Resist Smite" || matrix[j][2] == "1: Resist Smite +S"){
 											battle_data[matrix[j][0]].temp_resist = true;
 											if (show_log == true)
 												document.getElementById('res').innerHTML += base_data[matrix[j][0]].card + " (Team " + (matrix[j][0] + 1).toString() + ") gains temporary resistance against bad status! <br>";
@@ -1533,12 +1539,12 @@ function battle(){
 								if (battle_data[matrix[j][0]].mp_left >= 300 && 
 									(battle_data[matrix[j][1]].atk_buff + battle_data[matrix[j][1]].def_buff + battle_data[matrix[j][1]].spd_buff + battle_data[matrix[j][1]].wis_buff != 0 || 
 									battle_data[matrix[j][1]].inherit_atk + battle_data[matrix[j][1]].inherit_def + battle_data[matrix[j][1]].inherit_spd + battle_data[matrix[j][1]].inherit_wis != 0 || 
-									battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].temp_resist == true || battle_data[matrix[j][1]].healing > 0 || battle_data[matrix[j][1]].shield == true || 
-									battle_data[matrix[j][1]].multi_block == true )){
+									battle_data[matrix[j][1]].resist == true || battle_data[matrix[j][1]].temp_resist == true || battle_data[matrix[j][1]].healing > 0 || battle_data[matrix[j][1]].full_healing > 0
+									|| battle_data[matrix[j][1]].shield == true || battle_data[matrix[j][1]].multi_block == true )){
 									battle_data[matrix[j][1]].atk_buff = 0, battle_data[matrix[j][1]].def_buff = 0, battle_data[matrix[j][1]].spd_buff = 0, battle_data[matrix[j][1]].wis_buff = 0; 
 									battle_data[matrix[j][1]].inherit_atk = 0, battle_data[matrix[j][1]].inherit_def = 0, battle_data[matrix[j][1]].inherit_spd = 0, battle_data[matrix[j][1]].inherit_wis = 0; 
-									battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].temp_resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].shield = false;
-									battle_data[matrix[j][1]].multi_block = false;
+									battle_data[matrix[j][1]].resist = false, battle_data[matrix[j][1]].temp_resist = false, battle_data[matrix[j][1]].healing = 0, battle_data[matrix[j][1]].full_healing = 0, 
+									battle_data[matrix[j][1]].shield = false, battle_data[matrix[j][1]].multi_block = false;
 									keep = false;
 									battle_data[matrix[j][0]].mp_left -= 300;
 									if (show_log == true)
@@ -1693,6 +1699,10 @@ function battle(){
 			heal_apply(attacker, 0.5, 0);
 			battle_data[attacker].healing -= 1;
 		}
+		if (battle_data[attacker].full_healing > 0){
+			heal_apply(attacker, 1.0, 0);
+			battle_data[attacker].full_healing -= 1;
+		}
 		// Poison Damage
 		if (battle_data[attacker].poisoned == true){
 			damage = Math.round((0.4 + poison_attack_modifier[defender]) * base_data[attacker].hp);
@@ -1769,11 +1779,14 @@ function battle(){
 					battle_data[defender].dodgable = false;
 					break;
 				case "Dark Giga Slash":
+				case "Free Dark Giga Slash":
 				case "Dark Death Slash":
 					attack_attr = "Physical";
 					dmg_rate = 2, reduc_rate = 0;
 					if (attack_skill == "Dark Giga Slash")
 						mp_cost = 1200;
+					else if (attack_skill == "Free Dark Giga Slash")
+						mp_cost = 0;
 					else
 						mp_cost = 1500;
 					battle_data[defender].dodgable = false;
