@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DC Battle Simulator</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body onload="generate_table(10); init_all(10)">
+		Number of cards involved in both teams: <select id="num_cards"> </select> <br>
+		<button id="show_details" onclick="show_details()">Show Detailed Data</button>
+		<button id="hide_details" onclick="hide_details()">Hide Detailed Data</button>
+		<br> <br>
+
+		<table id="team_table">
+		</table>
+
+		<br>
+		<br>
+
+		<!--
+		Colosseum Attribute Buff1:
+		<select id="colo_buff_attr1" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select>
+		<select id="colo_buff_rate1" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select> <br>
+		Colosseum Attribute Buff2:
+		<select id="colo_buff_attr2" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select>
+		<select id="colo_buff_rate2" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select> <br>
+		Colosseum Attribute Buff3:
+		<select id="colo_buff_attr3" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select>
+		<select id="colo_buff_rate3" onchange="update_all(10, 1, 0); update_all(10, 2, 0)"></select> <br>
+		Colosseum Skill Buff:
+		<select id="colo_buff_skill"></select> <br>
+		<br>
+		-->
+
+		<!-- <p style="display:none;"> -->
+		<!-- <p> -->
+		<p style="display:none;">
+		From LV 70 Cool Clean to Basic: <button id="calc" onclick="basic_calc()">Calc!</button> <br>
+		<input type="text" name="hpc" id="hpc"> <input type="text" name="mpc" id="mpc"> <br>
+		<input type="text" name="atkc" id="atkc"> <input type="text" name="defc" id="defc"> <br>
+		<input type="text" name="spdc" id="spdc"> <input type="text" name="wisc" id="wisc"> <br>
+		<br>
+		</p>
+
+		<button id="battle" onclick="team_battle()">Go!</button>
+		<button id="battle1000" onclick="win_rate_test()">Go*1000!</button>
+		
+		<p id="res"></p>
+		
+		<script src="cards.js" charset="UTF-8"></script>
+		<script src="battle.js" charset="UTF-8"></script>
+
+	</body>
+</html>
