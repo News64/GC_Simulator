@@ -146,6 +146,11 @@ var data =
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: グレイビアードシフト（HPMP入替） / Shift", "IN: I20-CELL変異 / WIS +20% Buff"]
 	},
+	{
+		"name": "クリスマスナイト・ソナ", "attr": "共鳴型 / Screamer", "hp": 1463, "mp": 1416, "atk": 1793, "def": 1840, "spd": 1699, "wis": 1227, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", 
+		"DE: サバイヴ（耐える） / Survive", "RE: マゾヒスト（瀕死時攻+50%） / Masochist", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
 
 
 
@@ -243,6 +248,16 @@ var data =
 
 
 	{
+		"name": "クリスマスナイト・ソナ・極型", "attr": "共鳴型 / Screamer", "hp": 1484, "mp": 1437, "atk": 1819, "def": 1867, "spd": 1724, "wis": 1245, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", 
+		"DE: サバイヴ（耐える） / Survive", "RE: マゾヒスト（瀕死時攻+50%） / Masochist", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
+		"name": "クリスマスナイト・ソナ・究極型", "attr": "共鳴型 / Screamer", "hp": 1536, "mp": 1486, "atk": 1882, "def": 1932, "spd": 1783, "wis": 1288, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", 
+		"DE: サバイヴ（耐える） / Survive", "RE: マゾヒスト（瀕死時攻+50%） / Masochist", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
 		"name": "ライダー・アラン・ポー・極型", "attr": "寄生型 / Leecher", "hp": 1845, "mp": 1529, "atk": 1229, "def": 1680, "spd": 1596, "wis": 1729, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", 
 		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: ハイアヴォイド（完全回避） / High Avoid"]
@@ -327,7 +342,6 @@ var data =
 		"skill": ["IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
 		"IN: A25-CELL進化 / ATK +25% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
 	},
-
 	{
 		"name": "クー・フーリン・究極型", "attr": "疾風型 / Slasher", "hp": 1798, "mp": 1263, "atk": 1798, "def": 1653, "spd": 1749, "wis": 1458, 
 		"skill": ["IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
@@ -483,8 +497,8 @@ var gears = [
 	"None",
 	"バイタルピアス / Fresh Earring", "クレバーピアス / Mental Earring", "フォースピアス / Strong Earring", 
 	"ソリッドピアス / Tough Earring", "クイックピアス / Quick Earring", "スマートピアス / Smart Earring",
-	"バイタルリング / Fresh Ring", "バイタルリング / Mental Ring", "バイタルリング / Strong Ring", 
-	"バイタルリング / Tough Ring", "バイタルリング / Quick Ring", "バイタルリング / Smart Ring"
+	"バイタルリング / Fresh Ring", "クレバーリング / Mental Ring", "フォースリング / Strong Ring", 
+	"ソリッドリング / Tough Ring", "クイックリング / Quick Ring", "スマートリング / Smart Ring"
 ];
 
 var attack_skills = [
