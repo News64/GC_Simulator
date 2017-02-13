@@ -1,5 +1,26 @@
 var data =
 [
+
+	{
+		"name": "デスボイス・サリア", "attr": "放電型 / Shocker", "hp": 1657, "mp": 2242, "atk": 1335, "def": 1170, "spd": 1657, "wis": 1686, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
+		"IN: グレイビアードシフト（HPMP入替） / Shift", "RE: プレデター（捕食） / Predator", "IN: メディテーション（自動MP回復） / Meditation"]
+	},
+	{
+		"name": "レッドローズ・ビリー", "attr": "発熱型 / Burner", "hp": 1756, "mp": 1534, "atk": 1852, "def": 1466, "spd": 1582, "wis": 1457, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"BD: サディスト（打倒時攻+30%） / Sadist", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
+		"name": "エスコート・ジーク", "attr": "冷却型 / Chiller", "hp": 1821, "mp": 1453, "atk": 1676, "def": 1705, "spd": 1482, "wis": 1559, 
+		"skill": ["IN: プレッシャー（消費MP2倍） / Pressure", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: リジェネレート（自動HP回復） / Regenerate", "IN: AD10同時活性 / ATK_DEF +10% Buff", "AT: アームブレイカー（攻-20%攻撃） / Arm Breaker"]
+	},
+	{
+		"name": "ロマン・シェイクスピア", "attr": "共鳴型 / Screamer", "hp": 1790, "mp": 1488, "atk": 1362, "def": 1517, "spd": 1731, "wis": 1838, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: コンフュージョン（混乱攻撃） / Confusion", "IN: I20-CELL変異 / WIS +20% Buff"]
+	},
 	{
 		"name": "ギブミー・サンベリーナ", "attr": "誘惑型 / Charmer", "hp": 1780, "mp": 1751, "atk": 1275, "def": 1561, "spd": 1523, "wis": 1637, 
 		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ダブルストレイン（属性二連射） / Double Strain", 
@@ -31,10 +52,101 @@ var data =
 		"AT: ダブルストレイン（属性二連射） / Double Strain", "IN: A20-CELL変異 / ATK +20% Buff", "IN: I20-CELL変異 / WIS +20% Buff"]
 	},
 	{
-		"name": "プロキオン", "attr": "冷却型 / Chiller", "hp": 1346, "mp": 1244, "atk": 1023, "def": 1528, "spd": 1422, "wis": 1533, 
+		"name": "プロキオン", "attr": "冷却型 / Chiller", "hp": 1464, "mp": 1762, "atk": 1396, "def": 1416, "spd": 1811, "wis": 1782, 
 		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "IN: イリュージョン（チック化） / Illusion", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
 	},
+	{
+		"name": "アルデバラン", "attr": "共鳴型 / Screamer", "hp": 1640, "mp": 1699, "atk": 1336, "def": 1403, "spd": 1651, "wis": 1813, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"RE: プレデター（捕食） / Predator", "IN: プレッシャー（消費MP2倍） / Pressure", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+	},
+	{
+		"name": "ポルックス", "attr": "猛毒型 / Spitter", "hp": 1904, "mp": 1301, "atk": 1697, "def": 1763, "spd": 1253, "wis": 1508, 
+		"skill": ["AT: ポイズンアタック（毒攻撃） / Poison Attack", "RE: カウンター（反撃） / Counter", "IN: リジェネレート（自動HP回復） / Regenerate", 
+		"DE: サバイヴ（耐える） / Survive", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "IN: D20-CELL変異 / DEF +20% Buff"]
+	},
+	{
+		"name": "勝利の女神ニケ", "attr": "発熱型 / Burner", "hp": 1794, "mp": 1605, "atk": 1227, "def": 1416, "spd": 1605, "wis": 1794, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"RE: ロックリアクション（反応封印） / Lock Reaction", "IN: I20-CELL変異 / WIS +20% Buff", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "クー・フーリン", "attr": "疾風型 / Slasher", "hp": 1746, "mp": 1227, "atk": 1746, "def": 1605, "spd": 1699, "wis": 1416, 
+		"skill": ["IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"IN: A20-CELL変異 / ATK +20% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "戦神アレス", "attr": "放電型 / Shocker", "hp": 1786, "mp": 1222, "atk": 1739, "def": 1494, "spd": 1663, "wis": 1494, 
+		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: プレッシャー（消費MP2倍） / Pressure", "IN: AS10混合活性 / ATK_SPD +10% Buff", "RE: マゾヒスト（瀕死時攻+50%） / Masochist"]
+	},
+	{
+		"name": "巫女・スクールガール", "attr": "寄生型 / Leecher", "hp": 1715, "mp": 1615, "atk": 1875, "def": 1516, "spd": 1775, "wis": 1476, 
+		"skill": ["IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: AS10混合活性 / ATK_SPD +10% Buff", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)"]
+	},
+	{
+		"name": "アメノウズメ", "attr": "猛毒型 / Spitter", "hp": 1535, "mp": 1677, "atk": 1355, "def": 1535, "spd": 1753, "wis": 1621, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: イリュージョン（チック化） / Illusion", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "初詣エカチェリーナ", "attr": "発熱型 / Burner", "hp": 1507, "mp": 1383, "atk": 1812, "def": 1602, "spd": 1755, "wis": 1478, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ファストブラッド（先制物理） / First Blood", "IN: クリーンネス（弱体無効） / Cleanness"]
+	},
+	{
+		"name": "ネフィリム", "attr": "共鳴型 / Screamer", "hp": 1912, "mp": 1147, "atk": 1816, "def": 1864, "spd": 1434, "wis": 1386, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: リジェネレート（自動HP回復） / Regenerate", "AT: ツインリッパー（二連射） / Twin Ripper", "IN: AD10同時活性 / ATK_DEF +10% Buff"]
+	},
+	{
+		"name": "ペルセポネ", "attr": "中性型 / Voider", "hp": 1804, "mp": 1309, "atk": 2244, "def": 1650, "spd": 1903, "wis": 2090, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: メディテーション（自動MP回復） / Meditation", "IN: D25-CELL進化 / DEF +25% Buff"]
+	},
+	{
+		"name": "朱雀", "attr": "発熱型 / Burner", "hp": 1423, "mp": 1518, "atk": 1753, "def": 1508, "spd": 1716, "wis": 1508, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: A20-CELL変異 / ATK +20% Buff", "IN: クリーンネス（弱体無効） / Cleanness"]
+	},
+	{
+		"name": "メリー・ブラッディマリー", "attr": "放電型 / Shocker", "hp": 1284, "mp": 1050, "atk": 1231, "def": 1355, "spd": 1044, "wis": 1188, 
+		"skill": ["IN: アヴォイド（回避） / Avoid", "AT: トリプルスレット（会心一撃） / Triple Threat", "RE: ロックリアクション（反応封印） / Lock Reaction", 
+		"IN: AS10混合活性 / ATK_SPD +10% Buff", "IN: AS10混合浸食 / ATK_SPD -10% Debuff", "AT: 物理斬 +2 / Physical Slash +2"]
+	},
+	{
+		"name": "パリカー", "attr": "猛毒型 / Spitter", "hp": 1624, "mp": 1644, "atk": 1867, "def": 1522, "spd": 1624, "wis": 1867, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"BD: サディスト（打倒時攻+30%） / Sadist", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "サンタ・サキュバス", "attr": "誘惑型 / Charmer", "hp": 1848, "mp": 1469, "atk": 1308, "def": 1602, "spd": 1592, "wis": 1659, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: 聖・RE-CELL2回構築（2回復活） / Holy Double Revival", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: リジェネレート（自動HP回復） / Regenerate", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "ブラックサンタ・リリス", "attr": "共鳴型 / Screamer", "hp": 1630, "mp": 1650, "atk": 1399, "def": 1512, "spd": 1650, "wis": 1804, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: 聖・プレデター（捕食） / Holy Predator", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ファストロック（先制封印） / Fast Lock", "IN: コンフュージョン（混乱攻撃） / Confusion", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
+	},
+	{
+		"name": "ダークサンタ・アレクセイ", "attr": "発熱型 / Burner", "hp": 1976, "mp": 1501, "atk": 1798, "def": 1946, "spd": 859, "wis": 1798, 
+		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ファストブラッド（先制物理） / First Blood", "AT: ダブルストレイン（属性二連射） / Double Strain", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
+		"name": "ウィンター・リリノエ", "attr": "冷却型 / Chiller", "hp": 1601, "mp": 1761, "atk": 1365, "def": 1394, "spd": 1648, "wis": 1648, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"DE: ブレイン・デス（MP自爆） / Brain Death", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: イリュージョン（チック化） / Illusion"]
+	},
+	{
+		"name": "聖夜のスノウクイーン", "attr": "冷却型 / Chiller", "hp": 1653, "mp": 1464, "atk": 1370, "def": 1672, "spd": 1587, "wis": 1701, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: グレイビアードシフト（HPMP入替） / Shift", "IN: I20-CELL変異 / WIS +20% Buff"]
+	},
+
 
 
 
@@ -131,6 +243,107 @@ var data =
 
 
 	{
+		"name": "ライダー・アラン・ポー・極型", "attr": "寄生型 / Leecher", "hp": 1845, "mp": 1529, "atk": 1229, "def": 1680, "spd": 1596, "wis": 1729, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: ハイアヴォイド（完全回避） / High Avoid"]
+	},
+	{
+		"name": "ライダー・アラン・ポー・究極型", "attr": "寄生型 / Leecher", "hp": 1872, "mp": 1552, "atk": 1247, "def": 1705, "spd": 1620, "wis": 1755, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: ハイアヴォイド（完全回避） / High Avoid"]
+	},
+	{
+		"name": "聖夜のスノウクイーン・極型", "attr": "冷却型 / Chiller", "hp": 1677, "mp": 1488, "atk": 1390, "def": 1697, "spd": 1610, "wis": 1726, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: グレイビアードシフト（HPMP入替） / Shift", "IN: I20-CELL変異 / WIS +20% Buff"]
+	},
+	{
+		"name": "聖夜のスノウクイーン・究極型", "attr": "冷却型 / Chiller", "hp": 1735, "mp": 1537, "atk": 1438, "def": 1755, "spd": 1666, "wis": 1786, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: グレイビアードシフト（HPMP入替） / Shift", "IN: I20-CELL変異 / WIS +20% Buff"]
+	},
+	{
+		"name": "ディーア・イライダ・極型", "attr": "疾風型 / Slasher", "hp": 1561, "mp": 1750, "atk": 1372, "def": 1372, "spd": 1561, "wis": 1845, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: メディテーション（自動MP回復） / Meditation"]
+	},
+	{
+		"name": "ディーア・イライダ・究極型", "attr": "疾風型 / Slasher", "hp": 1614, "mp": 1811, "atk": 1419, "def": 1419, "spd": 1614, "wis": 1908, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: メディテーション（自動MP回復） / Meditation"]
+	},
+	{
+		"name": "リリム×サキュバス・究極型", "attr": "寄生型 / Leecher", "hp": 1670, "mp": 1635, "atk": 1851, "def": 1497, "spd": 1694, "wis": 1497, 
+		"skill": ["IN: ハイアヴォイド（完全回避） / High Avoid", "AT: トリプルスレット（会心一撃） / Triple Threat", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: AS10混合活性 / ATK_SPD +10% Buff", "AT: ツインリッパー（二連射） / Twin Ripper", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+	},
+	{
+		"name": "ウィンター・リリノエ・極型", "attr": "冷却型 / Chiller", "hp": 1681, "mp": 1849, "atk": 1433, "def": 1463, "spd": 1730, "wis": 1730, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"DE: ブレイン・デス（MP自爆） / Brain Death", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: イリュージョン（チック化） / Illusion"]
+	},
+	{
+		"name": "ウィンター・リリノエ・究極型", "attr": "冷却型 / Chiller", "hp": 1625, "mp": 1787, "atk": 1385, "def": 1414, "spd": 1672, "wis": 1672, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"DE: ブレイン・デス（MP自爆） / Brain Death", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "IN: イリュージョン（チック化） / Illusion"]
+	},
+	{
+		"name": "バンシー・ラプソディ・極型", "attr": "猛毒型 / Spitter", "hp": 1531, "mp": 1813, "atk": 1201, "def": 1635, "spd": 1651, "wis": 1802, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: グレイビアードシフト（HPMP入替） / Shift", "IN: SI10変則活性 / SPD_WIS +10% Buff", "AT: 毒 +4 / Spitter +4"]
+	},
+	{
+		"name": "バンシー・ラプソディ・究極型", "attr": "猛毒型 / Spitter", "hp": 1561, "mp": 1849, "atk": 1225, "def": 1667, "spd": 1683, "wis": 1837, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: グレイビアードシフト（HPMP入替） / Shift", "IN: SI10変則活性 / SPD_WIS +10% Buff", "AT: 毒 +4 / Spitter +4"]
+	},
+	{
+		"name": "アメノウズメ・極型", "attr": "猛毒型 / Spitter", "hp": 1565, "mp": 1710, "atk": 1382, "def": 1565, "spd": 1788, "wis": 1653, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: イリュージョン（チック化） / Illusion", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "アメノウズメ・究極型", "attr": "猛毒型 / Spitter", "hp": 1596, "mp": 1744, "atk": 1409, "def": 1596, "spd": 1823, "wis": 1685, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: イリュージョン（チック化） / Illusion", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "サンタ・サキュバス・究極型", "attr": "誘惑型 / Charmer", "hp": 1884, "mp": 1498, "atk": 1334, "def": 1634, "spd": 1623, "wis": 1692, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: 聖・RE-CELL2回構築（2回復活） / Holy Double Revival", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: リジェネレート（自動HP回復） / Regenerate", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "初詣エカチェリーナ・極型", "attr": "発熱型 / Burner", "hp": 1537, "mp": 1410, "atk": 1848, "def": 1634, "spd": 1791, "wis": 1507, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ファストブラッド（先制物理） / First Blood", "IN: クリーンネス（弱体無効） / Cleanness"]
+	},
+	{
+		"name": "初詣エカチェリーナ・究極型", "attr": "発熱型 / Burner", "hp": 1582, "mp": 1452, "atk": 1902, "def": 1682, "spd": 1842, "wis": 1551, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ファストブラッド（先制物理） / First Blood", "IN: クリーンネス（弱体無効） / Cleanness"]
+	},
+	{
+		"name": "クー・フーリン・極型", "attr": "疾風型 / Slasher", "hp": 1772, "mp": 1245, "atk": 1772, "def": 1630, "spd": 1724, "wis": 1437, 
+		"skill": ["IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"IN: A25-CELL進化 / ATK +25% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+
+	{
+		"name": "クー・フーリン・究極型", "attr": "疾風型 / Slasher", "hp": 1798, "mp": 1263, "atk": 1798, "def": 1653, "spd": 1749, "wis": 1458, 
+		"skill": ["IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"IN: A25-CELL進化 / ATK +25% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "プロキオン・極型", "attr": "冷却型 / Chiller", "hp": 1493, "mp": 1797, "atk": 1423, "def": 1444, "spd": 1847, "wis": 1817, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "IN: イリュージョン（チック化） / Illusion", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
+	},
+	{
+		"name": "プロキオン・究極型", "attr": "冷却型 / Chiller", "hp": 1522, "mp": 1832, "atk": 1451, "def": 1472, "spd": 1883, "wis": 1853, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "IN: イリュージョン（チック化） / Illusion", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
+	},
+	{
 		"name": "勝利の女神ニケ・極型", "attr": "発熱型 / Burner", "hp": 1820, "mp": 1629, "atk": 1245, "def": 1437, "spd": 1629, "wis": 1820, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"RE: ロックリアクション（反応封印） / Lock Reaction", "IN: I25-CELL進化 / WIS +25% Buff", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
@@ -154,6 +367,26 @@ var data =
 		"name": "デスクッカー・テレサ・究極型", "attr": "猛毒型 / Spitter", "hp": 1719, "mp": 1458, "atk": 1839, "def": 1477, "spd": 1930, "wis": 1627, 
 		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"RE: プレデター（捕食） / Predator", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "カペラ・極型", "attr": "疾風型 / Slasher", "hp": 1551, "mp": 1521, "atk": 1747, "def": 1689, "spd": 1933, "wis": 1373, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: S20-CELL変異 / SPD +20% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "カペラ・究極型", "attr": "疾風型 / Slasher", "hp": 1581, "mp": 1551, "atk": 1781, "def": 1689, "spd": 1971, "wis": 1400, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: S20-CELL変異 / SPD +20% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "エスコート・ジーク・極型", "attr": "冷却型 / Chiller", "hp": 1857, "mp": 1482, "atk": 1709, "def": 1739, "spd": 1511, "wis": 1590, 
+		"skill": ["IN: プレッシャー（消費MP2倍） / Pressure", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: リジェネレート（自動HP回復） / Regenerate", "IN: AD10同時活性 / ATK_DEF +10% Buff", "AT: アームブレイカー（攻-20%攻撃） / Arm Breaker"]
+	},
+	{
+		"name": "エスコート・ジーク・究極型", "attr": "冷却型 / Chiller", "hp": 1912, "mp": 1525, "atk": 1759, "def": 1790, "spd": 1556, "wis": 1636, 
+		"skill": ["IN: プレッシャー（消費MP2倍） / Pressure", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: リジェネレート（自動HP回復） / Regenerate", "IN: AD10同時活性 / ATK_DEF +10% Buff", "AT: アームブレイカー（攻-20%攻撃） / Arm Breaker"]
 	}
 ];
 

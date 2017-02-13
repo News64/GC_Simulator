@@ -609,7 +609,7 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		}
 	}
 	else{
-		if (attack_skill.search("Triple Threat") != -1)
+		if ( (attack_skill.search("Triple Threat") != -1 && insta_death == true) || attack_attr.search("Charmer") != -1)
 			damage = battle_data[id2].hp_left;
 	}
 
