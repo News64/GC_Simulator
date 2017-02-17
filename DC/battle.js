@@ -322,6 +322,28 @@ function update_box(team_num, card_num, mode){
 		else if (gear_name.search("Quick") != -1) spd_ratio += up_ratio;
 		else if (gear_name.search("Smart") != -1) wis_ratio += up_ratio;
 	}
+	else if (gear_name.search("SPD") != -1){
+		up_fixed = 100 + 5 * gear_lv_value;
+
+		if (gear_lv_value == 0)
+			up_fixed = 0;
+
+		spd_fixed = up_fixed;
+		if (gear_name.search("ATK") != -1) atk_fixed = up_fixed;
+		else wis_fixed = up_fixed;
+	}
+	else if (gear_name.search("All Stats") != -1){
+		up_fixed = 50 + 2 * gear_lv_value;
+
+		if (gear_lv_value == 0)
+			up_fixed = 0;
+		hp_fixed = up_fixed;
+		mp_fixed = up_fixed;
+		atk_fixed = up_fixed;
+		def_fixed = up_fixed;
+		spd_fixed = up_fixed;
+		wis_fixed = up_fixed;
+	}
 	
 	
 
@@ -520,20 +542,33 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		if (attack_skill.search("Triple Threat") != -1){
 			damage = Math.floor( (base_data[id1].atk) * (1.5 + battle_data[id1].atk_buff - battle_data[id1].atk_debuff)
 				   - (base_data[id2].def) * (1 + battle_data[id2].def_buff - battle_data[id2].def_debuff) * 0.5);
+
 			chance = damage / battle_data[id2].hp_left;
 			if (chance > 0.85)
 				chance = 0.85;
+			if (base_data[id1].gear.search("Triple Threat Success Rate +") != -1)
+				chance += base_data[id1].gear_lv * 0.0025;
+
 			if (Math.random() < chance){
 				insta_death = true;
 			}
 			else{
 				damage = Math.floor( (base_data[id1].atk) * (1.12 + battle_data[id1].atk_buff - battle_data[id1].atk_debuff)
 				   - (base_data[id2].def) * (1 + battle_data[id2].def_buff - battle_data[id2].def_debuff) * 0.5);
+
+				if (base_data[id1].gear.search("Triple Threat Damage +") != -1)
+					damage = Math.floor(damage * (1 + 0.015 * base_data[id1].gear_lv));
 			}
 		}
 		else{
 			damage = Math.floor( (base_data[id1].atk) * (dmg_rate + battle_data[id1].atk_buff - battle_data[id1].atk_debuff)
 				   - (base_data[id2].def) * (1 + battle_data[id2].def_buff - battle_data[id2].def_debuff) * reduc_rate);
+
+			if ((attack_skill.search("Blood Strike") != -1 && base_data[id1].gear.search("Blood Strike Damage +") != -1) ||
+				(attack_skill.search("Transfusion") != -1 && base_data[id1].gear.search("Transfusion Damage +") != -1) ||
+				(attack_skill.search("Poison Attack") != -1 && base_data[id1].gear.search("Poison Attack Damage +") != -1) ||
+				(attack_skill.search("Twin Ripper") != -1 && base_data[id1].gear.search("Twin Ripper Damage +") != -1))
+				damage = Math.floor(damage * (1 + 0.01 * base_data[id1].gear_lv));
 		}
 	}
 	else{
@@ -545,7 +580,27 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 		// Double Binder/ Gear
 		if (battle_data[id2].double_binder[0] == attack_attr || battle_data[id2].double_binder[1] == attack_attr)
 			damage /= 2;
+		if (attack_skill.search("Quick Thinking") == -1 &&
+			( (base_data[id1].gear.search("Burner Damage +") != -1 && attack_attr.search("Burner") != -1) || 
+				(base_data[id1].gear.search("Chiller Damage +") != -1 && attack_attr.search("Chiller") != -1) || 
+				(base_data[id1].gear.search("Slasher Damage +") != -1 && attack_attr.search("Slasher") != -1) || 
+				(base_data[id1].gear.search("Shocker Damage +") != -1 && attack_attr.search("Shocker") != -1) || 
+				(base_data[id1].gear.search("Screamer Damage +") != -1 && attack_attr.search("Screamer") != -1) || 
+				(base_data[id1].gear.search("Spitter Damage +") != -1 && attack_attr.search("Spitter") != -1) || 
+				(base_data[id1].gear.search("Leecher Damage +") != -1 && attack_attr.search("Leecher") != -1) ))
+			damage = Math.floor(damage * (1 + 0.0125 * base_data[id1].gear_lv));
+		if (attack_skill.search("Quick Thinking") == -1 &&
+			( (base_data[id1].gear.search("Chiller +") != -1 && attack_attr.search("Chiller") != -1) || 
+				(base_data[id1].gear.search("Slasher +") != -1 && attack_attr.search("Slasher") != -1) || 
+				(base_data[id1].gear.search("Screamer +") != -1 && attack_attr.search("Screamer") != -1) ))
+			damage = Math.floor(damage * (1 + 0.0075 * base_data[id1].gear_lv));
+		if ( (base_data[id2].gear.search("Leecher -") != -1 && attack_attr.search("Leecher") != -1) || 
+				(base_data[id2].gear.search("Spitter -") != -1 && attack_attr.search("Spitter") != -1) || 
+				(base_data[id2].gear.search("Shocker -") != -1 && attack_attr.search("Shocker") != -1) )
+			damage = Math.floor(damage * 0.9);
 
+
+		// Charmer 
 		if (attack_attr.search("Charmer") != -1){
 			undead = true;
 			chance = damage / battle_data[id2].hp_left;
@@ -557,6 +612,9 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			}
 			else if (chance > 0.5 + parseInt(attack_skill.charAt(temp)) * 0.1)
 				chance = 0.5 + parseInt(attack_skill.charAt(temp)) * 0.1;
+
+			if (base_data[id1].gear.search("Charmer Success Rate +") != -1)
+				chance += base_data[id1].gear_lv * 0.0025;
 
 			if (Math.random() < chance){
 				insta_death = true;
@@ -583,6 +641,9 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 					+ base_data[id2].card + " (Team " + (id2 + 1).toString() + ")! HP: " + battle_data[id2].hp_left + "/" + base_data[id2].hp + " <br>";
 			if (attack_skill.search("Poison Attack") != -1 && battle_data[id2].hp_left > 0){
 				chance = 0.5;
+				if (base_data[id1].gear.search("Poison Attack Success Rate +") != -1)
+					chance += 0.01 * base_data[id1].gear_lv;
+
 				if (Math.random() < chance){
 					battle_data[id2].poisoned = true;
 					if (show_log == true)
@@ -640,7 +701,7 @@ function mp_damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_r
 
 
 function death_proc(id1, id2, attack_skill, pre_hp){
-	var mp_cost;
+	var mp_cost, threshold;
 	var revival_proc;
 
 	// Revival
@@ -653,7 +714,10 @@ function death_proc(id1, id2, attack_skill, pre_hp){
 	}
 
 	// Last Stand
-	if (pre_hp / base_data[id1].hp > 0.1)
+	threshold = 0.1;
+	if (base_data[id1].gear.search("Survive Condition +") != -1)
+		threshold -= 0.0025 * base_data[id1].gear_lv;
+	if (pre_hp / base_data[id1].hp > threshold)
 		for (var i = 0; i < 3; i++){
 			if (base_data[id1].skill[i].search("Survive") != -1){
 				revival_proc = survive_apply(id1, i, base_data[id1].skill[i]);
@@ -741,6 +805,11 @@ function revival_apply(id, skill_id, name){
 	else
 		chance = 0.5;
 
+	if (base_data[id].gear.search("Revival Success Rate +") != -1){
+		if ((base_data[id].gear.search("Full") != -1 && name.search("Full") != -1) || (base_data[id].gear.search("Full") == -1 && name.search("Full") == -1))
+			chance += 0.01 * base_data[id].gear_lv;
+	}
+
 	if (Math.random() < chance){		
 		if (name.search("Full") != -1){
 			battle_data[id].hp_left = base_data[id].hp;
@@ -774,7 +843,10 @@ function survive_apply(id, name){
 
 	if (show_log == true)
 		document.getElementById('res').innerHTML += base_data[id].card + " (Team " + (id + 1).toString() + ") uses Survive! <br>";
+	
 	var chance = 0.7;
+	if (base_data[id1].gear.search("Survive Success Rate +") != -1)
+		chance += 0.005 * base_data[id1].gear_lv;
 
 	if (Math.random() < chance){
 		battle_data[id].hp_left = 1;
@@ -833,7 +905,7 @@ function death_damage_apply(id1, id2, skill){
 	temp1 = battle_data[id2].dodgable, temp2 = battle_data[id2].counterable, temp3 = battle_data[id2].no_death, temp4 = battle_data[id2].reflectable;
 	battle_data[id2].dodgable = false, battle_data[id2].counterable = false, battle_data[id2].no_death = true, battle_data[id2].reflectable = true;
 	switch (skill){
-		case "DE: デッドシンクロ / Dead Synchro":
+		case "DE: デッドシンクロ（自爆） / Dead Synchro":
 			chance = 0.5;
 			if (Math.random() < chance)
 				damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left, true);
@@ -841,10 +913,11 @@ function death_damage_apply(id1, id2, skill){
 				if (show_log == true)
 					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
-		case "DE: ジェノサイドシンクロ / Genocide Synchro":
+		case "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro":
+			console.log("Genocide");
 			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left, true);
 			break;
-		case "DE: ブレイン・デス / Brain Death":
+		case "DE: ブレイン・デス（MP自爆） / Brain Death":
 			mp_damage_dealer(id1, id2, skill, "None", 0, 0, 0, battle_data[id1].mp_left);
 			break;
 	}
@@ -1093,7 +1166,7 @@ function data_init(team_num, card_num){
 			document.getElementById('skill6' + team_num.toString() + '.' + card_num.toString()).value,
 		],
 		"gear": document.getElementById('gear' + team_num.toString() + '.' + card_num.toString()).value,
-		"gear_lv": document.getElementById('gear_lv' + team_num.toString() + '.' + card_num.toString()).value
+		"gear_lv": parseInt(document.getElementById('gear_lv' + team_num.toString() + '.' + card_num.toString()).value)
 	};
 
 	battle_data[team_num - 1] = {"atk_buff": 0, "def_buff": 0, "spd_buff": 0, "wis_buff": 0, "atk_debuff": 0, "def_debuff": 0, "spd_debuff": 0, "wis_debuff": 0,
@@ -1217,11 +1290,6 @@ function battle(){
 					// Buff
 					if (base_data[battler[i]].skill[j].search("Buff") != -1){
 
-						temp = Math.random();
-						if (temp < 0.25) base_data[battler[i]].skill[j].replace("RAN", "ATK");
-						else if (temp < 0.5) base_data[battler[i]].skill[j].replace("RAN", "DEF");
-						else if (temp < 0.75) base_data[battler[i]].skill[j].replace("RAN", "SPD");
-						else base_data[battler[i]].skill[j].replace("RAN", "WIS");
 
 						if (base_data[battler[i]].skill[j].search("_") != -1) mp_cost = 400, temp = 0.1;
 						else if (base_data[battler[i]].skill[j].search("10") != -1) mp_cost = 100, temp = 0.1;
@@ -1238,6 +1306,14 @@ function battle(){
 							if (show_log == true){
 								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
 							}
+
+
+							temp = Math.random();
+							if (temp < 0.25) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "ATK");
+							else if (temp < 0.5) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "DEF");
+							else if (temp < 0.75) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "SPD");
+							else base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "WIS");
+
 							if (base_data[battler[i]].skill[j].search("ATK") != -1) 
 								buff_apply(battler[i], battler[1 - i], "ATK", temp);
 							if (base_data[battler[i]].skill[j].search("DEF") != -1) 
@@ -1419,7 +1495,7 @@ function battle(){
 
 									// If Death Occurs
 									if (battle_data[1 - battler[i]].hp_left <= 0){		
-										still_alive = death_proc(1 - battler[i], 1 - 1 - battler[i], base_data[battler[i]].skill[j], pre_hp);
+										still_alive = death_proc(1 - battler[i], battler[i], base_data[battler[i]].skill[j], pre_hp);
 
 										// If Survived
 										if (still_alive == 1){
@@ -1438,10 +1514,10 @@ function battle(){
 										else{ 
 											if (show_log == true)
 												document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") is defeated! <br>";
-											result = 1 - 1 - battler[i];
-											if (battle_data[1 - 1 - battler[i]].hp_left <= 0){
+											result = battler[i];
+											if (battle_data[battler[i]].hp_left <= 0){
 												if (show_log == true)
-													document.getElementById('res').innerHTML += base_data[1 - 1 - battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
+													document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
 												result = -1;
 											}
 											else{
@@ -1566,7 +1642,7 @@ function battle(){
 							base_data[1 - battler[i]].mp = temp;
 
 							if (battle_data[1 - battler[i]].hp_left <= 0){		
-								still_alive = death_proc(1 - battler[i], 1 - 1 - battler[i], base_data[battler[i]].skill[j], battle_data[1 - battler[i]].mp_left);
+								still_alive = death_proc(1 - battler[i], battler[i], base_data[battler[i]].skill[j], battle_data[1 - battler[i]].mp_left);
 
 								// If Survived
 								if (still_alive == 1){
@@ -1577,10 +1653,10 @@ function battle(){
 								else{ 
 									if (show_log == true)
 										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") is defeated! <br>";
-									result = 1 - 1 - battler[i];
-									if (battle_data[1 - 1 - battler[i]].hp_left <= 0){
+									result = battler[i];
+									if (battle_data[battler[i]].hp_left <= 0){
 										if (show_log == true)
-											document.getElementById('res').innerHTML += base_data[1 - 1 - battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
+											document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
 										result = -1;
 									}
 									else{
@@ -1791,7 +1867,11 @@ function battle(){
 								continue;
 							}
 
-							if (Math.random() < 0.5){
+							chance = 0.5;
+							if (base_data[battler[i]].gear.search("Brain Suck Success Rate +") != -1)
+								chance += 0.01 * base_data[battler[i]].gear_lv;
+
+							if (Math.random() < chance){
 								avoided = false;
 								if (battle_data[1 - battler[i]].avoid > 0){
 									battle_data[1 - battler[i]].avoid--;
@@ -1887,7 +1967,11 @@ function battle(){
 								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
 							}
 
-							if (Math.random() < 0.3){
+							chance = 0.3;
+							if (base_data[battler[i]].gear.search("Illusion Success Rate +") != -1)
+								chance += 0.01 * base_data[battler[i]].gear_lv;
+
+							if (Math.random() < chance){
 
 								avoided = false;
 								if (battle_data[1 - battler[i]].avoid > 0){
@@ -1971,7 +2055,6 @@ function battle(){
 			defender = attacker;
 		}
 		else{
-			console.log(attacker);
 			for (var i = 0; i < 3; i++){
 				attack_skill = base_data[attacker].skill[i];
 				temp = attack_skill.split(" ");
@@ -1998,6 +2081,7 @@ function battle(){
 						case "+2": dmg_rate = 1.12; mp_cost = 300; mp_comp[i] = 300; break;
 						case "+3": dmg_rate = 1.25; mp_cost = 600; mp_comp[i] = 600; break;
 						case "+4": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
+						case "+5": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
 					}
 				}
 				else{
@@ -2011,6 +2095,8 @@ function battle(){
 						case "AT: ダブルストレイン（属性二連射） / Double Strain":
 							attack_attr = base_data[attacker].attr;
 							dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
+							if (attack_attr.search('Charmer') != -1)
+								dmg_rate = 1.2;
 							break;
 						case "AT: トリプルスレット（会心一撃） / Triple Threat":
 							mp_cost = 1200, mp_comp[i] = 1200;
@@ -2093,6 +2179,7 @@ function battle(){
 					case "+2": dmg_rate = 1.12; mp_cost = 300; mp_comp[i] = 300; break;
 					case "+3": dmg_rate = 1.25; mp_cost = 600; mp_comp[i] = 600; break;
 					case "+4": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
+					case "+5": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
 				}
 			}
 			else{
@@ -2108,6 +2195,8 @@ function battle(){
 					case "AT: ダブルストレイン（属性二連射） / Double Strain":
 						attack_attr = base_data[attacker].attr;
 						dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
+						if (attack_attr.search('Charmer') != -1)
+							dmg_rate = 1.2;
 						twice = 2;
 						break;
 					case "AT: トリプルスレット（会心一撃） / Triple Threat":
@@ -2166,7 +2255,8 @@ function battle(){
 			}
 
 			if (avoided == true){
-				auto_heal(defender);
+				if (twice == 1)
+					auto_heal(defender);
 			}
 			else{
 				// Damage Calc
@@ -2219,6 +2309,7 @@ function battle(){
 						if (attack_skill.search("Transfusion") != -1)
 							heal_apply(attacker, 0, 0.3 * damage);
 
+						/*
 						else if (attack_skill.search("Poison Attack") != -1){
 							if (Math.random() < 0.5){
 								battle_data[defender].poisoned = true;
@@ -2227,6 +2318,7 @@ function battle(){
 									document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") is poisoned! <br>";
 							}
 						}
+						*/
 
 						else if (attack_skill.search("Arm Breaker") != -1){
 							buff_apply(attacker, defender, "ATK", -0.2);
@@ -2336,7 +2428,8 @@ function battle(){
 							return result;
 						}
 
-						auto_heal(defender);
+						if (twice == 1)
+							auto_heal(defender);
 					}
 				}
 				
