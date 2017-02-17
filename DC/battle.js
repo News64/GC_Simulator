@@ -1186,7 +1186,7 @@ function battle(){
 	var chance;
 	var keep = false;
 	var damage, counter_skill, damage_comp = [-1, -1, -1], mp_comp = [0, 0, 0], hp_comp = [0, 0, 0], max_damage = 0, min_mp = 10000, choose_skill = -1;
-	var temp, temp_stat;
+	var temp, temp2, temp_stat;
 	var pre_hp;
 	var result = 0;
 	var battle_length = 0;
@@ -1307,12 +1307,13 @@ function battle(){
 								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
 							}
 
-
-							temp = Math.random();
-							if (temp < 0.25) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "ATK");
-							else if (temp < 0.5) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "DEF");
-							else if (temp < 0.75) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "SPD");
-							else base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "WIS");
+							if (base_data[battler[i]].skill[j].search("RAN") != -1){
+								temp2 = Math.random();
+								if (temp2 < 0.25) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "ATK");
+								else if (temp2 < 0.5) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "DEF");
+								else if (temp2 < 0.75) base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "SPD");
+								else base_data[battler[i]].skill[j] = base_data[battler[i]].skill[j].replace("RAN", "WIS");
+							}
 
 							if (base_data[battler[i]].skill[j].search("ATK") != -1) 
 								buff_apply(battler[i], battler[1 - i], "ATK", temp);
