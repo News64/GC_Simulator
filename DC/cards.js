@@ -433,7 +433,7 @@ var data =
 		"IN: A25-CELL進化 / ATK +25% Buff", "IN: メディテーション（自動MP回復） / Meditation", "RE: プレデター（捕食） / Predator"]
 	},
 	{
-		"name": "白虎", "attr": "猛毒型 / Spitter", "hp": 1770, "mp": 1504, "atk": 619, "def": 1681, "spd": 1593, "wis": 1681, 
+		"name": "メフィストフェレス", "attr": "猛毒型 / Spitter", "hp": 1770, "mp": 1504, "atk": 619, "def": 1681, "spd": 1593, "wis": 1681, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: I25-CELL進化 / WIS +25% Buff", "IN: ハイアヴォイド（完全回避） / High Avoid", 
 		"IN: リジェネレート（自動HP回復） / Regenerate", "RE: ロックリアクション（反応封印） / Lock Reaction", "IN: クイック・シンキング（先制知能） / Quick Thinking"]
 	},
