@@ -889,7 +889,7 @@ function death_status_apply(id1, id2, skill){
 }
 
 function death_damage_apply(id1, id2, skill){
-	var mp_cost = 1, chance;
+	var mp_cost = 1, chance, multiplier = 1.0;
 	var temp1, temp2, temp3, temp4;
 	if (battle_data[id1].pressure == true)
 		mp_cost *= 2;
@@ -904,21 +904,25 @@ function death_damage_apply(id1, id2, skill){
 	
 	temp1 = battle_data[id2].dodgable, temp2 = battle_data[id2].counterable, temp3 = battle_data[id2].no_death, temp4 = battle_data[id2].reflectable;
 	battle_data[id2].dodgable = false, battle_data[id2].counterable = false, battle_data[id2].no_death = true, battle_data[id2].reflectable = true;
+
+	if (base_data[id1].gear.search("Synchro Damage +") != -1)
+		multiplier += 0.01 * base_data[id1].gear_lv;
+
 	switch (skill){
 		case "DE: デッドシンクロ（自爆） / Dead Synchro":
 			chance = 0.5;
 			if (Math.random() < chance)
-				damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left, true);
+				damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left * multiplier, true);
 			else
 				if (show_log == true)
 					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
 		case "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro":
 			console.log("Genocide");
-			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left, true);
+			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left * multiplier, true);
 			break;
 		case "DE: ブレイン・デス（MP自爆） / Brain Death":
-			mp_damage_dealer(id1, id2, skill, "None", 0, 0, 0, battle_data[id1].mp_left);
+			mp_damage_dealer(id1, id2, skill, "None", 0, 0, 0, battle_data[id1].mp_left * multiplier);
 			break;
 	}
 	battle_data[id2].dodgable = temp1, battle_data[id2].counterable = temp2, battle_data[id2].no_death = temp3, battle_data[id2].reflectable = temp4;

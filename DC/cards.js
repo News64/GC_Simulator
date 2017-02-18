@@ -969,7 +969,7 @@ var gears = [
 
 	"精神統一の鉢巻（サバイヴ成功率強化） / Survive Success Rate +", "バーニングハチマキ（サバイヴ条件強化） / Survive Condition +",
 	"第二の心臓（復活成功率強化） / Revival Success Rate +", "改造人工心臓（完全復活成功率強化） / Full Revival Success Rate +", 
-	"ダイナマイト（自爆ダメージ強化） / Synchro Success Rate +"
+	"ダイナマイト（自爆ダメージ強化） / Synchro Damage +"
 ];
 
 var attack_skills = [
