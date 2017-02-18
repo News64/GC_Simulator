@@ -3,6 +3,16 @@ var data =
 
 	
 	{
+		"name": "ホワイトドラゴン", "attr": "放電型 / Shocker", "hp": 1824, "mp": 1814, "atk": 1650, "def": 1363, "spd": 1691, "wis": 1906, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "デーモンドラゴン", "attr": "放電型 / Shocker", "hp": 1824, "mp": 1814, "atk": 1906, "def": 1650, "spd": 1691, "wis": 1363, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: コンフュージョン（混乱攻撃） / Confusion", "IN: AS10混合活性 / ATK_SPD +10% Buff"]
+	},
+	{
 		"name": "迎賓・クレオパトラ", "attr": "誘惑型 / Charmer", "hp": 1875, "mp": 1564, "atk": 1464, "def": 1715, "spd": 1654, "wis": 1755, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: 誘 +5 / Charmer +5", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: リジェネレート（自動HP回復） / Regenerate", "RE: プレデター（捕食） / Predator", "RE: ミラーダメージ（攻撃反射） / Mirror Damage"]
