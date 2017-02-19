@@ -946,7 +946,7 @@ var gears = [
 	"ソリッドリング（防御強化） / Tough Ring", "クイックリング（素早さ強化） / Quick Ring", "スマートリング（賢さ強化） / Smart Ring",
 
 	"ジェムドラゴンピアス（攻撃・素早さ強化） / ATK_SPD +", "DXツリーピアス（賢さ・素早さ強化） / WIS_SPD +",
-	"ガンガン（全属性強化） / All Stats +",
+	"ガンガン（全属性強化） / All Stats +", "ヘッドギア（全スキル消費軽減） / All Cost -",
 
 	"バーナー（熱ダメージ強化） / Burner Damage +", "ドライアイス（冷ダメージ強化） / Chiller Damage +", 
 	"猛禽獣の片翼（風ダメージ強化） / Slasher Damage +", "パラボラアンテナ（電ダメージ強化） / Shocker Damage +",

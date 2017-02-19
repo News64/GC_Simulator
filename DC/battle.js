@@ -730,6 +730,8 @@ function death_proc(id1, id2, attack_skill, pre_hp){
 	mp_cost = 300;
 	if (battle_data[id1].pressure == true)
 		mp_cost *= 2;
+	if (base_data[id1].gear.search("All Cost -") != -1)
+		mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[id1].gear_lv));
 
 	for (var i = 0; i < 3; i++){
 		if (battle_data[id2].mp_left < mp_cost)
@@ -866,6 +868,8 @@ function death_status_apply(id1, id2, skill){
 	var mp_cost = 400;
 	if (battle_data[id1].pressure == true)
 		mp_cost *= 2;
+	if (base_data[id1].gear.search("All Cost -") != -1)
+		mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[id1].gear_lv));
 
 	if (battle_data[id1].mp_left < mp_cost)
 		return
@@ -980,6 +984,8 @@ function on_hit_reaction(id){
 			mp_cost = 400;
 			if (battle_data[id].pressure == true)
 				mp_cost *= 2;
+			if (base_data[id].gear.search("All Cost -") != -1)
+				mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[id].gear_lv));
 
 			if (battle_data[id].mp_left >= mp_cost){
 				battle_data[id].mp_left -= mp_cost;
@@ -1000,6 +1006,8 @@ function on_hit_reaction(id){
 			mp_cost = 300;
 			if (battle_data[id].pressure == true)
 				mp_cost *= 2;
+			if (base_data[id].gear.search("All Cost -") != -1)
+				mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[id].gear_lv));
 
 			if (battle_data[id].mp_left >= mp_cost){
 				battle_data[id].mp_left -= mp_cost;
@@ -1062,6 +1070,8 @@ function on_hit_reaction(id){
 			mp_cost = 300;
 			if (battle_data[id].pressure == true)
 				mp_cost *= 2;
+			if (base_data[id].gear.search("All Cost -") != -1)
+				mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[id].gear_lv));
 
 			if (battle_data[id].mp_left >= mp_cost){
 				battle_data[id].mp_left -= mp_cost;
@@ -1250,6 +1260,8 @@ function battle(){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1277,6 +1289,8 @@ function battle(){
 						mp_cost = 300;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1303,6 +1317,8 @@ function battle(){
 
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1346,6 +1362,8 @@ function battle(){
 
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1387,6 +1405,8 @@ function battle(){
 
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1413,6 +1433,8 @@ function battle(){
 
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1460,12 +1482,17 @@ function battle(){
 								damage = damage_dealer(battler[i], 1 - battler[i], base_data[battler[i]].skill[j], attack_attr, 0.8, 0.5, 0, false);
 
 								// Mirror Damage
-								if (battle_data[1 - battler[i]].mp_left >= 700){
+								mp_cost = 700;
+								if (battle_data[1 - battler[i]].pressure == true)
+									mp_cost *= 2;
+								if (base_data[1 - battler[i]].gear.search("All Cost -") != -1)
+									mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[1 - battler[i]].gear_lv));
+								if (battle_data[1 - battler[i]].mp_left >= mp_cost){
 									for (var k = 0; k < 3; k++){
 										if (base_data[1 - battler[i]].skill[k].search("Mirror Damage") != -1){
 											if (Math.random() < 0.6){
 												mirrored = true;
-												battle_data[1 - battler[i]].mp_left -= 700;
+												battle_data[1 - battler[i]].mp_left -= mp_cost;
 
 												if (show_log == true)
 													document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") uses Mirror Damage! MP: " + battle_data[1 - battler[i]].mp_left + "/" + base_data[1 - battler[i]].mp + " <br>";
@@ -1598,6 +1625,8 @@ function battle(){
 						mp_cost = 300;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost && (battle_data[1 - battler[i]].atk_buff > 0 || battle_data[1 - battler[i]].def_buff > 0 
 							|| battle_data[1 - battler[i]].spd_buff > 0 || battle_data[1 - battler[i]].wis_buff > 0 
@@ -1629,6 +1658,8 @@ function battle(){
 						mp_cost = 300;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1684,6 +1715,8 @@ function battle(){
 						mp_cost = 600;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							if (Math.random() < 0.7){
@@ -1709,6 +1742,8 @@ function battle(){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1728,6 +1763,8 @@ function battle(){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1747,6 +1784,8 @@ function battle(){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1769,6 +1808,8 @@ function battle(){
 						mp_cost = 600;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].mp_left -= mp_cost;
@@ -1856,6 +1897,8 @@ function battle(){
 						mp_cost = 300;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].skill_used[j]++;
@@ -1918,6 +1961,8 @@ function battle(){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].skill_used[j]++;
@@ -1963,6 +2008,8 @@ function battle(){
 						mp_cost = 300;
 						if (battle_data[battler[i]].pressure == true)
 							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
 
 						if (battle_data[battler[i]].mp_left >= mp_cost){
 							battle_data[battler[i]].skill_used[j]++;
@@ -2102,6 +2149,7 @@ function battle(){
 							dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
 							if (attack_attr.search('Charmer') != -1)
 								dmg_rate = 1.2;
+							console.log(mp_cost);
 							break;
 						case "AT: トリプルスレット（会心一撃） / Triple Threat":
 							mp_cost = 1200, mp_comp[i] = 1200;
@@ -2120,6 +2168,11 @@ function battle(){
 				
 				if (battle_data[attacker].pressure == true)
 					mp_cost *= 2, mp_comp[i] *= 2;
+				if (base_data[attacker].gear.search("All Cost -") != -1){
+					mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[attacker].gear_lv));
+					mp_comp[i] = mp_cost;
+					hp_cost = Math.round(hp_cost * (1 - 0.01 * base_data[attacker].gear_lv));
+				}
 
 				if (battle_data[attacker].mp_left >= mp_cost && battle_data[attacker].hp_left >= hp_cost){
 					damage_comp[i] = damage_dealer(attacker, defender, attack_skill, attack_attr, dmg_rate, reduc_rate, 0, false);
@@ -2223,6 +2276,11 @@ function battle(){
 
 		if (battle_data[attacker].pressure == true)
 			mp_cost *= 2;
+		if (base_data[attacker].gear.search("All Cost -") != -1){
+			mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[attacker].gear_lv));
+			mp_comp[i] = mp_cost;
+			hp_cost = Math.round(hp_cost * (1 - 0.01 * base_data[attacker].gear_lv));
+		}
 
 		battle_data[attacker].hp_left -= hp_cost;
 		battle_data[attacker].mp_left -= mp_cost;
@@ -2271,12 +2329,17 @@ function battle(){
 					damage = pre_hp;
 
 				// Mirror Damage
-				if (battle_data[defender].reflectable == true && battle_data[defender].mp_left >= 700 && twice == 1 && attacker != defender){
+				mp_cost = 700;
+				if (battle_data[defender].pressure == true)
+					mp_cost *= 2;
+				if (base_data[defender].gear.search("All Cost -") != -1)
+					mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[defender].gear_lv));
+				if (battle_data[defender].reflectable == true && battle_data[defender].mp_left >= mp_cost && twice == 1 && attacker != defender){
 					for (var i = 0; i < 3; i++){
 						if (base_data[defender].skill[i].search("Mirror Damage") != -1){
 							if (Math.random() < 0.6){
 								mirrored = true;
-								battle_data[defender].mp_left -= 700;
+								battle_data[defender].mp_left -= mp_cost;
 
 								if (show_log == true)
 									document.getElementById('res').innerHTML += base_data[defender].card + " (Team " + (defender + 1).toString() + ") uses Mirror Damage! MP: " + battle_data[defender].mp_left + "/" + base_data[defender].mp + " <br>";
