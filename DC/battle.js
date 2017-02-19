@@ -1874,7 +1874,7 @@ function battle(){
 
 							chance = 0.5;
 							if (base_data[battler[i]].gear.search("Brain Suck Success Rate +") != -1)
-								chance += 0.01 * base_data[battler[i]].gear_lv;
+								chance += 0.0075 * base_data[battler[i]].gear_lv;
 
 							if (Math.random() < chance){
 								avoided = false;
@@ -1974,7 +1974,7 @@ function battle(){
 
 							chance = 0.3;
 							if (base_data[battler[i]].gear.search("Illusion Success Rate +") != -1)
-								chance += 0.01 * base_data[battler[i]].gear_lv;
+								chance += 0.0075 * base_data[battler[i]].gear_lv;
 
 							if (Math.random() < chance){
 
