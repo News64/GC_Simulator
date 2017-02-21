@@ -3,6 +3,21 @@ var data =
 
 	
 	{
+		"name": "主賓・ニュートン", "attr": "発熱型 / Burner", "hp": 1605, "mp": 1555, "atk": 1436, "def": 1436, "spd": 1724, "wis": 2150, 
+		"skill": ["IN: I20-CELL変異 / WIS +20% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
+	},
+	{
+		"name": "来賓・ヘレネー", "attr": "冷却型 / Chiller", "hp": 1631, "mp": 1907, "atk": 1346, "def": 1523, "spd": 1720, "wis": 1702, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid","AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+	},
+	{
+		"name": "闇への誘い・J&H", "attr": "寄生型 / Leecher", "hp": 1773, "mp": 1379, "atk": 1970, "def": 1615, "spd": 1704, "wis": 1408, 
+		"skill": ["IN: メディテーション（自動MP回復） / Meditation", "AT: トランスフュージョン（回復攻撃） / Transfusion", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: A25-CELL進化 / ATK +25% Buff", "RE: ロックリアクション（反応封印） / Lock Reaction", "RE: プレデター（捕食） / Predator"]
+	},
+	{
 		"name": "ホワイトドラゴン", "attr": "放電型 / Shocker", "hp": 1824, "mp": 1814, "atk": 1650, "def": 1363, "spd": 1691, "wis": 1906, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: SI30変則浸食 / SPD_WIS -30% Debuff", "RE: カウンター（反撃） / Counter"]
@@ -827,6 +842,16 @@ var data =
 		"IN: ファストブラッド（先制物理） / First Blood", "IN: S20-CELL変異 / SPD +20% Buff", "BD: サイコパス（打倒時速+30%） / Psychopath"]
 	},
 	{
+		"name": "ギブミー・サンベリーナ・極型", "attr": "誘惑型 / Charmer", "hp": 1815, "mp": 1786, "atk": 1300, "def": 1592, "spd": 1553, "wis": 1669, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
+	},
+	{
+		"name": "ギブミー・サンベリーナ・究極型", "attr": "誘惑型 / Charmer", "hp": 1869, "mp": 1838, "atk": 1338, "def": 1639, "spd": 1599, "wis": 1718, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: ハイアヴォイド（完全回避） / High Avoid", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
+	},
+	{
 		"name": "エスコート・ジーク・極型", "attr": "冷却型 / Chiller", "hp": 1857, "mp": 1482, "atk": 1709, "def": 1739, "spd": 1511, "wis": 1590, 
 		"skill": ["IN: プレッシャー（消費MP2倍） / Pressure", "AT: ツインリッパー（二連射） / Twin Ripper", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: リジェネレート（自動HP回復） / Regenerate", "IN: AD10同時活性 / ATK_DEF +10% Buff", "AT: アームブレイカー（攻-20%攻撃） / Arm Breaker"]
@@ -845,6 +870,26 @@ var data =
 		"name": "迎賓・クレオパトラ・究極型", "attr": "誘惑型 / Charmer", "hp": 2015, "mp": 1681, "atk": 1573, "def": 1843, "spd": 1778, "wis": 1886, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: 誘 +5 / Charmer +5", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: リジェネレート（自動HP回復） / Regenerate", "RE: プレデター（捕食） / Predator", "RE: ミラーダメージ（攻撃反射） / Mirror Damage"]
+	},
+	{
+		"name": "レッドローズ・ビリー・極型", "attr": "発熱型 / Burner", "hp": 1791, "mp": 1564, "atk": 1889, "def": 1495, "spd": 1613, "wis": 1486, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"BD: サディスト（打倒時攻+30%） / Sadist", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
+		"name": "レッドローズ・ビリー・究極型", "attr": "発熱型 / Burner", "hp": 1843, "mp": 1610, "atk": 1944, "def": 1539, "spd": 1661, "wis": 1529, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"BD: サディスト（打倒時攻+30%） / Sadist", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: トランスフュージョン（回復攻撃） / Transfusion"]
+	},
+	{
+		"name": "主賓・ニュートン・極型", "attr": "発熱型 / Burner", "hp": 1637, "mp": 1586, "atk": 1464, "def": 1464, "spd": 1758, "wis": 2193, 
+		"skill": ["IN: I20-CELL変異 / WIS +20% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
+	},
+	{
+		"name": "主賓・ニュートン・究極型", "attr": "発熱型 / Burner", "hp": 1725, "mp": 1671, "atk": 1543, "def": 1543, "spd": 1853, "wis": 2311, 
+		"skill": ["IN: I25-CELL進化 / WIS +25% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
 	}
 ];
 
