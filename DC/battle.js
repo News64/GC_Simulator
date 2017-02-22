@@ -2133,7 +2133,7 @@ function battle(){
 						case "+2": dmg_rate = 1.12; mp_cost = 300; mp_comp[i] = 300; break;
 						case "+3": dmg_rate = 1.25; mp_cost = 600; mp_comp[i] = 600; break;
 						case "+4": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
-						case "+5": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
+						case "+5": dmg_rate = 1.9;; mp_cost = 1200; mp_comp[i] = 1200; break;
 					}
 				}
 				else{
@@ -2237,7 +2237,7 @@ function battle(){
 					case "+2": dmg_rate = 1.12; mp_cost = 300; mp_comp[i] = 300; break;
 					case "+3": dmg_rate = 1.25; mp_cost = 600; mp_comp[i] = 600; break;
 					case "+4": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
-					case "+5": dmg_rate = 1.5;; mp_cost = 1200; mp_comp[i] = 1200; break;
+					case "+5": dmg_rate = 1.9;; mp_cost = 1200; mp_comp[i] = 1200; break;
 				}
 			}
 			else{
