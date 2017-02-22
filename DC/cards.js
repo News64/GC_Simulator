@@ -13,7 +13,7 @@ var data =
 		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	},
 	{
-		"name": "闇への誘い・J&H", "attr": "寄生型 / Leecher", "hp": 1773, "mp": 1379, "atk": 1970, "def": 1615, "spd": 1704, "wis": 1408, 
+		"name": "闇への誘い・J&H", "attr": "寄生型 / Leecher", "hp": 1974, "mp": 1387, "atk": 1706, "def": 1633, "spd": 1516, "wis": 1770, 
 		"skill": ["IN: メディテーション（自動MP回復） / Meditation", "AT: トランスフュージョン（回復攻撃） / Transfusion", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
 		"IN: A25-CELL進化 / ATK +25% Buff", "RE: ロックリアクション（反応封印） / Lock Reaction", "RE: プレデター（捕食） / Predator"]
 	},
@@ -98,7 +98,7 @@ var data =
 		"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "IN: イリュージョン（チック化） / Illusion", "IN: SI10変則活性 / SPD_WIS +10% Buff"]
 	},
 	{
-		"name": "アルデバラン", "attr": "共鳴型 / Screamer", "hp": 1640, "mp": 1699, "atk": 1336, "def": 1403, "spd": 1651, "wis": 1813, 
+		"name": "アルデバラン", "attr": "寄生型 / Leecher", "hp": 1640, "mp": 1699, "atk": 1336, "def": 1403, "spd": 1651, "wis": 1813, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"RE: プレデター（捕食） / Predator", "IN: プレッシャー（消費MP2倍） / Pressure", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	},
@@ -817,12 +817,12 @@ var data =
 		"RE: ロックリアクション（反応封印） / Lock Reaction", "IN: I25-CELL進化 / WIS +25% Buff", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
 	},
 	{
-		"name": "アルデバラン・極型", "attr": "共鳴型 / Screamer", "hp": 1673, "mp": 1732, "atk": 1362, "def": 1431, "spd": 1684, "wis": 1849, 
+		"name": "アルデバラン・極型", "attr": "寄生型 / Leecher", "hp": 1673, "mp": 1732, "atk": 1362, "def": 1431, "spd": 1684, "wis": 1849, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"RE: プレデター（捕食） / Predator", "IN: プレッシャー（消費MP2倍） / Pressure", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	},
 	{
-		"name": "アルデバラン・究極型", "attr": "共鳴型 / Screamer", "hp": 1706, "mp": 1766, "atk": 1389, "def": 1459, "spd": 1717, "wis": 1885, 
+		"name": "アルデバラン・究極型", "attr": "寄生型 / Leecher", "hp": 1706, "mp": 1766, "atk": 1389, "def": 1459, "spd": 1717, "wis": 1885, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"RE: プレデター（捕食） / Predator", "IN: プレッシャー（消費MP2倍） / Pressure", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	},
