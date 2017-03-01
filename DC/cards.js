@@ -3,6 +3,21 @@ var data =
 
 	
 	{
+		"name": "殲滅の死穢王", "attr": "発熱型 / Burner", "hp": 2463, "mp": 1441, "atk": 1093, "def": 1942, "spd": 1482, "wis": 1799, 
+		"skill": ["IN: I25-CELL進化 / WIS +25% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: D25-CELL進化 / DEF +25% Buff", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "RE: ロックリアクション（反応封印） / Lock Reaction"]
+	},
+	{
+		"name": "玉藻前", "attr": "猛毒型 / Spitter", "hp": 1575, "mp": 1456, "atk": 1744, "def": 1476, "spd": 1833, "wis": 1823, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "AT: ポイズンアタック（毒攻撃） / Poison Attack"]
+	},
+	{
+		"name": "月兎", "attr": "疾風型 / Slasher", "hp": 1616, "mp": 1357, "atk": 1946, "def": 1596, "spd": 1896, "wis": 1566, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: A20-CELL変異 / ATK +20% Buff", "AT: トリプルスレット（会心一撃） / Triple Threat", 
+		"IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
 		"name": "主賓・ニュートン", "attr": "発熱型 / Burner", "hp": 1605, "mp": 1555, "atk": 1436, "def": 1436, "spd": 1724, "wis": 2150, 
 		"skill": ["IN: I20-CELL変異 / WIS +20% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
@@ -10,7 +25,7 @@ var data =
 	{
 		"name": "来賓・ヘレネー", "attr": "冷却型 / Chiller", "hp": 1631, "mp": 1907, "atk": 1346, "def": 1523, "spd": 1720, "wis": 1702, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid","AT: ダブルストレイン（属性二連射） / Double Strain", 
-		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+		"IN: ブレインサック（先制MP） / Brain Suck", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	},
 	{
 		"name": "闇への誘い・J&H", "attr": "寄生型 / Leecher", "hp": 1974, "mp": 1387, "atk": 1706, "def": 1633, "spd": 1516, "wis": 1770, 
@@ -890,6 +905,26 @@ var data =
 		"name": "主賓・ニュートン・究極型", "attr": "発熱型 / Burner", "hp": 1725, "mp": 1671, "atk": 1543, "def": 1543, "spd": 1853, "wis": 2311, 
 		"skill": ["IN: I25-CELL進化 / WIS +25% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
+	},
+	{
+		"name": "祝砲アタックヘリコプター・極型", "attr": "寄生型 / Leecher", "hp": 1773, "mp": 1379, "atk": 1970, "def": 1615, "spd": 1704, "wis": 1408, 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike"]
+	},
+	{
+		"name": "祝砲アタックヘリコプター・究極型", "attr": "寄生型 / Leecher", "hp": 1843, "mp": 1434, "atk": 2048, "def": 1679, "spd": 1772, "wis": 1464, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike"]
+	},
+	{
+		"name": "玉藻前・極型", "attr": "猛毒型 / Spitter", "hp": 1606, "mp": 1485, "atk": 1778, "def": 1505, "spd": 1869, "wis": 1859, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "AT: ポイズンアタック（毒攻撃） / Poison Attack"]
+	},
+	{
+		"name": "玉藻前・究極型", "attr": "猛毒型 / Spitter", "hp": 1638, "mp": 1514, "atk": 1813, "def": 1535, "spd": 1906, "wis": 1895, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "AT: ポイズンアタック（毒攻撃） / Poison Attack"]
 	}
 ];
 
