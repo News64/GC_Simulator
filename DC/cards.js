@@ -907,8 +907,8 @@ var data =
 		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
 	},
 	{
-		"name": "祝砲アタックヘリコプター・極型", "attr": "寄生型 / Leecher", "hp": 1773, "mp": 1379, "atk": 1970, "def": 1615, "spd": 1704, "wis": 1408, 
-		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"name": "祝砲アタックヘリコプター・極型", "attr": "寄生型 / Leecher", "hp": 1808, "mp": 1406, "atk": 2009, "def": 1647, "spd": 1738, "wis": 1436, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
 		"IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike"]
 	},
 	{
