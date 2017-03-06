@@ -441,14 +441,9 @@ function save_deck(num_cards, team_num, mode){
 		var newWindow = window.open(uriContent, 'Saved!');
 	}
 	else if (mode == 1){
-		var d = new Date();
-		d.setTime(d.getTime() + (10* 365 * 24 * 60 * 60 * 1000));
-		var expires = "expires=" + d.toUTCString();
-		document.cookie = document.getElementById('deckname_' + team_num.toString()).value + "=" + JSON_target + ";" + expires + ";path=/";
-		console.log(document.getElementById('deckname_' + team_num.toString()).value + "=" + JSON_target + ";" + expires + ";path=/");
+		setCookie(document.getElementById('deckname_' + team_num.toString()).value, JSON_target, 365 * 10);
 	}
 }
-
 
 function load_file(event, team_num){
 	var input = event.target;
@@ -483,25 +478,13 @@ function load_file(event, team_num){
 }
 
 function load_cookie(team_num){
-	var name = document.getElementById('loadname_'+ team_num.toString()).value + "=";
-    var ca = document.cookie.split(';');
-    console.log(ca);
-    var dataURL = "", curr_data;
-
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            dataURL = c.substring(name.length, c.length);
-        }
-    }
+	var name = document.getElementById('loadname_'+ team_num.toString()).value;
+    var res = checkCookie(name);
     
-    if (dataURL == "")
+    if (res == "")
     	return;
 
-    curr_data = JSON.parse(dataURL);
+    res = JSON.parse(dataURL);
 
     for (var i = 0; i < 10; i++){
     	document.getElementById('card' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][0];
@@ -523,6 +506,43 @@ function load_cookie(team_num){
    		document.getElementById('gear_lv' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][16];
    	}
 }
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "," + expires + ",path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:", "");
+        if (user != "" && user != null) {
+            setCookie("username", user, 365);
+        }
+    }
+}
+
+
+
 
 
 
