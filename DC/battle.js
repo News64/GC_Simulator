@@ -479,7 +479,7 @@ function load_file(event, team_num){
 
 function load_cookie(team_num){
 	var name = document.getElementById('loadname_'+ team_num.toString()).value;
-    var res = getCookie(name);
+    var res = checkCookie(name);
     
     if (res == "")
     	return;
@@ -511,13 +511,12 @@ function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "," + expires + ",path=/";
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    console.log(ca);
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
