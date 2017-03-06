@@ -62,6 +62,9 @@ function init_all(num_cards){
 	for (var i = 1; i <= num_cards; i++)
 		for (var j = 1; j <= 2; j++)
 			init_list(j, i);
+
+	update_deck(1);
+	update_deck(2);
 }
 
 
@@ -200,6 +203,9 @@ function filter_name(team_num, card_num){
 function update_all(num_cards, team_num, mode){
 	for (var i = 1; i <= num_cards; i++)
 		update_box(team_num, i, mode);
+
+	update_deck(1);
+	update_deck(2);
 }
 
 function update_box(team_num, card_num, mode){
@@ -441,7 +447,9 @@ function save_deck(num_cards, team_num, mode){
 		var newWindow = window.open(uriContent, 'Saved!');
 	}
 	else if (mode == 1){
-		setCookie(document.getElementById('deckname_' + team_num.toString()).value, JSON_target, 365 * 10);
+		localStorage.setItem(document.getElementById('deckname_' + team_num.toString()).value, JSON_target);
+		alert("Saved!");
+		update_deck(team_num);
 	}
 }
 
@@ -477,9 +485,9 @@ function load_file(event, team_num){
     reader.readAsText(input.files[0]);
 }
 
-function load_cookie(team_num){
-	var name = document.getElementById('loadname_'+ team_num.toString()).value;
-    var res = getCookie(name);
+function load_storage(team_num){
+	var name = document.getElementById('decksel_'+ team_num.toString()).value;
+    var res = localStorage.getItem(name);
     
     if (res == "")
     	return;
@@ -507,32 +515,28 @@ function load_cookie(team_num){
    	}
 }
 
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-	alert(document.cookie);
+function update_deck(team_num){
+	var option;
+	var sel = document.getElementById('decksel_' + team_num.toString());
+	sel.innerHTML = "";
+
+	for (var i = 0; i < localStorage.length; i++) {
+    	var name = localStorage.key( i );
+    	var value = localStorage.getItem( name );
+
+    	option = document.createElement("option");
+		option.value = name;
+		option.text = name;
+		sel.appendChild(option);
+	}
 }
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+function delete_deck(team_num){
+	localStorage.removeItem(document.getElementById('decksel_' + team_num.toString()).value);
+
+	update_deck(1);
+	update_deck(2);
 }
-
-
-
-
 
 
 

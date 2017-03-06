@@ -12,26 +12,32 @@
 		<br> <br>
 
 		<table id="team_table">
+			<tr> <td> Save Options </td> </tr>
 			<tr>
 				<td> Deck Name 1: <input type="text" id="deckname_1"> </td>
 				<td> Deck Name 2: <input type="text" id="deckname_2"> </td>
 			</tr>
 			<tr>
 				<td> <button id="save_1" onclick="save_deck(10, 1, 0)">Save Deck 1 to File</button> 
-					 <button id="save_1" onclick="save_deck(10, 1, 1)">Save Deck 1 to Cookie</button> </td>
+					 <button id="save_1" onclick="save_deck(10, 1, 1)">Save Deck 1 to Storage</button> </td>
 				<td> <button id="save_2" onclick="save_deck(10, 2, 0)">Save Deck 2 to File</button> 
-					 <button id="save_1" onclick="save_deck(10, 2, 1)">Save Deck 2 to Cookie</button> </td>
+					 <button id="save_1" onclick="save_deck(10, 2, 1)">Save Deck 2 to Storage</button> </td>
+			</tr>
+			<tr> <td> &nbsp;  </td> </tr>
+			<tr> <td> Load Options </td> </tr>
+			<tr>
+				<td> Load from File: <input id="filename_1" type="file" onchange="load_file(event, 1)"> </td>
+				<td> Load from File: <input id="filename_2" type="file" onchange="load_file(event, 2)"> </td>
 			</tr>
 			<tr>
-				<td> Load from File as Deck 1: <input id="filename_1" type="file" onchange="load_file(event, 1)"> </td>
-				<td> Load from File as Deck 2: <input id="filename_2" type="file" onchange="load_file(event, 2)"> </td>
+				<td> Load from Storage: <select id="decksel_1"></select> 
+					 <button id="load_1" onclick="load_storage(1)">Load</button> 
+					 <button id="delete_1" onclick="delete_deck(1)">Delete</button> </td>
+				<td> Load from Storage: <select id="decksel_2"></select>
+					 <button id="load_2" onclick="load_storage(2)">Load</button> 
+					 <button id="delete_2" onclick="delete_deck(2)">Delete</button> </td>
 			</tr>
-			<tr>
-				<td> Load from Cookie as Deck 1: <input id="loadname_1" type="text" onchange="load_cookie(1)"> 
-					 <button id="load_1" onclick="load_cookie(1)">Load</button> </td>
-				<td> Load from Cookie as Deck 2: <input id="loadname_2" type="text" onchange="load_cookie(2)"> 
-					 <button id="load_2" onclick="load_cookie(2)">Load</button></td>
-			</tr>
+			<tr> <td> &nbsp;  </td> </tr>
 		</table>
 
 		<br>
