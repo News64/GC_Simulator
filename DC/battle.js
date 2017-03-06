@@ -409,7 +409,8 @@ function hide_details(){
 	}
 }
 
-function save_file(num_cards, team_num){
+function save_deck(num_cards, team_num, mode){
+	// mode 0 = local, mode 1 = cookie
 	var curr_data = [], temp, JSON_target;
 	for (var i = 1; i <= num_cards; i++){
 		temp = [
@@ -434,9 +435,20 @@ function save_file(num_cards, team_num){
 		curr_data.push(temp);
 	}
 	JSON_target = JSON.stringify(curr_data);
-	var uriContent = "data:application/octet-stream," + encodeURIComponent(JSON_target);
-	var newWindow = window.open(uriContent, 'Saved!');
+	
+	if (mode == 0){
+		var uriContent = "data:application/octet-stream," + encodeURIComponent(JSON_target);
+		var newWindow = window.open(uriContent, 'Saved!');
+	}
+	else if (mode == 1){
+		var d = new Date();
+		d.setTime(d.getTime() + (10* 365 * 24 * 60 * 60 * 1000));
+		var expires = "expires=" + d.toUTCString();
+		document.cookie = document.getElementById('deckname_' + team_num.toString()).value + "=" + JSON_target + ";" + expires + ";path=/";
+		console.log(document.getElementById('deckname_' + team_num.toString()).value + "=" + JSON_target + ";" + expires + ";path=/");
+	}
 }
+
 
 function load_file(event, team_num){
 	var input = event.target;
@@ -445,8 +457,6 @@ function load_file(event, team_num){
 	reader.onload = function(){
 		var dataURL = reader.result;
 		var curr_data = JSON.parse(dataURL);
-    	console.log(curr_data);
-    	console.log(team_num);
 
     	for (var i = 0; i < 10; i++){
     		document.getElementById('card' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][0];
@@ -470,6 +480,48 @@ function load_file(event, team_num){
 	};
     
     reader.readAsText(input.files[0]);
+}
+
+function load_cookie(team_num){
+	var name = document.getElementById('loadname_'+ team_num.toString()).value + "=";
+    var ca = document.cookie.split(';');
+    console.log(ca);
+    var dataURL = "", curr_data;
+
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            dataURL = c.substring(name.length, c.length);
+        }
+    }
+    
+    if (dataURL == "")
+    	return;
+
+    curr_data = JSON.parse(dataURL);
+
+    for (var i = 0; i < 10; i++){
+    	document.getElementById('card' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][0];
+    	document.getElementById('type' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][1];
+    	document.getElementById('attr' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][2];
+    	document.getElementById('hp' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][3];
+    	document.getElementById('mp' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][4];
+    	document.getElementById('atk' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][5];
+    	document.getElementById('def' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][6];
+    	document.getElementById('spd' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][7];
+   		document.getElementById('wis' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][8];
+   		document.getElementById('skill1' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][9];
+   		document.getElementById('skill2' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][10];
+   		document.getElementById('skill3' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][11];
+   		document.getElementById('skill4' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][12];
+   		document.getElementById('skill5' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][13];
+   		document.getElementById('skill6' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][14];
+   		document.getElementById('gear' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][15];
+   		document.getElementById('gear_lv' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][16];
+   	}
 }
 
 

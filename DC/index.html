@@ -13,12 +13,24 @@
 
 		<table id="team_table">
 			<tr>
-				<td> <button id="save_1" onclick="save_file(10, 1)">Save Deck 1</button> </td>
-				<td> <button id="save_2" onclick="save_file(10, 2)">Save Deck 2</button> </td>
+				<td> Deck Name 1: <input type="text" id="deckname_1"> </td>
+				<td> Deck Name 2: <input type="text" id="deckname_2"> </td>
 			</tr>
 			<tr>
-				<td> Load as Deck 1: <input id="filename_1" type="file" onchange="load_file(event, 1)"> </td>
-				<td> Load as Deck 2: <input id="filename_2" type="file" onchange="load_file(event, 2)"> </td>
+				<td> <button id="save_1" onclick="save_deck(10, 1, 0)">Save Deck 1 to File</button> 
+					 <button id="save_1" onclick="save_deck(10, 1, 1)">Save Deck 1 to Cookie</button> </td>
+				<td> <button id="save_2" onclick="save_deck(10, 2, 0)">Save Deck 2 to File</button> 
+					 <button id="save_1" onclick="save_deck(10, 2, 1)">Save Deck 2 to Cookie</button> </td>
+			</tr>
+			<tr>
+				<td> Load from File as Deck 1: <input id="filename_1" type="file" onchange="load_file(event, 1)"> </td>
+				<td> Load from File as Deck 2: <input id="filename_2" type="file" onchange="load_file(event, 2)"> </td>
+			</tr>
+			<tr>
+				<td> Load from Cookie as Deck 1: <input id="loadname_1" type="text" onchange="load_cookie(1)"> 
+					 <button id="load_1" onclick="load_cookie(1)">Load</button> </td>
+				<td> Load from Cookie as Deck 2: <input id="loadname_2" type="text" onchange="load_cookie(2)"> 
+					 <button id="load_2" onclick="load_cookie(2)">Load</button></td>
 			</tr>
 		</table>
 
