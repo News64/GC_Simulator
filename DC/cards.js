@@ -925,6 +925,16 @@ var data =
 		"name": "玉藻前・究極型", "attr": "猛毒型 / Spitter", "hp": 1638, "mp": 1514, "atk": 1813, "def": 1535, "spd": 1906, "wis": 1895, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "AT: ポイズンアタック（毒攻撃） / Poison Attack"]
+	},
+	{
+		"name": "来賓・ヘレネー・極型", "attr": "冷却型 / Chiller", "hp": 1663, "mp": 1945, "atk": 1372, "def": 1553, "spd": 1754, "wis": 1736, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid","AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+	},
+	{
+		"name": "来賓・ヘレネー・究極型", "attr": "冷却型 / Chiller", "hp": 1696, "mp": 1983, "atk": 1399, "def": 1583, "spd": 1788, "wis": 1770, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid","AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
 	}
 ];
 

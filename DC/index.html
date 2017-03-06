@@ -12,6 +12,14 @@
 		<br> <br>
 
 		<table id="team_table">
+			<tr>
+				<td> <button id="save_1" onclick="save_file(10, 1)">Save Deck 1</button> </td>
+				<td> <button id="save_2" onclick="save_file(10, 2)">Save Deck 2</button> </td>
+			</tr>
+			<tr>
+				<td> Load as Deck 1: <input id="filename_1" type="file" onchange="load_file(event, 1)"> </td>
+				<td> Load as Deck 2: <input id="filename_2" type="file" onchange="load_file(event, 2)"> </td>
+			</tr>
 		</table>
 
 		<br>

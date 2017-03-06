@@ -409,6 +409,68 @@ function hide_details(){
 	}
 }
 
+function save_file(num_cards, team_num){
+	var curr_data = [], temp, JSON_target;
+	for (var i = 1; i <= num_cards; i++){
+		temp = [
+			document.getElementById('card' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('type' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('attr' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('hp' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('mp' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('atk' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('def' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('spd' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('wis' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill1' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill2' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill3' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill4' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill5' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('skill6' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('gear' + team_num.toString() + '.' + i.toString()).value,
+			document.getElementById('gear_lv' + team_num.toString() + '.' + i.toString()).value
+		];
+		curr_data.push(temp);
+	}
+	JSON_target = JSON.stringify(curr_data);
+	var uriContent = "data:application/octet-stream," + encodeURIComponent(JSON_target);
+	var newWindow = window.open(uriContent, 'Saved!');
+}
+
+function load_file(event, team_num){
+	var input = event.target;
+
+	var reader = new FileReader();
+	reader.onload = function(){
+		var dataURL = reader.result;
+		var curr_data = JSON.parse(dataURL);
+    	console.log(curr_data);
+    	console.log(team_num);
+
+    	for (var i = 0; i < 10; i++){
+    		document.getElementById('card' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][0];
+    		document.getElementById('type' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][1];
+    		document.getElementById('attr' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][2];
+    		document.getElementById('hp' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][3];
+    		document.getElementById('mp' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][4];
+    		document.getElementById('atk' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][5];
+    		document.getElementById('def' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][6];
+    		document.getElementById('spd' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][7];
+    		document.getElementById('wis' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][8];
+    		document.getElementById('skill1' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][9];
+    		document.getElementById('skill2' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][10];
+    		document.getElementById('skill3' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][11];
+    		document.getElementById('skill4' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][12];
+    		document.getElementById('skill5' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][13];
+    		document.getElementById('skill6' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][14];
+    		document.getElementById('gear' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][15];
+    		document.getElementById('gear_lv' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][16];
+    	}
+	};
+    
+    reader.readAsText(input.files[0]);
+}
 
 
 
