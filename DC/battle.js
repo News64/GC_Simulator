@@ -479,12 +479,12 @@ function load_file(event, team_num){
 
 function load_cookie(team_num){
 	var name = document.getElementById('loadname_'+ team_num.toString()).value;
-    var res = checkCookie(name);
+    var res = getCookie(name);
     
     if (res == "")
     	return;
 
-    res = JSON.parse(res);
+    var curr_data = JSON.parse(res);
 
     for (var i = 0; i < 10; i++){
     	document.getElementById('card' + team_num.toString() + '.' + (i + 1).toString()).value = curr_data[i][0];
