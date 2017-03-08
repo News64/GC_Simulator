@@ -1050,7 +1050,6 @@ function death_damage_apply(id1, id2, skill){
 					document.getElementById('res').innerHTML += "But it failed! (Chance: " + (1 - chance).toString() + ") <br>";
 			break;
 		case "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro":
-			console.log("Genocide");
 			damage_dealer(id1, id2, skill, "None", 0, 0, battle_data[id1].mp_left * multiplier, true);
 			break;
 		case "DE: ブレイン・デス（MP自爆） / Brain Death":
@@ -1383,7 +1382,32 @@ function battle(){
 					if (battle_data[battler[i]].skill_used[j] == 1)
 						break;
 
-					// Dead Shell should be processed earliest
+
+					// Pressure
+					if (base_data[battler[i]].skill[j].search("Pressure") != -1){
+						mp_cost = 400;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].mp_left -= mp_cost;
+							battle_data[battler[i]].skill_used[j]++;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s MP costs are doubled! <br>";
+							}
+
+							battle_data[1 - battler[i]].pressure = true;
+						}
+
+						
+						continue;
+					}
+
+					// Dead Shell
 					if (base_data[battler[i]].skill[j].search("Dead Shell") != -1){
 						mp_cost = 400;
 						if (battle_data[battler[i]].pressure == true)
@@ -1403,14 +1427,6 @@ function battle(){
 						battle_data[battler[i]].skill_used[j]++;
 						break;
 					}
-				}
-			}
-
-			for (var i = 0; i < 2; i++){
-				Inner:
-				for (var j = 0; j < 3; j++){
-					if (battle_data[battler[i]].skill_used[j] == 1)
-						continue;
 
 					// Cleanness
 					if (base_data[battler[i]].skill[j].search("Cleanness") != -1){
@@ -1432,6 +1448,14 @@ function battle(){
 						}
 						
 					}
+				}
+			}
+
+			for (var i = 0; i < 2; i++){
+				Inner:
+				for (var j = 0; j < 3; j++){
+					if (battle_data[battler[i]].skill_used[j] == 1)
+						continue;
 
 					// Buff
 					if (base_data[battler[i]].skill[j].search("Buff") != -1){
@@ -1555,231 +1579,6 @@ function battle(){
 						continue;
 					}
 
-					// First Blood / Quick Thinking
-					if (base_data[battler[i]].skill[j].search("First Blood") != -1 || base_data[battler[i]].skill[j].search("Quick Thinking") != -1){
-						mp_cost = 300;
-
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].mp_left -= mp_cost;
-							battle_data[battler[i]].skill_used[j]++;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-							}
-
-							if (battle_data[1 - battler[i]].shell == true){
-								if (show_log == true){
-									document.getElementById('res').innerHTML += "But it failed! <br>";
-								}
-								continue Inner;
-							}
-
-							avoided = false, mirrored = false;
-							if (battle_data[1 - battler[i]].avoid > 0){
-								battle_data[1 - battler[i]].avoid--;
-								if (Math.random() < 0.4){
-									avoided = true;
-									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-								}
-								else 
-									avoided = false;
-							}
-							else if (battle_data[1 - battler[i]].high_avoid > 0){
-								battle_data[1 - battler[i]].high_avoid--;
-								avoided = true;
-								if (show_log == true)
-									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
-							}
-
-							if (avoided == true){
-								continue Inner;
-							}
-							else{
-								if (base_data[battler[i]].skill[j].search("First Blood") != -1)
-									attack_attr = "Physical";
-								else
-									attack_attr = base_data[battler[i]].attr;
-
-								// Damage Calc
-								damage = damage_dealer(battler[i], 1 - battler[i], base_data[battler[i]].skill[j], attack_attr, 0.8, 0.5, 0, false);
-
-								// Mirror Damage
-								mp_cost = 700;
-								if (battle_data[1 - battler[i]].pressure == true)
-									mp_cost *= 2;
-								if (base_data[1 - battler[i]].gear.search("All Cost -") != -1)
-									mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[1 - battler[i]].gear_lv));
-								if (battle_data[1 - battler[i]].mp_left >= mp_cost){
-									for (var k = 0; k < 3; k++){
-										if (base_data[1 - battler[i]].skill[k].search("Mirror Damage") != -1){
-											if (Math.random() < 0.6){
-												mirrored = true;
-												battle_data[1 - battler[i]].mp_left -= mp_cost;
-
-												if (show_log == true)
-													document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") uses Mirror Damage! MP: " + battle_data[1 - battler[i]].mp_left + "/" + base_data[1 - battler[i]].mp + " <br>";
-
-												battle_data[battler[i]].dodgable = false, battle_data[battler[i]].counterable = false, battle_data[battler[i]].no_death = true, battle_data[battler[i]].reflectable = false;
-												damage = damage * 0.4;
-												damage = damage_dealer(1 - battler[i], battler[i], "Mirror Damage", "None", 0, 0, damage, true);
-
-												
-
-												if (battle_data[battler[i]].hp_left <= 0){
-													if (show_log == true)
-														document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
-													result = 1 - battler[i];
-													return result;
-												}
-											}
-											else
-												mirrored = false;
-											break;
-										}
-									}
-								}
-
-								if (mirrored == true){
-									continue Inner;
-								}
-								else{
-									pre_hp = battle_data[1 - battler[i]].hp_left;
-									damage = damage_dealer(battler[i], 1 - battler[i], base_data[battler[i]].skill[j], attack_attr, 0.8, 0.5, 0, true);
-																	
-
-									// If Death Occurs
-									if (battle_data[1 - battler[i]].hp_left <= 0){		
-										still_alive = death_proc(1 - battler[i], battler[i], base_data[battler[i]].skill[j], pre_hp);
-
-										// If Survived
-										if (still_alive == 1){
-											// intro_activate = true;
-											on_hit_reaction(1 - battler[i]);
-											if (battle_data[battler[i]].hp_left <= 0){
-												if (show_log == true)
-													document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
-												result = 1 - battler[i];
-												return result;
-											}
-
-											battle_length++;
-											continue Inner;
-										}
-										else{ 
-											if (show_log == true)
-												document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") is defeated! <br>";
-											result = battler[i];
-											if (battle_data[battler[i]].hp_left <= 0){
-												if (show_log == true)
-													document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
-												result = -1;
-											}
-											else{
-												// Speed Change
-												battle_data[battler[i]].exceeded_speed -= battle_data[1 - battler[i]].exceeded_speed;
-												battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
-											}
-											return result;
-										}
-									}
-									else {
-										// Counter
-										for (var k = 0; k < 3; k++){
-											if (base_data[1 - battler[i]].skill[k].search("Counter") != -1){
-												if (damage > 0 && battle_data[1 - battler[i]].counterable == true && battle_data[1 - battler[i]].mp_left >= 300 && twice == 1){
-													battle_data[1 - battler[i]].mp_left -= 300;
-													if (show_log == true)
-														document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") uses Counter! MP: " + battle_data[1 - battler[i]].mp_left + "/" + base_data[1 - battler[i]].mp + " <br>";
-
-													avoided = false;
-													if (battle_data[battler[i]].avoid > 0){
-														battle_data[battler[i]].avoid--;
-														if (Math.random() < 0.4){
-															avoided = true;
-															if (show_log == true)
-																document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-														}
-														else 
-															avoided = false;
-													}
-													else if (battle_data[battler[i]].high_avoid > 0){
-														battle_data[battler[i]].high_avoid--;
-														avoided = true;
-														if (show_log == true)
-															document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
-													}
-
-													if (avoided == true){
-														continue Inner;
-													}
-
-													battle_data[battler[i]].dodgable = false, battle_data[battler[i]].counterable = false, battle_data[battler[i]].no_death = true, battle_data[battler[i]].reflectable = false;
-													damage_dealer(1 - battler[i], battler[i], "Counter", "None", 0, 0, 1.2 * damage, true);
-													if (battle_data[battler[i]].hp_left <= 0){
-														if (show_log == true)
-															document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
-														result = 1 - battler[i];
-														return result;
-													}
-												}
-												break;
-											}
-										}
-										
-										on_hit_reaction(1 - battler[i]);
-										if (battle_data[battler[i]].hp_left <= 0){
-											if (show_log == true)
-												document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
-											result = 1 - battler[i];
-											return result;
-										}
-
-										continue Inner;
-									}
-								}
-								
-							}
-						}
-					}
-
-					// Skull Shatter
-					if (base_data[battler[i]].skill[j].search("Skull Shatter") != -1){
-						mp_cost = 300;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost && (battle_data[1 - battler[i]].atk_buff > 0 || battle_data[1 - battler[i]].def_buff > 0 
-							|| battle_data[1 - battler[i]].spd_buff > 0 || battle_data[1 - battler[i]].wis_buff > 0 
-							|| battle_data[1 - battler[i]].double_binder[0] != "None" || battle_data[1 - battler[i]].double_binder[1] != "None") ){
-							battle_data[battler[i]].mp_left -= mp_cost;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s buffs are cancelled! <br>";
-							}
-
-							battle_data[1 - battler[i]].atk_buff = 0;
-							battle_data[1 - battler[i]].def_buff = 0;
-							if (battle_data[1- battler[i]].spd_buff > 0){
-								battle_data[1 - battler[i]].spd_buff = 0;
-								battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
-							}
-							battle_data[1 - battler[i]].wis_buff = 0;
-							battle_data[1 - battler[i]].double_binder[0] = "None";
-							battle_data[1 - battler[i]].double_binder[1] = "None";
-
-							battle_data[battler[i]].skill_used[j]++;
-							continue;
-						}
-					}
 
 					// Shift
 					if (base_data[battler[i]].skill[j].search("Shift") != -1){
@@ -1907,30 +1706,6 @@ function battle(){
 						
 					}
 
-					// Pressure
-					if (base_data[battler[i]].skill[j].search("Pressure") != -1){
-						mp_cost = 400;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].mp_left -= mp_cost;
-							battle_data[battler[i]].skill_used[j]++;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s MP costs are doubled! <br>";
-							}
-
-							battle_data[1 - battler[i]].pressure = true;
-						}
-
-						
-						continue;
-					}
-
 					// Double Binder
 					if (base_data[battler[i]].skill[j].search("Double Binder") != -1){
 						mp_cost = 600;
@@ -2017,8 +1792,236 @@ function battle(){
 				for (var j = 0; j < 3; j++){
 					if (battle_data[battler[i]].skill_used[j] == 1)
 						continue;
+
+					// Skull Shatter
+					if (base_data[battler[i]].skill[j].search("Skull Shatter") != -1){
+						mp_cost = 300;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost && (battle_data[1 - battler[i]].atk_buff > 0 || battle_data[1 - battler[i]].def_buff > 0 
+							|| battle_data[1 - battler[i]].spd_buff > 0 || battle_data[1 - battler[i]].wis_buff > 0 
+							|| battle_data[1 - battler[i]].double_binder[0] != "None" || battle_data[1 - battler[i]].double_binder[1] != "None") ){
+							battle_data[battler[i]].mp_left -= mp_cost;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s buffs are cancelled! <br>";
+							}
+
+							battle_data[1 - battler[i]].atk_buff = 0;
+							battle_data[1 - battler[i]].def_buff = 0;
+							if (battle_data[1- battler[i]].spd_buff > 0){
+								battle_data[1 - battler[i]].spd_buff = 0;
+								battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
+							}
+							battle_data[1 - battler[i]].wis_buff = 0;
+							battle_data[1 - battler[i]].double_binder[0] = "None";
+							battle_data[1 - battler[i]].double_binder[1] = "None";
+
+							battle_data[battler[i]].skill_used[j]++;
+							continue;
+						}
+					}
+
+					// Following will be nullified by Confusion
 					if (battle_data[battler[i]].confusion == true)
 						break;
+
+					// First Blood / Quick Thinking
+					if (base_data[battler[i]].skill[j].search("First Blood") != -1 || base_data[battler[i]].skill[j].search("Quick Thinking") != -1){
+						mp_cost = 300;
+
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].mp_left -= mp_cost;
+							battle_data[battler[i]].skill_used[j]++;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+							}
+
+							if (battle_data[1 - battler[i]].shell == true){
+								if (show_log == true){
+									document.getElementById('res').innerHTML += "But it failed! <br>";
+								}
+								continue;
+							}
+
+							avoided = false, mirrored = false;
+							if (battle_data[1 - battler[i]].avoid > 0){
+								battle_data[1 - battler[i]].avoid--;
+								if (Math.random() < 0.4){
+									avoided = true;
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
+								}
+								else 
+									avoided = false;
+							}
+							else if (battle_data[1 - battler[i]].high_avoid > 0){
+								battle_data[1 - battler[i]].high_avoid--;
+								avoided = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+							}
+
+							if (avoided == true){
+								continue;
+							}
+							else{
+								if (base_data[battler[i]].skill[j].search("First Blood") != -1)
+									attack_attr = "Physical";
+								else
+									attack_attr = base_data[battler[i]].attr;
+
+								// Damage Calc
+								damage = damage_dealer(battler[i], 1 - battler[i], base_data[battler[i]].skill[j], attack_attr, 0.8, 0.5, 0, false);
+
+								// Mirror Damage
+								mp_cost = 700;
+								if (battle_data[1 - battler[i]].pressure == true)
+									mp_cost *= 2;
+								if (base_data[1 - battler[i]].gear.search("All Cost -") != -1)
+									mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[1 - battler[i]].gear_lv));
+								if (battle_data[1 - battler[i]].mp_left >= mp_cost){
+									for (var k = 0; k < 3; k++){
+										if (base_data[1 - battler[i]].skill[k].search("Mirror Damage") != -1){
+											if (Math.random() < 0.6){
+												mirrored = true;
+												battle_data[1 - battler[i]].mp_left -= mp_cost;
+
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") uses Mirror Damage! MP: " + battle_data[1 - battler[i]].mp_left + "/" + base_data[1 - battler[i]].mp + " <br>";
+
+												battle_data[battler[i]].dodgable = false, battle_data[battler[i]].counterable = false, battle_data[battler[i]].no_death = true, battle_data[battler[i]].reflectable = false;
+												damage = damage * 0.4;
+												damage = damage_dealer(1 - battler[i], battler[i], "Mirror Damage", "None", 0, 0, damage, true);
+
+												
+
+												if (battle_data[battler[i]].hp_left <= 0){
+													if (show_log == true)
+														document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
+													result = 1 - battler[i];
+													return result;
+												}
+											}
+											else
+												mirrored = false;
+											break;
+										}
+									}
+								}
+
+								if (mirrored == true){
+									continue;
+								}
+								else{
+									pre_hp = battle_data[1 - battler[i]].hp_left;
+									damage = damage_dealer(battler[i], 1 - battler[i], base_data[battler[i]].skill[j], attack_attr, 0.8, 0.5, 0, true);
+																	
+
+									// If Death Occurs
+									if (battle_data[1 - battler[i]].hp_left <= 0){		
+										still_alive = death_proc(1 - battler[i], battler[i], base_data[battler[i]].skill[j], pre_hp);
+
+										// If Survived
+										if (still_alive == 1){
+											// intro_activate = true;
+											on_hit_reaction(1 - battler[i]);
+											if (battle_data[battler[i]].hp_left <= 0){
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
+												result = 1 - battler[i];
+												return result;
+											}
+
+											battle_length++;
+											continue;
+										}
+										else{ 
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") is defeated! <br>";
+											result = battler[i];
+											if (battle_data[battler[i]].hp_left <= 0){
+												if (show_log == true)
+													document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (2 - 1 - battler[i]).toString() + ") is defeated! <br>";
+												result = -1;
+											}
+											else{
+												// Speed Change
+												battle_data[battler[i]].exceeded_speed -= battle_data[1 - battler[i]].exceeded_speed;
+												battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
+											}
+											return result;
+										}
+									}
+									else {
+										// Counter
+										for (var k = 0; k < 3; k++){
+											if (base_data[1 - battler[i]].skill[k].search("Counter") != -1){
+												if (damage > 0 && battle_data[1 - battler[i]].counterable == true && battle_data[1 - battler[i]].mp_left >= 300 && twice == 1){
+													battle_data[1 - battler[i]].mp_left -= 300;
+													if (show_log == true)
+														document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") uses Counter! MP: " + battle_data[1 - battler[i]].mp_left + "/" + base_data[1 - battler[i]].mp + " <br>";
+
+													avoided = false;
+													if (battle_data[battler[i]].avoid > 0){
+														battle_data[battler[i]].avoid--;
+														if (Math.random() < 0.4){
+															avoided = true;
+															if (show_log == true)
+																document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
+														}
+														else 
+															avoided = false;
+													}
+													else if (battle_data[battler[i]].high_avoid > 0){
+														battle_data[battler[i]].high_avoid--;
+														avoided = true;
+														if (show_log == true)
+															document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+													}
+
+													if (avoided == true){
+														continue;
+													}
+
+													battle_data[battler[i]].dodgable = false, battle_data[battler[i]].counterable = false, battle_data[battler[i]].no_death = true, battle_data[battler[i]].reflectable = false;
+													damage_dealer(1 - battler[i], battler[i], "Counter", "None", 0, 0, 1.2 * damage, true);
+													if (battle_data[battler[i]].hp_left <= 0){
+														if (show_log == true)
+															document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
+														result = 1 - battler[i];
+														return result;
+													}
+												}
+												break;
+											}
+										}
+										
+										on_hit_reaction(1 - battler[i]);
+										if (battle_data[battler[i]].hp_left <= 0){
+											if (show_log == true)
+												document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") is defeated! <br>";
+											result = 1 - battler[i];
+											return result;
+										}
+
+										continue;
+									}
+								}
+								
+							}
+						}
+					}
 
 					// Brain Suck
 					if (base_data[battler[i]].skill[j].search("Brain Suck") != -1){
@@ -2264,6 +2267,23 @@ function battle(){
 						case "+5": dmg_rate = 1.9;; mp_cost = 1200; mp_comp[i] = 1200; break;
 					}
 				}
+				else if (attack_skill.search('二連射') != -1 && attack_skill.search('（') == -1){
+					console.log("!!");
+					switch(temp[1].charAt(0)){
+						case "熱": attack_attr = "発熱型 / Burner"; break;
+						case "冷": attack_attr = "冷却型 / Chiller"; break;
+						case "風": attack_attr = "疾風型 / Slasher"; break;
+						case "電": attack_attr = "放電型 / Shocker"; break;
+						case "鳴": attack_attr = "共鳴型 / Screamer"; break;
+						case "毒": attack_attr = "猛毒型 / Spitter"; break;
+						case "誘": attack_attr = "誘惑型 / Charmer"; break;
+						case "寄": attack_attr = "寄生型 / Leecher"; break;
+						default: attack_attr = "Physical";
+					}
+					dmg_rate = 1.0; mp_cost = 1200; mp_comp[i] = 1200;
+					if (attack_skill.search('Charmer') != -1)
+						dmg_rate = 1.2;
+				}
 				else{
 					switch(attack_skill){
 						case "AT: トランスフュージョン（回復攻撃） / Transfusion":
@@ -2277,7 +2297,6 @@ function battle(){
 							dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
 							if (attack_attr.search('Charmer') != -1)
 								dmg_rate = 1.2;
-							console.log(mp_cost);
 							break;
 						case "AT: トリプルスレット（会心一撃） / Triple Threat":
 							mp_cost = 1200, mp_comp[i] = 1200;
@@ -2368,6 +2387,22 @@ function battle(){
 					case "+5": dmg_rate = 1.9;; mp_cost = 1200; mp_comp[i] = 1200; break;
 				}
 			}
+			else if (attack_skill.search('二連射') != -1 && attack_skill.search('（') == -1){
+				switch(temp[1].charAt(0)){
+					case "熱": attack_attr = "発熱型 / Burner"; break;
+					case "冷": attack_attr = "冷却型 / Chiller"; break;
+					case "風": attack_attr = "疾風型 / Slasher"; break;
+					case "電": attack_attr = "放電型 / Shocker"; break;
+					case "鳴": attack_attr = "共鳴型 / Screamer"; break;
+					case "毒": attack_attr = "猛毒型 / Spitter"; break;
+					case "誘": attack_attr = "誘惑型 / Charmer"; break;
+					case "寄": attack_attr = "寄生型 / Leecher"; break;
+					default: attack_attr = "Physical";
+				}
+				dmg_rate = 1.0; mp_cost = 1200; twice = 2;
+				if (attack_skill.search('Charmer') != -1)
+					dmg_rate = 1.2;
+			}
 			else{
 				switch(attack_skill){
 					case "AT: トランスフュージョン（回復攻撃） / Transfusion":
@@ -2401,6 +2436,7 @@ function battle(){
 			}
 		}
 
+		console.log(attack_attr);
 
 		if (battle_data[attacker].pressure == true)
 			mp_cost *= 2;

@@ -3,6 +3,21 @@ var data =
 
 	
 	{
+		"name": "黄龍", "attr": "中性型 / Voider", "hp": 1816, "mp": 1816, "atk": 1816, "def": 1816, "spd": 1816, "wis": 1816, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: リジェネレート（自動HP回復） / Regenerate", "AT: 寄二連射 / Double Strain (Leecher)"]
+	},
+	{
+		"name": "酒呑童子", "attr": "共鳴型 / Screamer", "hp": 1847, "mp": 1403, "atk": 1294, "def": 1679, "spd": 1897, "wis": 1758, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S20-CELL変異 / SPD +20% Buff"]
+	},
+	{
+		"name": "カイチ", "attr": "寄生型 / Leecher", "hp": 1867, "mp": 1361, "atk": 2003, "def": 2052, "spd": 1468, "wis": 972, 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "AT: トランスフュージョン（回復攻撃） / Transfusion", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter"]
+	},
+	{
 		"name": "殲滅の死穢王", "attr": "発熱型 / Burner", "hp": 2463, "mp": 1441, "atk": 1093, "def": 1942, "spd": 1482, "wis": 1799, 
 		"skill": ["IN: I25-CELL進化 / WIS +25% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: D25-CELL進化 / DEF +25% Buff", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "RE: ロックリアクション（反応封印） / Lock Reaction"]
@@ -20,7 +35,7 @@ var data =
 	{
 		"name": "主賓・ニュートン", "attr": "発熱型 / Burner", "hp": 1605, "mp": 1555, "atk": 1436, "def": 1436, "spd": 1724, "wis": 2150, 
 		"skill": ["IN: I20-CELL変異 / WIS +20% Buff", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
-		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: ダブルストレイン（属性二連射） / Double Strain"]
+		"IN: ブレインサック（先制MP） / Brain Suck", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)", "AT: 電二連射 / Double Strain (Shocker)"]
 	},
 	{
 		"name": "来賓・ヘレネー", "attr": "冷却型 / Chiller", "hp": 1631, "mp": 1907, "atk": 1346, "def": 1523, "spd": 1720, "wis": 1702, 
@@ -935,6 +950,26 @@ var data =
 		"name": "来賓・ヘレネー・究極型", "attr": "冷却型 / Chiller", "hp": 1696, "mp": 1983, "atk": 1399, "def": 1583, "spd": 1788, "wis": 1770, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: ハイアヴォイド（完全回避） / High Avoid","AT: ダブルストレイン（属性二連射） / Double Strain", 
 		"IN: ブレインサック（先制MP） / Brain Suck", "DE: ブレイン・デス（MP自爆） / Brain Death", "IN: コンフュージョン（混乱攻撃） / Confusion"]
+	},
+	{
+		"name": "月兎・極型", "attr": "疾風型 / Slasher", "hp": 1664, "mp": 1397, "atk": 2004, "def": 1643, "spd": 1952, "wis": 1612, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: A25-CELL進化 / ATK +25% Buff", "AT: トリプルスレット（会心一撃） / Triple Threat", 
+		"IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "月兎・究極型", "attr": "疾風型 / Slasher", "hp": 1696, "mp": 1424, "atk": 2043, "def": 1675, "spd": 1990, "wis": 1644, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: A25-CELL進化 / ATK +25% Buff", "AT: トリプルスレット（会心一撃） / Triple Threat", 
+		"IN: ファストブラッド（先制物理） / First Blood", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "酒呑童子・極型", "attr": "共鳴型 / Screamer", "hp": 1883, "mp": 1431, "atk": 1319, "def": 1712, "spd": 1934, "wis": 1793, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S20-CELL変異 / SPD +20% Buff"]
+	},
+	{
+		"name": "酒呑童子・究極型", "attr": "共鳴型 / Screamer", "hp": 1920, "mp": 1459, "atk": 1345, "def": 1746, "spd": 1972, "wis": 1828, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S20-CELL変異 / SPD +20% Buff"]
 	}
 ];
 
@@ -1015,14 +1050,14 @@ var all_skills = [
 
 	"-----------------------------",
 	"攻撃スキル（通常） / Attack Skills (Normal)",
-	"AT: 熱 +1 / Burner +1", "AT: 熱 +2 / Burner +2", "AT: 熱 +3 / Burner +3", "AT: 熱 +4 / Burner +4",
-	"AT: 冷 +1 / Chiller +1", "AT: 冷 +2 / Chiller +2", "AT: 冷 +3 / Chiller +3", "AT: 冷 +4 / Chiller +4",
-	"AT: 風 +1 / Slasher +1", "AT: 風 +2 / Slasher +2", "AT: 風 +3 / Slasher +3", "AT: 風 +4 / Slasher +4",
-	"AT: 電 +1 / Shocker +1", "AT: 電 +2 / Shocker +2", "AT: 電 +3 / Shocker +3", "AT: 電 +4 / Shocker +4",
-	"AT: 鳴 +1 / Screamer +1", "AT: 鳴 +2 / Screamer +2", "AT: 鳴 +3 / Screamer +3", "AT: 鳴 +4 / Screamer +4",
-	"AT: 毒 +1 / Spitter +1", "AT: 毒 +2 / Spitter +2", "AT: 毒 +3 / Spitter +3", "AT: 毒 +4 / Spitter +4", 
-	"AT: 誘 +1 / Charmer +1", "AT: 誘 +2 / Charmer +2", "AT: 誘 +3 / Charmer +3", "AT: 誘 +4 / Charmer +4", "AT: 誘 +5 / Charmer +5",
-	"AT: 寄 +1 / Leecher +1", "AT: 寄 +2 / Leecher +2", "AT: 寄 +3 / Leecher +3", "AT: 寄 +4 / Leecher +4",
+	"AT: 熱 +1 / Burner +1", "AT: 熱 +2 / Burner +2", "AT: 熱 +3 / Burner +3", "AT: 熱 +4 / Burner +4", "AT: 熱二連射 / Double Strain (Burner)",
+	"AT: 冷 +1 / Chiller +1", "AT: 冷 +2 / Chiller +2", "AT: 冷 +3 / Chiller +3", "AT: 冷 +4 / Chiller +4", "AT: 冷二連射 / Double Strain (Chiller)",
+	"AT: 風 +1 / Slasher +1", "AT: 風 +2 / Slasher +2", "AT: 風 +3 / Slasher +3", "AT: 風 +4 / Slasher +4", "AT: 風二連射 / Double Strain (Slasher)",
+	"AT: 電 +1 / Shocker +1", "AT: 電 +2 / Shocker +2", "AT: 電 +3 / Shocker +3", "AT: 電 +4 / Shocker +4", "AT: 電二連射 / Double Strain (Shocker)",
+	"AT: 鳴 +1 / Screamer +1", "AT: 鳴 +2 / Screamer +2", "AT: 鳴 +3 / Screamer +3", "AT: 鳴 +4 / Screamer +4", "AT: 鳴二連射 / Double Strain (Screamer)",
+	"AT: 毒 +1 / Spitter +1", "AT: 毒 +2 / Spitter +2", "AT: 毒 +3 / Spitter +3", "AT: 毒 +4 / Spitter +4", "AT: 毒二連射 / Double Strain (Spitter)",
+	"AT: 誘 +1 / Charmer +1", "AT: 誘 +2 / Charmer +2", "AT: 誘 +3 / Charmer +3", "AT: 誘 +4 / Charmer +4", "AT: 誘 +5 / Charmer +5", "AT: 誘二連射 / Double Strain (Charmer)",
+	"AT: 寄 +1 / Leecher +1", "AT: 寄 +2 / Leecher +2", "AT: 寄 +3 / Leecher +3", "AT: 寄 +4 / Leecher +4", "AT: 寄二連射 / Double Strain (Leecher)",
 	"AT: 物理斬 +1 / Physical Slash +1", "AT: 物理斬 +2 / Physical Slash +2", "AT: 物理斬 +3 / Physical Slash +3", "AT: 物理斬 +4 / Physical Slash +4", 
 	"AT: 物理打 +1 / Physical Smash +1", "AT: 物理打 +2 / Physical Smash +2", "AT: 物理打 +3 / Physical Smash +3", "AT: 物理打 +4 / Physical Smash +4"
 ];
