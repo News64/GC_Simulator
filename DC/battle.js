@@ -1382,31 +1382,6 @@ function battle(){
 					if (battle_data[battler[i]].skill_used[j] == 1)
 						break;
 
-
-					// Pressure
-					if (base_data[battler[i]].skill[j].search("Pressure") != -1){
-						mp_cost = 400;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].mp_left -= mp_cost;
-							battle_data[battler[i]].skill_used[j]++;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s MP costs are doubled! <br>";
-							}
-
-							battle_data[1 - battler[i]].pressure = true;
-						}
-
-						
-						continue;
-					}
-
 					// Dead Shell
 					if (base_data[battler[i]].skill[j].search("Dead Shell") != -1){
 						mp_cost = 400;
@@ -1447,6 +1422,39 @@ function battle(){
 							continue;
 						}
 						
+					}
+
+
+					// Avoid
+					if (base_data[battler[i]].skill[j].search("Avoid") != -1){
+						if (base_data[battler[i]].skill[j].search("High") != -1)
+							mp_cost = 900;
+						else
+							mp_cost = 400;
+
+
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].mp_left -= mp_cost;
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") can avoid attack for once! <br>";
+							}
+
+							if (battle_data[battler[i]].locked == false){
+								if (base_data[battler[i]].skill[j].search("High") != -1)
+									battle_data[battler[i]].high_avoid++;
+								else
+									battle_data[battler[i]].avoid++;
+							}
+							
+						}
+						battle_data[battler[i]].skill_used[j]++;
+						continue;
 					}
 				}
 			}
@@ -1542,38 +1550,6 @@ function battle(){
 							}
 							if (base_data[battler[i]].skill[j].search("WIS") != -1) 
 								buff_apply(battler[i], battler[1 - i], "WIS", temp);
-						}
-						battle_data[battler[i]].skill_used[j]++;
-						continue;
-					}
-					
-					// Avoid
-					if (base_data[battler[i]].skill[j].search("Avoid") != -1){
-						if (base_data[battler[i]].skill[j].search("High") != -1)
-							mp_cost = 900;
-						else
-							mp_cost = 400;
-
-
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].mp_left -= mp_cost;
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") can avoid attack for once! <br>";
-							}
-
-							if (battle_data[battler[i]].locked == false){
-								if (base_data[battler[i]].skill[j].search("High") != -1)
-									battle_data[battler[i]].high_avoid++;
-								else
-									battle_data[battler[i]].avoid++;
-							}
-							
 						}
 						battle_data[battler[i]].skill_used[j]++;
 						continue;
@@ -1784,6 +1760,31 @@ function battle(){
 						
 						continue;
 					} 
+
+
+					// Pressure
+					if (base_data[battler[i]].skill[j].search("Pressure") != -1){
+						mp_cost = 400;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].mp_left -= mp_cost;
+							battle_data[battler[i]].skill_used[j]++;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+								document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s MP costs are doubled! <br>";
+							}
+
+							battle_data[1 - battler[i]].pressure = true;
+						}
+
+						
+						continue;
+					}
 				}
 			}
 
@@ -2435,8 +2436,6 @@ function battle(){
 				}
 			}
 		}
-
-		console.log(attack_attr);
 
 		if (battle_data[attacker].pressure == true)
 			mp_cost *= 2;
