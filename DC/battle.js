@@ -744,6 +744,9 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 			if (base_data[id1].gear.search("Charmer Success Rate +") != -1)
 				chance += base_data[id1].gear_lv * 0.0025;
 
+			if ( (battle_data[id2].double_binder[0] == attack_attr || battle_data[id2].double_binder[1] == attack_attr) && chance > 0.5)
+				chance = 0.5;
+
 			if (Math.random() < chance){
 				insta_death = true;
 			}
