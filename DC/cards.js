@@ -512,13 +512,121 @@ var data =
 		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
 		"RE: カウンター（反撃） / Counter", "AT: ツインリッパー（二連射） / Twin Ripper", "AT: 物理斬 +4 / Physical Slash +4"]
 	},
-
-
-
-
-
-
-
+	{
+		"name": "マスター・ロージー", "attr": "共鳴型 / Screamer", "hp": 1524, "mp": 1138, "atk": 1454, "def": 1515, "spd": 1550, "wis": 1576, 
+		"skill": ["AT: ポイズンアタック（毒攻撃） / Poison Attack", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: コンフュージョン（混乱攻撃） / Confusion", "BD: サディスト（打倒時攻+30%） / Sadist", "BD: サイコパス（打倒時速+30%） / Psychopath"]
+	},
+	{
+		"name": "レッドワイバーン", "attr": "発熱型 / Burner", "hp": 1583, "mp": 1407, "atk": 1055, "def": 1583, "spd": 1583, "wis": 1583, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ダブルバインダー（冷風-50%） / Double Binder (Chiller, Slasher)", "IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: グレイビアードシフト（HPMP入替） / Shift"]
+	},
+	{
+		"name": "ドラゴニュート", "attr": "誘惑型 / Charmer", "hp": 1374, "mp": 1460, "atk": 1529, "def": 1202, "spd": 1494, "wis": 1529, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: A25-CELL進化 / ATK +25% Buff", "AT: トリプルスレット（会心一撃） / Triple Threat"]
+	},
+	{
+		"name": "ハンマー・ギルガメッシュ", "attr": "放電型 / Shocker", "hp": 1484, "mp": 1309, "atk": 1658, "def": 1309, "spd": 1484, "wis": 1484, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "AT: ツインリッパー（二連射） / Twin Ripper", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"DE: RE-CELL構築（復活） / Revival", "AT: トリプルスレット（会心一撃） / Triple Threat", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "スプリンター・アレン", "attr": "疾風型 / Slasher", "hp": 1309, "mp": 1667, "atk": 1309, "def": 1309, "spd": 1571, "wis": 1562, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: ブレイン・デス（MP自爆） / Brain Death", 
+		"IN: S25-CELL退化 / SPD -25% Debuff", "RE: ロックリアクション（反応封印） / Lock Reaction", "IN: スカルシャッター（強化無効） / Skull Shatter"]
+	},
+	{
+		"name": "初芽局・新体操", "attr": "誘惑型 / Charmer", "hp": 1328, "mp": 1369, "atk": 1328, "def": 1245, "spd": 1535, "wis": 1494, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: I25-CELL退化 / WIS -25% Debuff", "IN: スカルシャッター（強化無効） / Skull Shatter", "IN: デッドシェル（先制無効） / Dead Shell"]
+	},
+	{
+		"name": "スプラッシュ・レオナ", "attr": "冷却型 / Chiller", "hp": 1483, "mp": 1421, "atk": 1396, "def": 1396, "spd": 1509, "wis": 1543, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "RE: カウンター（反撃） / Counter", "AT: 冷 +4 / Chiller +4"]
+	},
+	{
+		"name": "ゆきんこ・さまー", "attr": "寄生型 / Leecher", "hp": 1405, "mp": 1473, "atk": 1277, "def": 1405, "spd": 1516, "wis": 1473, 
+		"skill": ["IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL構築（復活） / Revival", 
+		"DE: ブレイン・デス（MP自爆） / Brain Death", "IN: I20-CELL感染 / WIS -20% Debuff", "AT: 寄 +3 / Leecher +3"]
+	},
+	{
+		"name": "ローレライ", "attr": "誘惑型 / Charmer", "hp": 1554, "mp": 1308, "atk": 981, "def": 1554, "spd": 1472, "wis": 1308, 
+		"skill": ["IN: メディテーション（自動MP回復） / Meditation", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: サバイヴ（耐える） / Survive", 
+		"IN: DS10共通活性 / DEF_SPD +10% Buff", "IN: DI10合同活性 / DEF_WIS +10% Buff", "AT: 誘 +2 / Charmer +2"]
+	},
+	{
+		"name": "リリス・パラダイス", "attr": "共鳴型 / Screamer", "hp": 1453, "mp": 1436, "atk": 1282, "def": 1299, "spd": 1470, "wis": 1581, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: プレデター（捕食） / Predator", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: コンフュージョン（混乱攻撃） / Confusion", "IN: I25-CELL退化 / WIS -25% Debuff", "AT: 鳴 +3 / Screamer +3"]
+	},
+	{
+		"name": "絶対王者アレクセイ", "attr": "発熱型 / Burner", "hp": 1740, "mp": 1305, "atk": 1653, "def": 1740, "spd": 522, "wis": 1740, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: リジェネレート（自動HP回復） / Regenerate", "AT: トランスフュージョン（回復攻撃） / Transfusion", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "ポセイドン", "attr": "冷却型 / Chiller", "hp": 1522, "mp": 1392, "atk": 1348, "def": 1435, "spd": 1479, "wis": 1522, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クイック・シンキング（先制知能） / Quick Thinking", "IN: リジェネレート（自動HP回復） / Regenerate", "AT: 冷 +3 / Chiller +3"]
+	},
+	{
+		"name": "宮本武蔵・海神", "attr": "放電型 / Shocker", "hp": 1802, "mp": 1287, "atk": 1459, "def": 1459, "spd": 1201, "wis": 1373, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: トリプルスレット（会心一撃） / Triple Threat", 
+		"IN: A20-CELL変異 / ATK +20% Buff", "IN: プレッシャー（消費MP2倍） / Pressure", "IN: D25-CELL退化 / DEF -25% Debuff"]
+	},
+	{
+		"name": "サマーフルーツ・ソニア", "attr": "疾風型 / Slasher", "hp": 1377, "mp": 972, "atk": 1539, "def": 1377, "spd": 1458, "wis": 1134, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "BD: サディスト（打倒時攻+30%） / Sadist", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: ファストブラッド（先制物理） / First Blood", "IN: D20-CELL感染 / DEF -20% Debuff", "AT: 物理打 +3 / Physical Smash +3"]
+	},
+	{
+		"name": "ウンディーネ", "attr": "猛毒型 / Spitter", "hp": 1262, "mp": 1419, "atk": 1566, "def": 1392, "spd": 1453, "wis": 1566, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: アヴォイド（回避） / Avoid", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: AI10並列浸食 / ATK_WIS -10% Debuff", "AT: ポイズンアタック（毒攻撃） / Poison Attack", "AT: 毒 +3 / Spitter +3"]
+	},
+	{
+		"name": "麒麟娘々", "attr": "放電型 / Shocker", "hp": 1197, "mp": 1454, "atk": 1454, "def": 1197, "spd": 1710, "wis": 1539, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: DS10共通活性 / DEF_SPD +10% Buff", "IN: クイック・シンキング（先制知能） / Quick Thinking", "AT: 電 +3 / Shocker +3"]
+	},
+	{
+		"name": "セイレーン", "attr": "誘惑型 / Charmer", "hp": 1289, "mp": 1631, "atk": 1289, "def": 1460, "spd": 1374, "wis": 1460, 
+		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: DI10合同浸食 / DEF_WIS -10% Debuff", "IN: アヴォイド（回避） / Avoid", "AT: 誘 +3 / Charmer +3"]
+	},
+	{
+		"name": "スナイパー・オルガ", "attr": "猛毒型 / Spitter", "hp": 1344, "mp": 1428, "atk": 1302, "def": 1344, "spd": 1470, "wis": 1512, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: スカルシャッター（強化無効） / Skull Shatter", "IN: クリーンネス（弱体無効） / Cleanness", "AT: 毒 +3 / Spitter +3"]
+	},
+	{
+		"name": "パイロット・ベロニカ", "attr": "疾風型 / Slasher", "hp": 1462, "mp": 1376, "atk": 1290, "def": 1376, "spd": 1505, "wis": 1591, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: プレデター（捕食） / Predator", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "AT: 風 +2 / Slasher +2", "AT: 風 +3 / Slasher +3"]
+	},
+	{
+		"name": "オフィサー・ソナ", "attr": "共鳴型 / Screamer", "hp": 1207, "mp": 1288, "atk": 1529, "def": 1529, "spd": 1489, "wis": 966, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: マゾヒスト（瀕死時攻+50%） / Masochist", "DE: サバイヴ（耐える） / Survive", 
+		"IN: AD10同時浸食 / ATK_DEF -10% Debuff", "IN: クリーンネス（弱体無効） / Cleanness", "AT: 物理斬 +3 / Physical Slash +3"]
+	},
+	{
+		"name": "重機甲兵ロビンフッド", "attr": "疾風型 / Slasher", "hp": 1443, "mp": 1296, "atk": 1253, "def": 1362, "spd": 1299, "wis": 1362, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "IN: リジェネレート（自動HP回復） / Regenerate", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: AI10並列活性 / ATK_WIS +10% Buff", "AT: 風 +2 / Slasher +2", "AT: 風 +3 / Slasher +3"]
+	},
+	{
+		"name": "ボマー・イライダ", "attr": "発熱型 / Burner", "hp": 1305, "mp": 1367, "atk": 1184, "def": 1342, "spd": 1450, "wis": 1561, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL構築（復活） / Revival", 
+		"IN: SI10変則活性 / SPD_WIS +10% Buff", "IN: A20-CELL感染 / ATK -20% Debuff", "AT: 熱 +3 / Burner +3"]
+	},
+	{
+		"name": "レジェンドロックスター", "attr": "発熱型 / Burner", "hp": 1305, "mp": 1089, "atk": 1066, "def": 1333, "spd": 1622, "wis": 1422, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"IN: DI10合同活性 / DEF_WIS +10% Buff", "AT: 熱 +2 / Burner +2", "AT: 熱 +3 / Burner +3"]
+	},
 	{
 		"name": "ジャンヌ'歌姫'ダルク", "attr": "疾風型 / Slasher", "hp": 1322, "mp": 1187, "atk": 1001, "def": 1655, "spd": 1255, "wis": 1533, 
 		"skill": ["IN: アヴォイド（回避） / Avoid", "RE: カウンター（反撃） / Counter", "AT: ダブルストレイン（属性二連射） / Double Strain", 
@@ -538,6 +646,11 @@ var data =
 		"name": "ルシファー", "attr": "共鳴型 / Screamer", "hp": 1500, "mp": 1500, "atk": 1500, "def": 1500, "spd": 1500, "wis": 1500, 
 		"skill": ["AT: トリプルスレット（会心一撃） / Triple Threat", "RE: カウンター（反撃） / Counter", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: デッドシェル（先制無効） / Dead Shell", "IN: クリーンネス（弱体無効） / Cleanness", "AT: 物理斬 +4 / Physical Slash +4"]
+	},
+	{
+		"name": "ビリー・ザ・パンク", "attr": "共鳴型 / Screamer", "hp": 1769, "mp": 600, "atk": 1589, "def": 1601, "spd": 1111, "wis": 1055, 
+		"skill": ["AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: D20-CELL変異 / DEF +20% Buff", "AT: 物理打 +2 / Physical Smash +2", "AT: 物理打 +3 / Physical Smash +3"]
 	},
 	{
 		"name": "'エレキ'スカアハ", "attr": "放電型 / Shocker", "hp": 1422, "mp": 1125, "atk": 1122, "def": 1325, "spd": 1499, "wis": 1543, 
@@ -998,6 +1111,7 @@ var all_skills = [
 	"IN: リジェネレート（自動HP回復） / Regenerate", "IN: メディテーション（自動MP回復） / Meditation",
 	"IN: プレッシャー（消費MP2倍） / Pressure",
 	"IN: ダブルバインダー（電毒-50%） / Double Binder (Shocker, Spitter)", "IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)",
+	"IN: ダブルバインダー（冷風-50%） / Double Binder (Chiller, Slasher)",
 
 	"-----------------------------",
 	"攻撃スキル（特殊） / Attack Skills (Special)",
