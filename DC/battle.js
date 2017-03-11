@@ -1920,30 +1920,29 @@ function battle(){
 							if (base_data[battler[i]].gear.search("Illusion Success Rate +") != -1)
 								chance += 0.0075 * base_data[battler[i]].gear_lv;
 
-							if (Math.random() < chance){
-
-								avoided = false;
-								if (battle_data[1 - battler[i]].avoid > 0){
-									battle_data[1 - battler[i]].avoid--;
-									if (Math.random() < 0.4){
-										avoided = true;
-										if (show_log == true)
-											document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-									}
-									else 
-										avoided = false;
-								}
-								else if (battle_data[1 - battler[i]].high_avoid > 0){
-									battle_data[1 - battler[i]].high_avoid--;
+							avoided = false;
+							if (battle_data[1 - battler[i]].avoid > 0){
+								battle_data[1 - battler[i]].avoid--;
+								if (Math.random() < 0.4){
 									avoided = true;
 									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
 								}
+								else 
+									avoided = false;
+							}
+							else if (battle_data[1 - battler[i]].high_avoid > 0){
+								battle_data[1 - battler[i]].high_avoid--;
+								avoided = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+							}
 
-								if (avoided == true){
-									continue;
-								}
-								else{
+							if (avoided == true){
+								continue;
+							}
+							else{
+								if (Math.random() < chance){
 									battle_data[1 - battler[i]].chick = true;
 									battle_data[1 - battler[i]].hp_left = 460;
 									battle_data[1 - battler[i]].mp_left = 460;
@@ -1958,11 +1957,9 @@ function battle(){
 									if (show_log == true)
 										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") becomes a Chick! (Chance: 0.3) <br>";
 								}
-							}
-							else{
-								if (show_log == true){
-									document.getElementById('res').innerHTML += "But it failed! <br>";
-								}
+								else
+									if (show_log == true)
+										document.getElementById('res').innerHTML += "But it failed! <br>";
 							}
 						}
 							
@@ -2193,39 +2190,38 @@ function battle(){
 							if (base_data[battler[i]].gear.search("Brain Suck Success Rate +") != -1)
 								chance += 0.0075 * base_data[battler[i]].gear_lv;
 
-							if (Math.random() < chance){
-								avoided = false;
-								if (battle_data[1 - battler[i]].avoid > 0){
-									battle_data[1 - battler[i]].avoid--;
-									if (Math.random() < 0.4){
-										avoided = true;
-										if (show_log == true)
-											document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-									}
-									else 
-										avoided = false;
-								}
-								else if (battle_data[1 - battler[i]].high_avoid > 0){
-									battle_data[1 - battler[i]].high_avoid--;
+							avoided = false;
+							if (battle_data[1 - battler[i]].avoid > 0){
+								battle_data[1 - battler[i]].avoid--;
+								if (Math.random() < 0.4){
 									avoided = true;
 									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
 								}
+								else 
+									avoided = false;
+							}
+							else if (battle_data[1 - battler[i]].high_avoid > 0){
+								battle_data[1 - battler[i]].high_avoid--;
+								avoided = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+							}
 
-								if (avoided == true){
-									continue;
-								}
-								else{
+							if (avoided == true){
+								continue;
+							}
+							else{
+								if (Math.random() < chance){
 									battle_data[1 - battler[i]].mp_left = 1;
 									if (show_log == true)
 										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s MP becomes 1! (Chance: 0.5) <br>";
 								}
+								else
+									if (show_log == true)
+										document.getElementById('res').innerHTML += "But it failed! <br>";
 							}
-							else{
-								if (show_log == true){
-									document.getElementById('res').innerHTML += "But it failed! <br>";
-								}
-							}
+							
 						}
 					}
 				}
