@@ -1077,12 +1077,12 @@ var data =
 	{
 		"name": "酒呑童子・極型", "attr": "共鳴型 / Screamer", "hp": 1883, "mp": 1431, "atk": 1319, "def": 1712, "spd": 1934, "wis": 1793, 
 		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
-		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S20-CELL変異 / SPD +20% Buff"]
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S25-CELL進化 / SPD +25% Buff"]
 	},
 	{
 		"name": "酒呑童子・究極型", "attr": "共鳴型 / Screamer", "hp": 1920, "mp": 1459, "atk": 1345, "def": 1746, "spd": 1972, "wis": 1828, 
 		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
-		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S20-CELL変異 / SPD +20% Buff"]
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S25-CELL進化 / SPD +25% Buff"]
 	}
 ];
 
