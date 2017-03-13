@@ -1475,6 +1475,146 @@ function battle(){
 						battle_data[battler[i]].skill_used[j]++;
 						continue;
 					}
+
+
+					// Fast Lock
+					if (base_data[battler[i]].skill[j].search("Fast Lock") != -1){
+						mp_cost = 600;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							if (Math.random() < 0.7){
+								battle_data[battler[i]].mp_left -= mp_cost;
+
+								if (show_log == true){
+									document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s reaction abilities are locked! <br>";
+								}
+
+								battle_data[1 - battler[i]].locked = true;
+
+								lock_apply(1 - battler[i]);
+							}
+
+							battle_data[battler[i]].skill_used[j]++;
+							continue;
+						}
+					}
+
+					// Confusion
+					if (base_data[battler[i]].skill[j].search("Confusion") != -1){
+						mp_cost = 400;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].skill_used[j]++;
+							battle_data[battler[i]].mp_left -= mp_cost;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+							}
+
+							avoided = false;
+							if (battle_data[1 - battler[i]].avoid > 0){
+								battle_data[1 - battler[i]].avoid--;
+								if (Math.random() < 0.4){
+									avoided = true;
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
+								}
+								else 
+									avoided = false;
+							}
+							else if (battle_data[1 - battler[i]].high_avoid > 0){
+								battle_data[1 - battler[i]].high_avoid--;
+								avoided = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+							}
+
+							if (avoided == true){
+								continue;
+							}
+							else{
+								battle_data[1 - battler[i]].confusion = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") becomes confused! <br>";
+							}
+						}
+						
+					}
+
+
+					// Illusion
+					if (base_data[battler[i]].skill[j].search("Illusion") != -1){
+						mp_cost = 300;
+						if (battle_data[battler[i]].pressure == true)
+							mp_cost *= 2;
+						if (base_data[battler[i]].gear.search("All Cost -") != -1)
+							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
+
+						if (battle_data[battler[i]].mp_left >= mp_cost){
+							battle_data[battler[i]].skill_used[j]++;
+							battle_data[battler[i]].mp_left -= mp_cost;
+
+							if (show_log == true){
+								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
+							}
+
+							chance = 0.3;
+							if (base_data[battler[i]].gear.search("Illusion Success Rate +") != -1)
+								chance += 0.0075 * base_data[battler[i]].gear_lv;
+
+							avoided = false;
+							if (battle_data[1 - battler[i]].avoid > 0){
+								battle_data[1 - battler[i]].avoid--;
+								if (Math.random() < 0.4){
+									avoided = true;
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
+								}
+								else 
+									avoided = false;
+							}
+							else if (battle_data[1 - battler[i]].high_avoid > 0){
+								battle_data[1 - battler[i]].high_avoid--;
+								avoided = true;
+								if (show_log == true)
+									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
+							}
+
+							if (avoided == true){
+								continue;
+							}
+							else{
+								if (Math.random() < chance){
+									battle_data[1 - battler[i]].chick = true;
+									battle_data[1 - battler[i]].hp_left = 460;
+									battle_data[1 - battler[i]].mp_left = 460;
+									base_data[1 - battler[i]].hp = 460;
+									base_data[1 - battler[i]].mp = 460;
+									base_data[1 - battler[i]].atk = 460;
+									base_data[1 - battler[i]].def = 460;
+									base_data[1 - battler[i]].spd = 460;
+									base_data[1 - battler[i]].wis = 440;
+									battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
+
+									if (show_log == true)
+										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") becomes a Chick! (Chance: 0.3) <br>";
+								}
+								else
+									if (show_log == true)
+										document.getElementById('res').innerHTML += "But it failed! <br>";
+							}
+						}
+							
+					}
 				}
 			}
 
@@ -1662,34 +1802,6 @@ function battle(){
 						}
 					}
 
-
-					// Fast Lock
-					if (base_data[battler[i]].skill[j].search("Fast Lock") != -1){
-						mp_cost = 600;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							if (Math.random() < 0.7){
-								battle_data[battler[i]].mp_left -= mp_cost;
-
-								if (show_log == true){
-									document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ")'s reaction abilities are locked! <br>";
-								}
-
-								battle_data[1 - battler[i]].locked = true;
-
-								lock_apply(1 - battler[i]);
-							}
-
-							battle_data[battler[i]].skill_used[j]++;
-							continue;
-						}
-					}
-
 					// Regenerate
 					if (base_data[battler[i]].skill[j].search("Regenerate") != -1){
 						mp_cost = 400;
@@ -1851,118 +1963,6 @@ function battle(){
 							battle_data[battler[i]].skill_used[j]++;
 							continue;
 						}
-					}
-
-					// Confusion
-					if (base_data[battler[i]].skill[j].search("Confusion") != -1){
-						mp_cost = 400;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].skill_used[j]++;
-							battle_data[battler[i]].mp_left -= mp_cost;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-							}
-
-							avoided = false;
-							if (battle_data[1 - battler[i]].avoid > 0){
-								battle_data[1 - battler[i]].avoid--;
-								if (Math.random() < 0.4){
-									avoided = true;
-									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-								}
-								else 
-									avoided = false;
-							}
-							else if (battle_data[1 - battler[i]].high_avoid > 0){
-								battle_data[1 - battler[i]].high_avoid--;
-								avoided = true;
-								if (show_log == true)
-									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
-							}
-
-							if (avoided == true){
-								continue;
-							}
-							else{
-								battle_data[1 - battler[i]].confusion = true;
-								if (show_log == true)
-									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") becomes confused! <br>";
-							}
-						}
-						
-					}
-
-
-					// Illusion
-					if (base_data[battler[i]].skill[j].search("Illusion") != -1){
-						mp_cost = 300;
-						if (battle_data[battler[i]].pressure == true)
-							mp_cost *= 2;
-						if (base_data[battler[i]].gear.search("All Cost -") != -1)
-							mp_cost = Math.round(mp_cost * (1 - 0.01 * base_data[battler[i]].gear_lv));
-
-						if (battle_data[battler[i]].mp_left >= mp_cost){
-							battle_data[battler[i]].skill_used[j]++;
-							battle_data[battler[i]].mp_left -= mp_cost;
-
-							if (show_log == true){
-								document.getElementById('res').innerHTML += base_data[battler[i]].card + " (Team " + (battler[i] + 1).toString() + ") uses " + base_data[battler[i]].skill[j] + "! <br>";
-							}
-
-							chance = 0.3;
-							if (base_data[battler[i]].gear.search("Illusion Success Rate +") != -1)
-								chance += 0.0075 * base_data[battler[i]].gear_lv;
-
-							avoided = false;
-							if (battle_data[1 - battler[i]].avoid > 0){
-								battle_data[1 - battler[i]].avoid--;
-								if (Math.random() < 0.4){
-									avoided = true;
-									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 0.4) <br>";
-								}
-								else 
-									avoided = false;
-							}
-							else if (battle_data[1 - battler[i]].high_avoid > 0){
-								battle_data[1 - battler[i]].high_avoid--;
-								avoided = true;
-								if (show_log == true)
-									document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") dodges the attack! (Chance: 1) <br>";
-							}
-
-							if (avoided == true){
-								continue;
-							}
-							else{
-								if (Math.random() < chance){
-									battle_data[1 - battler[i]].chick = true;
-									battle_data[1 - battler[i]].hp_left = 460;
-									battle_data[1 - battler[i]].mp_left = 460;
-									base_data[1 - battler[i]].hp = 460;
-									base_data[1 - battler[i]].mp = 460;
-									base_data[1 - battler[i]].atk = 460;
-									base_data[1 - battler[i]].def = 460;
-									base_data[1 - battler[i]].spd = 460;
-									base_data[1 - battler[i]].wis = 440;
-									battle_data[1 - battler[i]].exceeded_speed = Math.floor((base_data[1 - battler[i]].spd) * (1 + battle_data[1 - battler[i]].spd_buff - battle_data[1 - battler[i]].spd_debuff));
-
-									if (show_log == true)
-										document.getElementById('res').innerHTML += base_data[1 - battler[i]].card + " (Team " + (1 - battler[i] + 1).toString() + ") becomes a Chick! (Chance: 0.3) <br>";
-								}
-								else
-									if (show_log == true)
-										document.getElementById('res').innerHTML += "But it failed! <br>";
-							}
-						}
-							
 					}
 
 
