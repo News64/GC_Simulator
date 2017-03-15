@@ -766,6 +766,12 @@ function damage_dealer(id1, id2, attack_skill, attack_attr, dmg_rate, reduc_rate
 				if ( (battle_data[id2].double_binder[0] == attack_attr || battle_data[id2].double_binder[1] == attack_attr) && chance >= 0.4)
 					chance = 0.4;
 			}
+			else if (attack_skill.search("Christmas") != -1){
+				if (chance > 0.85)
+					chance = 0.85;
+				if ( (battle_data[id2].double_binder[0] == attack_attr || battle_data[id2].double_binder[1] == attack_attr) && chance >= 0.425)
+					chance = 0.425;
+			}
 			else if (chance > 0.5 + parseInt(attack_skill.charAt(temp)) * 0.1){
 				chance = 0.5 + parseInt(attack_skill.charAt(temp)) * 0.1;
 				if ( (battle_data[id2].double_binder[0] == attack_attr || battle_data[id2].double_binder[1] == attack_attr) && chance >= (0.5 + parseInt(attack_skill.charAt(temp)) * 0.1) / 2.0)
@@ -2343,6 +2349,7 @@ function battle(){
 							dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
 							break;
 						case "AT: ダブルストレイン（属性二連射） / Double Strain":
+						case "AT: クリスマスストレイン（誘二連射） / Christmas Strain":
 							attack_attr = base_data[attacker].attr;
 							dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
 							if (attack_attr.search('Charmer') != -1)
@@ -2464,6 +2471,7 @@ function battle(){
 						twice = 2;
 						break;
 					case "AT: ダブルストレイン（属性二連射） / Double Strain":
+					case "AT: クリスマスストレイン（誘二連射） / Christmas Strain":
 						attack_attr = base_data[attacker].attr;
 						dmg_rate = 1.0, mp_cost = 1200, mp_comp[i] = 1200;
 						if (attack_attr.search('Charmer') != -1)

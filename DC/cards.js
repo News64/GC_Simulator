@@ -1,7 +1,33 @@
 var data =
 [
-
+	/*
+	{
+		"name": "アンラ・マンユ", "attr": "発熱型 / Burner", "hp": 1724, "mp": 2271, "atk": 1176, "def": 1166, "spd": 1703, "wis": 2099, 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
+	},
+	*/
 	
+	{
+		"name": "坂本龍馬", "attr": "発熱型 / Burner", "hp": 1831, "mp": 1582, "atk": 2100, "def": 1443, "spd": 1701, "wis": 1293, 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
+	},
+	{
+		"name": "ローラン", "attr": "共鳴型 / Screamer", "hp": 2743, "mp": 1227, "atk": 1107, "def": 1795, "spd": 1276, "wis": 1825, 
+		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"RE: カウンター（反撃） / Counter", "IN: メディテーション（自動MP回復） / Meditation", "IN: クイック・シンキング（先制知能） / Quick Thinking"]
+	},
+	{
+		"name": "ビキニアーマー・千代女", "attr": "誘惑型 / Charmer", "hp": 1659, "mp": 1649, "atk": 1319, "def": 1479, "spd": 2068, "wis": 1818, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ブレインサック（先制MP） / Brain Suck", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "デュラハン", "attr": "猛毒型 / Spitter", "hp": 1709, "mp": 1532, "atk": 1768, "def": 1630, "spd": 1866, "wis": 1316, 
+		"skill": ["IN: コンフュージョン（混乱攻撃） / Confusion",  "IN: イリュージョン（チック化） / Illusion", "AT: ポイズンアタック（毒攻撃） / Poison Attack", 
+		"IN: SI30変則浸食 / SPD_WIS -30% Debuff", "DE: ラストクラウド（死亡攻撃） / Last Cloud", "IN: ハイアヴォイド（完全回避） / High Avoid"]
+	},
 	{
 		"name": "黄龍", "attr": "中性型 / Voider", "hp": 1816, "mp": 1816, "atk": 1816, "def": 1816, "spd": 1816, "wis": 1816, 
 		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", 
@@ -229,7 +255,7 @@ var data =
 	},
 	{
 		"name": "Xmas☆ミカにゃ", "attr": "誘惑型 / Charmer", "hp": 1814, "mp": 1713, "atk": 1411, "def": 1612, "spd": 1864, "wis": 1663, 
-		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: クリスマスストレイン（誘二連射） / Christmas Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: コンフュージョン（混乱攻撃） / Confusion", "BD: サイコパス（打倒時速+30%） / Psychopath", "IN: S25-CELL進化 / SPD +25% Buff"]
 	},
 	{
@@ -1083,6 +1109,26 @@ var data =
 		"name": "酒呑童子・究極型", "attr": "共鳴型 / Screamer", "hp": 1920, "mp": 1459, "atk": 1345, "def": 1746, "spd": 1972, "wis": 1828, 
 		"skill": ["IN: ブレインサック（先制MP） / Brain Suck", "IN: イリュージョン（チック化） / Illusion", "AT: ダブルストレイン（属性二連射） / Double Strain", 
 		"IN: ハイアヴォイド（完全回避） / High Avoid", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: S25-CELL進化 / SPD +25% Buff"]
+	},
+	{
+		"name": "カイチ・極型", "attr": "寄生型 / Leecher", "hp": 1904, "mp": 1388, "atk": 2043, "def": 2093, "spd": 1497, "wis": 991, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "AT: トランスフュージョン（回復攻撃） / Transfusion", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "カイチ・究極型", "attr": "寄生型 / Leecher", "hp": 1941, "mp": 1415, "atk": 2083, "def": 2134, "spd": 1526, "wis": 1010, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "AT: トランスフュージョン（回復攻撃） / Transfusion", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"AT: ブラッドストライク（HP消費攻撃） / Blood Strike", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "ビキニアーマー・千代女・極型", "attr": "誘惑型 / Charmer", "hp": 1708, "mp": 1698, "atk": 1358, "def": 1523, "spd": 2130, "wis": 1872, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ブレインサック（先制MP） / Brain Suck", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "ビキニアーマー・千代女・究極型", "attr": "誘惑型 / Charmer", "hp": 1741, "mp": 1731, "atk": 1384, "def": 1552, "spd": 2171, "wis": 1908, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
+		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ブレインサック（先制MP） / Brain Suck", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
 	}
 ];
 
@@ -1115,7 +1161,7 @@ var all_skills = [
 
 	"-----------------------------",
 	"攻撃スキル（特殊） / Attack Skills (Special)",
-	"AT: ツインリッパー（二連射） / Twin Ripper", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+	"AT: ツインリッパー（二連射） / Twin Ripper", "AT: ダブルストレイン（属性二連射） / Double Strain", "AT: クリスマスストレイン（誘二連射） / Christmas Strain", 
 	"AT: トリプルスレット（会心一撃） / Triple Threat",
 	"AT: トランスフュージョン（回復攻撃） / Transfusion",
 	"AT: ポイズンアタック（毒攻撃） / Poison Attack",
@@ -1212,7 +1258,7 @@ var gears = [
 ];
 
 var deck_data = [
-	'[["ウィンター・リリノエ","エース / Perfect","冷却型 / Chiller","5732","6935","4887","4991","5900","5900","IN: SI30変則浸食 / SPD_WIS -30% Debuff","AT: ダブルストレイン（属性二連射） / Double Strain","DE: ブレイン・デス（MP自爆） / Brain Death","IN: ファストロック（先制封印） / Fast Lock","IN: ハイアヴォイド（完全回避） / High Avoid","IN: イリュージョン（チック化） / Illusion","クレバーリング（MP強化） / Mental Ring","20"],["Xmas☆ミカにゃ","エース / Perfect","誘惑型 / Charmer","6495","6133","5052","5771","6674","5954","BD: サイコパス（打倒時速+30%） / Psychopath","AT: ダブルストレイン（属性二連射） / Double Strain","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: コンフュージョン（混乱攻撃） / Confusion","IN: ファストロック（先制封印） / Fast Lock","IN: S25-CELL進化 / SPD +25% Buff","黒いティーバック（誘成功率強化） / Charmer Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["プロフェッサー・ユイ","エース / Perfect","猛毒型 / Spitter","3781","8411","3623","4726","5735","7519","IN: ファストロック（先制封印） / Fast Lock","AT: ダブルストレイン（属性二連射） / Double Strain","DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro","RE: ミラーダメージ（攻撃反射） / Mirror Damage","IN: デッドシェル（先制無効） / Dead Shell","DE: RE-CELL構築（復活） / Revival","クレバーリング（MP強化） / Mental Ring","20"],["パリカー","エース / Perfect","猛毒型 / Spitter","5814","5886","6684","5449","5814","6684","IN: ファストロック（先制封印） / Fast Lock","AT: ツインリッパー（二連射） / Twin Ripper","DE: RE-CELL2回構築（2回復活） / Double Revival","BD: サディスト（打倒時攻+30%） / Sadist","AT: ダブルストレイン（属性二連射） / Double Strain","IN: SI30変則浸食 / SPD_WIS -30% Debuff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","7104","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","IN: D25-CELL進化 / DEF +25% Buff","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","DE: RE-CELL2回構築（2回復活） / Double Revival","バイタルリング（HP強化） / Fresh Ring","20"],["サンタ・サキュバス","エース / Perfect","誘惑型 / Charmer","6616","5259","4683","5735","5700","5940","AT: ダブルストレイン（属性二連射） / Double Strain","RE: ロックリアクション（反応封印） / Lock Reaction","DE: 聖・RE-CELL2回構築（2回復活） / Holy Double Revival","RE: ミラーダメージ（攻撃反射） / Mirror Damage","IN: リジェネレート（自動HP回復） / Regenerate","IN: SI30変則浸食 / SPD_WIS -30% Debuff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","7494","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","クイックリング（素早さ強化） / Quick Ring","20"],["ブラックサンタ・リリス","エース / Perfect","共鳴型 / Screamer","5836","5907","5009","5413","5907","6459","AT: ダブルストレイン（属性二連射） / Double Strain","RE: 聖・プレデター（捕食） / Holy Predator","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストロック（先制封印） / Fast Lock","IN: コンフュージョン（混乱攻撃） / Confusion","IN: SI10変則活性 / SPD_WIS +10% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"]]',
+	'[["ウィンター・リリノエ","エース / Perfect","冷却型 / Chiller","5732","6935","4887","4991","5900","5900","IN: SI30変則浸食 / SPD_WIS -30% Debuff","AT: ダブルストレイン（属性二連射） / Double Strain","DE: ブレイン・デス（MP自爆） / Brain Death","IN: ファストロック（先制封印） / Fast Lock","IN: ハイアヴォイド（完全回避） / High Avoid","IN: イリュージョン（チック化） / Illusion","クレバーリング（MP強化） / Mental Ring","20"],["Xmas☆ミカにゃ","エース / Perfect","誘惑型 / Charmer","6495","6133","5052","5771","6674","5954","BD: サイコパス（打倒時速+30%） / Psychopath","AT: クリスマスストレイン（誘二連射） / Christmas Strain","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: コンフュージョン（混乱攻撃） / Confusion","IN: ファストロック（先制封印） / Fast Lock","IN: S25-CELL進化 / SPD +25% Buff","黒いティーバック（誘成功率強化） / Charmer Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["プロフェッサー・ユイ","エース / Perfect","猛毒型 / Spitter","3781","8411","3623","4726","5735","7519","IN: ファストロック（先制封印） / Fast Lock","AT: ダブルストレイン（属性二連射） / Double Strain","DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro","RE: ミラーダメージ（攻撃反射） / Mirror Damage","IN: デッドシェル（先制無効） / Dead Shell","DE: RE-CELL構築（復活） / Revival","クレバーリング（MP強化） / Mental Ring","20"],["パリカー","エース / Perfect","猛毒型 / Spitter","5814","5886","6684","5449","5814","6684","IN: ファストロック（先制封印） / Fast Lock","AT: ツインリッパー（二連射） / Twin Ripper","DE: RE-CELL2回構築（2回復活） / Double Revival","BD: サディスト（打倒時攻+30%） / Sadist","AT: ダブルストレイン（属性二連射） / Double Strain","IN: SI30変則浸食 / SPD_WIS -30% Debuff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","7104","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","IN: D25-CELL進化 / DEF +25% Buff","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","DE: RE-CELL2回構築（2回復活） / Double Revival","バイタルリング（HP強化） / Fresh Ring","20"],["サンタ・サキュバス","エース / Perfect","誘惑型 / Charmer","6616","5259","4683","5735","5700","5940","AT: ダブルストレイン（属性二連射） / Double Strain","RE: ロックリアクション（反応封印） / Lock Reaction","DE: 聖・RE-CELL2回構築（2回復活） / Holy Double Revival","RE: ミラーダメージ（攻撃反射） / Mirror Damage","IN: リジェネレート（自動HP回復） / Regenerate","IN: SI30変則浸食 / SPD_WIS -30% Debuff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","7494","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","クイックリング（素早さ強化） / Quick Ring","20"],["ブラックサンタ・リリス","エース / Perfect","共鳴型 / Screamer","5836","5907","5009","5413","5907","6459","AT: ダブルストレイン（属性二連射） / Double Strain","RE: 聖・プレデター（捕食） / Holy Predator","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストロック（先制封印） / Fast Lock","IN: コンフュージョン（混乱攻撃） / Confusion","IN: SI10変則活性 / SPD_WIS +10% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"]]',
 	'[["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","7494","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","クイックリング（素早さ強化） / Quick Ring","20"],["ハント・ドローン","エース / Perfect","寄生型 / Leecher","4880","6563","6423","4443","7436","4443","AT: ツインリッパー（二連射） / Twin Ripper","BD: サディスト（打倒時攻+30%） / Sadist","DE: RE-CELL2回構築（2回復活） / Double Revival","DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro","IN: ダブルバインダー（誘冷-50%） / Double Binder (Chiller, Charmer)","IN: スカルシャッター（強化無効） / Skull Shatter","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","7104","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","IN: D25-CELL進化 / DEF +25% Buff","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","DE: RE-CELL2回構築（2回復活） / Double Revival","バイタルリング（HP強化） / Fresh Ring","20"],["ダークサンタ・アレクセイ","エース / Perfect","発熱型 / Burner","7075","5374","6437","6967","3075","6437","IN: リジェネレート（自動HP回復） / Regenerate","RE: ミラーダメージ（攻撃反射） / Mirror Damage","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストブラッド（先制物理） / First Blood","AT: ダブルストレイン（属性二連射） / Double Strain","AT: トランスフュージョン（回復攻撃） / Transfusion","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["マーキュリー","エース / Perfect","放電型 / Shocker","5961","6444","5585","5693","6015","6734","AT: ダブルストレイン（属性二連射） / Double Strain","IN: ファストロック（先制封印） / Fast Lock","DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro","RE: ミラーダメージ（攻撃反射） / Mirror Damage","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: クイック・シンキング（先制知能） / Quick Thinking","スマートリング（賢さ強化） / Smart Ring","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ヒトガタ","エース / Perfect","中性型 / Voider","9559","4142","5735","955","5735","5735","RE: カウンター（反撃） / Counter","AT: ブラッドストライク（HP消費攻撃） / Blood Strike","DE: RE-CELL完全構築（HP100%復活） / Full Revival","IN: ハイアヴォイド（完全回避） / High Avoid","RE: プレデター（捕食） / Predator","RE: カウンター（反撃） / Counter","改造人工心臓（完全復活成功率強化） / Full Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","7494","7483","AT: ツインリッパー（二連射） / Twin Ripper","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","RE: ロックリアクション（反応封印） / Lock Reaction","IN: ファストブラッド（先制物理） / First Blood","DE: RE-CELL2回構築（2回復活） / Double Revival","クイックリング（素早さ強化） / Quick Ring","20"],["氷龍","エース / Perfect","冷却型 / Chiller","5993","6358","5814","5449","6176","6541","AT: ダブルストレイン（属性二連射） / Double Strain","IN: S25-CELL進化 / SPD +25% Buff","DE: RE-CELL2回構築（2回復活） / Double Revival","RE: ロックリアクション（反応封印） / Lock Reaction","RE: ミラーダメージ（攻撃反射） / Mirror Damage","IN: スカルシャッター（強化無効） / Skull Shatter","第二の心臓（復活成功率強化） / Revival Success Rate +","20"],["ペルセポネ","エース / Perfect","中性型 / Voider","6459","4686","8034","5907","6813","7483","AT: ツインリッパー（二連射） / Twin Ripper","RE: ロックリアクション（反応封印） / Lock Reaction","DE: RE-CELL2回構築（2回復活） / Double Revival","IN: ファストブラッド（先制物理） / First Blood","IN: メディテーション（自動MP回復） / Meditation","IN: D25-CELL進化 / DEF +25% Buff","第二の心臓（復活成功率強化） / Revival Success Rate +","20"]]'
 ];
 
