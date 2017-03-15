@@ -419,8 +419,8 @@ function save_deck(num_cards, team_num, mode){
 	// mode 0 = local, mode 1 = cookie
 	var curr_data = [], temp, JSON_target;
 
-	if (document.getElementById('decksel_'+ team_num.toString()).value == "ハイパーオリバー6000" ||
-		document.getElementById('decksel_'+ team_num.toString()).value == "ハイパーオリバー7000"){
+	if (document.getElementById('deckname_'+ team_num.toString()).value == "ハイパーオリバー6000" ||
+		document.getElementById('deckname_'+ team_num.toString()).value == "ハイパーオリバー7000"){
 		alert("Please use another deck name!");
 		return;
 	}
