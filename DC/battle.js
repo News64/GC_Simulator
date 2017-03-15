@@ -418,6 +418,13 @@ function hide_details(){
 function save_deck(num_cards, team_num, mode){
 	// mode 0 = local, mode 1 = cookie
 	var curr_data = [], temp, JSON_target;
+
+	if (document.getElementById('card' + team_num.toString() + '.' + i.toString()).value == "ハイパーオリバー6000" ||
+		document.getElementById('card' + team_num.toString() + '.' + i.toString()).value == "ハイパーオリバー7000"){
+		alert("Please use another deck name!");
+		return;
+	}
+
 	for (var i = 1; i <= num_cards; i++){
 		temp = [
 			document.getElementById('card' + team_num.toString() + '.' + i.toString()).value,
@@ -487,7 +494,14 @@ function load_file(event, team_num){
 
 function load_storage(team_num){
 	var name = document.getElementById('decksel_'+ team_num.toString()).value;
-    var res = localStorage.getItem(name);
+    var res;
+
+    if (name == "ハイパーオリバー6000")
+    	res = deck_data[0];
+    else if (name == "ハイパーオリバー7000")
+    	res = deck_data[1];
+    else
+    	res = localStorage.getItem(name);
     
     if (res == "")
     	return;
@@ -516,19 +530,31 @@ function load_storage(team_num){
 }
 
 function update_deck(team_num){
-	var option;
+	var option, name, value;
 	var sel = document.getElementById('decksel_' + team_num.toString());
 	sel.innerHTML = "";
 
 	for (var i = 0; i < localStorage.length; i++) {
-    	var name = localStorage.key( i );
-    	var value = localStorage.getItem( name );
+    	name = localStorage.key( i );
+    	value = localStorage.getItem( name );
 
     	option = document.createElement("option");
 		option.value = name;
 		option.text = name;
 		sel.appendChild(option);
 	}
+
+	name = "ハイパーオリバー6000";
+	option = document.createElement("option");
+	option.value = name;
+	option.text = name;
+	sel.appendChild(option);
+
+	name = "ハイパーオリバー7000";
+	option = document.createElement("option");
+	option.value = name;
+	option.text = name;
+	sel.appendChild(option);
 }
 
 function delete_deck(team_num){
