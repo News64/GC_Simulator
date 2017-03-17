@@ -1,13 +1,11 @@
 var data =
 [
-	/*
-	{
-		"name": "アンラ・マンユ", "attr": "発熱型 / Burner", "hp": 1724, "mp": 2271, "atk": 1176, "def": 1166, "spd": 1703, "wis": 2099, 
-		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
-		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
-	},
-	*/
 	
+	{
+		"name": "アンラ・マンユ", "attr": "猛毒型 / Spitter", "hp": 1724, "mp": 2271, "atk": 1176, "def": 1166, "spd": 1703, "wis": 2099, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro",
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: ハイアヴォイド（完全回避） / High Avoid", "RE: プレデター（捕食） / Predator"]
+	},
 	{
 		"name": "坂本龍馬", "attr": "発熱型 / Burner", "hp": 1831, "mp": 1582, "atk": 2100, "def": 1443, "spd": 1701, "wis": 1293, 
 		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
