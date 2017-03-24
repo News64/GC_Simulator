@@ -2,6 +2,21 @@ var data =
 [
 	
 	{
+		"name": "侍大将・ジャンヌ", "attr": "疾風型 / Slasher", "hp": 1919, "mp": 1539, "atk": 1629, "def": 1399, "spd": 1699, "wis": 1809, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: I20-CELL変異 / WIS +20% Buff"]
+	},
+	{
+		"name": "騎士団長・巴御前", "attr": "放電型 / Shocker", "hp": 1919, "mp": 1539, "atk": 1809, "def": 1629, "spd": 1699, "wis": 1399, 
+		"skill": ["AT: ツインリッパー（二連射） / Twin Ripper", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "IN: A20-CELL変異 / ATK +20% Buff", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "激闘・サムライナイト", "attr": "寄生型 / Leecher", "hp": 2038, "mp": 1210, "atk": 2300, "def": 1917, "spd": 1674, "wis": 948, 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: A25-CELL進化 / ATK +25% Buff", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"RE: ロックリアクション（反応封印） / Lock Reaction", "IN: リジェネレート（自動HP回復） / Regenerate", "RE: プレデター（捕食） / Predator"]
+	},
+	{
 		"name": "アンラ・マンユ", "attr": "猛毒型 / Spitter", "hp": 1724, "mp": 2271, "atk": 1176, "def": 1166, "spd": 1703, "wis": 2099, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro",
 		"IN: I25-CELL進化 / WIS +25% Buff", "IN: ハイアヴォイド（完全回避） / High Avoid", "RE: プレデター（捕食） / Predator"]
@@ -1060,7 +1075,7 @@ var data =
 	},
 	{
 		"name": "祝砲アタックヘリコプター・極型", "attr": "寄生型 / Leecher", "hp": 1808, "mp": 1406, "atk": 2009, "def": 1647, "spd": 1738, "wis": 1436, 
-		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"skill": ["IN: A20-CELL変異 / ATK +20% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
 		"IN: ハイアヴォイド（完全回避） / High Avoid", "DE: ジェノサイドシンクロ（絶対自爆） / Genocide Synchro", "AT: ブラッドストライク（HP消費攻撃） / Blood Strike"]
 	},
 	{
@@ -1127,6 +1142,16 @@ var data =
 		"name": "ビキニアーマー・千代女・究極型", "attr": "誘惑型 / Charmer", "hp": 1741, "mp": 1731, "atk": 1384, "def": 1552, "spd": 2171, "wis": 1908, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "IN: ハイアヴォイド（完全回避） / High Avoid", 
 		"RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: ブレインサック（先制MP） / Brain Suck", "IN: SI30変則浸食 / SPD_WIS -30% Debuff"]
+	},
+	{
+		"name": "坂本龍馬・極型", "attr": "発熱型 / Burner", "hp": 1885, "mp": 1629, "atk": 2163, "def": 1486, "spd": 1752, "wis": 1331, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
+	},
+	{
+		"name": "坂本龍馬・究極型", "attr": "発熱型 / Burner", "hp": 1922, "mp": 1661, "atk": 2205, "def": 1515, "spd": 1786, "wis": 1357, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
+		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
 	}
 ];
 
@@ -1245,10 +1270,11 @@ var gears = [
 	"触腕（回復攻撃ダメージ強化） / Transfusion Damage +",
 	"逆鱗のチャーム（会心一撃ダメージ強化） / Triple Threat Damage +", "青薔薇のチャーム（会心一撃成功率強化） / Triple Threat Success Rate +",
 	"改良アンプル（毒攻撃ダメージ強化） / Poison Attack Damage +", "劇薬のアンプル（毒攻撃成功率強化） / Poison Attack Success Rate +",
+	"メリケンサック（通常攻撃ダメージ強化） / Normal Attack Damage +",
 
 	"イービルアイ（チック化成功率強化） / Illusion Success Rate +",
 	"軽量化エンジン（先制MP成功率強化） / Brain Suck Success Rate +",
-	//"エクストラターボ（先制攻撃ダメージ強化） / First Blood, Quick Thinking Damage +",
+	"エクストラターボ（先制攻撃ダメージ強化） / FB, QT Damage +",
 
 	"精神統一の鉢巻（サバイヴ成功率強化） / Survive Success Rate +", "バーニングハチマキ（サバイヴ条件強化） / Survive Condition +",
 	"第二の心臓（復活成功率強化） / Revival Success Rate +", "改造人工心臓（完全復活成功率強化） / Full Revival Success Rate +", 
