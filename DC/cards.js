@@ -2,6 +2,11 @@ var data =
 [
 	
 	{
+		"name": "デスメッセンジャー", "attr": "共鳴型 / Screamer", "hp": 1977, "mp": 666, "atk": 666, "def": 666, "spd": 1815, "wis": 3875, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: クイック・シンキング（先制知能） / Quick Thinking", "AT: ダブルストレイン（属性二連射） / Double Strain", 
+		"DE: RE-CELL2回構築（2回復活） / Double Revival", "IN: メディテーション（自動MP回復） / Meditation", "AT: 鳴 +2 / Screamer +2"]
+	},
+	{
 		"name": "侍大将・ジャンヌ", "attr": "疾風型 / Slasher", "hp": 1919, "mp": 1539, "atk": 1629, "def": 1399, "spd": 1699, "wis": 1809, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: ブレインサック（先制MP） / Brain Suck", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: I20-CELL変異 / WIS +20% Buff"]
@@ -1152,6 +1157,16 @@ var data =
 		"name": "坂本龍馬・究極型", "attr": "発熱型 / Burner", "hp": 1922, "mp": 1661, "atk": 2205, "def": 1515, "spd": 1786, "wis": 1357, 
 		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: ファストブラッド（先制物理） / First Blood", "AT: ツインリッパー（二連射） / Twin Ripper", 
 		"IN: ハイアヴォイド（完全回避） / High Avoid", "BD: サディスト（打倒時攻+30%） / Sadist", "IN: D20-CELL感染 / DEF -20% Debuff"]
+	},
+	{
+		"name": "侍大将・ジャンヌ・極型", "attr": "疾風型 / Slasher", "hp": 1976, "mp": 1585, "atk": 1677, "def": 1440, "spd": 1749, "wis": 1863, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: I25-CELL進化 / WIS +25% Buff"]
+	},
+	{
+		"name": "侍大将・ジャンヌ・究極型", "attr": "疾風型 / Slasher", "hp": 2014, "mp": 1615, "atk": 1710, "def": 1468, "spd": 1783, "wis": 1899, 
+		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: I25-CELL進化 / WIS +25% Buff"]
 	}
 ];
 
