@@ -4,7 +4,7 @@ var data =
 	{
 		"name": "デスメッセンジャー", "attr": "共鳴型 / Screamer", "hp": 1977, "mp": 666, "atk": 666, "def": 666, "spd": 1815, "wis": 3875, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: クイック・シンキング（先制知能） / Quick Thinking", "AT: ダブルストレイン（属性二連射） / Double Strain", 
-		"DE: RE-CELL2回構築（2回復活） / Double Revival", "IN: メディテーション（自動MP回復） / Meditation", "AT: 鳴 +2 / Screamer +2"]
+		"DE: RE-CELL2回構築（2回復活） / Double Revival", "IN: ブレインサック（先制MP） / Brain Suck", "AT: 鳴 +2 / Screamer +2"]
 	},
 	{
 		"name": "侍大将・ジャンヌ", "attr": "疾風型 / Slasher", "hp": 1919, "mp": 1539, "atk": 1629, "def": 1399, "spd": 1699, "wis": 1809, 
