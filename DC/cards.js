@@ -1167,6 +1167,18 @@ var data =
 		"name": "侍大将・ジャンヌ・究極型", "attr": "疾風型 / Slasher", "hp": 2014, "mp": 1615, "atk": 1710, "def": 1468, "spd": 1783, "wis": 1899, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: ブレインサック（先制MP） / Brain Suck", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "IN: I25-CELL進化 / WIS +25% Buff"]
+	},
+	/*
+	{
+		"name": "絶対王者アレクセイ・極型", "attr": "発熱型 / Burner", "hp": 1305, "mp": 1089, "atk": 1066, "def": 1333, "spd": 1622, "wis": 1422, 
+		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"AT: トランスフュージョン（回復攻撃） / Transfusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction"]
+	},
+	*/
+	{
+		"name": "絶対王者アレクセイ・究極型", "attr": "発熱型 / Burner", "hp": 2095, "mp": 1571, "atk": 1990, "def": 2095, "spd": 627, "wis": 2095, 
+		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"AT: トランスフュージョン（回復攻撃） / Transfusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction"]
 	}
 ];
 
