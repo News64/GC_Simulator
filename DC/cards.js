@@ -1179,6 +1179,16 @@ var data =
 		"name": "絶対王者アレクセイ・究極型", "attr": "発熱型 / Burner", "hp": 2095, "mp": 1571, "atk": 1990, "def": 2095, "spd": 627, "wis": 2095, 
 		"skill": ["IN: リジェネレート（自動HP回復） / Regenerate", "RE: カウンター（反撃） / Counter", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"AT: トランスフュージョン（回復攻撃） / Transfusion", "AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction"]
+	},
+	{
+		"name": "ブラック・ナース・極型", "attr": "誘惑型 / Charmer", "hp": 1729, "mp": 1838, "atk": 1512, "def": 1643, "spd": 1675, "wis": 1715, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: メディテーション（自動MP回復） / Meditation", "AT: 誘 +5 / Charmer +5"]
+	},
+	{
+		"name": "ブラック・ナース・究極型", "attr": "誘惑型 / Charmer", "hp": 1780, "mp": 1892, "atk": 1557, "def": 1691, "spd": 1725, "wis": 1766, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: I25-CELL進化 / WIS +25% Buff", "IN: メディテーション（自動MP回復） / Meditation", "AT: 誘 +5 / Charmer +5"]
 	}
 ];
 
