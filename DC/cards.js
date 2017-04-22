@@ -2,6 +2,11 @@ var data =
 [
 	
 	{
+		"name": "ジ・アース", "attr": "中性型 / Voider", "hp": 3631, "mp": 3631, "atk": 3631, "def": 3631, "spd": 3631, "wis": 3631, 
+		"skill": ["IN: A25-CELL進化 / ATK +25% Buff", "IN: S25-CELL進化 / SPD +25% Buff", "DE: RE-CELL完全構築（HP100%復活） / Full Revival", 
+		"IN: R30-CELL覚醒 / RAN +30% Buff", "IN: I25-CELL進化 / WIS +25% Buff", "IN: D25-CELL進化 / DEF +25% Buff"]
+	},
+	{
 		"name": "デスメッセンジャー", "attr": "共鳴型 / Screamer", "hp": 1977, "mp": 666, "atk": 666, "def": 666, "spd": 1815, "wis": 3875, 
 		"skill": ["IN: ファストロック（先制封印） / Fast Lock", "IN: クイック・シンキング（先制知能） / Quick Thinking", "AT: ダブルストレイン（属性二連射） / Double Strain", 
 		"DE: RE-CELL2回構築（2回復活） / Double Revival", "IN: ブレインサック（先制MP） / Brain Suck", "AT: 鳴 +2 / Screamer +2"]
