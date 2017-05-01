@@ -1192,6 +1192,28 @@ var data =
 		"name": "ブラック・ナース・究極型", "attr": "誘惑型 / Charmer", "hp": 1780, "mp": 1892, "atk": 1557, "def": 1691, "spd": 1725, "wis": 1766, 
 		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ミラーダメージ（攻撃反射） / Mirror Damage", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
 		"IN: I25-CELL進化 / WIS +25% Buff", "IN: メディテーション（自動MP回復） / Meditation", "AT: 誘 +5 / Charmer +5"]
+	},
+	/*
+	{
+		"name": "アイドル☆ミカにゃ・極型", "attr": "誘惑型 / Charmer", "hp": 1331, "mp": 1255, "atk": 989, "def": 1333, "spd": 1402, "wis": 1455, 
+		"skill": ["AT: 誘 +5 / Charmer +5", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クリーンネス（弱体無効） / Cleanness", "IN: コンフュージョン（混乱攻撃） / Confusion", "IN: I25-CELL進化 / WIS +25% Buff"]
+	},
+	*/
+	{
+		"name": "アイドル☆ミカにゃ・究極型", "attr": "誘惑型 / Charmer", "hp": 1783, "mp": 1682, "atk": 1325, "def": 1787, "spd": 1879, "wis": 1949, 
+		"skill": ["AT: 誘 +5 / Charmer +5", "AT: ダブルストレイン（属性二連射） / Double Strain", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: クリーンネス（弱体無効） / Cleanness", "IN: コンフュージョン（混乱攻撃） / Confusion", "IN: I25-CELL進化 / WIS +25% Buff"]
+	},
+	{
+		"name": "ルシファー・極型", "attr": "共鳴型 / Screamer", "hp": 1781, "mp": 1781, "atk": 1781, "def": 1781, "spd": 1781, "wis": 1781, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "AT: トリプルスレット（会心一撃） / Triple Threat", "RE: カウンター（反撃） / Counter"]
+	},
+	{
+		"name": "ルシファー・究極型", "attr": "共鳴型 / Screamer", "hp": 1834, "mp": 1834, "atk": 1834, "def": 1834, "spd": 1834, "wis": 1834, 
+		"skill": ["AT: ダブルストレイン（属性二連射） / Double Strain", "RE: ロックリアクション（反応封印） / Lock Reaction", "DE: RE-CELL2回構築（2回復活） / Double Revival", 
+		"IN: ブレインサック（先制MP） / Brain Suck", "AT: トリプルスレット（会心一撃） / Triple Threat", "RE: カウンター（反撃） / Counter"]
 	}
 ];
 
